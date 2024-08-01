@@ -2,3 +2,19 @@ body {
     background-image: url("recursos/img/background.png");
     background-size: cover;
 }
+
+.Kyiv {
+    font-family: Kyiv;
+}
+
+.title {
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-stroke-width: 1px;
+    font-size: 4rem;
+}
+
+.combatir {
+    border: 5px solid black;
+    background: #bdbdbd;
+    font-family: Kyiv;
+}

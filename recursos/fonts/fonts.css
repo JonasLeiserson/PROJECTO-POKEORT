@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "Kyiv";
+    src: url("kyiv/KyivTypeTitling-Regular.otf") format("OpenType");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Kyiv";
+    src: url("kyiv/KyivTypeTitling-Bold.otf") format("OpenType");
+    font-weight: 600;
+}
