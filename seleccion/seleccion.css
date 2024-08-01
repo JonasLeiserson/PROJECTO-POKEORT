@@ -1,6 +1,6 @@
-
-.container {
+.main-container {
     display: flex;
+    flex-direction: column;
     flex-wrap: nowrap;
     overflow-x: auto;
     position: relative;
@@ -16,6 +16,17 @@
     margin: 50px;
 }
 
-.pokemon:hover {
-    background-color: rgb(255, 0, 0);
+.pokeort-name-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.pokeort-name {
+    margin: 50px;
+}
+
+.volver {
+    width: 20px;
+    height: 20px;
+    background: blue    ;
 }
