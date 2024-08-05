@@ -1,4 +1,24 @@
+body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.order-0 {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.seleccione-pokeort {
+    position: absolute;
+    right: 37%;
+}
+
 .main-container {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -13,20 +33,79 @@
     border: 3px solid black;
     width: 200px;
     height: 200px;
-    margin: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.pokeort-name-container {
+.pokeort-container {
     display: flex;
     flex-direction: row;
 }
 
 .pokeort-name {
-    margin: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .volver {
     width: 20px;
     height: 20px;
-    background: blue    ;
+    background: blue;
+    order: 1;
+}
+
+.pokeort-img {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 100px;
+    width: 100px;
+}
+
+.ability-container {
+    display: flex;
+    height: 300px;
+    width: 200px;
+    border: 5px solid black;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.ability {
+    height: 30%;
+    width: 90%;
+    border: 2px solid black;
+}
+
+.selected-pokeort {
+    height: 200px;
+    width: 135px;
+    border: 2px solid black;
+}
+
+.selected-pokeort-1 {
+    margin-right: 280px;
+    margin-left: 10px;
+}
+
+.selected-pokeort-2 {
+    margin-right: 10px;
+}
+
+.selected-pokeort-container {
+    height: 300px;
+    width: 550px;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    margin-left: 200px;
+    justify-content: center;
+}
+
+.order-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
