@@ -1,3 +1,10 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -13,10 +20,11 @@
     border: 3px solid black;
     width: 200px;
     height: 200px;
-    margin: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-.pokeort-name-container {
+.pokeort-container {
     display: flex;
     flex-direction: row;
 }
@@ -28,5 +36,12 @@
 .volver {
     width: 20px;
     height: 20px;
-    background: blue    ;
+    background: blue;
+}
+
+.pokeort-img {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 100px;
+    width: 100px;
 }
