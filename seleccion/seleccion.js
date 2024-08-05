@@ -44,3 +44,7 @@ var MACETONIO = {
 
 //FALTA MELONKEY PIPA
 
+function cambiarpokeort() 
+{
+alert("pollo"); 
+}
