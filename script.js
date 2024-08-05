@@ -1,23 +1,46 @@
+var PICKCHEL = {
+    nombre: "PICKCHEL",
+    atk: 100,
+    vida: 200,
+    velocidad: 300,
+    Tipo1: "ELECTRICO",
+    Habilidad1: 1,
+    Habilidad2: 1,
+    Habilidad3: 1
+};
 
-var atkPICKCHEL = 100
-var vidaPICKCHEL = 200
-var velocidadPICKCHEL = 300
-var Tipo1PICKCHEL = "ELECTRICO" 
+var OWLEON = {
+    nombre: "OWLEON",
+    atk: 200,
+    vida: 150,
+    velocidad: 200,
+    Tipo1: "FUEGO",
+    Habilidad1: 1,
+    Habilidad2: 1,
+    Habilidad3: 1
+};
 
-var atkOWLEON = 200
-var vidaOWLEON = 150
-var velocidadOWLEON = 200
-var Tipo1OWLEON = "FUEGO"
+var ROKTOM = {
+    nombre: "ROKTOM",
+    atk: 200,
+    vida: 400,
+    velocidad: 100,
+    Tipo1: "ROCA",
+    Habilidad1: 1,
+    Habilidad2: 1,
+    Habilidad3: 1
+};
 
-var atkROKTOM = 200
-var vidaROKTOM = 400
-var velocidadROKTOM = 100
-var Tipo1ROKTOM = "ROCA"
-
-var atkMACETONIO = 200
-var vidaMACETONIO = 400
-var velocidadMACETONIO = 100
-var Tipo1MACETONIO= "PLANTA"
+var MACETONIO = {
+    nombre: "MACETONIO",
+    atk: 200,
+    vida: 400,
+    velocidad: 100,
+    Tipo1: "PLANTA",
+    Habilidad1: 1,
+    Habilidad2: 1,
+    Habilidad3: 1
+};
 
 //FALTA MELONKEY PIPA
 
