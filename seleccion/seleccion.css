@@ -70,6 +70,7 @@ body {
     justify-content: center;
     flex-direction: column;
     margin-bottom: 100px;
+    margin-left: 50px;
 }
 
 .ability {
@@ -99,7 +100,7 @@ body {
     display: flex;
     align-items: center;
     border: 2px solid black;
-    margin-left: 200px;
+    margin-left: 150px;
     justify-content: center;
 }
 
