@@ -44,7 +44,10 @@ var MACETONIO = {
 
 //FALTA MELONKEY PIPA
 
-function cambiarpokeort() 
+function cambiarpokeort(button) 
 {
-alert("pollo"); 
+button.style.display = "none" ; 
+const imgSrc = button.querySelector('img').src;
+const selectedPokeortDisplay = document.getElementById('selected-pokeort-display');
+selectedPokeortDisplay.src = imgSrc;
 }
