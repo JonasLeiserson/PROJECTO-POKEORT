@@ -1,4 +1,5 @@
-var PICKCHEL = {
+var PICKCHEL = 
+{
     nombre: "PICKCHEL",
     atk: 100,
     vida: 200,
@@ -41,6 +42,14 @@ var MACETONIO = {
     Habilidad2: 1,
     Habilidad3: 1
 };
+var PokeORTS = {
+    "Owleon": OWLEON,
+    "Melonkey": Melonkey,
+    "Roktom": ROKTOM,
+    "Pickchel": PICKCHEL,
+    "Macetonio": MACETONIO
+};
+
 
 //FALTA MELONKEY PIPA
 
@@ -52,7 +61,12 @@ const selectedPokeortDisplay = document.getElementById('selected-pokeort-display
 selectedPokeortDisplay.src = imgSrc;
 }
 
-function MostrarEstadisticas(button)
-{
+function MostrarEstadisticas(button) {
+    const pokeortId = button.querySelector('.pokeort-name').textContent;
+    const pokeort = PokeORTS[pokeortId];
 
+    document.getElementById("VIDA").textContent = "VIDA: " + pokeort.vida;
+    document.getElementById("VELOCIDAD").textContent = "VELOCIDAD: " + pokeort.velocidad;
+    document.getElementById("DANO").textContent = "DAÑO: " + pokeort.atk;
+    document.getElementById("DEFENSA").textContent = "DEFENSA: " + (pokeort.defensa); 
 }
