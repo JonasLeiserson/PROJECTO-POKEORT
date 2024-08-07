@@ -81,8 +81,12 @@ body {
 
 .selected-pokeort {
     height: 200px;
-    width: 135px;
+    width: 200px;
     border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .selected-pokeort-1 {
@@ -102,6 +106,8 @@ body {
     border: 2px solid black;
     margin-left: 150px;
     justify-content: center;
+    text-align: center;
+    
 }
 
 .order-1 {
@@ -110,3 +116,21 @@ body {
     display: flex;
     align-items: center;
 }
+
+.divDeLaDerecha {
+    height: 200px;
+    width:  200px;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    margin-left: 150px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+#selected-pokeort-display {
+    height: 100px;
+    width: 100px;
+}
+
+

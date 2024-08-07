@@ -51,3 +51,8 @@ const imgSrc = button.querySelector('img').src;
 const selectedPokeortDisplay = document.getElementById('selected-pokeort-display');
 selectedPokeortDisplay.src = imgSrc;
 }
+
+function MostrarEstadisticas(button)
+{
+
+}
