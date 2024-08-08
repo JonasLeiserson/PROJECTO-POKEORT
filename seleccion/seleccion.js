@@ -1,4 +1,4 @@
-var PICKCHEL = {
+const PICKCHEL = {
     nombre: "PICKCHEL",
     atk: 100,
     vida: 200,
@@ -10,7 +10,7 @@ var PICKCHEL = {
     Habilidad3: 1
 };
 
-var OWLEON = {
+const OWLEON = {
     nombre: "OWLEON",
     atk: 200,
     vida: 150,
@@ -22,7 +22,7 @@ var OWLEON = {
     Habilidad3: 1
 };
 
-var ROKTOM = {
+const ROKTOM = {
     nombre: "ROKTOM",
     atk: 200,
     vida: 400,
@@ -34,7 +34,7 @@ var ROKTOM = {
     Habilidad3: 1
 };
 
-var MACETONIO = {
+const MACETONIO = {
     nombre: "MACETONIO",
     atk: 200,
     vida: 400,
@@ -46,7 +46,7 @@ var MACETONIO = {
     Habilidad3: 1
 };
 
-var MELONKEY = {
+const MELONKEY = {
     nombre: "MELONKEY",
     atk: 150,
     vida: 180,
@@ -58,7 +58,7 @@ var MELONKEY = {
     Habilidad3: 1
 };
 
-var PokeORTS = {
+const PokeORTS = {
     "Owleon": OWLEON,
     "Melonkey": MELONKEY,
     "Roktom": ROKTOM,
@@ -71,17 +71,22 @@ function cambiarpokeort(button) {
     const imgSrc = button.querySelector('img').src;
     const selectedPokeortDisplay = document.getElementById('selected-pokeort-display');
     selectedPokeortDisplay.src = imgSrc;
+    document.getElementById("Pokeort1").innerHTML = pokeort.nombre;
 }
 
 function MostrarEstadisticas(button) {
     const pokeortId = button.querySelector('.pokeort-name').textContent.trim();
-    const pokeort = PokeORTS[pokeortId];
+    var pokeort = PokeORTS[pokeortId];
 
-    if (pokeort) {
+    if (pokeort) 
+    {
+   
         document.getElementById("VIDA").textContent = "VIDA: " + pokeort.vida;
         document.getElementById("VELOCIDAD").textContent = "VELOCIDAD: " + pokeort.velocidad;
         document.getElementById("DAÑO").textContent = "DAÑO: " + pokeort.atk;
         document.getElementById("DEFENSA").textContent = "DEFENSA: " + pokeort.defensa;
+
+
 
        
     } else {
