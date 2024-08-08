@@ -57,16 +57,53 @@ const MELONKEY = {
     Habilidad2: 1,
     Habilidad3: 1
 };
+const CHANCHORANCIO  = {
+    nombre: "CHANCHORANCIO",
+    atk: 500,
+    vida: 100,
+    velocidad: 250,
+    defensa: 50,
+    Tipo1: "AGUA",
+    Habilidad1: 1,
+    Habilidad2: 1,
+    Habilidad3: 1
+};
+const GATORANCIO = {
+    nombre: "GATO-RANCIO",
+    atk: 200,
+    vida: 200,
+    velocidad: 200,
+    defensa: 200,
+    Tipo1: "AGUA",
+    Habilidad1: 1,
+    Habilidad2: 1,
+    Habilidad3: 1
+};
+const AMONGUS = {
+    nombre: "AMON GUS",
+    atk: 150,
+    vida: 180,
+    velocidad: 250,
+    defensa: 200,
+    Tipo1: "AGUA",
+    Habilidad1: 1,
+    Habilidad2: 1,
+    Habilidad3: 1
+};
 
 const PokeORTS = {
     "Owleon": OWLEON,
     "Melonkey": MELONKEY,
     "Roktom": ROKTOM,
     "Pickchel": PICKCHEL,
-    "Macetonio": MACETONIO
+    "Macetonio": MACETONIO,
+    "GatoRancio": GATORANCIO,
+    "AmonGus": AMONGUS,
+    "ChanchoRancio": CHANCHORANCIO
 };
 
-function cambiarpokeort(button) {
+function cambiarpokeort(button) 
+  {
     const pokeortId = button.querySelector('.pokeort-name').textContent.trim();
     const pokeort = PokeORTS[pokeortId];
     button.style.display = "none"; 
@@ -74,6 +111,7 @@ function cambiarpokeort(button) {
     const selectedPokeortDisplay = document.getElementById('selected-pokeort-display');
     selectedPokeortDisplay.src = imgSrc;
     document.getElementById("Pokeort1").innerHTML = pokeort.nombre;
+
 }
 
 function MostrarEstadisticas(button) {
