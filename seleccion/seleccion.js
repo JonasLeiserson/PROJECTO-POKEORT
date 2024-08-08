@@ -67,6 +67,8 @@ const PokeORTS = {
 };
 
 function cambiarpokeort(button) {
+    const pokeortId = button.querySelector('.pokeort-name').textContent.trim();
+    const pokeort = PokeORTS[pokeortId];
     button.style.display = "none"; 
     const imgSrc = button.querySelector('img').src;
     const selectedPokeortDisplay = document.getElementById('selected-pokeort-display');
@@ -76,7 +78,7 @@ function cambiarpokeort(button) {
 
 function MostrarEstadisticas(button) {
     const pokeortId = button.querySelector('.pokeort-name').textContent.trim();
-    var pokeort = PokeORTS[pokeortId];
+    const pokeort = PokeORTS[pokeortId];
 
     if (pokeort) 
     {

@@ -157,5 +157,12 @@ background-color: yellow;
 }
 .BloqueDePokemon 
 {
-background-color: white;
+
+}
+.ability 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
 }
