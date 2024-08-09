@@ -2,6 +2,9 @@ body {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    background-image: url(../recursos/img/pollo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .order-0 {
@@ -40,6 +43,7 @@ body {
 .pokeort-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .pokeort-name {
@@ -59,6 +63,7 @@ body {
     margin-right: 50px;
     height: 100px;
     width: 100px;
+
 }
 
 .ability-container {
@@ -107,6 +112,7 @@ body {
     margin-left: 150px;
     justify-content: center;
     text-align: center;
+    background-color: gray;
     
 }
 
@@ -133,4 +139,30 @@ body {
     width: 100px;
 }
 
+#VIDA
+ {
+background-color: greenyellow;
+}
+#VELOCIDAD 
+{
+background-color: yellow;
+}
+#DEFENSA 
+{
+    background-color: brown;
+}
+#DAÑO
+{
+    background-color: crimson;
+}
+.BloqueDePokemon 
+{
 
+}
+.ability 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+}
