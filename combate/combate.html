@@ -8,21 +8,28 @@
     <script src="combate.js"></script>
 </head>
 <body>
+
     <div class="hp-pkort1">
         <div class="barra-hp1"></div>
     </div>.
     <div class="hp-pkort2">
         <div class="barra-hp2"></div>
     </div>
+
     <img src="" alt="" class="pokeort1">
     <img src="" alt="" class="pokeort2">
+
     <div class="order1">
+
     <div class="menu">
-        <button class="atacar option">Ataques</button>
-        <button class="rendirse option">Cambiar PokeORT</button>
-        <button class="cambiar-pokeort option">Rendirse</button>
-        <div class="ataques">
+
+        <button onclick="mostrar_ataques()" class="atacar option">Ataques</button>
+        <button onclick="mostrar_pokeort()" class="cambiar-pokeort option">Cambiar PokeORT</button>
+        <button class="rendirse option">Rendirse</button>
+
+        <div id="ataques" class="ataques" style="display: none;">
             <div class="atk1-2">
+
                 <button class="ataque">Ataque 1</button>
                 <button class="ataque">Ataque 2</button>
             </div>
@@ -30,12 +37,17 @@
                 <button class="ataque">Ataque 3</button>
                 <button class="ataque">Ataque 4</button>
             </div>
+
         </div>
+
+        <div id="cambiar-pokeort" class="pokemon" style="display: none;">
+
+            <button class="pokeort">PokeORT 1</button>
+            <button class="pokeort">PokeORT 2</button>
+            
+        </div>
+
     </div>
-    </div>
-    <div class="pokemon">
-        <button class="pokeort">PokeORT 1</button>
-        <button class="pokeort">PokeORT 2</button>
     </div>
 </body>
 </html>
