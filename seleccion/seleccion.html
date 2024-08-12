@@ -9,9 +9,11 @@
 </head>
 <body>
     <div class="order-0">
+
         <div class="volver" onclick="location.href='../pag inicial/index.html'"></div>
-    <button>Combatir</button>
-    <h1 class="seleccione-pokeort">Seleccione sus PokeORT</h1>
+
+       <button onclick="location.href='../combate/index.html'">Combatir</button>
+    <h1 class="seleccione-pokeort">Seleccione suokeORT</h1>
     </div>
     <div class="order-1">
     <div class="ability-container">
@@ -25,7 +27,10 @@
         <div class="selected-pokeort selected-pokeort-1">
             
             <p  id="Pokeort1">PokeORT 1</p>
-            <img src="" id="selected-pokeort-display" class="BloqueDePokemon" > 
+
+            <button class="botoneleccion" onclick="DevolverPokeort(this)">
+            <img src="" id="selected-pokeort-display" class="BloqueDePokemon" style="display: none;">
+            </button> 
        </div>
 
 
@@ -95,17 +100,7 @@
         <img class="pokeort-img" src="../recursos/img/owleon.png">
         </button>
     </div>
-    <div>
-        <button onclick="cambiarpokeort(this)" onmouseover="MostrarEstadisticas(this)">
-        <p class="pokeort-name">PokeORT 1</p>
-        <img class="pokeort-img" src="../recursos/img/owleon.png">
-        </button>
-    </div>
-    <div>
-        <button onclick="cambiarpokeort(this)" onmouseover="MostrarEstadisticas(this)">
-        <p class="pokeort-name">PokeORT 1</p>
-        <img class="pokeort-img" src="../recursos/img/owleon.png">
-        </button>
+
     </div>      
     </div>        
     </div>
