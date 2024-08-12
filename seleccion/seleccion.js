@@ -102,7 +102,7 @@ const PokeORTS = {
     "ChanchoRancio": CHANCHORANCIO
 };
 
-function cambiarpokeort(button) 
+function cambiarpokeort(button, slot) 
   {
     const pokeortId = button.querySelector('.pokeort-name').textContent.trim();
     const pokeort = PokeORTS[pokeortId];
@@ -115,7 +115,7 @@ function cambiarpokeort(button)
         selectedPokeortDisplay.src = imgSrc;
         selectedPokeortDisplay.style.display = "block";
 
-        document.getElementById("Pokeort1").innerHTML = pokeort.nombre;
+        document.getElementById("Pokeort${slot}").innerHTML = pokeort.nombre;
 
         
         button.style.display = "none";
@@ -147,22 +147,24 @@ function MostrarEstadisticas(button)
         console.error("PokeORT no encontrado:", pokeortId);
     }
 }
-function DevolverPokeort(button) 
+function DevolverPokeort(slot) 
 {
-    const selectedPokeortDisplay = button.querySelector('img');
+    const selectedPokeortDisplay = document.getElementById(`selected-pokeort-display-${slot}`);
+
+
 
     selectedPokeortDisplay.style.display = "none";
     selectedPokeortDisplay.src = "";
 
     
-    document.querySelectorAll('.pokeort-container button').forEach((btn) => {
-        if (btn.style.display === "none") {
+    document.querySelectorAll('.pokeort-container button').forEach((btn) =>
+     {
             btn.style.display = "inline-block";
-        }
+        
     });
 
    
-    document.getElementById("Pokeort1").innerHTML = "PokeORT 1";
+    document.getElementById("Pokeort${slot}").innerHTML = "PokeORT$ {slot}";
 
 }
 
