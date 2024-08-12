@@ -166,3 +166,9 @@ background-color: yellow;
   justify-content: center;
   background-color: whitesmoke;
 }
+.botoneleccion
+{
+  background-color: gray;
+  border: none;
+  cursor: pointer;
+}
