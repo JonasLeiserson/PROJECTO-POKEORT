@@ -1,27 +1,12 @@
 body {
-    height: 99%;
-    width: 99%;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(../recursos/img/fondos/fondoinicial.png);
-    background-size: cover;
 }
 
 .combatir, .creditos, .opciones{
     margin-top: 50px;
-}
-
-.kyiv {
-    font-family: "Kyiv";
-}
-
-.title {
-    -webkit-text-stroke-color: white;
-    -webkit-text-stroke-width: 0.5px;
-    font-size: 90px;
-    font-weight: 400;
-    width: 700px;
-    text-align: center;
 }
