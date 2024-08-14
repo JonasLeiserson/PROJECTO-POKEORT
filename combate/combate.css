@@ -1,6 +1,12 @@
 body {
     height: 99%;
     width: 99%;
+    background-image: url("../recursos/img/fondos/fondocombate.png");
+    background-size: cover;
+}
+
+.pokeort1 .pokeort2 {
+
 }
 
 .order1 {
