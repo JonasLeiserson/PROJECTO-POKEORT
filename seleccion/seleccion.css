@@ -134,11 +134,15 @@ body {
     flex-direction: column;
     text-align: center;
 }
-#selected-pokeort-display {
+#selected-pokeort-display 
+{
     height: 100px;
     width: 100px;
 }
-
+#selected-pokeort-display2 {
+    height: 100px;
+    width: 100px;
+}
 #VIDA
  {
 background-color: greenyellow;
@@ -155,10 +159,7 @@ background-color: yellow;
 {
     background-color: crimson;
 }
-.BloqueDePokemon 
-{
 
-}
 .ability 
 {
   display: flex;
@@ -171,4 +172,15 @@ background-color: yellow;
   background-color: gray;
   border: none;
   cursor: pointer;
+}
+.BotonBloqueador 
+{
+    position: absolute;
+    top: 100px;
+}
+.filtroVerde
+{
+
+background: rgba(0, 255, 0, 0.799);
+z-index: 1; 
 }
