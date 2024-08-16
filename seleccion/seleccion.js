@@ -144,7 +144,10 @@ function BloquearPokeort(button)
         selectedPokeortDisplay.src = imgSrc;
         selectedPokeortDisplay.style.display = "block";
 
-        document.getElementById("Pokeort").innerHTML = pokeort.nombre;
+        const pokeortIndex = Array.from(button.parentNode.parentNode.children).indexOf(button.parentNode);
+        const pokeortNameElement = document.getElementById(`Pokeort${pokeortIndex + 1}`);
+        pokeortNameElement.textContent = pokeort.nombre;
+
 
         
         button.style.display = "none";
@@ -253,10 +256,7 @@ function MostrarEstadisticas(button)
 }
 function DevolverPokeort(slot) 
 {
-    const selectedPokeortDisplay = document.getElementById(`selected-pokeort-display}`);
-
-
-
+    const selectedPokeortDisplay = slot.querySelector("img");
     selectedPokeortDisplay.style.display = "none";
     selectedPokeortDisplay.src = "";
 
@@ -268,11 +268,16 @@ function DevolverPokeort(slot)
     });
 
    
+<<<<<<< Updated upstream
     document.getElementById("Pokeort").innerHTML = "PokeORT";
 =======
     const PokeortIds = button.querySelector(".pokeort-name").textContent.trim(); 
     const pokeort = PokeORTS[PokeortIds]; 
 >>>>>>> 6ad4811315ca280cc8fd70172c5e2042ae0823ae
+=======
+    const pokeortIndex = Array.from(slot.parentNode.children).indexOf(slot);
+    document.getElementById(`Pokeort${pokeortIndex + 1}`).textContent = `PokeORT ${pokeortIndex + 1}`;
+>>>>>>> Stashed changes
 
     document.getElementById("VIDA").textContent = "VIDA: " + pokeort.vida;
     document.getElementById("VELOCIDAD").textContent = "VELOCIDAD: " + pokeort.velocidad;
