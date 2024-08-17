@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url(../recursos/img/pantalla\ de\ inicio.png);
 }
 
 .combatir, .creditos, .opciones{

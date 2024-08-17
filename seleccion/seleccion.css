@@ -83,6 +83,9 @@ body {
     height: 30%;
     width: 90%;
     border: 2px solid black;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
 }
 
 .selected-pokeort {
@@ -122,6 +125,7 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
+    
 }
 
 .divDeLaDerecha {

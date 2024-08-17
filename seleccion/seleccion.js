@@ -155,16 +155,17 @@ const PokeORTS = {
     "AmonGus": AMONGUS,
     "ChanchoRancio": CHANCHORANCIO,
     "CaritaFacha": CARITAFACHA,
-    "skibidi": SKIBIDI, 
+    "Skibidi": SKIBIDI, 
     "COMODIN": COMODIN
 };
 let PokeortListoParaElCombate 
 let PokeortListoParaElCombate2
 let BotonOculto = null;
 let Eleccion = 1
-
+let Contraseña = ""
 let Pokeortelegido1 
 let Pokeortelegido2 
+
 
 function BloquearPokeort(button)
 
@@ -223,6 +224,11 @@ else
         }
 }
 }
+function BotonesCombinados(button)
+{
+cambiarpokeort(button);
+EasterEgg(button); 
+}
 function cambiarpokeort(button)
 {
    
@@ -268,7 +274,19 @@ function MostrarEstadisticas(button)
     document.getElementById("DEFENSA").textContent = "DEFENSA: " + pokeort.defensa;
 }
 
+function EasterEgg(button)
+{
 
+    const PokeortIds = button.querySelector(".pokeort-name").textContent.trim(); 
+    const pokeort = PokeORTS[PokeortIds]; 
+    Contraseña = Contraseña + pokeort.NumeroSecreto.toString();
+
+    if(Contraseña === "1987") 
+    {
+        document.getElementById("kibidi").style.display = "block"
+    }
+    
+}
 function EnviarAlCombate ()
 {
     if (Eleccion === 3)
