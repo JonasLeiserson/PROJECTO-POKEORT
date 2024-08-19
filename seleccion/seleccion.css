@@ -99,11 +99,15 @@ body {
 }
 
 .selected-pokeort-1 {
-    margin-right: 280px;
+    margin-right: 50px;
     margin-left: 10px;
 }
 
 .selected-pokeort-2 {
+    margin-right: 50px;
+}
+
+.selected-pokeort-3 {
     margin-right: 10px;
 }
 
@@ -139,27 +143,38 @@ body {
     flex-direction: column;
     text-align: center;
 }
+
 #selected-pokeort-display 
 {
     height: 100px;
     width: 100px;
 }
+
 #selected-pokeort-display2 {
     height: 100px;
     width: 100px;
 }
+
+#selected-pokeort-display3 {
+    height: 100px;
+    width: 100px;
+}
+
 #VIDA
  {
 background-color: greenyellow;
 }
+
 #VELOCIDAD 
 {
 background-color: yellow;
 }
+
 #DEFENSA 
 {
     background-color: brown;
 }
+
 #DAÑO
 {
     background-color: crimson;
@@ -172,23 +187,25 @@ background-color: yellow;
   justify-content: center;
   background-color: whitesmoke;
 }
+
 .botoneleccion
 {
   background-color: gray;
   border: none;
   cursor: pointer;
 }
+
 .BotonBloqueador 
 {
     position: absolute;
     top: 100px;
 }
-.filtroVerde
-{
 
+.filtroVerde {
 background: rgba(0, 255, 0, 0.799);
 z-index: 1; 
 }
+
 #BotonDeBloqueo2 
 {
     display: none;
