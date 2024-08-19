@@ -6,6 +6,7 @@ window.onload = function()
     
     const imageninicial = document.getElementById("ImagenAmiga1");
     imageninicial.src = "none" 
+    imageninicial.style.display = "none";
     const imagen1 = document.getElementById("EleccionPrimerPokemon");
     imagen1.src = Pokeort1.src; 
     const imagen2 = document.getElementById("EleccionPrimerPokemon2");
@@ -34,8 +35,32 @@ function mostrar_pokeort() {
     document.getElementById("cambiar-pokeort").style.display = "flex";
 }
 
-function EleccionDePokeortInicial(button)
+function EleccionDePokeortInicial()
 {
-const ImagenDePokemon = button.querySelector(".ImagenCombate").src;
-document.getElementById("ImagenAmiga1").src = ImagenDePokemon
+    const pokeortsSeleccionados = [
+        pokeort = document.getElementById("EleccionPrimerPokemon"),
+        pokeort2 = document.getElementById("EleccionPrimerPokemon2"),
+        pokeort3 = document.getElementById("EleccionPrimerPokemon3")
+    ];
+
+    const seleccion = 0;
+
+    pokeort.addEventListener("click", seleccionar()
+{
+    seleccion = 1
+});
+
+pokeort2.addEventListener("click", seleccionar2()
+{
+    seleccion = 2
+});
+
+pokeort3.addEventListener("click", seleccionar3()
+{
+    seleccion = 3
+});
+
+    const imagenAmiga = document.getElementById("ImagenAmiga1").src;
+
+    
 }
