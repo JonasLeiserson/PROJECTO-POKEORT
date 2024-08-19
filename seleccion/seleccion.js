@@ -195,12 +195,9 @@ function BloquearPokeort(button)
     alert("Selecciona un Pokeort Primero")
     }
 }
-else 
+else if(Eleccion === 2) 
 {
-    if( Pokeortelegido2 !== "PokeORT 2") 
-
-        {
-            
+     if(Pokeortelegido2 !== "PokeORT 2" ) {
         
         const BotonBloqueo2 = document.getElementById("BotonDeBloqueo2")
         const elementos = document.querySelectorAll(`.selected-pokeort-2`);
@@ -220,10 +217,32 @@ else
         }
         else
         {
-        alert("Selecciona un Pokeort Primero")
+        alert("Selecciona tu segundo Pokeort Primero")
         }
 }
+    else 
+{
+        if(Pokeortelegido2 !== "PokeORT 2" ) 
+    {
+        
+            const BotonBloqueo3 = document.getElementById("BotonDeBloqueo3")
+            const elementos = document.querySelectorAll(`.selected-pokeort-3`);
+                elementos.forEach(elemento => 
+            {
+             elemento.style.backgroundColor = "rgba(0, 255, 0, 0.799)";
+                Eleccion = 4;
+                BotonOculto = "null";
+             });
+             BotonBloqueo3.style.display ="none"
+             const OcultarBotones = document.querySelectorAll(`.pokeort-container`);
+             OcultarBotones.forEach(OcultarBotones => 
+                {
+                OcultarBotones.style.display = "none"
+                });  
+    }
 }
+}
+
 function BotonesCombinados(button)
 {
 cambiarpokeort(button);
@@ -253,6 +272,21 @@ function cambiarpokeort(button)
      PokeortListoParaElCombate2 = pokeort
      Pokeortelegido2 =  document.getElementById('Pokeort2').textContent;
     }
+    else if(Eleccion === 3)
+    {
+    document.getElementById("Pokeort3").innerHTML = pokeort.nombre; 
+    document.getElementById("selected-pokeort-display3").src = POkeortImg;
+    document.getElementById("selected-pokeort-display3").style.display = "block"; 
+     PokeortListoParaElCombate3 = pokeort
+     Pokeortelegido2 =  document.getElementById('Pokeort2').textContent;
+    }
+    if(BotonOculto)
+    {
+        BotonOculto.style.display = "block";
+    }
+    
+    button.style.display = "none";
+    BotonOculto = button;
     if(BotonOculto)
     {
         BotonOculto.style.display = "block";
