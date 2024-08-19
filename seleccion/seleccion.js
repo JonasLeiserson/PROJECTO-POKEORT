@@ -116,7 +116,7 @@ const CARITAFACHA = {
     Habilidad1: 1,
     Habilidad2: 1,
     Habilidad3: 1,
-    src:"../recursos/img/carita facha.png",
+    src:"../recursos/img/carita fachera.png",
     NumeroSecreto: 9
 };
 const SKIBIDI = {
