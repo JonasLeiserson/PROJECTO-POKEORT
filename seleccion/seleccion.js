@@ -272,21 +272,16 @@ function cambiarpokeort(button)
      PokeortListoParaElCombate2 = pokeort
      Pokeortelegido2 =  document.getElementById('Pokeort2').textContent;
     }
+    
     else if(Eleccion === 3)
     {
     document.getElementById("Pokeort3").innerHTML = pokeort.nombre; 
     document.getElementById("selected-pokeort-display3").src = POkeortImg;
     document.getElementById("selected-pokeort-display3").style.display = "block"; 
      PokeortListoParaElCombate3 = pokeort
-     Pokeortelegido2 =  document.getElementById('Pokeort2').textContent;
-    }
-    if(BotonOculto)
-    {
-        BotonOculto.style.display = "block";
+     Pokeortelegido3 =  document.getElementById('Pokeort3').textContent;
     }
     
-    button.style.display = "none";
-    BotonOculto = button;
     if(BotonOculto)
     {
         BotonOculto.style.display = "block";
@@ -323,11 +318,12 @@ function EasterEgg(button)
 }
 function EnviarAlCombate ()
 {
-    if (Eleccion === 3)
+    if (Eleccion === 4)
     {   
         sessionStorage.setItem('PokeORTS', JSON.stringify(PokeORTS));
         sessionStorage.setItem('Pokeort1', JSON.stringify(PokeortListoParaElCombate));
         sessionStorage.setItem('Pokeort2', JSON.stringify(PokeortListoParaElCombate2));
+        sessionStorage.setItem('Pokeort3', JSON.stringify(PokeortListoParaElCombate3));
         window.location.href = "../combate/combate.html";
     }   
 
