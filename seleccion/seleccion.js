@@ -160,11 +160,13 @@ const PokeORTS = {
 };
 let PokeortListoParaElCombate 
 let PokeortListoParaElCombate2
+let PokeortListoParaElCombate3
 let BotonOculto = null;
 let Eleccion = 1
 let Contraseña = ""
 let Pokeortelegido1 
 let Pokeortelegido2 
+let Pokeortelegido3
 
 
 function BloquearPokeort(button)
@@ -200,29 +202,28 @@ else if(Eleccion === 2)
      if(Pokeortelegido2 !== "PokeORT 2" ) {
         
         const BotonBloqueo2 = document.getElementById("BotonDeBloqueo2")
+        const BotonBloqueo3 = document.getElementById("BotonDeBloqueo3")
         const elementos = document.querySelectorAll(`.selected-pokeort-2`);
             elementos.forEach(elemento => 
         {
          elemento.style.backgroundColor = "rgba(0, 255, 0, 0.799)";
             Eleccion = 3;
             BotonOculto = "null";
+            BotonOculto = pokeort
          });
          BotonBloqueo2.style.display ="none"
-         const OcultarBotones = document.querySelectorAll(`.pokeort-container`);
-         OcultarBotones.forEach(OcultarBotones => 
-            {
-            OcultarBotones.style.display = "none"
-            });
-       
+         BotonBloqueo3.style.display ="block"
+         
         }
         else
         {
         alert("Selecciona tu segundo Pokeort Primero")
         }
 }
-    else 
+    else if(Eleccion === 3)
+    {
 {
-        if(Pokeortelegido2 !== "PokeORT 2" ) 
+        if(Pokeortelegido3 !== "PokeORT 3" ) 
     {
         
             const BotonBloqueo3 = document.getElementById("BotonDeBloqueo3")
@@ -240,6 +241,7 @@ else if(Eleccion === 2)
                 OcultarBotones.style.display = "none"
                 });  
     }
+}
 }
 }
 
