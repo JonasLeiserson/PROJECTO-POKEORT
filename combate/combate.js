@@ -1,5 +1,6 @@
 window.onload = function()  
 {
+    let PokeORTS = JSON.parse(sessionStorage.getItem('PokeORTS'));
     const Pokeort1 = JSON.parse(sessionStorage.getItem('Pokeort1'));
     const Pokeort2 = JSON.parse(sessionStorage.getItem('Pokeort2'));
     const Pokeort3 = JSON.parse(sessionStorage.getItem('Pokeort3'));
@@ -22,7 +23,7 @@ window.onload = function()
    
 
 }
-
+let pokeortSeleccionado 
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
     document.getElementById("cambiar-pokeort").style.display = "none";
@@ -38,4 +39,12 @@ function EleccionDePokeortInicial(button)
 {
 const ImagenDePokemon = button.querySelector(".ImagenCombate").src;
 document.getElementById("ImagenAmiga1").src = ImagenDePokemon
+const NombreDelPokeort = button.querySelector(".ParrafoDeNombre").textContent.trim();
+const Pokeort = PokeORTS[NombreDelPokeort];
+alert(Pokeort)
+
+
+document.querySelectorAll(".BotonDeEleciion").forEach(function(element) {
+    element.style.display = "none";
+})
 }
