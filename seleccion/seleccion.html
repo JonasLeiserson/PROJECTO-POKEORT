@@ -55,6 +55,150 @@
               
 
             </div> 
+            
+        </div>
+
+        <div class="divDeLaDerecha">
+
+            <div class="ability" id="VIDA">     VIDA     </div>
+            <div class="ability" id="VELOCIDAD">VELOCIDAD</div>
+            <div class="ability" id="DAÑO">     DAÑO     </div>
+            <div class="ability" id="DEFENSA">  DEFENSA  </div>
+
+        </div>   
+
+    </div>
+
+    <div class="main-container">
+        <div class="pokeort-container">
+            <div>
+                <button onclick="BotonesCombinados(this)" id="Owleon" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
+                <p class="pokeort-name" id="Owleon">Owleon</p>
+                <img class="pokeort-img" src="../recursos/img/owleon.png" >
+                </button>
+            </div>
+
+            <div>
+                <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)" class="BotonDeEleccion"> 
+                <p class="pokeort-name" id="Melonkey" >Melonkey</p>
+                <img class="pokeort-img" src="../recursos/img/melonkey.png">
+                </button>
+            </div>
+
+            <div>
+                <button onclick="BotonesCombinados (this)" onmouseover="MostrarEstadisticas(this)" class="BotonDeEleccion">
+                <p class="pokeort-name"  id="Roktom">Roktom</p>
+                <img class="pokeort-img" src="../recursos/img/roktom.png">
+                </button>
+            </div>
+
+            <div>
+                <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)" class="BotonDeEleccion">
+                <p class="pokeort-name"  id="Pickchel">Pickchel</p>
+                <img class="pokeort-img" src="../recursos/img/pickchel.png">
+                </button>
+            </div>
+
+            <div>
+                <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)" class="BotonDeEleccion">
+                <p class="pokeort-name" id="amongus">AmonGus</p>
+                <img class="pokeort-img" src="../recursos/img/among us.png">
+                </button>
+            </div>
+
+            <div>
+                <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)" class="BotonDeEleccion" >
+                <p class="pokeort-name" id="chancho-rancio">ChanchoRancio</p>
+                <img class="pokeort-img" src="../recursos/img/chancho rancio.png">
+                </button>
+            </div>
+
+            <div>
+                <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
+                <p class="pokeort-name" id="gato-rancio" >GatoRancio</p>
+                <img class="pokeort-img" src="../recursos/img/gato rancio.png">
+                </button>
+            </div>
+            <div>
+                <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
+                <p class="pokeort-name" id="macetonio" >Macetonio</p>
+                <img class="pokeort-img" src="../recursos/img/maseta rancia.png">
+                </button>
+            </div>
+           
+            <div>
+                <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
+                <p class="pokeort-name" id="CaritaFacha" >CaritaFacha</p>
+                <img class="pokeort-img" src="../recursos/img/carita fachera.png">
+                </button>
+            </div>
+            <div style="display: none;" id="kibidi">
+                <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
+                <p class="pokeort-name" id="skibidi" >Skibidi</p>
+                <img class="pokeort-img" src="../recursos/img/skibidi.png">
+                </button>
+            </div>
+            <div style="display: none;">
+                <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)" >
+                <p class="pokeort-name" id="COMODIN" >COMODIN</p>
+                <img class="pokeort-img" src="../recursos/img/gato rancio.png">
+                </button>
+            </div>
+
+        </div>      
+    </div>
+   
+    <p id="HuevoDePascua">oioioio</p>        
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccion de PokeORT</title>
+    <link rel="stylesheet" href="seleccion.css">
+    <script src="seleccion.js"></script>
+</head>
+<body>
+    <div class="order-0">
+
+        <div class="volver" onclick="location.href='../pag inicial/index.html'">volver</div>
+        <button onclick="EnviarAlCombate()">Combatir</button>
+        <h1 class="seleccione-pokeort">Seleccione sus PokeORTs</h1>
+
+    </div>
+
+    <div class="order-1">
+
+        <div class="ability-container">
+            <div class="ability">Habilidad 1</div>
+            <div class="ability">Habilidad 2</div>
+            <div class="ability">Habilidad 3</div>
+        </div>
+   
+        <div class="selected-pokeort-container">
+    
+            <div class="selected-pokeort selected-pokeort-1" id="PrimerDiv">
+                
+                <button id="BotonDeBloqueo1" class="BotonBloqueador" onclick="BloquearPokeort(this)">bloquear eleccion</button>
+                <p  id="Pokeort1">PokeORT 1</p>
+                
+                <img src="" id="selected-pokeort-display" class="BloqueDePokemon" style="display: none;">
+             
+
+            </div>
+
+            <div class="selected-pokeort selected-pokeort-2" class="BloqueDePokemon">
+
+                <button id="BotonDeBloqueo2" class="BotonBloqueador" onclick="BloquearPokeort(this)">bloquear eleccion</button>
+                <p  id="Pokeort2">PokeORT 2</p>
+               
+                <img src="" id="selected-pokeort-display2" class="BloqueDePokemon" style="display: none;">
+              
+
+            </div> 
 
             <div class="selected-pokeort selected-pokeort-3" class="BloqueDePokemon">
 
