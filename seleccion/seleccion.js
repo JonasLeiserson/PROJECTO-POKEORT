@@ -195,13 +195,13 @@ function BloquearPokeort(button)
     alert("Selecciona un Pokeort Primero")
     }
 }
-else if (Eleccion === 2)
+else 
 {
     if( Pokeortelegido2 !== "PokeORT 2") 
 
         {
             
-        const BotonBloqueo3 = document.getElementById("BotonDeBloqueo3")
+        
         const BotonBloqueo2 = document.getElementById("BotonDeBloqueo2")
         const elementos = document.querySelectorAll(`.selected-pokeort-2`);
 
@@ -240,15 +240,14 @@ else
             {
             OcultarBotones.style.display = "none"
             });
-
-    }
-    else
-    {
-        alert("Selecciona un Pokeort pirmero")
-    }
+       
+        }
+        else
+        {
+        alert("Selecciona un Pokeort Primero")
+        }
 }
 }
-
 function BotonesCombinados(button)
 {
 cambiarpokeort(button);
@@ -279,15 +278,6 @@ function cambiarpokeort(button)
      PokeortListoParaElCombate2 = pokeort
      Pokeortelegido2 =  document.getElementById('Pokeort2').textContent;
     }
-
-    else if(Eleccion === 3)
-        {
-        document.getElementById("Pokeort3").innerHTML = pokeort.nombre; 
-        document.getElementById("selected-pokeort-display3").src = POkeortImg;
-        document.getElementById("selected-pokeort-display3").style.display = "block"; 
-         PokeortListoParaElCombate3 = pokeort
-         Pokeortelegido3 =  document.getElementById('Pokeort3').textContent;
-        }
     if(BotonOculto)
     {
         BotonOculto.style.display = "block";
