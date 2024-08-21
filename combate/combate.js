@@ -1,28 +1,22 @@
 window.onload = function()  
 {
     let PokeORTS = JSON.parse(sessionStorage.getItem('PokeORTS'));
-    const Pokeort1 = JSON.parse(sessionStorage.getItem('Pokeort1'));
-    const Pokeort2 = JSON.parse(sessionStorage.getItem('Pokeort2'));
-    const Pokeort3 = JSON.parse(sessionStorage.getItem('Pokeort3'));
+    let Pokeort1 = JSON.parse(sessionStorage.getItem('Pokeort1'));
+    let Pokeort2 = JSON.parse(sessionStorage.getItem('Pokeort2'));
+    let Pokeort3 = JSON.parse(sessionStorage.getItem('Pokeort3'));
     
     const imageninicial = document.getElementById("ImagenAmiga1");
-    imageninicial.src = "none" 
-    const imagen1 = document.getElementById("EleccionPrimerPokemon");
+    imageninicial.src = "" 
+    let imagen1 = document.getElementById("EleccionPrimerPokemon");
     imagen1.src = Pokeort1.src; 
-    const imagen2 = document.getElementById("EleccionPrimerPokemon2");
+    let imagen2 = document.getElementById("EleccionPrimerPokemon2");
     imagen2.src = Pokeort2.src; 
-    const imagen3 = document.getElementById("EleccionPrimerPokemon3");
+    let imagen3 = document.getElementById("EleccionPrimerPokemon3");
     imagen3.src = Pokeort3.src; 
-
-
-    const NombrePokeort = document.getElementById("NombrePokeort").innerHTML = Pokeort1.nombre;
-  
-    const NombrePokeort2 = document.getElementById("NombrePokeort2").innerHTML  = Pokeort2.nombre;
-  
-    const NombrePokeort3 = document.getElementById("NombrePokeort3").innerHTML  = Pokeort3.nombre;
    
-
 }
+let botonesNoSeleccionados = []
+let PokeortelegidoCombate
 let pokeortSeleccionado 
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
@@ -35,16 +29,32 @@ function mostrar_pokeort() {
     document.getElementById("cambiar-pokeort").style.display = "flex";
 }
 
-function EleccionDePokeortInicial(button)
-{
-const ImagenDePokemon = button.querySelector(".ImagenCombate").src;
-document.getElementById("ImagenAmiga1").src = ImagenDePokemon
-const NombreDelPokeort = button.querySelector(".ParrafoDeNombre").textContent.trim();
-const Pokeort = PokeORTS[NombreDelPokeort];
-alert(Pokeort)
 
+
+function EleccionDePokeortInicial(button) 
+{
+    const ImagenDePokemon = button.querySelector(".ImagenCombate").src;
+ document.getElementById("ImagenAmiga1").src = ImagenDePokemon;
+    
+ 
+ botonesNoSeleccionados = [];
 
 document.querySelectorAll(".BotonDeEleciion").forEach(function(element) {
-    element.style.display = "none";
-})
-}
+    element.style.display = "none"
+     if (element !== button) {
+        
+         botonesNoSeleccionados.push(element);
+     }
+ });
+ const ImagenElegida1 = document.getElementById("ImagenSeleccion") 
+ const ImagenElegida2 =  document.getElementById("ImagenSeleccion2")
+ const parrafo1 = document.getElementById("paarrafo")
+ const parrafo2 = document.getElementById("paarrafo2")
+
+ ImagenElegida1.src = botonesNoSeleccionados[0].src
+
+ }
+
+
+ 
+    

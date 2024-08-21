@@ -13,16 +13,16 @@
         <div class="barra-hp1"></div>
         <img src="../recursos/img/pancho.png" alt="" class="pokeort1-img" id="ImagenAmiga1">
 
-        <button   onclick="EleccionDePokeortInicial(this)" class="BotonDeEleciion">
+        <button   onclick="EleccionDePokeortInicial(this)" class="BotonDeEleciion" id="BotonDeEleccion1">
             <p id="NombrePokeort" class="ParrafoDeNombre">  </p>
             <img src="" alt="" id="EleccionPrimerPokemon" class="ImagenCombate">
         </button>
         
-        <button  onclick="EleccionDePokeortInicial(this)" class="BotonDeEleciion">
+        <button  onclick="EleccionDePokeortInicial(this)" class="BotonDeEleciion"  id="BotonDeEleccion2">
             <p id="NombrePokeort2" class="ParrafoDeNombre">  </p>
             <img src="" alt=""  id="EleccionPrimerPokemon2" class="ImagenCombate">
         </button>
-        <button  onclick="EleccionDePokeortInicial(this)" class="BotonDeEleciion">
+        <button  onclick="EleccionDePokeortInicial(this)" class="BotonDeEleciion"  id="BotonDeEleccion3">
             <p id="NombrePokeort3" class="ParrafoDeNombre"> </p>
             <img src="" alt=""  id="EleccionPrimerPokemon3"class="ImagenCombate">
         </button>
@@ -55,8 +55,15 @@
 
         <div id="cambiar-pokeort" class="pokemon" style="display: none;">
 
-            <button class="pokeort">PokeORT 1</button>
-            <button class="pokeort">PokeORT 2</button>
+            <button class="pokeort">
+                <img id="ImagenSeleccion">
+                <p id="paarrafo"></p>
+            </button>
+
+            <button class="pokeort"> 
+                <img id="ImagenSeleccion2">
+                <p id="paarrafo2"></p>
+            </button>
             
         </div>
 
