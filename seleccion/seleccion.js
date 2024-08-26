@@ -1,4 +1,3 @@
-
 const OWLEON = {
     nombre: "OWLEON",
     atk: 200,
