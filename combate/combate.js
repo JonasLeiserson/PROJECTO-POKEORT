@@ -17,7 +17,7 @@ window.onload = function()
 }
 let botonesNoSeleccionados = []
 let PokeortelegidoCombate
-let pokeortSeleccionado 
+let pokeortSeleccionado = ""
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
     document.getElementById("cambiar-pokeort").style.display = "none";
@@ -35,7 +35,8 @@ function EleccionDePokeortInicial(button)
 {
     const ImagenDePokemon = button.querySelector(".ImagenCombate").src;
  document.getElementById("ImagenAmiga1").src = ImagenDePokemon;
-    
+
+ pokeortSeleccionado = button
  
  botonesNoSeleccionados = [];
 
@@ -46,14 +47,22 @@ document.querySelectorAll(".BotonDeEleciion").forEach(function(element) {
          botonesNoSeleccionados.push(element);
      }
  });
- const ImagenElegida1 = document.getElementById("ImagenSeleccion") 
- const ImagenElegida2 =  document.getElementById("ImagenSeleccion2")
- const parrafo1 = document.getElementById("paarrafo")
- const parrafo2 = document.getElementById("paarrafo2")
+ const ImagenElegida1 = document.getElementById("ImagenSeleccion");
+ const ImagenElegida2 = document.getElementById("ImagenSeleccion2");
+ const parrafo1 = document.getElementById("paarrafo");
+ const parrafo2 = document.getElementById("paarrafo2");
 
- ImagenElegida1.src = botonesNoSeleccionados[0].src
+ ImagenElegida1.src = botonesNoSeleccionados[0].querySelector(".ImagenCombate").src;
+ parrafo1.textContent = botonesNoSeleccionados[0].querySelector(".ParrafoDeNombre").textContent;
 
- }
+ ImagenElegida2.src = botonesNoSeleccionados[1].querySelector(".ImagenCombate").src;
+ parrafo2.textContent = botonesNoSeleccionados[1].querySelector(".ParrafoDeNombre").textContent;
+
+ document.querySelectorAll(".pokeort").forEach(function(element, index) {
+    element.style.display = "block";
+    });
+}
+
 
 
  
