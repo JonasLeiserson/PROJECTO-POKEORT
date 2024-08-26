@@ -19,6 +19,7 @@ window.onload = function()
 let botonesNoSeleccionados = []
 let PokeortelegidoCombate
 let botonSeleccionado = ""
+let daño
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
     document.getElementById("cambiar-pokeort").style.display = "none";
@@ -79,7 +80,12 @@ function intercambiarPokeort(pokeortButton) {
 
 }
 
-
-
- 
-    
+function Rendirse() 
+{
+    alert("Te rendiste")
+}
+function CalcularDaño(Pokeort1, Pokeort2) 
+{
+ daño = Pokeort1.atk - Pokeort2.defensa
+alert(daño)
+}
