@@ -8,7 +8,8 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
-    background-color: black;
+    background-image: url("../recursos/img/fondocombate.png");
+    background-size: contain;
 }
 
 .order1 {
@@ -43,6 +44,7 @@ body {
     background-color: #ddd;
     grid-column: 10;
     grid-row: 10;
+    position: relative;
 }
 
 .ataques {
