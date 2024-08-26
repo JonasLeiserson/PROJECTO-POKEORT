@@ -1,10 +1,11 @@
+let Pokeort1; 
+let Pokeort2
 window.onload = function()  
 {
-    let PokeORTS = JSON.parse(sessionStorage.getItem('PokeORTS'));
     let Pokeort1 = JSON.parse(sessionStorage.getItem('Pokeort1'));
     let Pokeort2 = JSON.parse(sessionStorage.getItem('Pokeort2'));
     let Pokeort3 = JSON.parse(sessionStorage.getItem('Pokeort3'));
-    
+
     const imageninicial = document.getElementById("ImagenAmiga1");
     imageninicial.src = "" 
     let imagen1 = document.getElementById("EleccionPrimerPokemon");
@@ -84,6 +85,7 @@ function Rendirse()
 {
     alert("Te rendiste")
 }
+
 function CalcularDaño(Pokeort1, Pokeort2) 
 {
  daño = Pokeort1.atk - Pokeort2.defensa
