@@ -15,6 +15,7 @@ window.onload = function()
     imagen3.src = Pokeort3.src; 
    
 }
+
 let botonesNoSeleccionados = []
 let PokeortelegidoCombate
 let botonSeleccionado = ""
@@ -58,11 +59,11 @@ document.querySelectorAll(".BotonDeEleciion").forEach(function(element) {
  ImagenElegida2.src = botonesNoSeleccionados[1].querySelector(".ImagenCombate").src;
  parrafo2.textContent = botonesNoSeleccionados[1].querySelector(".ParrafoDeNombre").textContent;
 
- document.querySelectorAll(".pokeort").forEach(function(element, index) {
+ document.querySelectorAll(".pokeort").forEach(function(element) {
     element.style.display = "block";
     });
 }
-function intercambiarPokeort(pokeortButton, index) {
+function intercambiarPokeort(pokeortButton) {
 
     const imagenSeleccionada = pokeortButton.querySelector("img").src;
     const textoSeleccionado = pokeortButton.querySelector("p").textContent;
