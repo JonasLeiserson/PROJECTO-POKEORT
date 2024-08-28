@@ -1,302 +1,190 @@
-const OWLEON = {
-    nombre: "OWLEON",
-    atk: 200,
-    vida: 150,
-    velocidad: 200,
-    defensa: 200,
-    Tipo1: "FUEGO",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/owleon.png",
-    NumeroSecreto: 1
-}
-const MELONKEY = {
-    nombre: "MELONKEY",
-    atk: 150,
-    vida: 180,
-    velocidad: 250,
-    defensa: 200,
-    Tipo1: "AGUA",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/melonkey.png",
-    NumeroSecreto: 2
-};
 
-const ROKTOM = {
-    nombre: "ROKTOM",
-    atk: 200,
-    vida: 400,
-    velocidad: 100,
-    defensa: 200,
-    Tipo1: "ROCA",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/roktom.png" ,
-    NumeroSecreto: 3
-};
-const PICKCHEL = {
-    nombre: "PICKCHEL",
-    atk: 100,
-    vida: 200,
-    velocidad: 300,
-    defensa: 200,
-    Tipo1: "ELECTRICO",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/pickchel.png" ,
-    NumeroSecreto: 4
-};
-const AMONGUS = {
-    nombre: "AMON GUS",
-    atk: 150,
-    vida: 180,
-    velocidad: 250,
-    defensa: 200,
-    Tipo1: "AGUA",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/among us.png" ,
-    NumeroSecreto: 5
-};
 
-const CHANCHORANCIO  = {
-    nombre: "CHANCHORANCIO",
-    atk: 500,
-    vida: 100,
-    velocidad: 250,
-    defensa: 50,
-    Tipo1: "AGUA",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/chancho rancio.png" ,
-    NumeroSecreto: 6
-};
-const GATORANCIO = {
-    nombre: "GATO-RANCIO",
-    atk: 200,
-    vida: 200,
-    velocidad: 200,
-    defensa: 200,
-    Tipo1: "AGUA",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/gato rancio.png" ,
-    NumeroSecreto: 7
-};
-const MACETONIO = {
-    nombre: "MACETONIO",
-    atk: 200,
-    vida: 400,
-    velocidad: 100,
-    defensa: 200,
-    Tipo1: "PLANTA",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/maseta rancia.png" ,
-    NumeroSecreto: 8
-};
-
-const CARITAFACHA = {
-    nombre: "CARITA-FACHA",
-    atk: 200,
-    vida: 400,
-    velocidad: 100,
-    defensa: 200,
-    Tipo1: "PLANTA",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/carita fachera.png",
-    NumeroSecreto: 9
-};
-const SKIBIDI = {
-    nombre: "SKIBIDI",
-    atk: 999,
-    vida: 1,
-    velocidad: 200,
-    defensa: 1,
-    Tipo1: "TOILET",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1,
-    src:"../recursos/img/skibidi.png",
+const PokeORTS =   
+{
+     OWLEON = {
+        nombre: "OWLEON",
+        atk: 200,
+        vida: 150,
+        velocidad: 200,
+        defensa: 200,
+        Tipo1: "FUEGO",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/owleon.png",
+        NumeroSecreto: 1
+    },
+     MELONKEY = {
+        nombre: "MELONKEY",
+        atk: 150,
+        vida: 180,
+        velocidad: 250,
+        defensa: 200,
+        Tipo1: "AGUA",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/melonkey.png",
+        NumeroSecreto: 2
+    },
     
-};
-
-const COMODIN = {
-    nombre: "COMODIN",
-    atk: 150,
-    vida: 180,
-    velocidad: 250,
-    defensa: 200,
-    Tipo1: "POLLO",
-    Habilidad1: 1,
-    Habilidad2: 1,
-    Habilidad3: 1
-};
-
-const PokeORTS = {
-    "Owleon": OWLEON,
-    "Melonkey": MELONKEY,
-    "Roktom": ROKTOM,
-    "Pickchel": PICKCHEL,
-    "Macetonio": MACETONIO,
-    "GatoRancio": GATORANCIO,
-    "AmonGus": AMONGUS,
-    "ChanchoRancio": CHANCHORANCIO,
-    "CaritaFacha": CARITAFACHA,
-    "Skibidi": SKIBIDI, 
-    "COMODIN": COMODIN
-};
-let PokeortListoParaElCombate 
-let PokeortListoParaElCombate2
-let PokeortListoParaElCombate3
-let BotonOculto = null;
-let Eleccion = 1
-let Contraseña = ""
-let Pokeortelegido1 
-let Pokeortelegido2 
-let Pokeortelegido3
-
-
-function BloquearPokeort(button)
-
-{
-    const pokeort = PokeORTS[COMODIN]; 
-    if(Eleccion === 1)
+     ROKTOM = {
+        nombre: "ROKTOM",
+        atk: 200,
+        vida: 400,
+        velocidad: 100,
+        defensa: 200,
+        Tipo1: "ROCA",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/roktom.png" ,
+        NumeroSecreto: 3
+    },
+     PICKCHEL = {
+        nombre: "PICKCHEL",
+        atk: 100,
+        vida: 200,
+        velocidad: 300,
+        defensa: 200,
+        Tipo1: "ELECTRICO",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/pickchel.png" ,
+        NumeroSecreto: 4
+    },
+     AMONGUS = {
+        nombre: "AMON GUS",
+        atk: 150,
+        vida: 180,
+        velocidad: 250,
+        defensa: 200,
+        Tipo1: "AGUA",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/among us.png" ,
+        NumeroSecreto: 5
+    },
     
-{
-    if( Pokeortelegido1 !== "PokeORT 1") 
-
-    {
-    const BotonBloqueo1 = document.getElementById("BotonDeBloqueo1")
-    const BotonBloqueo2 = document.getElementById("BotonDeBloqueo2")
-    const elementos = document.querySelectorAll(`.selected-pokeort-1`);
-        elementos.forEach(elemento => 
-    {
-     elemento.style.backgroundColor = "rgba(0, 255, 0, 0.799)";
-     });
-     Eleccion = 2;
-    BotonBloqueo1.style.display = "none"
-    BotonBloqueo2.style.display = "block"
-    BotonOculto = "null"
-    BotonOculto = pokeort
-    }
-    else
-    {
-    alert("Selecciona un Pokeort Primero")
-    }
-}
-else if(Eleccion === 2) 
-{
-     if(Pokeortelegido2 !== "PokeORT 2" ) {
+     CHANCHORANCIO  = {
+        nombre: "CHANCHORANCIO",
+        atk: 500,
+        vida: 100,
+        velocidad: 250,
+        defensa: 50,
+        Tipo1: "AGUA",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/chancho rancio.png" ,
+        NumeroSecreto: 6
+    },
+     GATORANCIO = {
+        nombre: "GATO-RANCIO",
+        atk: 200,
+        vida: 200,
+        velocidad: 200,
+        defensa: 200,
+        Tipo1: "AGUA",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/gato rancio.png" ,
+        NumeroSecreto: 7
+    },
+     MACETONIO = {
+        nombre: "MACETONIO",
+        atk: 200,
+        vida: 400,
+        velocidad: 100,
+        defensa: 200,
+        Tipo1: "PLANTA",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/maseta rancia.png" ,
+        NumeroSecreto: 8
+    },
+    
+     CARITAFACHA = {
+        nombre: "CARITA-FACHA",
+        atk: 200,
+        vida: 400,
+        velocidad: 100,
+        defensa: 200,
+        Tipo1: "PLANTA",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/carita fachera.png",
+        NumeroSecreto: 9
+    },
+     SKIBIDI = {
+        nombre: "SKIBIDI",
+        atk: 999,
+        vida: 1,
+        velocidad: 200,
+        defensa: 1,
+        Tipo1: "TOILET",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1,
+        src:"../recursos/img/skibidi.png",
         
-        const BotonBloqueo2 = document.getElementById("BotonDeBloqueo2")
-        const BotonBloqueo3 = document.getElementById("BotonDeBloqueo3")
-        const elementos = document.querySelectorAll(`.selected-pokeort-2`);
-            elementos.forEach(elemento => 
-        {
-         elemento.style.backgroundColor = "rgba(0, 255, 0, 0.799)";
-            Eleccion = 3;
-            BotonOculto = "null";
-            BotonOculto = pokeort
-         });
-         BotonBloqueo2.style.display ="none"
-         BotonBloqueo3.style.display ="block"
-         
-        }
-        else
-        {
-        alert("Selecciona tu segundo Pokeort Primero")
-        }
-}
-    else if(Eleccion === 3)
-    {
-{
-        if(Pokeortelegido3 !== "PokeORT 3" ) 
-    {
-        
-            const BotonBloqueo3 = document.getElementById("BotonDeBloqueo3")
-            const elementos = document.querySelectorAll(`.selected-pokeort-3`);
-                elementos.forEach(elemento => 
-            {
-             elemento.style.backgroundColor = "rgba(0, 255, 0, 0.799)";
-                Eleccion = 4;
-                BotonOculto = "null";
-             });
-             BotonBloqueo3.style.display ="none"
-             const OcultarBotones = document.querySelectorAll(`.pokeort-container`);
-             OcultarBotones.forEach(OcultarBotones => 
-                {
-                OcultarBotones.style.display = "none"
-                });  
+    },
+    
+     COMODIN = {
+        nombre: "COMODIN",
+        atk: 150,
+        vida: 180,
+        velocidad: 250,
+        defensa: 200,
+        Tipo1: "POLLO",
+        Habilidad1: 1,
+        Habilidad2: 1,
+        Habilidad3: 1
     }
-}
-}
+};
+
+let eleccion = 1;
+let seleccionados = [];
+let contraseña = "";
+
+function BloquearPokeort()
+ {
+    if (seleccionados[eleccion - 1]) {
+        document.querySelector(`.selected-pokeort-${eleccion}`).style.backgroundColor = "rgba(0, 255, 0, 0.799)";
+        document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "none";
+        eleccion++;
+        if (eleccion <= 3) {
+            document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "block";
+        } else {
+            document.querySelectorAll('.pokeort-container').forEach(el => el.style.display = "none");
+        }
+    } else {
+        alert("Selecciona un Pokeort Primero");
+    }
 }
 
-function BotonesCombinados(button)
+function CambiarPokeort(button) 
 {
-cambiarpokeort(button);
-EasterEgg(button); 
-}
-function cambiarpokeort(button)
-{
-   
-    const PokeortIds = button.querySelector(".pokeort-name").textContent.trim(); 
-    const pokeort = PokeORTS[PokeortIds]; 
-    const POkeortImg = button.querySelector(".pokeort-img").src; 
-    
-    if(Eleccion === 1)
-    {
-    document.getElementById("Pokeort1").innerHTML = pokeort.nombre; 
-    document.getElementById("selected-pokeort-display").src = POkeortImg;
-    document.getElementById("selected-pokeort-display").style.display = "block"; 
-    PokeortListoParaElCombate = pokeort
-     Pokeortelegido1 =  document.getElementById('Pokeort1').textContent;
+    const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
+    const pokeort = PokeORTS[pokeortID];
 
-    }
-    else if(Eleccion === 2)
-    {
-    document.getElementById("Pokeort2").innerHTML = pokeort.nombre; 
-    document.getElementById("selected-pokeort-display2").src = POkeortImg;
-    document.getElementById("selected-pokeort-display2").style.display = "block"; 
-     PokeortListoParaElCombate2 = pokeort
-     Pokeortelegido2 =  document.getElementById('Pokeort2').textContent;
-    }
-    
-    else if(Eleccion === 3)
-    {
-    document.getElementById("Pokeort3").innerHTML = pokeort.nombre; 
-    document.getElementById("selected-pokeort-display3").src = POkeortImg;
-    document.getElementById("selected-pokeort-display3").style.display = "block"; 
-     PokeortListoParaElCombate3 = pokeort
-     Pokeortelegido3 =  document.getElementById('Pokeort3').textContent;
-    }
-    
-    if(BotonOculto)
-    {
-        BotonOculto.style.display = "block";
-    }
-    
+    document.getElementById(`Pokeort${eleccion}`).textContent = pokeort.nombre;
+    document.getElementById(`selected-pokeort-display${eleccion}`).src = pokeort.src;
+    document.getElementById(`selected-pokeort-display${eleccion}`).style.display = "block";
+
+    seleccionados[eleccion - 1] = pokeort;
     button.style.display = "none";
-    BotonOculto = button;
-    
 }
 
-function MostrarEstadisticas(button) 
-{
-    const PokeortIds = button.querySelector(".pokeort-name").textContent.trim(); 
-    const pokeort = PokeORTS[PokeortIds]; 
+function MostrarEstadisticas(button) {
+    const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
+    const pokeort = PokeORTS[pokeortID];
 
     document.getElementById("VIDA").textContent = "VIDA: " + pokeort.vida;
     document.getElementById("VELOCIDAD").textContent = "VELOCIDAD: " + pokeort.velocidad;
@@ -304,32 +192,29 @@ function MostrarEstadisticas(button)
     document.getElementById("DEFENSA").textContent = "DEFENSA: " + pokeort.defensa;
 }
 
-function EasterEgg(button)
-{
+function EasterEgg(button) {
+    const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
+    const pokeort = PokeORTS[pokeortID];
 
-    const PokeortIds = button.querySelector(".pokeort-name").textContent.trim(); 
-    const pokeort = PokeORTS[PokeortIds]; 
-    Contraseña = Contraseña + pokeort.NumeroSecreto.toString();
-
-    if(Contraseña === "1987") 
-    {
-        document.getElementById("kibidi").style.display = "block"
+    contraseña += pokeort.NumeroSecreto.toString();
+    if (contraseña === "1987") {
+        document.getElementById("kibidi").style.display = "block";
     }
-    
 }
-function EnviarAlCombate ()
-{
-    if (Eleccion === 4)
-    {   
-        sessionStorage.setItem('PokeORTS', JSON.stringify(PokeORTS));
-        sessionStorage.setItem('Pokeort1', JSON.stringify(PokeortListoParaElCombate));
-        sessionStorage.setItem('Pokeort2', JSON.stringify(PokeortListoParaElCombate2));
-        sessionStorage.setItem('Pokeort3', JSON.stringify(PokeortListoParaElCombate3));
-        window.location.href = "../combate/combate.html";
-    }   
 
-    else
-    {
-        alert("Primero Selecciona 2 pokeorts")
+function EnviarAlCombate() {
+    if (eleccion === 4) {
+        sessionStorage.setItem('PokeORTS', JSON.stringify(PokeORTS));
+        sessionStorage.setItem('Pokeort1', JSON.stringify(seleccionados[0]));
+        sessionStorage.setItem('Pokeort2', JSON.stringify(seleccionados[1]));
+        sessionStorage.setItem('Pokeort3', JSON.stringify(seleccionados[2]));
+        window.location.href = "../combate/combate.html";
+    } else {
+        alert("Primero selecciona 3 pokeorts");
     }
+}
+
+function BotonesCombinados(button) {
+    CambiarPokeort(button);
+    EasterEgg(button);
 }
