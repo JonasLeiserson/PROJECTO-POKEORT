@@ -2,7 +2,7 @@
 
 const PokeORTS =   
 {
-     OWLEON = {
+     OWLEON : {
         nombre: "OWLEON",
         atk: 200,
         vida: 150,
@@ -15,7 +15,7 @@ const PokeORTS =
         src:"../recursos/img/owleon.png",
         NumeroSecreto: 1
     },
-     MELONKEY = {
+     MELONKEY : {
         nombre: "MELONKEY",
         atk: 150,
         vida: 180,
@@ -29,7 +29,7 @@ const PokeORTS =
         NumeroSecreto: 2
     },
     
-     ROKTOM = {
+     ROKTOM : {
         nombre: "ROKTOM",
         atk: 200,
         vida: 400,
@@ -42,7 +42,7 @@ const PokeORTS =
         src:"../recursos/img/roktom.png" ,
         NumeroSecreto: 3
     },
-     PICKCHEL = {
+     PICKCHEL : {
         nombre: "PICKCHEL",
         atk: 100,
         vida: 200,
@@ -55,7 +55,7 @@ const PokeORTS =
         src:"../recursos/img/pickchel.png" ,
         NumeroSecreto: 4
     },
-     AMONGUS = {
+     AMONGUS : {
         nombre: "AMON GUS",
         atk: 150,
         vida: 180,
@@ -69,7 +69,7 @@ const PokeORTS =
         NumeroSecreto: 5
     },
     
-     CHANCHORANCIO  = {
+     CHANCHORANCIO  : {
         nombre: "CHANCHORANCIO",
         atk: 500,
         vida: 100,
@@ -82,7 +82,7 @@ const PokeORTS =
         src:"../recursos/img/chancho rancio.png" ,
         NumeroSecreto: 6
     },
-     GATORANCIO = {
+     GATORANCIO : {
         nombre: "GATO-RANCIO",
         atk: 200,
         vida: 200,
@@ -95,7 +95,7 @@ const PokeORTS =
         src:"../recursos/img/gato rancio.png" ,
         NumeroSecreto: 7
     },
-     MACETONIO = {
+     MACETONIO : {
         nombre: "MACETONIO",
         atk: 200,
         vida: 400,
@@ -109,7 +109,7 @@ const PokeORTS =
         NumeroSecreto: 8
     },
     
-     CARITAFACHA = {
+     CARITAFACHA : {
         nombre: "CARITA-FACHA",
         atk: 200,
         vida: 400,
@@ -122,7 +122,7 @@ const PokeORTS =
         src:"../recursos/img/carita fachera.png",
         NumeroSecreto: 9
     },
-     SKIBIDI = {
+     SKIBIDI : {
         nombre: "SKIBIDI",
         atk: 999,
         vida: 1,
@@ -136,7 +136,7 @@ const PokeORTS =
         
     },
     
-     COMODIN = {
+     COMODIN : {
         nombre: "COMODIN",
         atk: 150,
         vida: 180,
@@ -202,7 +202,8 @@ function EasterEgg(button) {
     }
 }
 
-function EnviarAlCombate() {
+function EnviarAlCombate() 
+{
     if (eleccion === 4) {
         sessionStorage.setItem('PokeORTS', JSON.stringify(PokeORTS));
         sessionStorage.setItem('Pokeort1', JSON.stringify(seleccionados[0]));
