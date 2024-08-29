@@ -12,7 +12,7 @@ const PokeORTS =
         Habilidad1: 1,
         Habilidad2: 1,
         Habilidad3: 1,
-        src:"../recursos/img/owleon.png",
+        src:"../recursos/img/owleon.png" ,
         NumeroSecreto: 1
     },
      MELONKEY : {
@@ -25,7 +25,7 @@ const PokeORTS =
         Habilidad1: 1,
         Habilidad2: 1,
         Habilidad3: 1,
-        src:"../recursos/img/melonkey.png",
+        src: "../recursos/img/melonkey.png",
         NumeroSecreto: 2
     },
     
@@ -152,6 +152,7 @@ const PokeORTS =
 let eleccion = 1;
 let seleccionados = [];
 let contraseña = "";
+let BotonOculto = null;
 
 function BloquearPokeort()
  {
@@ -170,17 +171,32 @@ function BloquearPokeort()
 }
 
 function CambiarPokeort(button) 
-{
-    const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
-    const pokeort = PokeORTS[pokeortID];
+     {
+        const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
+        const pokeort = PokeORTS[pokeortID];
+        const imgElement = document.getElementById(`selected-pokeort-display${eleccion}`);
+    
+        if (imgElement) {
+            imgElement.src = pokeort.src;
+            imgElement.style.display = "block";
+        } else {
+            alert(`No se encontró el elemento con ID 'selected-pokeort-display${eleccion}'`);
+        }
+    
+        document.getElementById(`Pokeort${eleccion}`).textContent = pokeort.nombre;
+        seleccionados[eleccion - 1] = pokeort;
+        button.style.display = "none";
+    
+            if(BotonOculto)
+                    {
+                        BotonOculto.style.display = "block";
+                    }
+                    
+                    button.style.display = "none";
+                    BotonOculto = button;
+        
+    }
 
-    document.getElementById(`Pokeort${eleccion}`).textContent = pokeort.nombre;
-    document.getElementById(`selected-pokeort-display${eleccion}`).src = pokeort.src;
-    document.getElementById(`selected-pokeort-display${eleccion}`).style.display = "block";
-
-    seleccionados[eleccion - 1] = pokeort;
-    button.style.display = "none";
-}
 
 function MostrarEstadisticas(button) {
     const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
