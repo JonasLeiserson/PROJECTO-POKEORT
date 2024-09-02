@@ -1,14 +1,21 @@
-let PokeORTS
-let Pokeort1
-let Pokeort2
-let Pokeort3
+
 window.onload = function()  
 {
-     PokeORTS = JSON.parse(sessionStorage.getItem('PokeORTS'));
-     Pokeort1 = JSON.parse(sessionStorage.getItem('Pokeort1'));
-     Pokeort2 = JSON.parse(sessionStorage.getItem('Pokeort2'));
-     Pokeort3 = JSON.parse(sessionStorage.getItem('Pokeort3'));
+    let PokeORTS = JSON.parse(sessionStorage.getItem('PokeORTS')) || {};
+    let Pokeort1 = JSON.parse(sessionStorage.getItem('Pokeort1')) || {};
+    let Pokeort2 = JSON.parse(sessionStorage.getItem('Pokeort2')) || {};
+    let Pokeort3 = JSON.parse(sessionStorage.getItem('Pokeort3')) || {};
 
+
+    if (!Pokeort1 || !Pokeort1.src) {
+        alert("Error: Pokeort1 is not correctly loaded.");
+    }
+    if (!Pokeort2 || !Pokeort2.src) {
+        alert("Error: Pokeort2 is not correctly loaded.");
+    }
+    if (!Pokeort3 || !Pokeort3.src) {
+        alert("Error: Pokeort3 is not correctly loaded.");
+    }
     const imageninicial = document.getElementById("ImagenAmiga1");
     imageninicial.src = "" 
     let imagen1 = document.getElementById("EleccionPrimerPokemon");
@@ -91,6 +98,17 @@ function Rendirse()
 
 function CalcularDaño(Pokeort1, Pokeort2) 
 {
+    if (!Pokeort1 || !Pokeort2)
+         {
+        alert("Error: Pokeort1 or Pokeort2 is undefined.");
+        console.log("Pokeort1:", Pokeort1);
+        console.log("Pokeort2:", Pokeort2);
+        return;
+         }
  daño = Pokeort1.atk - Pokeort2.defensa
+ if (daño < 0) 
+    {
+    daño = 0;
+    }
 alert(daño)
 }
