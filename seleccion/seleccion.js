@@ -152,14 +152,24 @@ const PokeORTS =
 let eleccion = 1;
 let seleccionados = [];
 let contraseña = "";
-let BotonOculto = null;
+let BotonOculto = "";
+let pokeort = ""
 
-function BloquearPokeort() 
-{
+function BloquearPokeort(button) {
     if (seleccionados[eleccion - 1]) {
+        
         document.querySelector(`.selected-pokeort-${eleccion}`).style.backgroundColor = "rgba(0, 255, 0, 0.799)";
-        document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "none";
+        
+        
+        button.style.display = "none";
 
+
+        if (BotonOculto) {
+            BotonOculto.disabled = true;
+            BotonOculto.style.display = "none";
+        }
+
+        
         if (eleccion === 1 && seleccionados[0].nombre !== "PokeORT 1") {
             eleccion++;
             document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "block";
@@ -168,14 +178,16 @@ function BloquearPokeort()
             document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "block";
         } else if (eleccion === 3 && seleccionados[2].nombre !== "PokeORT 3") {
             document.querySelectorAll('.pokeort-container').forEach(el => el.style.display = "none");
+            eleccion++;
         } else {
-            alert("Selecciona un Pokeort Primero");
+            alert("Selecciona un PokeORT Primero");
         }
 
     } else {
-        alert("Selecciona un Pokeort Primero");
+        alert("Selecciona un PokeORT Primero");
     }
 }
+
 function CambiarPokeort(button) {
     const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
     const pokeort = PokeORTS[pokeortID];
@@ -191,12 +203,13 @@ function CambiarPokeort(button) {
     document.getElementById(`Pokeort${eleccion}`).textContent = pokeort.nombre;
     seleccionados[eleccion - 1] = pokeort;
 
+    
     if (BotonOculto) {
-        BotonOculto.style.display = "block";
+        BotonOculto.classList.remove('hidden'); 
     }
 
-    button.style.display = "none";
     BotonOculto = button;
+    button.classList.add('hidden');
 }
 
 

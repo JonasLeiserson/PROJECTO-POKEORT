@@ -214,3 +214,7 @@ z-index: 1;
 {
     display: none;
 }
+.BotonDeEleccion.hidden
+ {
+    display: none !important; 
+}

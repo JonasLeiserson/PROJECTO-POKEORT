@@ -1,10 +1,13 @@
-let Pokeort1; 
+let PokeORTS
+let Pokeort1
 let Pokeort2
+let Pokeort3
 window.onload = function()  
 {
-    let Pokeort1 = JSON.parse(sessionStorage.getItem('Pokeort1'));
-    let Pokeort2 = JSON.parse(sessionStorage.getItem('Pokeort2'));
-    let Pokeort3 = JSON.parse(sessionStorage.getItem('Pokeort3'));
+     PokeORTS = JSON.parse(sessionStorage.getItem('PokeORTS'));
+     Pokeort1 = JSON.parse(sessionStorage.getItem('Pokeort1'));
+     Pokeort2 = JSON.parse(sessionStorage.getItem('Pokeort2'));
+     Pokeort3 = JSON.parse(sessionStorage.getItem('Pokeort3'));
 
     const imageninicial = document.getElementById("ImagenAmiga1");
     imageninicial.src = "" 
