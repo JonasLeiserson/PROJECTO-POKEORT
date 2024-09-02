@@ -1,15 +1,20 @@
-function leerDatosDelServidor() {
+let PokeORTS = {};
+
+function cargarDatosIniciales() {
     fetch('http://localhost:3000/leer-datos')
         .then(response => response.json())
         .then(data => {
-            console.log('Datos leídos del servidor:', data);
-            // Actualizar la interfaz con los datos leídos
+            PokeORTS = data;  // Almacena los datos en la variable global
+            console.log('Datos cargados:', PokeORTS);
+            inicializarInterfazConDatos(); // Función para actualizar la interfaz con los datos cargados
         })
         .catch(error => {
-            console.error('Error al leer los datos:', error);
+            console.error('Error al cargar los datos:', error);
         });
 }
 
+// Llama a cargarDatosIniciales cuando la página se cargue
+document.addEventListener('DOMContentLoaded', cargarDatosIniciales);
 
 let eleccion = 1;
 let seleccionados = [];
