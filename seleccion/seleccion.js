@@ -154,48 +154,50 @@ let seleccionados = [];
 let contraseña = "";
 let BotonOculto = null;
 
-function BloquearPokeort()
- {
+function BloquearPokeort() 
+{
     if (seleccionados[eleccion - 1]) {
         document.querySelector(`.selected-pokeort-${eleccion}`).style.backgroundColor = "rgba(0, 255, 0, 0.799)";
         document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "none";
-        eleccion++;
-        if (eleccion <= 3) {
+
+        if (eleccion === 1 && seleccionados[0].nombre !== "PokeORT 1") {
+            eleccion++;
             document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "block";
-        } else {
+        } else if (eleccion === 2 && seleccionados[1].nombre !== "PokeORT 2") {
+            eleccion++;
+            document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "block";
+        } else if (eleccion === 3 && seleccionados[2].nombre !== "PokeORT 3") {
             document.querySelectorAll('.pokeort-container').forEach(el => el.style.display = "none");
+        } else {
+            alert("Selecciona un Pokeort Primero");
         }
+
     } else {
         alert("Selecciona un Pokeort Primero");
     }
 }
+function CambiarPokeort(button) {
+    const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
+    const pokeort = PokeORTS[pokeortID];
+    const imgElement = document.getElementById(`selected-pokeort-display${eleccion}`);
 
-function CambiarPokeort(button) 
-     {
-        const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
-        const pokeort = PokeORTS[pokeortID];
-        const imgElement = document.getElementById(`selected-pokeort-display${eleccion}`);
-    
-        if (imgElement) {
-            imgElement.src = pokeort.src;
-            imgElement.style.display = "block";
-        } else {
-            alert(`No se encontró el elemento con ID 'selected-pokeort-display${eleccion}'`);
-        }
-    
-        document.getElementById(`Pokeort${eleccion}`).textContent = pokeort.nombre;
-        seleccionados[eleccion - 1] = pokeort;
-        button.style.display = "none";
-    
-            if(BotonOculto)
-                    {
-                        BotonOculto.style.display = "block";
-                    }
-                    
-                    button.style.display = "none";
-                    BotonOculto = button;
-        
+    if (imgElement) {
+        imgElement.src = pokeort.src;
+        imgElement.style.display = "block";
+    } else {
+        alert(`No se encontró el elemento con ID 'selected-pokeort-display${eleccion}'`);
     }
+
+    document.getElementById(`Pokeort${eleccion}`).textContent = pokeort.nombre;
+    seleccionados[eleccion - 1] = pokeort;
+
+    if (BotonOculto) {
+        BotonOculto.style.display = "block";
+    }
+
+    button.style.display = "none";
+    BotonOculto = button;
+}
 
 
 function MostrarEstadisticas(button) {
