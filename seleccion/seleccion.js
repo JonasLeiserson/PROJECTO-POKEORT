@@ -1,153 +1,15 @@
+function leerDatosDelServidor() {
+    fetch('http://localhost:3000/leer-datos')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Datos leídos del servidor:', data);
+            // Actualizar la interfaz con los datos leídos
+        })
+        .catch(error => {
+            console.error('Error al leer los datos:', error);
+        });
+}
 
-
-const PokeORTS =   
-{
-     OWLEON : {
-        nombre: "OWLEON",
-        atk: 200,
-        vida: 150,
-        velocidad: 200,
-        defensa: 200,
-        Tipo1: "FUEGO",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src:"../recursos/img/owleon.png" ,
-        NumeroSecreto: 1
-    },
-     MELONKEY : {
-        nombre: "MELONKEY",
-        atk: 150,
-        vida: 180,
-        velocidad: 250,
-        defensa: 200,
-        Tipo1: "AGUA",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src: "../recursos/img/melonkey.png",
-        NumeroSecreto: 2
-    },
-    
-     ROKTOM : {
-        nombre: "ROKTOM",
-        atk: 200,
-        vida: 400,
-        velocidad: 100,
-        defensa: 200,
-        Tipo1: "ROCA",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src:"../recursos/img/roktom.png" ,
-        NumeroSecreto: 3
-    },
-     PICKCHEL : {
-        nombre: "PICKCHEL",
-        atk: 100,
-        vida: 200,
-        velocidad: 300,
-        defensa: 200,
-        Tipo1: "ELECTRICO",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src:"../recursos/img/pickchel.png" ,
-        NumeroSecreto: 4
-    },
-     AMONGUS : {
-        nombre: "AMON GUS",
-        atk: 150,
-        vida: 180,
-        velocidad: 250,
-        defensa: 200,
-        Tipo1: "AGUA",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src:"../recursos/img/among us.png" ,
-        NumeroSecreto: 5
-    },
-    
-     CHANCHORANCIO  : {
-        nombre: "CHANCHORANCIO",
-        atk: 500,
-        vida: 100,
-        velocidad: 250,
-        defensa: 50,
-        Tipo1: "AGUA",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src:"../recursos/img/chancho rancio.png" ,
-        NumeroSecreto: 6
-    },
-     GATORANCIO : {
-        nombre: "GATO-RANCIO",
-        atk: 200,
-        vida: 200,
-        velocidad: 200,
-        defensa: 200,
-        Tipo1: "AGUA",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src:"../recursos/img/gato rancio.png" ,
-        NumeroSecreto: 7
-    },
-     MACETONIO : {
-        nombre: "MACETONIO",
-        atk: 200,
-        vida: 400,
-        velocidad: 100,
-        defensa: 200,
-        Tipo1: "PLANTA",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src:"../recursos/img/maseta rancia.png" ,
-        NumeroSecreto: 8
-    },
-    
-     CARITAFACHA : {
-        nombre: "CARITA-FACHA",
-        atk: 200,
-        vida: 400,
-        velocidad: 100,
-        defensa: 200,
-        Tipo1: "PLANTA",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src:"../recursos/img/carita fachera.png",
-        NumeroSecreto: 9
-    },
-     SKIBIDI : {
-        nombre: "SKIBIDI",
-        atk: 999,
-        vida: 1,
-        velocidad: 200,
-        defensa: 1,
-        Tipo1: "TOILET",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1,
-        src:"../recursos/img/skibidi.png",
-        
-    },
-    
-     COMODIN : {
-        nombre: "COMODIN",
-        atk: 150,
-        vida: 180,
-        velocidad: 250,
-        defensa: 200,
-        Tipo1: "POLLO",
-        Habilidad1: 1,
-        Habilidad2: 1,
-        Habilidad3: 1
-    }
-};
 
 let eleccion = 1;
 let seleccionados = [];
@@ -249,4 +111,33 @@ function EnviarAlCombate()
 function BotonesCombinados(button) {
     CambiarPokeort(button);
     EasterEgg(button);
+
+
+
+    //Serverrr
+}
+function enviarDatosAlServidor() {
+    // Definición de los datos que se enviarán al servidor
+    
+
+    // Agrupamos todos los datos en un solo objeto
+    const datos = {
+    
+    };
+
+    // Enviar los datos al servidor usando fetch
+    fetch('http://localhost:3000/guardar-datos', {
+        method: 'POST', // Método HTTP para enviar datos
+        headers: {
+            'Content-Type': 'application/json' // Tipo de contenido de los datos enviados
+        },
+        body: JSON.stringify(datos) // Convertir los datos a formato JSON para enviarlos
+    })
+    .then(response => response.text()) // Manejar la respuesta del servidor
+    .then(data => {
+        console.log('Datos enviados al servidor:', data); // Mostrar un mensaje de éxito
+    })
+    .catch(error => {
+        console.error('Error al enviar los datos:', error); // Mostrar un error si falla
+    });
 }
