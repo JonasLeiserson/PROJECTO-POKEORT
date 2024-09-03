@@ -1,5 +1,4 @@
 {
-  "PokeORTS": {
     "OWLEON": {
       "nombre": "OWLEON",
       "atk": 200,
@@ -152,6 +151,5 @@
       "NumeroSecreto": 10,
       "pokeortID":"COMODIN"
     }
-  }
  
 }
