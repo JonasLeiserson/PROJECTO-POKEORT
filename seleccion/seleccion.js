@@ -136,8 +136,8 @@ function BotonesCombinados(button) {
 function EnviarAlCombate() {
     if (eleccion === 4) {
         
-        const datos = {
-            PokeORTS: PokeORTS,
+        const datos = 
+        {
             Pokeort1: seleccionados[0],
             Pokeort2: seleccionados[1],
             Pokeort3: seleccionados[2]

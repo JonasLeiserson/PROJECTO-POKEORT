@@ -1,4 +1,5 @@
 {
+  "PokeORTS": {
     "OWLEON": {
       "nombre": "OWLEON",
       "atk": 200,
@@ -11,7 +12,7 @@
       "Habilidad3": 1,
       "src": "../recursos/img/owleon.png",
       "NumeroSecreto": 1,
-      "pokeortID":"OWLEON"
+      "pokeortID": "OWLEON"
     },
     "MELONKEY": {
       "nombre": "MELONKEY",
@@ -25,7 +26,7 @@
       "Habilidad3": 1,
       "src": "../recursos/img/melonkey.png",
       "NumeroSecreto": 2,
-      "pokeortID":"MELONKEY"
+      "pokeortID": "MELONKEY"
     },
     "ROKTOM": {
       "nombre": "ROKTOM",
@@ -39,7 +40,7 @@
       "Habilidad3": 1,
       "src": "../recursos/img/roktom.png",
       "NumeroSecreto": 3,
-      "pokeortID":"ROKTOM"
+      "pokeortID": "ROKTOM"
     },
     "PICKCHEL": {
       "nombre": "PICKCHEL",
@@ -53,7 +54,7 @@
       "Habilidad3": 1,
       "src": "../recursos/img/pickchel.png",
       "NumeroSecreto": 4,
-      "pokeortID":"PICKCHEL"
+      "pokeortID": "PICKCHEL"
     },
     "AMONGUS": {
       "nombre": "AMON GUS",
@@ -67,7 +68,7 @@
       "Habilidad3": 1,
       "src": "../recursos/img/among us.png",
       "NumeroSecreto": 5,
-      "pokeortID":"AMONGUS"
+      "pokeortID": "AMONGUS"
     },
     "CHANCHORANCIO": {
       "nombre": "CHANCHORANCIO",
@@ -81,7 +82,7 @@
       "Habilidad3": 1,
       "src": "../recursos/img/chancho rancio.png",
       "NumeroSecreto": 6,
-      "pokeortID":"CHANCHORANCIO"
+      "pokeortID": "CHANCHORANCIO"
     },
     "GATORANCIO": {
       "nombre": "GATO-RANCIO",
@@ -95,7 +96,7 @@
       "Habilidad3": 1,
       "src": "../recursos/img/gato rancio.png",
       "NumeroSecreto": 7,
-      "pokeortID":"GATORANCIO"
+      "pokeortID": "GATORANCIO"
     },
     "MACETONIO": {
       "nombre": "MACETONIO",
@@ -109,7 +110,7 @@
       "Habilidad3": 1,
       "src": "../recursos/img/maseta rancia.png",
       "NumeroSecreto": 8,
-      "pokeortID":"MACETONIO"
+      "pokeortID": "MACETONIO"
     },
     "CARITAFACHA": {
       "nombre": "CARITA-FACHA",
@@ -123,7 +124,7 @@
       "Habilidad3": 1,
       "src": "../recursos/img/carita fachera.png",
       "NumeroSecreto": 9,
-      "pokeortID":"CARITAFACHA"
+      "pokeortID": "CARITAFACHA"
     },
     "SKIBIDI": {
       "nombre": "SKIBIDI",
@@ -136,7 +137,7 @@
       "Habilidad2": 1,
       "Habilidad3": 1,
       "src": "../recursos/img/skibidi.png",
-      "pokeortID":"SKIBIDI"
+      "pokeortID": "SKIBIDI"
     },
     "COMODIN": {
       "nombre": "COMODIN",
@@ -149,7 +150,49 @@
       "Habilidad2": 1,
       "Habilidad3": 1,
       "NumeroSecreto": 10,
-      "pokeortID":"COMODIN"
+      "pokeortID": "COMODIN"
     }
- 
+  },
+  "Pokeort1": {
+    "nombre": "PICKCHEL",
+    "atk": 100,
+    "vida": 200,
+    "velocidad": 300,
+    "defensa": 200,
+    "Tipo1": "ELECTRICO",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/pickchel.png",
+    "NumeroSecreto": 4,
+    "pokeortID": "PICKCHEL"
+  },
+  "Pokeort2": {
+    "nombre": "AMON GUS",
+    "atk": 150,
+    "vida": 180,
+    "velocidad": 250,
+    "defensa": 200,
+    "Tipo1": "AGUA",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/among us.png",
+    "NumeroSecreto": 5,
+    "pokeortID": "AMONGUS"
+  },
+  "Pokeort3": {
+    "nombre": "CHANCHORANCIO",
+    "atk": 500,
+    "vida": 100,
+    "velocidad": 250,
+    "defensa": 50,
+    "Tipo1": "AGUA",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/chancho rancio.png",
+    "NumeroSecreto": 6,
+    "pokeortID": "CHANCHORANCIO"
+  }
 }
