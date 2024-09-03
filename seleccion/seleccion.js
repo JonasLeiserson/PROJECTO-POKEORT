@@ -55,7 +55,9 @@ function BloquearPokeort(button) {
     }
 }
 
-function CambiarPokeort(button) {
+function CambiarPokeort(button)
+
+ {
     const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
     const pokeort = PokeORTS[pokeortID];
     const imgElement = document.getElementById(`selected-pokeort-display${eleccion}`);
@@ -80,7 +82,8 @@ function CambiarPokeort(button) {
 }
 
 
-function MostrarEstadisticas(button) {
+function MostrarEstadisticas(button) 
+{
     const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
     const pokeort = PokeORTS[pokeortID];
 
@@ -99,6 +102,7 @@ function EasterEgg(button) {
         document.getElementById("kibidi").style.display = "block";
     }
 }
+
 
 function EnviarAlCombate() 
 {
