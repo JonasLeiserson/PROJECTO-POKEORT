@@ -74,5 +74,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "cors": "^2.8.5"
+    
+
+  
 }

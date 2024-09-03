@@ -1,6 +1,7 @@
 let PokeORTS = {};
 
-function cargarDatosIniciales() {
+function cargarDatosIniciales() 
+{
     fetch('http://localhost:3000/leer-datos')
         .then(response => response.json())
         .then(data => {
@@ -12,6 +13,24 @@ function cargarDatosIniciales() {
             console.error('Error al cargar los datos:', error);
         });
 }
+function inicializarInterfazConDatos() 
+    {
+    if (PokeORTS) {
+       
+        document.querySelectorAll('.pokeort-item').forEach((item) => {
+            const pokeortID = item.getAttribute('data-id');
+            const pokeortData = PokeORTS[pokeortID];
+
+            if (pokeortData) {
+                item.querySelector('.pokeort-name').textContent = pokeortData.nombre;
+                item.querySelector('.pokeort-image').src = pokeortData.src;
+            }
+        });
+    } else {
+        console.error('No se encontraron datos válidos para inicializar la interfaz.');
+    }
+    }
+
 
 // Llama a cargarDatosIniciales cuando la página se cargue
 document.addEventListener('DOMContentLoaded', cargarDatosIniciales);
@@ -103,20 +122,6 @@ function EasterEgg(button) {
     }
 }
 
-
-function EnviarAlCombate() 
-{
-    if (eleccion === 4) {
-        sessionStorage.setItem('PokeORTS', JSON.stringify(PokeORTS));
-        sessionStorage.setItem('Pokeort1', JSON.stringify(seleccionados[0]));
-        sessionStorage.setItem('Pokeort2', JSON.stringify(seleccionados[1]));
-        sessionStorage.setItem('Pokeort3', JSON.stringify(seleccionados[2]));
-        window.location.href = "../combate/combate.html";
-    } else {
-        alert("Primero selecciona 3 pokeorts");
-    }
-}
-
 function BotonesCombinados(button) {
     CambiarPokeort(button);
     EasterEgg(button);
@@ -125,28 +130,36 @@ function BotonesCombinados(button) {
 
     //Serverrr
 }
-function enviarDatosAlServidor() {
-    // Definición de los datos que se enviarán al servidor
-    
+function EnviarAlCombate() {
+    if (eleccion === 4) {
+        
+        const datos = {
+            PokeORTS: PokeORTS,
+            Pokeort1: seleccionados[0],
+            Pokeort2: seleccionados[1],
+            Pokeort3: seleccionados[2]
+        };
 
-    // Agrupamos todos los datos en un solo objeto
-    const datos = {
-    
-    };
-
-    // Enviar los datos al servidor usando fetch
-    fetch('http://localhost:3000/guardar-datos', {
-        method: 'POST', // Método HTTP para enviar datos
-        headers: {
-            'Content-Type': 'application/json' // Tipo de contenido de los datos enviados
-        },
-        body: JSON.stringify(datos) // Convertir los datos a formato JSON para enviarlos
-    })
-    .then(response => response.text()) // Manejar la respuesta del servidor
-    .then(data => {
-        console.log('Datos enviados al servidor:', data); // Mostrar un mensaje de éxito
-    })
-    .catch(error => {
-        console.error('Error al enviar los datos:', error); // Mostrar un error si falla
-    });
+        
+        fetch('http://localhost:3000/guardar-datos', {
+            method: 'POST',
+            headers:
+            {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datos)
+        })
+        .then(response => response.text()) 
+        .then(data => {
+            console.log('Datos enviados al servidor:', data); 
+        
+            window.location.href = "../combate/combate.html";
+        })
+        .catch(error => {
+            console.error('Error al enviar los datos:', error); 
+        });
+    } else {
+        alert("Primero selecciona 3 pokeorts");
+    }
 }
+   

@@ -1,10 +1,40 @@
+window.onload = function() {
+    fetch('http://localhost:3000/leer-datos')
+    .then(response => response.json())
+    .then(data => {
+        const Pokeort1 = data.Pokeort1;
+        const Pokeort2 = data.Pokeort2;
+        const Pokeort3 = data.Pokeort3;
+        const PokeORT = data.PokeORT;
 
-window.onload = function()  
-{
-    let PokeORTS = JSON.parse(sessionStorage.getItem('PokeORTS')) || {};
-    let Pokeort1 = JSON.parse(sessionStorage.getItem('Pokeort1')) || {};
-    let Pokeort2 = JSON.parse(sessionStorage.getItem('Pokeort2')) || {};
-    let Pokeort3 = JSON.parse(sessionStorage.getItem('Pokeort3')) || {};
+        console.log('Pokeort1:', Pokeort1);
+        console.log('Pokeort2:', Pokeort2);
+        console.log('Pokeort3:', Pokeort3);
+
+      
+        if (!Pokeort1 || !Pokeort1.src) {
+            alert("Error: Pokeort1 is not correctly loaded.");
+            return;
+        }
+        if (!Pokeort2 || !Pokeort2.src) {
+            alert("Error: Pokeort2 is not correctly loaded.");
+            return;
+        }
+        if (!Pokeort3 || !Pokeort3.src) {
+            alert("Error: Pokeort3 is not correctly loaded.");
+            return;
+        }
+
+       
+        document.getElementById("ImagenAmiga1").src = Pokeort1.src;
+        document.getElementById("EleccionPrimerPokemon").src = Pokeort1.src;
+        document.getElementById("EleccionPrimerPokemon2").src = Pokeort2.src;
+        document.getElementById("EleccionPrimerPokemon3").src = Pokeort3.src;
+    })
+    .catch(error => {
+        console.error('Error al cargar los datos del servidor:', error);
+    });
+};
 
 
     if (!Pokeort1 || !Pokeort1.src) {
@@ -24,8 +54,8 @@ window.onload = function()
     imagen2.src = Pokeort2.src; 
     let imagen3 = document.getElementById("EleccionPrimerPokemon3");
     imagen3.src = Pokeort3.src; 
-   
-}
+
+
 
 let botonesNoSeleccionados = []
 let PokeortelegidoCombate

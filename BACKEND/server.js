@@ -1,12 +1,13 @@
 const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Importar el paquete CORS
+const cors = require('cors');
 
 const app = express();
 
-// Usar CORS para permitir solicitudes de cualquier origen
+
 app.use(cors());
+
 
 app.use(bodyParser.json());
 
@@ -20,6 +21,7 @@ app.get('/leer-datos', (req, res) => {
         }
     });
 });
+
 
 app.post('/guardar-datos', (req, res) => {
     fs.writeFile('DatosPokeorts.json', JSON.stringify(req.body, null, 2), err => {
