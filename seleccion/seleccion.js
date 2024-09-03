@@ -101,15 +101,18 @@ function CambiarPokeort(button)
 }
 
 
-function MostrarEstadisticas(button) 
-{
+function MostrarEstadisticas(button) {
     const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
     const pokeort = PokeORTS[pokeortID];
 
-    document.getElementById("VIDA").textContent = "VIDA: " + pokeort.vida;
-    document.getElementById("VELOCIDAD").textContent = "VELOCIDAD: " + pokeort.velocidad;
-    document.getElementById("DAÑO").textContent = "DAÑO: " + pokeort.atk;
-    document.getElementById("DEFENSA").textContent = "DEFENSA: " + pokeort.defensa;
+    if (pokeort) {
+        document.getElementById("VIDA").textContent = "VIDA: " + pokeort.vida;
+        document.getElementById("VELOCIDAD").textContent = "VELOCIDAD: " + pokeort.velocidad;
+        document.getElementById("DAÑO").textContent = "DAÑO: " + pokeort.atk;
+        document.getElementById("DEFENSA").textContent = "DEFENSA: " + pokeort.defensa;
+    } else {
+        console.error("PokeORT not found:", pokeortID);
+    }
 }
 
 function EasterEgg(button) {
