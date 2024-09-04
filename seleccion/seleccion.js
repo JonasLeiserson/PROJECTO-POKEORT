@@ -1,45 +1,44 @@
 let PokeORTS = {};
 
-function cargarDatosIniciales() 
-{
+function cargarDatosIniciales() {
     fetch('http://localhost:3000/leer-datos')
         .then(response => response.json())
         .then(data => {
-            PokeORTS = data;  // Almacena los datos en la variable global
+            PokeORTS = data;
             console.log('Datos cargados:', PokeORTS);
-            inicializarInterfazConDatos(); // Función para actualizar la interfaz con los datos cargados
+            inicializarInterfazConDatos();
         })
         .catch(error => {
             console.error('Error al cargar los datos:', error);
         });
 }
-function inicializarInterfazConDatos() 
-    {
+
+function inicializarInterfazConDatos() {
     if (PokeORTS) {
-       
         document.querySelectorAll('.pokeort-item').forEach((item) => {
             const pokeortID = item.getAttribute('data-id');
-            const pokeortData = PokeORTS[pokeortID];
 
-            if (pokeortData) {
+            if (pokeortID && PokeORTS[pokeortID]) {
+                const pokeortData = PokeORTS[pokeortID];
+
                 item.querySelector('.pokeort-name').textContent = pokeortData.nombre;
-                item.querySelector('.pokeort-image').src = pokeortData.src;
+                item.querySelector('.pokeort-img').src = pokeortData.src;
+            } else {
+                console.warn(`No se encontró un PokeORT con el ID: ${pokeortID}`);
             }
         });
     } else {
-        console.error('No se encontraron datos válidos para inicializar la interfaz.');
+        console.error('PokeORTS no está definido o está vacío');
     }
-    }
+}
 
-
-// Llama a cargarDatosIniciales cuando la página se cargue
 document.addEventListener('DOMContentLoaded', cargarDatosIniciales);
 
 let eleccion = 1;
 let seleccionados = [];
 let contraseña = "";
 let BotonOculto = "";
-let pokeort = ""
+
 
 function BloquearPokeort(button) {
     if (seleccionados[eleccion - 1]) {
