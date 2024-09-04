@@ -134,34 +134,40 @@ function BotonesCombinados(button) {
 }
 function EnviarAlCombate() {
     if (eleccion === 4) {
-        
-        const datos = 
-        {
-            Pokeort1: seleccionados[0],
-            Pokeort2: seleccionados[1],
-            Pokeort3: seleccionados[2]
-        };
+       
+        if (seleccionados.length === 3 && seleccionados[0] && seleccionados[1] && seleccionados[2]) {
+            const datos = {
+                seleccionados: seleccionados,
+                PokeORTS: PokeORTS 
+            };
 
-        
-        fetch('http://localhost:3000/guardar-datos', {
-            method: 'POST',
-            headers:
-            {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(datos)
-        })
-        .then(response => response.text()) 
-        .then(data => {
-            console.log('Datos enviados al servidor:', data); 
-        
-            window.location.href = "../combate/combate.html";
-        })
-        .catch(error => {
-            console.error('Error al enviar los datos:', error); 
-        });
+          
+            fetch('http://localhost:3000/guardar-datos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(datos)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al enviar los datos al servidor.');
+                }
+                return response.text()
+            })
+            .then(data => {
+                console.log('Datos enviados al servidor:', data);
+                
+                window.location.href = "../combate/combate.html";
+            })
+            .catch(error => {
+                console.error('Error al enviar los datos:', error);
+                alert('Hubo un error al enviar los datos. Inténtalo de nuevo.');
+            });
+        } else {
+            alert("Asegúrate de haber seleccionado 3 PokeORTS");
+        }
     } else {
-        alert("Primero selecciona 3 pokeorts");
+        alert("Primero selecciona 3 PokeORTS");
     }
 }
-   
