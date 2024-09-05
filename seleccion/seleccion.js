@@ -139,7 +139,9 @@ function EnviarAlCombate() {
         {
             Pokeort1: seleccionados[0],
             Pokeort2: seleccionados[1],
-            Pokeort3: seleccionados[2]
+            Pokeort3: seleccionados[2],
+            PokeORTS: PokeORTS
+
         };
 
         
