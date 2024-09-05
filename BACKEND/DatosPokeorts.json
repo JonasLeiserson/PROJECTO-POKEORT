@@ -1,47 +1,5 @@
+
 {
-  "Pokeort1": {
-    "nombre": "MELONKEY",
-    "atk": 150,
-    "vida": 180,
-    "velocidad": 250,
-    "defensa": 200,
-    "Tipo1": "AGUA",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/melonkey.png",
-    "NumeroSecreto": 2,
-    "pokeortID": "MELONKEY"
-  },
-  "Pokeort2": {
-    "nombre": "OWLEON",
-    "atk": 200,
-    "vida": 150,
-    "velocidad": 200,
-    "defensa": 200,
-    "Tipo1": "FUEGO",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/owleon.png",
-    "NumeroSecreto": 1,
-    "pokeortID": "OWLEON"
-  },
-  "Pokeort3": {
-    "nombre": "PICKCHEL",
-    "atk": 100,
-    "vida": 200,
-    "velocidad": 300,
-    "defensa": 200,
-    "Tipo1": "ELECTRICO",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/pickchel.png",
-    "NumeroSecreto": 4,
-    "pokeortID": "PICKCHEL"
-  },
-  "PokeORTS": {
     "OWLEON": {
       "nombre": "OWLEON",
       "atk": 200,
@@ -194,5 +152,5 @@
       "NumeroSecreto": 10,
       "pokeortID": "COMODIN"
     }
+  
   }
-}
