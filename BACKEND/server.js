@@ -39,6 +39,12 @@ app.post('/guardar-datos', (req, res) => {
         datosExistentes.Pokeort1 = nuevosDatos.Pokeort1 || datosExistentes.Pokeort1;
         datosExistentes.Pokeort2 = nuevosDatos.Pokeort2 || datosExistentes.Pokeort2;
         datosExistentes.Pokeort3 = nuevosDatos.Pokeort3 || datosExistentes.Pokeort3;
+        datosExistentes.PokeortEnemigo1 = nuevosDatos.PokeortEnemigo1 || datosExistentes.PokeortEnemigo1;
+        datosExistentes.PokeortEnemigo2 = nuevosDatos.PokeortEnemigo2 || datosExistentes.PokeortEnemigo2;
+        datosExistentes.PokeortEnemigo3 = nuevosDatos.PokeortEnemigo3 || datosExistentes.PokeortEnemigo3;
+        datosExistentes.PokeORTS = nuevosDatos.PokeORTS || datosExistentes.PokeORTS;
+        
+        
 
         // Guardar los datos combinados en el archivo JSON
         fs.writeFile('DatosPokeorts.json', JSON.stringify(datosExistentes, null, 2), (err) => {
