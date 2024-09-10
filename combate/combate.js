@@ -12,7 +12,7 @@ window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
     .then(response => response.json())
     .then(data => {
-        // Verificar que los datos esperados estén presentes
+        
         if (!data.Pokeort1 || !data.Pokeort2 || !data.Pokeort3) {
             console.error('Error: Datos incompletos recibidos del servidor.');
             alert('Error: Datos incompletos recibidos del servidor.');
@@ -42,7 +42,7 @@ window.onload = function() {
             }
         }
 
-        // Verificar que las propiedades src estén presentes
+
         if (!Pokeort1.src) {
             alert("Error: Pokeort1 is not correctly loaded.");
             return;
@@ -56,13 +56,13 @@ window.onload = function() {
             return;
         }
 
-        // Asignar las imágenes a los elementos del DOM
         document.getElementById("ImagenAmiga1").src = Pokeort1.src;
         document.getElementById("EleccionPrimerPokemon").src = Pokeort1.src;
         document.getElementById("EleccionPrimerPokemon2").src = Pokeort2.src;
         document.getElementById("EleccionPrimerPokemon3").src = Pokeort3.src;
 
-        // Guardar los datos en una variable global
+        document.getElementById("ImagenAmiga2").src = PokeortEnemigo1.src; 
+        document.getElementById("ImagenAmiga2") .style.display = "none";  
         window.pokeortsData = { Pokeort1, Pokeort2, Pokeort3 };
     })
     .catch(error => {
@@ -70,6 +70,8 @@ window.onload = function() {
         alert('Error al cargar los datos del servidor.');
     });
 };
+
+
 
 let botonesNoSeleccionados = [];
 let PokeortelegidoCombate;  
@@ -87,6 +89,7 @@ function mostrar_pokeort() {
 }
 
 function EleccionDePokeortInicial(button) {
+    document.getElementById("ImagenAmiga2") .style.display = "block";  
     const ImagenDePokemon = button.querySelector(".ImagenCombate").src;
     document.getElementById("ImagenAmiga1").src = ImagenDePokemon;
     

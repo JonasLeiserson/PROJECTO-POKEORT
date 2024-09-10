@@ -159,7 +159,6 @@ function EnviarAlCombate() {
             PokeortEnemigo1: PokemonesEnemigos[0],
             PokeortEnemigo2: PokemonesEnemigos[1],
             PokeortEnemigo3: PokemonesEnemigos[2],
-            PokeORTS: PokeORTS
         };
 
         fetch('http://localhost:3000/guardar-datos', {

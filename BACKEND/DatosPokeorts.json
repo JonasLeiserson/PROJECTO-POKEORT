@@ -153,20 +153,48 @@
     "pokeortID": "MELONKEY"
   },
   "Pokeort2": {
-    "nombre": "AMON GUS",
-    "atk": 150,
-    "vida": 180,
-    "velocidad": 250,
+    "nombre": "GATO-RANCIO",
+    "atk": 200,
+    "vida": 200,
+    "velocidad": 200,
     "defensa": 200,
     "Tipo1": "AGUA",
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/among us.png",
-    "NumeroSecreto": 5,
-    "pokeortID": "AMONGUS"
+    "src": "../recursos/img/gato rancio.png",
+    "NumeroSecreto": 7,
+    "pokeortID": "GATORANCIO"
   },
   "Pokeort3": {
+    "nombre": "CARITA-FACHA",
+    "atk": 200,
+    "vida": 400,
+    "velocidad": 100,
+    "defensa": 200,
+    "Tipo1": "PLANTA",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/carita fachera.png",
+    "NumeroSecreto": 9,
+    "pokeortID": "CARITAFACHA"
+  },
+  "PokeortEnemigo1": {
+    "nombre": "GATO-RANCIO",
+    "atk": 200,
+    "vida": 200,
+    "velocidad": 200,
+    "defensa": 200,
+    "Tipo1": "AGUA",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/gato rancio.png",
+    "NumeroSecreto": 7,
+    "pokeortID": "GATORANCIO"
+  },
+  "PokeortEnemigo2": {
     "nombre": "OWLEON",
     "atk": 200,
     "vida": 150,
@@ -179,5 +207,19 @@
     "src": "../recursos/img/owleon.png",
     "NumeroSecreto": 1,
     "pokeortID": "OWLEON"
+  },
+  "PokeortEnemigo3": {
+    "nombre": "ROKTOM",
+    "atk": 200,
+    "vida": 400,
+    "velocidad": 100,
+    "defensa": 200,
+    "Tipo1": "ROCA",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/roktom.png",
+    "NumeroSecreto": 3,
+    "pokeortID": "ROKTOM"
   }
 }
