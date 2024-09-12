@@ -34,6 +34,10 @@ window.onload = function() {
         console.log('Pokeort2:', Pokeort2);
         console.log('Pokeort3:', Pokeort3);
         console.log('PokeORTS:', PokeORTS);
+        console.log('PokeORTS:', PokeortEnemigo1);
+        console.log('PokeORTS:', PokeortEnemigo2);
+        console.log('PokeORTS:', PokeortEnemigo3);
+        
 
 
         for (let key in PokeORTS) {
@@ -74,8 +78,8 @@ window.onload = function() {
 
 
 let botonesNoSeleccionados = [];
-let PokeortelegidoCombate;  
-let botonSeleccionado = "";
+let PokeortelegidoCombate = []; 
+let botonSeleccionado = null;
 let daño;
 
 function mostrar_ataques() {
@@ -89,16 +93,21 @@ function mostrar_pokeort() {
 }
 
 function EleccionDePokeortInicial(button) {
-    document.getElementById("ImagenAmiga2") .style.display = "block";  
+
     const ImagenDePokemon = button.querySelector(".ImagenCombate").src;
+
+    document.getElementById("ImagenAmiga2") .style.display = "block";  
     document.getElementById("ImagenAmiga1").src = ImagenDePokemon;
     
-    botonSeleccionado = button;
+    botonSeleccionado = butt9665<on.id;
+    
     botonesNoSeleccionados = [];
+    PokeortelegidoCombate.push(button)
    
     document.querySelectorAll(".BotonDeEleciion").forEach(function(element) {
         element.style.display = "none";
-        if (element !== button) {
+        if (element !== button) 
+        {
             botonesNoSeleccionados.push(element);
         }
     });
@@ -136,10 +145,12 @@ function Rendirse() {
     alert("Te rendiste");
 }
 
-function CalcularDaño() {
-    if (!Pokeort1) {
+function CalcularDaño(botonSeleccionado) {
+    if (!Pokeort1) 
+    {
         alert("Error: Pokeort1 no está definido.");
         return;
     }
-    console.log(Pokeort1);
+    console.log(botonSeleccionado);
+
 }

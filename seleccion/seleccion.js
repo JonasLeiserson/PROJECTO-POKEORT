@@ -1,5 +1,4 @@
 
-
 let PokeORTS = {};
 
 function cargarDatosIniciales() {
@@ -30,7 +29,7 @@ function inicializarInterfazConDatos() {
             }
         });
         for (let i = 0; i < 3; i++)
-             {
+        {
             seleccionarPokeORTAleatorio();
         }
     } else {
