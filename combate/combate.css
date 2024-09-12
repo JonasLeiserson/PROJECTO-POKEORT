@@ -83,9 +83,11 @@ body {
 .pokeort1-img {
     width: 300px;
     height: 300px;
+    image-rendering: pixelated;
 }
 
 .pokeort2-img {
     width: 300px;
     height: 300px;
+    image-rendering: pixelated;
 }
