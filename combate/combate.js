@@ -1,10 +1,6 @@
-let Pokeort1 = null;
-let Pokeort2 = null;
-let Pokeort3 = null;
+let PokeortAmigos = [Pokeort1, Pokeort2, Pokeort3]
 let PokeORTS = null;
-let PokeortEnemigo1 = null;
-let PokeortEnemigo2 = null;
-let PokeortEnemigo3 = null;
+let PokeortEnemigos = [PokeortEnemigo1, PokeortEnemigo2, PokeortEnemigo3]
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
@@ -55,69 +51,10 @@ function mostrar_pokeort() {
     document.getElementById("cambiar-pokeort").style.display = "flex";
 }
 
-function EleccionDePokeortInicial(button) {
-    const ImagenDePokemon = button.querySelector(".ImagenCombate").src;
+function EleccionDePokeortInicial(button) 
+{
+const PokeortElegido =  button.querySelector(".ParrafoDeNombre").textContent.trim();
 
-    document.getElementById("ImagenAmiga2").style.display = "block";
-    document.getElementById("ImagenAmiga1").src = ImagenDePokemon;
-    
-    botonSeleccionado = button;
-    botonSeleccionadoID = button.id;
-    
-    // Establecer el Pokeort elegido para combate
-    if (botonSeleccionadoID === "BotonDeEleccion1") {
-        PokeortelegidoCombate = Pokeort1;
-    } else if (botonSeleccionadoID === "BotonDeEleccion2") {
-        PokeortelegidoCombate = Pokeort2;
-    } else {
-        PokeortelegidoCombate = Pokeort3;
-    }
-
-    // Actualizar imágenes y nombres en los botones de cambio
-    const pokeorts = [
-        { id: "BotonDeCambio1", pokeort: Pokeort1 },
-        { id: "BotonDeCambio2", pokeort: Pokeort2 },
-        { id: "BotonDeCambio3", pokeort: Pokeort3 }
-    ];
-
-    pokeorts.forEach(({ id, pokeort }) => {
-        const button = document.getElementById(id);
-        if (pokeort !== PokeortelegidoCombate) {
-            button.style.display = "block";
-            button.querySelector("img").src = pokeort.src;
-            button.querySelector("p").textContent = "Nombre del Pokeort"; // Reemplaza con el nombre real
-        } else {
-            button.style.display = "none";
-        }
-    });
-}
-
-function intercambiarPokeort(pokeortButton, index) {
-    const imagenSeleccionada = pokeortButton.querySelector("img").src;
-    const textoSeleccionado = pokeortButton.querySelector("p").textContent;
-
-    pokeortButton.querySelector("img").src = botonSeleccionado.querySelector(".ImagenCombate").src;
-    pokeortButton.querySelector("p").textContent = botonSeleccionado.querySelector(".ParrafoDeNombre").textContent;
-
-    botonSeleccionado.querySelector(".ImagenCombate").src = imagenSeleccionada;
-    botonSeleccionado.querySelector(".ParrafoDeNombre").textContent = textoSeleccionado;
-
-    document.getElementById("ImagenAmiga1").src = botonSeleccionado.querySelector(".ImagenCombate").src;
-
-    pokeortButton.style.display = "none";
-
-    // Mostrar botones de cambio restantes
-    const pokeorts = [
-        "BotonDeCambio1",
-        "BotonDeCambio2",
-        "BotonDeCambio3"
-    ];
-
-    pokeorts.forEach(id => {
-        if (id !== pokeortButton.id) {
-            document.getElementById(id).style.display = "block";
-        }
-    });
 }
 
 function Rendirse() {

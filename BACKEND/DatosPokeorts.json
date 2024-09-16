@@ -167,7 +167,7 @@
     "pokeortID": "AMONGUS"
   },
   "Pokeort3": {
-    "nombre": "MACETONIO",
+    "nombre": "CARITA-FACHA",
     "atk": 200,
     "vida": 400,
     "velocidad": 100,
@@ -176,23 +176,23 @@
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/maseta rancia.png",
-    "NumeroSecreto": 8,
-    "pokeortID": "MACETONIO"
+    "src": "../recursos/img/carita fachera.png",
+    "NumeroSecreto": 9,
+    "pokeortID": "CARITAFACHA"
   },
   "PokeortEnemigo1": {
-    "nombre": "CHANCHORANCIO",
-    "atk": 500,
-    "vida": 100,
-    "velocidad": 250,
-    "defensa": 50,
-    "Tipo1": "AGUA",
+    "nombre": "CARITA-FACHA",
+    "atk": 200,
+    "vida": 400,
+    "velocidad": 100,
+    "defensa": 200,
+    "Tipo1": "PLANTA",
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/chancho rancio.png",
-    "NumeroSecreto": 6,
-    "pokeortID": "CHANCHORANCIO"
+    "src": "../recursos/img/carita fachera.png",
+    "NumeroSecreto": 9,
+    "pokeortID": "CARITAFACHA"
   },
   "PokeortEnemigo2": {
     "nombre": "AMON GUS",
@@ -209,17 +209,17 @@
     "pokeortID": "AMONGUS"
   },
   "PokeortEnemigo3": {
-    "nombre": "ROKTOM",
-    "atk": 200,
-    "vida": 400,
-    "velocidad": 100,
+    "nombre": "PICKCHEL",
+    "atk": 100,
+    "vida": 200,
+    "velocidad": 300,
     "defensa": 200,
-    "Tipo1": "ROCA",
+    "Tipo1": "ELECTRICO",
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/roktom.png",
-    "NumeroSecreto": 3,
-    "pokeortID": "ROKTOM"
+    "src": "../recursos/img/pickchel.png",
+    "NumeroSecreto": 4,
+    "pokeortID": "PICKCHEL"
   }
 }
