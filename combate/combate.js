@@ -1,6 +1,5 @@
-let PokeortAmigos = [Pokeort1, Pokeort2, Pokeort3]
-let PokeORTS = null;
-let PokeortEnemigos = [PokeortEnemigo1, PokeortEnemigo2, PokeortEnemigo3]
+let PokeortAmigos = []
+let PokeortEnemigos = []
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
@@ -12,34 +11,27 @@ window.onload = function() {
             return;
         }
 
-        Pokeort1 = data.Pokeort1;
-        Pokeort2 = data.Pokeort2;
-        Pokeort3 = data.Pokeort3;
-        PokeORTS = data.PokeORTS;
-        PokeortEnemigo1 = data.PokeortEnemigo1;
-        PokeortEnemigo2 = data.PokeortEnemigo2;
-        PokeortEnemigo3 = data.PokeortEnemigo3;
-
+        PokeortAmigos = [data.Pokeort1,  data.Pokeort2, data.Pokeort3];
+        PokeortEnemigos = [data.PokeortEnemigo1, data.PokeortEnemigo2, data.PokeortEnemigo3]
         console.log('Datos recibidos:', data);
 
-        document.getElementById("EleccionPrimerPokemon").src = Pokeort1.src;
-        document.getElementById("EleccionPrimerPokemon2").src = Pokeort2.src;
-        document.getElementById("EleccionPrimerPokemon3").src = Pokeort3.src;
-
-        document.getElementById("ImagenAmiga2").src = PokeortEnemigo1.src;
-        document.getElementById("ImagenAmiga2").style.display = "none";
+        document.getElementById("EleccionPrimerPokemon").src = PokeortAmigos[0].src;
+        document.getElementById("EleccionPrimerPokemon2").src = PokeortAmigos[1].src;
+        document.getElementById("EleccionPrimerPokemon3").src = PokeortAmigos[2].src;
         
-        window.pokeortsData = { Pokeort1, Pokeort2, Pokeort3 };
+        document.getElementById("NombrePokeort1").innerHTML = PokeortAmigos[0].nombre
+        document.getElementById("NombrePokeort2").innerHTML = PokeortAmigos[1].nombre
+        document.getElementById("NombrePokeort3").innerHTML = PokeortAmigos[2].nombre
+
+        document.getElementById("ImagenAmiga2").style.display = "none";
     })
-    .catch(error => {
-        console.error('Error al cargar los datos del servidor:', error);
-        alert('Error al cargar los datos del servidor.');
-    });
 };
 
 let PokeortelegidoCombate = null;
 let botonSeleccionado = null;
 let botonSeleccionadoID = "";
+
+
 
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
@@ -53,18 +45,47 @@ function mostrar_pokeort() {
 
 function EleccionDePokeortInicial(button) 
 {
-const PokeortElegido =  button.querySelector(".ParrafoDeNombre").textContent.trim();
+    const botones = 
+    [
+        document.getElementById("BotonDeCambio1"),
+        document.getElementById("BotonDeCambio2"),
+        document.getElementById("BotonDeCambio3")
+    ];
 
+const PokeortElegidoId =  button.querySelector(".ParrafoDeNombre").textContent.trim();
+const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === PokeortElegidoId);
+document.getElementById("ImagenAmiga1").src = pokeortElegido.src
+
+document.querySelectorAll(".BotonDeEleciion").forEach(button => 
+{
+button.style.display = "none";
+});
+PokeortAmigos.forEach((pokeort, index) =>
+{
+    if (botones[index]) 
+    {
+        const img = botones[index].querySelector(".ImagenesCambiables") 
+        img.src = pokeort.src  
+       const parrafo =  botones[index].querySelector(".ParrafosCambiables") 
+       parrafo.textContent = pokeort.nombre  
+    }
+});
+}
+function intercambiarPokeort(button, index)
+{
+    const pokeortElegido = PokeortAmigos[index];
+    const img = button.querySelector(".ImagenAmiga1");
+
+        img.src = pokeortElegido.src;
+    
+        
 }
 
 function Rendirse() {
     alert("Te rendiste");
 }
 
-function CalcularDaño() {
-    if (!Pokeort1) {
-        alert("Error: Pokeort1 no está definido.");
-        return;
-    }
-    console.log(botonSeleccionado);
+function CalcularDaño() 
+{
+
 }
