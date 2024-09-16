@@ -1,13 +1,59 @@
-body {
+html {
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url(../recursos/img/pantalla\ de\ inicio.png);
+    background-size: 100%;
 }
 
 .combatir, .creditos, .opciones{
-    margin-top: 50px;
+    font-family: Kyiv;
+    background-color: #BDBDBD;
+    border: 3px solid black;
+    border-radius: 10px;
 }
+
+.combatir {
+    margin: 0;
+    width: 15%;
+    height: 10%;
+    font-size: 30px;
+
+    &:hover {
+        background-color: #949494;
+    }
+}
+
+.creditos {
+    margin-top: 15px;
+    width: 10%;
+    height: 5%;
+}
+
+.opciones {
+    margin-top: 15px;
+    width: 10%;
+    height: 5%;
+}
+
+.title {
+    font-family: "Kyiv";
+    -webkit-text-stroke: 0.5px white;
+    font-size: 90px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0;
+}
+
