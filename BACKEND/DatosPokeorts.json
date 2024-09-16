@@ -153,6 +153,20 @@
     "pokeortID": "MELONKEY"
   },
   "Pokeort2": {
+    "nombre": "PICKCHEL",
+    "atk": 100,
+    "vida": 200,
+    "velocidad": 300,
+    "defensa": 200,
+    "Tipo1": "ELECTRICO",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/pickchel.png",
+    "NumeroSecreto": 4,
+    "pokeortID": "PICKCHEL"
+  },
+  "Pokeort3": {
     "nombre": "AMON GUS",
     "atk": 150,
     "vida": 180,
@@ -166,49 +180,36 @@
     "NumeroSecreto": 5,
     "pokeortID": "AMONGUS"
   },
-  "Pokeort3": {
-    "nombre": "GATO-RANCIO",
-    "atk": 200,
-    "vida": 200,
-    "velocidad": 200,
-    "defensa": 200,
-    "Tipo1": "AGUA",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/gato rancio.png",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
-  },
   "PokeortEnemigo1": {
-    "nombre": "GATO-RANCIO",
+    "nombre": "OWLEON",
     "atk": 200,
-    "vida": 200,
+    "vida": 150,
     "velocidad": 200,
     "defensa": 200,
-    "Tipo1": "AGUA",
+    "Tipo1": "FUEGO",
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/gato rancio.png",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
+    "src": "../recursos/img/owleon.png",
+    "NumeroSecreto": 1,
+    "pokeortID": "OWLEON"
   },
   "PokeortEnemigo2": {
-    "nombre": "SKIBIDI",
-    "atk": 999,
-    "vida": 1,
+    "nombre": "OWLEON",
+    "atk": 200,
+    "vida": 150,
     "velocidad": 200,
-    "defensa": 1,
-    "Tipo1": "TOILET",
+    "defensa": 200,
+    "Tipo1": "FUEGO",
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/skibidi.png",
-    "pokeortID": "SKIBIDI"
+    "src": "../recursos/img/owleon.png",
+    "NumeroSecreto": 1,
+    "pokeortID": "OWLEON"
   },
   "PokeortEnemigo3": {
-    "nombre": "MELONKEY",
+    "nombre": "AMON GUS",
     "atk": 150,
     "vida": 180,
     "velocidad": 250,
@@ -217,8 +218,8 @@
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/melonkey.png",
-    "NumeroSecreto": 2,
-    "pokeortID": "MELONKEY"
+    "src": "../recursos/img/among us.png",
+    "NumeroSecreto": 5,
+    "pokeortID": "AMONGUS"
   }
 }
