@@ -1,5 +1,6 @@
 let PokeortAmigos = []
 let PokeortEnemigos = []
+let PokeortElegidoActual = null;
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
@@ -54,6 +55,10 @@ function EleccionDePokeortInicial(button)
 
 const PokeortElegidoId =  button.querySelector(".ParrafoDeNombre").textContent.trim();
 const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === PokeortElegidoId);
+
+PokeortElegidoActual = pokeortElegido;
+console.log("PokeORT elegido:", PokeortElegidoActual);
+
 document.getElementById("ImagenAmiga1").src = pokeortElegido.src
 
 document.querySelectorAll(".BotonDeEleciion").forEach(button => 
@@ -62,23 +67,33 @@ button.style.display = "none";
 });
 PokeortAmigos.forEach((pokeort, index) =>
 {
-    if (botones[index]) 
-    {
         const img = botones[index].querySelector(".ImagenesCambiables") 
         img.src = pokeort.src  
-       const parrafo =  botones[index].querySelector(".ParrafosCambiables") 
-       parrafo.textContent = pokeort.nombre  
-    }
+        const parrafo =  botones[index].querySelector(".ParrafosCambiables") 
+        parrafo.textContent = pokeort.nombre       
+        if (pokeort.nombre === PokeortElegidoId) 
+        {
+            botones[index].style.display = "none";
+        }
 });
+
+
 }
 function intercambiarPokeort(button, index)
 {
-    const pokeortElegido = PokeortAmigos[index];
-    const img = button.querySelector(".ImagenAmiga1");
 
-        img.src = pokeortElegido.src;
+    const pokeortElegido = PokeortAmigos[index];
+    const img = document.getElementById("ImagenAmiga1")
+    img.src = pokeortElegido.src;
     
-        
+    PokeortElegidoActual = pokeortElegido;
+    console.log("PokeORT elegido:", PokeortElegidoActual);
+    
+    document.querySelectorAll(".pokeort").forEach(button => 
+        {
+        button.style.display = "block";
+        });
+        button.style.display = "none"
 }
 
 function Rendirse() {
