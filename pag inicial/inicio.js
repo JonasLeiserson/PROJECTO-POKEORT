@@ -1,11 +1,11 @@
-const opciones = document.getElementById("opciones");
+const creditos = document.getElementById("creditos_button");
 const cerrar = document.getElementById("cerrar");
-const menu = document.getElementById("opciones_menu");
+const menu_creditos = document.getElementById("creditos-menu");
 
-opciones.addEventListener("click", () => {
-    menu.classList.add("show");
+creditos.addEventListener("click", () => {
+    menu_creditos.classList.add("show");
 });
 
 cerrar.addEventListener("click", () => {
-    menu.classList.remove("show");
+    menu_creditos.classList.remove("show");
 });

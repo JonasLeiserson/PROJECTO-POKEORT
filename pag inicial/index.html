@@ -6,15 +6,15 @@
     <title>PokeORT</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../recursos/fonts/fonts.css">
-    <script src="script.js"></script>
+    <script src="inicio.js" defer></script>
 </head>
 <body>
     <h1 class="Kyiv title">BIENVENIDOS <br> A POKEORT</h1>
     <button onclick="location.href='../seleccion/seleccion.html'" class="combatir Kyiv">COMBATIR</button>
     <button class="opciones Kyiv">OPCIONES</button>
-    <button class="creditos-button Kyiv">CREDITOS</button>
-    <div class="creditos-menu">
-        <button>X</button>
+    <button id="creditos_button" class="creditos-button Kyiv">CREDITOS</button>
+    <div id="creditos-menu" class="creditos-menu">
+        <button id="cerrar" class="cerrar">X</button>
         <div class="creditos">
             <h5>Backend: Jonas Leiserson</h5>
             <h5>Frontend: Juan Cruz Sabio</h5>
