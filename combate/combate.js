@@ -1,6 +1,8 @@
 let PokeortAmigos = []
 let PokeortEnemigos = []
 let PokeortElegidoActual = null;
+let PokeortElegidoEnemigoActual = null;
+let turnoJugador = true
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
@@ -55,11 +57,19 @@ function EleccionDePokeortInicial(button)
 
 const PokeortElegidoId =  button.querySelector(".ParrafoDeNombre").textContent.trim();
 const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === PokeortElegidoId);
+const PokeortElegidoEnemigo = PokeortEnemigos[0]
 
 PokeortElegidoActual = pokeortElegido;
 console.log("PokeORT elegido:", PokeortElegidoActual);
 
+PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
+console.log("PokeORT enemigo elegido:", PokeortElegidoEnemigoActual);
+
 document.getElementById("ImagenAmiga1").src = pokeortElegido.src
+
+document.getElementById("ImagenAmiga2").style.display = "block";
+
+document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src
 
 document.querySelectorAll(".BotonDeEleciion").forEach(button => 
 {
@@ -76,7 +86,6 @@ PokeortAmigos.forEach((pokeort, index) =>
             botones[index].style.display = "none";
         }
 });
-
 
 }
 function intercambiarPokeort(button, index)
@@ -100,7 +109,24 @@ function Rendirse() {
     alert("Te rendiste");
 }
 
-function CalcularDaño() 
+function CalcularDaño(atacante, defensor) 
 {
+    const daño = Math.max(0, atacante.atk - defensor.defensa);
+    return daño;
 
 }
+ if (turnoJugador) 
+    {
+        const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual);
+        PokeortElegidoEnemigoActual.vida -= daño;
+
+        console.log(`¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} causando ${daño} de daño!`);
+        console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
+
+
+        if (PokeortElegidoEnemigoActual.vida <= 0) 
+        {
+            alert(`${PokeortElegidoEnemigoActual.nombre} ha sido derrotado.`);
+            document.getElementById("ImagenAmiga2").style.display = "none";
+     }
+    }
