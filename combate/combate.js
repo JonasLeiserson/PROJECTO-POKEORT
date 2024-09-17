@@ -128,5 +128,5 @@ function CalcularDaño(atacante, defensor)
         {
             alert(`${PokeortElegidoEnemigoActual.nombre} ha sido derrotado.`);
             document.getElementById("ImagenAmiga2").style.display = "none";
-        }
+     }
     }
