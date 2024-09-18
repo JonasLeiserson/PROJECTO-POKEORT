@@ -32,7 +32,8 @@ window.onload = function() {
 let PokeortelegidoCombate = null;
 let botonSeleccionado = null;
 let botonSeleccionadoID = "";
-let turnoJugador = true
+let turnoJugador = true;
+let MedirVelocidad;
 
 
 function mostrar_ataques() {
@@ -108,17 +109,27 @@ function Rendirse() {
     alert("Te rendiste");
 }
 
-function CalcularDaño(atacante, defensor) 
+function AdministrarBatalla() 
 {
-    console.log(atacante);
-    console.log(defensor);
-    const daño =  Math.abs(atacante.atk - defensor.defensa);
-    return daño;
-
+realizarTurno()
+MedirVelocidad  = false
+realizarTurno()
 }
-turnoJugador = true;
 
-function realizarTurno() {
+
+function realizarTurno() 
+{
+if(MedirVelocidad) 
+{
+if(PokeortElegidoActual.velocidad  > PokeortElegidoEnemigoActual.velocidad)
+{
+turnoJugador = true
+}
+else if(PokeortElegidoActual.velocidad  <  PokeortElegidoEnemigoActual.velocidad)
+{
+turnoJugador = false
+}
+}
 if (turnoJugador) 
 {
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual);
@@ -137,12 +148,22 @@ if (turnoJugador)
         PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
         document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src
         document.getElementById("ImagenAmiga2").style.display = "block";
-    } else 
+        
+        
+            PokeortElegidoEnemigo = PokeortEnemigos[2]
+            PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
+            document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src
+            document.getElementById("ImagenAmiga2").style.display = "block"
+    } 
+    else 
     {
-    
+        turnoJugador = false;
+        
     }
     
-} else {
+} 
+else 
+{
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual);
     PokeortElegidoActual.vida -= daño;
 
@@ -151,9 +172,25 @@ if (turnoJugador)
 
     if (PokeortElegidoActual.vida <= 0) {
         alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
-    } else {
+        document.getElementById("ImagenAmiga").style.display = "none";
+        document.querySelectorAll(".BotonDeEleciion").forEach(button => 
+            {
+                button.style.display = "block";
+            });
+    } 
+    else 
+    {
         turnoJugador = true;
-        realizarTurno();  
+
     }
 }
 }
+function CalcularDaño(atacante, defensor) 
+{
+    console.log(atacante);
+    console.log(defensor);
+    const daño =  Math.abs(atacante.atk - defensor.defensa);
+    return daño;
+
+}
+
