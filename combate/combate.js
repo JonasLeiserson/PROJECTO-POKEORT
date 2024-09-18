@@ -1,8 +1,7 @@
 let PokeortAmigos = []
 let PokeortEnemigos = []
-let PokeortElegidoActual = null;
-let PokeortElegidoEnemigoActual = null;
-let turnoJugador = true
+let PokeortElegidoActual ;
+let PokeortElegidoEnemigoActual ;
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
@@ -33,7 +32,7 @@ window.onload = function() {
 let PokeortelegidoCombate = null;
 let botonSeleccionado = null;
 let botonSeleccionadoID = "";
-
+let turnoJugador = true
 
 
 function mostrar_ataques() {
@@ -111,22 +110,50 @@ function Rendirse() {
 
 function CalcularDaño(atacante, defensor) 
 {
-    const daño = Math.max(0, atacante.atk - defensor.defensa);
+    console.log(atacante);
+    console.log(defensor);
+    const daño =  Math.abs(atacante.atk - defensor.defensa);
     return daño;
 
 }
- if (turnoJugador) 
+turnoJugador = true;
+
+function realizarTurno() {
+if (turnoJugador) 
+{
+    const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual);
+    PokeortElegidoEnemigoActual.vida -= daño;
+
+    console.log(`¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} causando ${daño} de daño!`);
+    console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
+
+    if (PokeortElegidoEnemigoActual.vida <= 0) 
     {
-        const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual);
-        PokeortElegidoEnemigoActual.vida -= daño;
+        alert(`${PokeortElegidoEnemigoActual.nombre} ha sido derrotado.`);
+        document.getElementById("ImagenAmiga2").style.display = "none";
 
-        console.log(`¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} causando ${daño} de daño!`);
-        console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
-
-
-        if (PokeortElegidoEnemigoActual.vida <= 0) 
-        {
-            alert(`${PokeortElegidoEnemigoActual.nombre} ha sido derrotado.`);
-            document.getElementById("ImagenAmiga2").style.display = "none";
-     }
+        
+        const PokeortElegidoEnemigo = PokeortEnemigos[1]
+        PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
+        document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src
+        document.getElementById("ImagenAmiga2").style.display = "block";
+    } else 
+    {
+    
     }
+    
+} else {
+    const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual);
+    PokeortElegidoActual.vida -= daño;
+
+    console.log(`¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} causando ${daño} de daño!`);
+    console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
+
+    if (PokeortElegidoActual.vida <= 0) {
+        alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
+    } else {
+        turnoJugador = true;
+        realizarTurno();  
+    }
+}
+}

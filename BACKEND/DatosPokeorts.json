@@ -104,7 +104,7 @@
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "PLANTA",
-    "Habilidad1": 1,
+    "Habilidad1": "PUÑO VELOZ",
     "Habilidad2": 1,
     "Habilidad3": 1,
     "src": "../recursos/img/maseta rancia.png",
@@ -139,18 +139,18 @@
     "pokeortID": "SKIBIDI"
   },
   "Pokeort1": {
-    "nombre": "MELONKEY",
-    "atk": 150,
-    "vida": 180,
-    "velocidad": 250,
+    "nombre": "PICKCHEL",
+    "atk": 100,
+    "vida": 200,
+    "velocidad": 300,
     "defensa": 200,
-    "Tipo1": "AGUA",
+    "Tipo1": "ELECTRICO",
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/melonkey.png",
-    "NumeroSecreto": 2,
-    "pokeortID": "MELONKEY"
+    "src": "../recursos/img/pickchel.png",
+    "NumeroSecreto": 4,
+    "pokeortID": "PICKCHEL"
   },
   "Pokeort2": {
     "nombre": "AMON GUS",
@@ -167,20 +167,6 @@
     "pokeortID": "AMONGUS"
   },
   "Pokeort3": {
-    "nombre": "CHANCHORANCIO",
-    "atk": 500,
-    "vida": 100,
-    "velocidad": 250,
-    "defensa": 50,
-    "Tipo1": "AGUA",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/chancho rancio.png",
-    "NumeroSecreto": 6,
-    "pokeortID": "CHANCHORANCIO"
-  },
-  "PokeortEnemigo1": {
     "nombre": "MELONKEY",
     "atk": 150,
     "vida": 180,
@@ -194,7 +180,35 @@
     "NumeroSecreto": 2,
     "pokeortID": "MELONKEY"
   },
+  "PokeortEnemigo1": {
+    "nombre": "CARITA-FACHA",
+    "atk": 200,
+    "vida": 400,
+    "velocidad": 100,
+    "defensa": 200,
+    "Tipo1": "PLANTA",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/carita fachera.png",
+    "NumeroSecreto": 9,
+    "pokeortID": "CARITAFACHA"
+  },
   "PokeortEnemigo2": {
+    "nombre": "CHANCHORANCIO",
+    "atk": 500,
+    "vida": 100,
+    "velocidad": 250,
+    "defensa": 50,
+    "Tipo1": "AGUA",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/chancho rancio.png",
+    "NumeroSecreto": 6,
+    "pokeortID": "CHANCHORANCIO"
+  },
+  "PokeortEnemigo3": {
     "nombre": "PICKCHEL",
     "atk": 100,
     "vida": 200,
@@ -207,19 +221,5 @@
     "src": "../recursos/img/pickchel.png",
     "NumeroSecreto": 4,
     "pokeortID": "PICKCHEL"
-  },
-  "PokeortEnemigo3": {
-    "nombre": "ROKTOM",
-    "atk": 200,
-    "vida": 400,
-    "velocidad": 100,
-    "defensa": 200,
-    "Tipo1": "ROCA",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/roktom.png",
-    "NumeroSecreto": 3,
-    "pokeortID": "ROKTOM"
   }
 }
