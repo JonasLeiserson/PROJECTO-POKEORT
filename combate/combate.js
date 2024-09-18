@@ -34,6 +34,7 @@ let botonSeleccionado = null;
 let botonSeleccionadoID = "";
 let turnoJugador = true;
 let MedirVelocidad;
+let valor = 1
 
 
 function mostrar_ataques() {
@@ -113,7 +114,7 @@ function AdministrarBatalla()
 {
 realizarTurno()
 MedirVelocidad  = false
-realizarTurno()
+
 }
 
 
@@ -143,17 +144,14 @@ if (turnoJugador)
         alert(`${PokeortElegidoEnemigoActual.nombre} ha sido derrotado.`);
         document.getElementById("ImagenAmiga2").style.display = "none";
 
-        
-        const PokeortElegidoEnemigo = PokeortEnemigos[1]
+        valor = 1
+        const PokeortElegidoEnemigo = PokeortEnemigos[valor]
         PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
         document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src
         document.getElementById("ImagenAmiga2").style.display = "block";
-        
-        
-            PokeortElegidoEnemigo = PokeortEnemigos[2]
-            PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
-            document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src
-            document.getElementById("ImagenAmiga2").style.display = "block"
+
+        valor +=  1
+
     } 
     else 
     {
