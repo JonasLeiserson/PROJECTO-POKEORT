@@ -114,7 +114,7 @@ function AdministrarBatalla()
 {
 realizarTurno()
 MedirVelocidad  = false
-
+realizarTurno()
 }
 
 
