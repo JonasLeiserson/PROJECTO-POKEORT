@@ -1,82 +1,67 @@
-body {
+html {
     height: 100%;
     width: 100%;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
     box-sizing: border-box;
     background-image: url(../recursos/img/pollo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0;
 }
 
-.order-0 {
+header {
     box-sizing: border-box;
-    height: 100%;
+    height: 5%;
     width: 100%;
     display: flex;
     justify-content: end;
-    padding-right: 40px;
+    margin: 0;
+
+    .volver {
+        width: 37px;
+        height: 31px;
+        background: #484848;
+        border-radius: 5px;
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        img {
+            width: 80%;
+            height: 80%;
+        }
+    }
+
+    .seleccione-pokeort {
+        margin: 0;
+        margin-right: 27%;
+        font-family: Kyiv
+    }
 }
 
-.seleccione-pokeort {
-    position: absolute;
-    right: 37%;
-}
-
-.main-container {
-    box-sizing: border-box;
+main {
+    border: solid;
+    width: 100%;
+    height: 65%;
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    position: relative;
-    bottom: 0;
-    border: 1px  solid black;
-}
-
-.pokemon {
-    flex: 0 0 auto;
-    border: 3px solid black;
-    width: 200px;
-    height: 200px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-.pokeort-container {
-    display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-around;
-}
-
-.pokeort-name {
-    margin-right: 50px;
-    margin-left: 50px;
-}
-
-.volver {
-    width: 20px;
-    height: 20px;
-    background: blue;
-    order: 1;
-}
-
-.pokeort-img {
-    margin-left: 50px;
-    margin-right: 50px;
-    height: 100px;
-    width: 100px;
-
-}
 
 .ability-container {
     display: flex;
     height: 300px;
     width: 200px;
-    border: 5px solid black;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 100px;
-    margin-left: 50px;
 }
 
 .ability {
@@ -84,18 +69,19 @@ body {
     width: 90%;
     border: 2px solid black;
     font-size: large;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Kyiv;
     font-weight: bolder;
 }
 
 .selected-pokeort {
-    height: 200px;
-    width: 200px;
+    height: 90%;
+    width: 28%;
     border: 2px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: Kyiv;
 }
 
 .selected-pokeort-1 {
@@ -117,31 +103,68 @@ body {
     display: flex;
     align-items: center;
     border: 2px solid black;
-    margin-left: 150px;
     justify-content: center;
     text-align: center;
     background-color: gray;
     
 }
 
-.order-1 {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    
-}
-
 .divDeLaDerecha {
-    height: 200px;
+    height: 60%;
     width:  200px;
     display: flex;
     align-items: center;
-    border: 2px solid black;
-    margin-left: 150px;
     justify-content: center;
     flex-direction: column;
     text-align: center;
+}
+}
+
+footer {
+    height: 30%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+    overflow: auto;
+    bottom: 0;
+    margin: 0;
+    border: 1px  solid black;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.pokemon {
+    flex: 0 0 auto;
+    border: 3px solid black;
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.pokeort-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.pokeort-name {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.pokeort-img {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 100px;
+    width: 100px;
+
 }
 
 #selected-pokeort-display 
@@ -190,9 +213,13 @@ background-color: yellow;
 
 .botoneleccion
 {
-  background-color: gray;
-  border: none;
-  cursor: pointer;
+    background-color: gray;
+    border: none;
+    cursor: pointer;
+}
+
+.BotonDeEleccion {
+    height: 100%;
 }
 
 .BotonBloqueador 

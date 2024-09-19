@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selección de PokeORT</title>
     <link rel="stylesheet" href="seleccion.css">
+    <link rel="stylesheet" href="../recursos/fonts/fonts.css">
     <script src="seleccion.js" defer></script>
 </head>
 <body>
-    <div class="order-0">
-        <div class="volver" onclick="location.href='../pag inicial/index.html'">Volver</div>
-        <button onclick="EnviarAlCombate()">Combatir</button>
+    <header>
         <h1 class="seleccione-pokeort">Seleccione sus PokeORTs</h1>
-    </div>
+        <div class="volver" onclick="location.href='../pag inicial/index.html'"><img src="../recursos/img/iconos/home.png" alt=""></div>
+        <button onclick="EnviarAlCombate()">Combatir</button>
+    </header>
 
-    <div class="order-1">
+    <main>
         <div class="ability-container">
             <div class="ability">Habilidad 1</div>
             <div class="ability">Habilidad 2</div>
@@ -47,9 +48,9 @@
             <div class="ability" id="DAÑO">DAÑO</div>
             <div class="ability" id="DEFENSA">DEFENSA</div>
         </div>   
-    </div>
+    </main>
 
-    <div class="main-container">
+    <footer>
         <div class="pokeort-container">
             <div  class="pokeort-item" data-id="OWLEON">
                 <button onclick="BotonesCombinados(this)" id="Owleon" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
@@ -105,7 +106,7 @@
                 <img class="pokeort-img" src="../recursos/img/maseta rancia.png">
                 </button>
             </div>
-           
+        
             <div  class="pokeort-item" data-id="CARI-TAFACHA">
                 <button onclick="BotonesCombinados(this)" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
                 <p class="pokeort-name" id="CARITAFACHA" >CARITAFACHA</p>
@@ -126,9 +127,7 @@
             </div>
 
         </div>      
-    </div>
-   
-    <p id="HuevoDePascua">oioioio</p>        
+    </footer>      
 
 </body>
 </html>

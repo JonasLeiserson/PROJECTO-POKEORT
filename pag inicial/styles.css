@@ -23,6 +23,14 @@ body {
     background-color: #BDBDBD;
     border: 3px solid black;
     border-radius: 10px;
+
+    &:hover {
+        background-color: #949494;
+    }
+
+    &:active {
+        background-color: #a7a7a7;
+    }
 }
 
 .combatir {
@@ -30,10 +38,6 @@ body {
     width: 15%;
     height: 10%;
     font-size: 30px;
-
-    &:hover {
-        background-color: #949494;
-    }
 }
 
 .creditos-button {
@@ -67,12 +71,12 @@ body {
 .creditos-menu {
     height: 70%;
     width: 65%;
-    background-color: #BDBDBD;
+    background-color: black;
     position: fixed;
     top: auto;
     left: auto;
     border-radius: 20px;
-    border: 5px solid black;
+    border: 5px solid white;
     opacity: 0;
     pointer-events: none;
 
@@ -83,6 +87,7 @@ body {
         position: relative;
         top: 19%; 
         left: 31%;
+        color: white;
         font-family: Kyiv;
         font-size: 30px;
     }
@@ -92,6 +97,3 @@ body {
     opacity: 1;
     pointer-events: auto;
 }
-
-
-
