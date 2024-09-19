@@ -34,7 +34,7 @@ let botonSeleccionado = null;
 let botonSeleccionadoID = "";
 let turnoJugador = true;
 let MedirVelocidad;
-let valor = 1
+let valor = 0
 
 
 function mostrar_ataques() {
@@ -112,27 +112,25 @@ function Rendirse() {
 
 function AdministrarBatalla() 
 {
-realizarTurno()
-MedirVelocidad  = false
-realizarTurno()
+    
+        if(PokeortElegidoActual.velocidad  > PokeortElegidoEnemigoActual.velocidad)
+        {
+            if (realizarTurnoJugador()) return; 
+            if (realizarTurnoEnemigo()) return;
+        }
+        else if(PokeortElegidoActual.velocidad  <  PokeortElegidoEnemigoActual.velocidad)
+        { 
+            if (realizarTurnoEnemigo()) return; 
+            if (realizarTurnoJugador()) return;
+        }
+
 }
 
 
-function realizarTurno() 
+
+function realizarTurnoJugador() 
 {
-if(MedirVelocidad) 
-{
-if(PokeortElegidoActual.velocidad  > PokeortElegidoEnemigoActual.velocidad)
-{
-turnoJugador = true
-}
-else if(PokeortElegidoActual.velocidad  <  PokeortElegidoEnemigoActual.velocidad)
-{
-turnoJugador = false
-}
-}
-if (turnoJugador) 
-{
+
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual);
     PokeortElegidoEnemigoActual.vida -= daño;
 
@@ -144,23 +142,23 @@ if (turnoJugador)
         alert(`${PokeortElegidoEnemigoActual.nombre} ha sido derrotado.`);
         document.getElementById("ImagenAmiga2").style.display = "none";
 
-        valor = 1
+        valor +=  1
+
         const PokeortElegidoEnemigo = PokeortEnemigos[valor]
         PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
         document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src
         document.getElementById("ImagenAmiga2").style.display = "block";
 
-        valor +=  1
 
-    } 
-    else 
-    {
-        turnoJugador = false;
-        
-    }
-    
-} 
-else 
+        if(valor === 3)
+{
+    alert("Ganaste")
+}   
+    return true;
+}
+return false;
+}
+function realizarTurnoEnemigo()
 {
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual);
     PokeortElegidoActual.vida -= daño;
@@ -170,19 +168,17 @@ else
 
     if (PokeortElegidoActual.vida <= 0) {
         alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
-        document.getElementById("ImagenAmiga").style.display = "none";
+        document.getElementById("ImagenAmiga1").style.display = "none";
         document.querySelectorAll(".BotonDeEleciion").forEach(button => 
             {
                 button.style.display = "block";
             });
+            return true;
     } 
-    else 
-    {
-        turnoJugador = true;
+    return false;
+}
 
-    }
-}
-}
+
 function CalcularDaño(atacante, defensor) 
 {
     console.log(atacante);
