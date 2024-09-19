@@ -25,30 +25,41 @@ header {
     margin: 0;
 
     .volver {
-        width: 37px;
-        height: 31px;
+        width: 3%;
+        height: 100%;
         background: #484848;
         border-radius: 5px;
-        order: 1;
         display: flex;
         align-items: center;
         justify-content: center;
         
         img {
-            width: 80%;
+            width: 75%;
             height: 80%;
         }
     }
 
+    .combatir {
+        width: 8%;
+        height: 100%;
+        font-family: Kyiv;
+        background-color: #484848;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        font-size: 16px;
+        margin-left: 1%;
+        margin-right: 0.5%;
+    }
+
     .seleccione-pokeort {
         margin: 0;
-        margin-right: 27%;
+        margin-right: 22%;
         font-family: Kyiv
     }
 }
 
 main {
-    border: solid;
     width: 100%;
     height: 65%;
     display: flex;
@@ -57,8 +68,8 @@ main {
 
 .ability-container {
     display: flex;
-    height: 300px;
-    width: 200px;
+    height: 62%;
+    width: 17%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -71,6 +82,7 @@ main {
     font-size: large;
     font-family: Kyiv;
     font-weight: bolder;
+    background-color: #3afa74;
 }
 
 .selected-pokeort {
@@ -82,36 +94,24 @@ main {
     justify-content: center;
     align-items: center;
     font-family: Kyiv;
-}
-
-.selected-pokeort-1 {
-    margin-right: 50px;
-    margin-left: 10px;
-}
-
-.selected-pokeort-2 {
-    margin-right: 50px;
-}
-
-.selected-pokeort-3 {
-    margin-right: 10px;
+    background-color: #3afa74;
 }
 
 .selected-pokeort-container {
-    height: 300px;
-    width: 550px;
+    height: 70%;
+    width: 40%;
     display: flex;
     align-items: center;
     border: 2px solid black;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
-    background-color: gray;
+    background-color: #2d8f30;
     
 }
 
 .divDeLaDerecha {
     height: 60%;
-    width:  200px;
+    width: 17%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,16 +136,6 @@ footer {
     &::-webkit-scrollbar {
         display: none;
     }
-}
-
-.pokemon {
-    flex: 0 0 auto;
-    border: 3px solid black;
-    width: 200px;
-    height: 200px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
 
 .pokeort-container {
     display: flex;
@@ -164,8 +154,9 @@ footer {
     margin-right: 50px;
     height: 100px;
     width: 100px;
-
 }
+}
+
 
 #selected-pokeort-display 
 {
@@ -184,7 +175,7 @@ footer {
 }
 
 #VIDA
- {
+{
 background-color: greenyellow;
 }
 
