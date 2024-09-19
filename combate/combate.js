@@ -15,12 +15,12 @@ window.onload = function() {
 
         PokeortAmigos = [data.Pokeort1,  data.Pokeort2, data.Pokeort3];
         PokeortEnemigos = [data.PokeortEnemigo1, data.PokeortEnemigo2, data.PokeortEnemigo3]
-        console.log('Datos recibidos:', data);
+        console.log(PokeortAmigos)
+        console.log(PokeortEnemigos)
 
         document.getElementById("EleccionPrimerPokemon").src = PokeortAmigos[0].src;
         document.getElementById("EleccionPrimerPokemon2").src = PokeortAmigos[1].src;
         document.getElementById("EleccionPrimerPokemon3").src = PokeortAmigos[2].src;
-        
         document.getElementById("NombrePokeort1").innerHTML = PokeortAmigos[0].nombre
         document.getElementById("NombrePokeort2").innerHTML = PokeortAmigos[1].nombre
         document.getElementById("NombrePokeort3").innerHTML = PokeortAmigos[2].nombre
@@ -28,6 +28,7 @@ window.onload = function() {
         document.getElementById("ImagenAmiga2").style.display = "none";
     })
 };
+
 
 let PokeortelegidoCombate = null;
 let botonSeleccionado = null;
@@ -55,7 +56,7 @@ function EleccionDePokeortInicial(button)
         document.getElementById("BotonDeCambio2"),
         document.getElementById("BotonDeCambio3")
     ];
-
+console.log(botones)
 const PokeortElegidoId =  button.querySelector(".ParrafoDeNombre").textContent.trim();
 const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === PokeortElegidoId);
 const PokeortElegidoEnemigo = PokeortEnemigos[0]
@@ -123,7 +124,21 @@ function AdministrarBatalla()
             if (realizarTurnoEnemigo()) return; 
             if (realizarTurnoJugador()) return;
         }
-
+        else 
+        {
+            Aleatorio =  Math.floor(Math.random() * 2) + 1;
+            if(Aleatorio === 1)
+            {
+                if (realizarTurnoJugador()) return; 
+                if (realizarTurnoEnemigo()) return;
+            }
+            else if(Aleatorio === 2)
+                { 
+                    if (realizarTurnoEnemigo()) return; 
+                    if (realizarTurnoJugador()) return;
+                }
+            
+        }
 }
 
 
@@ -169,8 +184,13 @@ function realizarTurnoEnemigo()
     if (PokeortElegidoActual.vida <= 0) {
         alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
         document.getElementById("ImagenAmiga1").style.display = "none";
+
+    const index = PokeortAmigos.findIndex(pokeort => pokeort.nombre === PokeortElegidoActual.nombre);
+    PokeortAmigos.splice(index, 1);
+
         document.querySelectorAll(".BotonDeEleciion").forEach(button => 
             {
+
                 button.style.display = "block";
             });
             return true;
@@ -183,7 +203,7 @@ function CalcularDaño(atacante, defensor)
 {
     console.log(atacante);
     console.log(defensor);
-    const daño =  Math.abs(atacante.atk - defensor.defensa);
+    const daño =  Math.abs(atacante.atk - (defensor.defensa)/2);
     return daño;
 
 }
