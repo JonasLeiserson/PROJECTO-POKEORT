@@ -95,6 +95,7 @@ function intercambiarPokeort(button, index)
 
     const pokeortElegido = PokeortAmigos[index];
     const img = document.getElementById("ImagenAmiga1")
+    img.style.display = "block"
     img.src = pokeortElegido.src;
     
     PokeortElegidoActual = pokeortElegido;
@@ -173,6 +174,8 @@ function realizarTurnoJugador()
 }
 return false;
 }
+
+
 function realizarTurnoEnemigo()
 {
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual);
@@ -183,16 +186,31 @@ function realizarTurnoEnemigo()
 
     if (PokeortElegidoActual.vida <= 0) {
         alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
-        document.getElementById("ImagenAmiga1").style.display = "none";
+        
 
-    const index = PokeortAmigos.findIndex(pokeort => pokeort.nombre === PokeortElegidoActual.nombre);
-    PokeortAmigos.splice(index, 1);
+    //const index = PokeortAmigos.findIndex(pokeort => pokeort.nombre === PokeortElegidoActual.nombre);
+    //PokeortAmigos.splice(index, 1)
 
-        document.querySelectorAll(".BotonDeEleciion").forEach(button => 
+            mostrar_pokeort()
+
+            document.querySelectorAll(".pokeort").forEach(button => 
             {
-
-                button.style.display = "block";
+                document.querySelectorAll(".pokeort").forEach(button => {
+                    const parrafo = button.querySelector(".ParrafosCambiables").textContent.trim();
+                    if (parrafo === PokeortElegidoActual.nombre) 
+                    {
+                        button.disabled = true;
+                        button.style.opacity = "0.5";
+                    } else 
+                    {
+                        button.style.display = "block"
+                        button.style.opacity = "1";
+                    }
+                });
+        
+                button.style.display = "block"
             });
+            document.getElementById("ImagenAmiga1").style.display = "none";
             return true;
     } 
     return false;
