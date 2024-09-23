@@ -2,6 +2,7 @@
 let PokeORTS = {};
 
 function cargarDatosIniciales() {
+    //Cambiar a soqueTIC
     fetch('http://localhost:3000/leer-datos')
         .then(response => response.json())
         .then(data => {
@@ -78,7 +79,7 @@ function CambiarPokeort(button) {
     const imgElement = document.getElementById(`selected-pokeort-display${eleccion}`);
 
     if (imgElement) {
-        imgElement.src = pokeort.src;
+        imgElement.src = pokeort.src_gif;
         imgElement.style.display = "block";
     } else {
         alert(`No se encontró el elemento con ID 'selected-pokeort-display${eleccion}'`);

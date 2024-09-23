@@ -96,11 +96,11 @@ console.log("PokeORT elegido:", PokeortElegidoActual);
 PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
 console.log("PokeORT enemigo elegido:", PokeortElegidoEnemigoActual);
 
-document.getElementById("ImagenAmiga1").src = pokeortElegido.src
+document.getElementById("ImagenAmiga1").src = pokeortElegido.src_gif_back;
 
 document.getElementById("ImagenAmiga2").style.display = "block";
 
-document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src
+document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
 
 document.querySelectorAll(".BotonDeEleciion").forEach(button => 
 {
@@ -109,7 +109,7 @@ button.style.display = "none";
 PokeortAmigos.forEach((pokeort, index) =>
 {
         const img = botones[index].querySelector(".ImagenesCambiables") 
-        img.src = pokeort.src  
+        img.src = pokeort.src; 
         const parrafo =  botones[index].querySelector(".ParrafosCambiables") 
         parrafo.textContent = pokeort.nombre       
         if (pokeort.nombre === PokeortElegidoId) 
@@ -118,6 +118,8 @@ PokeortAmigos.forEach((pokeort, index) =>
         }
 });
 
+document.getElementById("ImagenAmiga1").style.display="block";
+
 }
 function intercambiarPokeort(button, index)
 {
@@ -125,7 +127,7 @@ function intercambiarPokeort(button, index)
     const pokeortElegido = PokeortAmigos[index];
     const img = document.getElementById("ImagenAmiga1")
     img.style.display = "block"
-    img.src = pokeortElegido.src;
+    img.src = pokeortElegido.src_gif_back;
     
     PokeortElegidoActual = pokeortElegido;
     console.log("PokeORT elegido:", PokeortElegidoActual);
@@ -217,7 +219,7 @@ function realizarTurnoJugador()
 
         const PokeortElegidoEnemigo = PokeortEnemigos[valor]
         PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
-        document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src
+        document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif
         document.getElementById("ImagenAmiga2").style.display = "block";
 
 

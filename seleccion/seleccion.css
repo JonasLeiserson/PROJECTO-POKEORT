@@ -95,6 +95,11 @@ main {
     align-items: center;
     font-family: Kyiv;
     background-color: #3afa74;
+
+    .selected-pokeort-display1, .selected-pokeort-display2, .selected-pokeort-display3 {
+        width: 90%;
+        height: 55%;
+    }
 }
 
 .selected-pokeort-container {
@@ -156,11 +161,6 @@ footer {
     width: 100px;
 }
 }
-
-.pokeort-item {
-    background-color: blue;
-}
-
 
 #selected-pokeort-display 
 {
