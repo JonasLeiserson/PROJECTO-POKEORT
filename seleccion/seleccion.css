@@ -7,7 +7,7 @@ body {
     height: 100vh;
     width: 100vw;
     box-sizing: border-box;
-    background-image: url(../recursos/img/pollo.jpg);
+    background-image: url(../recursos/img/fondos/seleccion.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -157,6 +157,10 @@ footer {
 }
 }
 
+.pokeort-item {
+    background-color: blue;
+}
+
 
 #selected-pokeort-display 
 {
@@ -215,6 +219,10 @@ background-color: yellow;
 
 .BotonBloqueador 
 {
+    background-color: #a5f5a7;
+    border: 1px solid black;
+    font-family: Kyiv;
+    border-radius: 5px;
     position: absolute;
     top: 100px;
 }
