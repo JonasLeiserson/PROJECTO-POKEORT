@@ -5,45 +5,41 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
-app.use(bodyParser.json());
+// Configuración de CORS
+app.use(cors({
+    origin: '*', // Permite todos los orígenes
+    credentials: false // No se necesitan cookies
+}));
 
+app.use(bodyParser.json());
 
 app.get('/leer-datos', (req, res) => {
     fs.readFile('DatosPokeorts.json', 'utf8', (err, data) => {
         if (err) {
             console.error('Error al leer los datos:', err);
-            res.status(500).send('Error al leer los datos.');
-        } else {
-            res.send(data);
+            return res.status(500).send('Error al leer los datos.');
         }
+        res.send(data);
     });
 });
 
-
 app.post('/guardar-datos', (req, res) => {
-  
     fs.readFile('DatosPokeorts.json', 'utf8', (err, data) => {
         if (err) {
             console.error('Error al leer los datos:', err);
             return res.status(500).send('Error al leer los datos.');
         }
 
-    
         let datosExistentes = JSON.parse(data);
-
-        
         const nuevosDatos = req.body;
 
-        
+        // Actualiza los datos existentes
         datosExistentes.Pokeort1 = nuevosDatos.Pokeort1 || datosExistentes.Pokeort1;
         datosExistentes.Pokeort2 = nuevosDatos.Pokeort2 || datosExistentes.Pokeort2;
         datosExistentes.Pokeort3 = nuevosDatos.Pokeort3 || datosExistentes.Pokeort3;
         datosExistentes.PokeortEnemigo1 = nuevosDatos.PokeortEnemigo1 || datosExistentes.PokeortEnemigo1;
         datosExistentes.PokeortEnemigo2 = nuevosDatos.PokeortEnemigo2 || datosExistentes.PokeortEnemigo2;
         datosExistentes.PokeortEnemigo3 = nuevosDatos.PokeortEnemigo3 || datosExistentes.PokeortEnemigo3;
-        
-        
 
         // Guardar los datos combinados en el archivo JSON
         fs.writeFile('DatosPokeorts.json', JSON.stringify(datosExistentes, null, 2), (err) => {

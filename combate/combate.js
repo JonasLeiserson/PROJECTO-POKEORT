@@ -37,7 +37,7 @@ let turnoJugador = true;
 let MedirVelocidad;
 let valor = 0
 let TipoDeAtaque
-
+//TABLA DE TIPOS
 const efectividadTipos = {
     agua: {
         fuego: 2,  // Agua es 2x más fuerte contra Fuego
@@ -141,11 +141,12 @@ function Rendirse() {
     alert("Te rendiste");
 }
 
+//BATALLA
 function AdministrarBatalla(button) 
 {
-        const ataque = button.textContent.trim();    
+    const ataque = button.textContent.trim(); 
+
         
-        console.log(TipoDeAtaque)
         if (ataque === "agua")
             {
             console.log("Es un ataque de agua");
@@ -166,7 +167,6 @@ function AdministrarBatalla(button)
                         console.log("Es un ataque de Electricidad");
                         TipoDeAtaque = "electrico"
                         }
-    
 
 
 
@@ -204,6 +204,11 @@ function realizarTurnoJugador()
 
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
     PokeortElegidoEnemigoActual.vida -= daño;
+    if (PokeortElegidoEnemigoActual.vida < 0) 
+    {
+        PokeortElegidoEnemigoActual.vida = 0;
+    }
+
 
     console.log(`¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} causando ${daño} de daño!`);
     console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
@@ -233,8 +238,19 @@ return false;
 
 function realizarTurnoEnemigo()
 {
-    const daño = CalcularDañoEnemigo(PokeortElegidoEnemigoActual, PokeortElegidoActual);
+    const TipoDefensor = PokeortElegidoActual.Tipo1;
+    const  ElementoMasEfectivo = elegirAtaqueMasEfectivo(TipoDefensor)
+    console.log(TipoDeAtaque)
+    const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ElementoMasEfectivo);
+
     PokeortElegidoActual.vida -= daño;
+
+    if (PokeortElegidoEnemigoActual.vida < 0) 
+        {
+            PokeortElegidoEnemigoActual.vida = 0;
+        }
+
+        
 
     console.log(`¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} causando ${daño} de daño!`);
     console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
@@ -271,20 +287,28 @@ function realizarTurnoEnemigo()
 
 function CalcularDaño(atacante, defensor, TipoDeAtaque) 
 {
-    console.log(defensor);
     let daño =  Math.abs(atacante.atk - (defensor.defensa)/2);
     const modificador = efectividadTipos[TipoDeAtaque][defensor.Tipo1] || 1;
 
     daño = daño*modificador
-    console.log(modificador)
+    console.log("El ataque tiene una efectividad del: " + modificador)
     return daño;
 
 }
-function CalcularDañoEnemigo(atacante, defensor) 
-{
-    console.log(atacante);
-    console.log(defensor);
-    const daño =  Math.abs(atacante.atk - (defensor.defensa)/2);
-    return daño;
 
+function elegirAtaqueMasEfectivo(TipoDefensor) 
+{   
+    const efectividades = efectividadTipos[TipoDefensor];
+    let mejorEfectividad = 1;
+    let mejorAtaque = null;
+
+    for (const tipo in efectividades) {
+        const efectividad = efectividades[tipo];
+        if (efectividad > mejorEfectividad) {
+            mejorEfectividad = efectividad;
+            mejorAtaque = tipo;
+        }
+    }
+    return mejorAtaque;
 }
+

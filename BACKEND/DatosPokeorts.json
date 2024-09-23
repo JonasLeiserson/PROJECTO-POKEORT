@@ -139,6 +139,20 @@
     "pokeortID": "SKIBIDI"
   },
   "Pokeort1": {
+    "nombre": "MELONKEY",
+    "atk": 150,
+    "vida": 180,
+    "velocidad": 250,
+    "defensa": 200,
+    "Tipo1": "agua",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/melonkey.png",
+    "NumeroSecreto": 2,
+    "pokeortID": "MELONKEY"
+  },
+  "Pokeort2": {
     "nombre": "AMON GUS",
     "atk": 150,
     "vida": 180,
@@ -152,7 +166,7 @@
     "NumeroSecreto": 5,
     "pokeortID": "AMONGUS"
   },
-  "Pokeort2": {
+  "Pokeort3": {
     "nombre": "CHANCHORANCIO",
     "atk": 500,
     "vida": 100,
@@ -165,61 +179,47 @@
     "src": "../recursos/img/chancho rancio.png",
     "NumeroSecreto": 6,
     "pokeortID": "CHANCHORANCIO"
-  },
-  "Pokeort3": {
-    "nombre": "CARITA-FACHA",
-    "atk": 200,
-    "vida": 400,
-    "velocidad": 100,
-    "defensa": 200,
-    "Tipo1": "planta",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/carita fachera.png",
-    "NumeroSecreto": 9,
-    "pokeortID": "CARITAFACHA"
   },
   "PokeortEnemigo1": {
-    "nombre": "MACETONIO",
-    "atk": 200,
-    "vida": 400,
-    "velocidad": 100,
+    "nombre": "AMON GUS",
+    "atk": 150,
+    "vida": 180,
+    "velocidad": 250,
     "defensa": 200,
-    "Tipo1": "planta",
-    "Habilidad1": "PUÑO VELOZ",
+    "Tipo1": "agua",
+    "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/maseta rancia.png",
-    "NumeroSecreto": 8,
-    "pokeortID": "MACETONIO"
+    "src": "../recursos/img/among us.png",
+    "NumeroSecreto": 5,
+    "pokeortID": "AMONGUS"
   },
   "PokeortEnemigo2": {
-    "nombre": "GATO-RANCIO",
-    "atk": 200,
+    "nombre": "PICKCHEL",
+    "atk": 100,
     "vida": 200,
-    "velocidad": 200,
+    "velocidad": 300,
+    "defensa": 200,
+    "Tipo1": "electrico",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/pickchel.png",
+    "NumeroSecreto": 4,
+    "pokeortID": "PICKCHEL"
+  },
+  "PokeortEnemigo3": {
+    "nombre": "MELONKEY",
+    "atk": 150,
+    "vida": 180,
+    "velocidad": 250,
     "defensa": 200,
     "Tipo1": "agua",
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/gato rancio.png",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
-  },
-  "PokeortEnemigo3": {
-    "nombre": "CHANCHORANCIO",
-    "atk": 500,
-    "vida": 100,
-    "velocidad": 250,
-    "defensa": 50,
-    "Tipo1": "agua",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/chancho rancio.png",
-    "NumeroSecreto": 6,
-    "pokeortID": "CHANCHORANCIO"
+    "src": "../recursos/img/melonkey.png",
+    "NumeroSecreto": 2,
+    "pokeortID": "MELONKEY"
   }
 }
