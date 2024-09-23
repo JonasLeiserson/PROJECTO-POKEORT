@@ -102,9 +102,9 @@ document.getElementById("ImagenAmiga2").style.display = "block";
 
 document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
 
-document.querySelectorAll(".BotonDeEleciion").forEach(button => 
+document.querySelectorAll(".pokeortInicialEleccion").forEach(button => 
 {
-button.style.display = "none";
+button.style.display="none";
 });
 PokeortAmigos.forEach((pokeort, index) =>
 {
