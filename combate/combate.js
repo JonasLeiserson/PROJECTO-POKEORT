@@ -36,6 +36,35 @@ let botonSeleccionadoID = "";
 let turnoJugador = true;
 let MedirVelocidad;
 let valor = 0
+let TipoDeAtaque
+
+const efectividadTipos = {
+    agua: {
+        fuego: 2,  // Agua es 2x más fuerte contra Fuego
+        planta: 2, // Agua es 2x más fuerte contra Tierra
+        electrico: 0.5, // Agua es 0.5x efectivo contra Eléctrico
+        agua: 0.5  // Agua es 0.5x menos efectivo contra Agua
+    },
+    fuego: {
+        agua: 0.5,  // Fuego es 0.5x menos efectivo contra Agua
+        planta: 1,  // Fuego es neutral contra Tierra
+        electrico: 1,  // Fuego es neutral contra Eléctrico
+        fuego: 0.5   // Fuego es menos efectivo contra Fuego
+    },
+    planta: {
+        agua: 0.5,  // Tierra es 0.5x menos efectivo contra Agua
+        fuego: 2,  // Tierra es 2x más fuerte contra Fuego
+        electrico: 2,  // Tierra es 2x más fuerte contra Eléctrico
+        planta: 0.5   // Tierra es menos efectivo contra Tierra
+    },
+    electrico: {
+        agua: 2,  // Eléctrico es 2x más fuerte contra Agua
+        planta: 0.5,  // Eléctrico no tiene efecto contra Tierra
+        fuego: 1,  // Eléctrico es neutral contra Fuego
+        electrico: 0.5   // Eléctrico es menos efectivo contra Eléctrico
+    }
+};
+
 
 
 function mostrar_ataques() {
@@ -95,6 +124,7 @@ function intercambiarPokeort(button, index)
 
     const pokeortElegido = PokeortAmigos[index];
     const img = document.getElementById("ImagenAmiga1")
+    img.style.display = "block"
     img.src = pokeortElegido.src;
     
     PokeortElegidoActual = pokeortElegido;
@@ -111,9 +141,35 @@ function Rendirse() {
     alert("Te rendiste");
 }
 
-function AdministrarBatalla() 
+function AdministrarBatalla(button) 
 {
+        const ataque = button.textContent.trim();    
+        
+        console.log(TipoDeAtaque)
+        if (ataque === "agua")
+            {
+            console.log("Es un ataque de agua");
+            TipoDeAtaque = "agua"
+            }
+        else if (ataque === "planta")
+                {
+                console.log("Es un ataque de planta");
+                TipoDeAtaque = "planta"
+                }
+                else if (ataque === "fuego")
+                    {
+                    console.log("Es un ataque de Fuego");
+                    TipoDeAtaque = "fuego"
+                    }
+                    else if (ataque === "electrico")
+                        {
+                        console.log("Es un ataque de Electricidad");
+                        TipoDeAtaque = "electrico"
+                        }
     
+
+
+
         if(PokeortElegidoActual.velocidad  > PokeortElegidoEnemigoActual.velocidad)
         {
             if (realizarTurnoJugador()) return; 
@@ -146,7 +202,7 @@ function AdministrarBatalla()
 function realizarTurnoJugador() 
 {
 
-    const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual);
+    const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
     PokeortElegidoEnemigoActual.vida -= daño;
 
     console.log(`¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} causando ${daño} de daño!`);
@@ -173,33 +229,58 @@ function realizarTurnoJugador()
 }
 return false;
 }
+
+
 function realizarTurnoEnemigo()
 {
-    const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual);
+    const daño = CalcularDañoEnemigo(PokeortElegidoEnemigoActual, PokeortElegidoActual);
     PokeortElegidoActual.vida -= daño;
 
     console.log(`¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} causando ${daño} de daño!`);
     console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
 
-    if (PokeortElegidoActual.vida <= 0) {
+    if (PokeortElegidoActual.vida <= 0) 
+        {
         alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
-        document.getElementById("ImagenAmiga1").style.display = "none";
 
-    const index = PokeortAmigos.findIndex(pokeort => pokeort.nombre === PokeortElegidoActual.nombre);
-    PokeortAmigos.splice(index, 1);
+            mostrar_pokeort()
 
-        document.querySelectorAll(".BotonDeEleciion").forEach(button => 
+            document.querySelectorAll(".pokeort").forEach(button => 
             {
-
-                button.style.display = "block";
+                document.querySelectorAll(".pokeort").forEach(button => {
+                    const parrafo = button.querySelector(".ParrafosCambiables").textContent.trim();
+                    if (parrafo === PokeortElegidoActual.nombre) 
+                    {
+                        button.disabled = true;
+                        button.style.opacity = "0.5";
+                    } else 
+                    {
+                        button.style.display = "block"
+                        button.style.opacity = "1";
+                    }
+                });
+        
+                button.style.display = "block"
             });
+            document.getElementById("ImagenAmiga1").style.display = "none";
             return true;
     } 
     return false;
 }
 
 
-function CalcularDaño(atacante, defensor) 
+function CalcularDaño(atacante, defensor, TipoDeAtaque) 
+{
+    console.log(defensor);
+    let daño =  Math.abs(atacante.atk - (defensor.defensa)/2);
+    const modificador = efectividadTipos[TipoDeAtaque][defensor.Tipo1] || 1;
+
+    daño = daño*modificador
+    console.log(modificador)
+    return daño;
+
+}
+function CalcularDañoEnemigo(atacante, defensor) 
 {
     console.log(atacante);
     console.log(defensor);
@@ -207,4 +288,3 @@ function CalcularDaño(atacante, defensor)
     return daño;
 
 }
-
