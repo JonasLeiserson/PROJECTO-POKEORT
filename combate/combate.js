@@ -242,10 +242,6 @@ function realizarTurnoEnemigo()
     if (PokeortElegidoActual.vida <= 0) 
         {
         alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
-        
-
-    //const index = PokeortAmigos.findIndex(pokeort => pokeort.nombre === PokeortElegidoActual.nombre);
-    //PokeortAmigos.splice(index, 1)
 
             mostrar_pokeort()
 
