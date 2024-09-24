@@ -32,49 +32,63 @@
         </div>
     </div>
 
-    <div class="pokeort1">
-        <div class="barra-hp1">
-            <img style="display: none;" src="" alt="" class="pokeort1-img" id="ImagenAmiga1">
+    <header>
+        <div class="pokeort2">
+            <p class="pokeort-name" id="pokeort-name-2">Nombre pokeort</p>
+            <div class="barra-hp2">
+                <div class="vida"></div>
+            </div>
+            <img src="../recursos/img/among us.png" alt="" class="pokeort2-img" id="ImagenAmiga2">
         </div>
+    </header>
+
+<footer>
+    <div class="pokeort1">
+        <p class="pokeort-name" id="pokeort-name-1">Nombre PokeORT</p>
+        <div class="barra-hp1">
+            <div class="vida"></div>
+        </div>
+        <img style="display: none;" src="" alt="" class="pokeort1-img" id="ImagenAmiga1">
     </div>
-    
-    <div class="pokeort2">
-        <div class="barra-hp2"></div>
-        <img src="../recursos/img/among us.png" alt="" class="pokeort2-img" id="ImagenAmiga2">
-    </div>
+    <div class="menu">.
 
-
-    <div class="menu">
-
-        <button onclick="mostrar_ataques()" class="atacar option">Ataques</button>
-        <button onclick="mostrar_pokeort()" class="cambiar-pokeort option">Cambiar PokeORT</button>
-        <button class="rendirse option" onclick="Rendirse()">Rendirse</button>
-
-        <div id="ataques" class="ataques" style="display: none;">
+        <div class="ataques-cambios">
+            <div id="ataques" class="ataques" style="display: none;">
                 <button class="ataque" onclick="AdministrarBatalla(this)">agua</button>
                 <button class="ataque" onclick="AdministrarBatalla(this)"> planta </button>
                 <button class="ataque" onclick="AdministrarBatalla(this)">fuego</button>
                 <button class="ataque" onclick="AdministrarBatalla(this)">electrico</button>
         </div>
-
-        <div id="cambiar-pokeort" class="pokemon" style="display: none;">
-
-            <button class="pokeort" id="BotonDeCambio1" onclick="intercambiarPokeort(this, 0)">
+    
+        <div id="cambiar-pokeort" class="cambios" style="display: none;">
+    
+            <button class="pokeort-cambiable" id="BotonDeCambio1" onclick="intercambiarPokeort(this, 0)">
                 <img id="ImagenSeleccion" class="ImagenesCambiables">
                 <p id="paarrafo"  class="ParrafosCambiables"></p>
             </button>
-
-            <button class="pokeort" id="BotonDeCambio2" onclick="intercambiarPokeort(this, 1)"> 
+    
+            <button class="pokeort-cambiable" id="BotonDeCambio2" onclick="intercambiarPokeort(this, 1)"> 
                 <img id="ImagenSeleccion2"  class="ImagenesCambiables">
                 <p id="paarrafo2"  class="ParrafosCambiables"></p>
             </button>
-            
-            <button class="pokeort" id="BotonDeCambio3" onclick="intercambiarPokeort(this, 2)"> 
+    
+            <button class="pokeort-cambiable" id="BotonDeCambio3" onclick="intercambiarPokeort(this, 2)"> 
                 <img id="ImagenSeleccion3"  class="ImagenesCambiables">
                 <p id="paarrafo3"  class="ParrafosCambiables"></p >
             </button>
-
+    
         </div>
+        </div>
+        
+
+        <div class="opciones">
+            <button onclick="mostrar_ataques()" class="atacar option">Ataques</button>
+            <button onclick="mostrar_pokeort()" class="cambiar-pokeort option">Cambiar PokeORT</button>
+            <button class="rendirse option" onclick="Rendirse()">Rendirse</button>
+        </div>
+
+
     </div>
+</footer>
 </body>
 </html>

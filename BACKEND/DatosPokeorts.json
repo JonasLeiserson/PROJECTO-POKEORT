@@ -85,7 +85,7 @@
     "pokeortID": "AMONGUS"
   },
   "CHANCHORANCIO": {
-    "nombre": "CHANCHORANCIO",
+    "nombre": "HAWK",
     "atk": 500,
     "vida": 100,
     "velocidad": 250,
@@ -102,7 +102,7 @@
     "pokeortID": "CHANCHORANCIO"
   },
   "GATORANCIO": {
-    "nombre": "GATO-RANCIO",
+    "nombre": "CATH",
     "atk": 200,
     "vida": 200,
     "velocidad": 200,
@@ -203,7 +203,7 @@
     "pokeortID": "AMONGUS"
   },
   "Pokeort3": {
-    "nombre": "GATO-RANCIO",
+    "nombre": "CATH",
     "atk": 200,
     "vida": 200,
     "velocidad": 200,
@@ -220,38 +220,38 @@
     "pokeortID": "GATORANCIO"
   },
   "PokeortEnemigo1": {
-    "nombre": "CHANCHORANCIO",
-    "atk": 500,
-    "vida": 100,
-    "velocidad": 250,
-    "defensa": 50,
-    "Tipo1": "agua",
+    "nombre": "OWLEON",
+    "atk": 200,
+    "vida": 150,
+    "velocidad": 200,
+    "defensa": 200,
+    "Tipo1": "fuego",
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/pokeorts-static/front/chancho-rancio.png",
-    "src_back": "../recursos/img/pokeorts-static/back/chancho-rancio-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/chancho-rancio.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/chancho-rancio-back.gif",
-    "NumeroSecreto": 6,
-    "pokeortID": "CHANCHORANCIO"
+    "src": "../recursos/img/pokeorts-static/front/owleon.png",
+    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
+    "NumeroSecreto": 1,
+    "pokeortID": "OWLEON"
   },
   "PokeortEnemigo2": {
-    "nombre": "CARITA-FACHA",
-    "atk": 200,
-    "vida": 400,
-    "velocidad": 100,
+    "nombre": "PICKCHEL",
+    "atk": 100,
+    "vida": 200,
+    "velocidad": 300,
     "defensa": 200,
-    "Tipo1": "planta",
+    "Tipo1": "electrico",
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-    "src": "../recursos/img/pokeorts-static/front/carita-fachera.png",
-    "src_back": "../recursos/img/pokeorts-static/back/carita-fachera-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/carita-fachera.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/carita-fachera-back.gif",
-    "NumeroSecreto": 9,
-    "pokeortID": "CARITAFACHA"
+    "src": "../recursos/img/pokeorts-static/front/pickchel.png",
+    "src_back": "../recursos/img/pokeorts-static/back/pickchel-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/pickchel.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/pickchel-back.gif",
+    "NumeroSecreto": 4,
+    "pokeortID": "PICKCHEL"
   },
   "PokeortEnemigo3": {
     "nombre": "ROKTOM",
