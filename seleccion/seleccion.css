@@ -159,6 +159,7 @@ footer {
     margin-right: 50px;
     height: 100px;
     width: 100px;
+    image-rendering: pixelated;
 }
 }
 

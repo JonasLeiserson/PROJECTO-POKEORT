@@ -5,33 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combate</title>
     <link rel="stylesheet" href="combate.css">
+    <link rel="stylesheet" href="../recursos/fonts/fonts.css">
     <script src="combate.js"></script>
 </head>
 <body>
-    <div class="order1">
+    <div class="pokeortInicialEleccion">
+        <p>Elige tu primer PokeORT</p>
+        <div class="botones">
+            <button onclick="EleccionDePokeortInicial(this)" class="BotonDeEleccion" id="BotonDeEleccion1">
+                <p id="NombrePokeort1" class="ParrafoDeNombre"> </p>
+                <img src="" alt="" id="EleccionPrimerPokemon" class="ImagenCombate">
+                <div class="NombresPokeorts">Pokeort1</div>
+            </button>
+            
+            <button  onclick="EleccionDePokeortInicial(this)" class="BotonDeEleccion"  id="BotonDeEleccion2">
+                <p id="NombrePokeort2" class="ParrafoDeNombre"> </p>
+                <img src="" alt=""  id="EleccionPrimerPokemon2" class="ImagenCombate">
+                <div class="NombresPokeorts">Pokeort2</div>
+            </button>
+        
+            <button  onclick="EleccionDePokeortInicial(this)" class="BotonDeEleccion"  id="BotonDeEleccion3">
+                <p id="NombrePokeort3" class="ParrafoDeNombre"> </p>
+                <img src="" alt=""  id="EleccionPrimerPokemon3"class="ImagenCombate">
+                <div class="NombresPokeorts">Pokeort3</div>
+            </button> 
+        </div>
+    </div>
+
     <div class="pokeort1">
         <div class="barra-hp1">
             <img style="display: none;" src="" alt="" class="pokeort1-img" id="ImagenAmiga1">
         </div>
-
-        <button onclick="EleccionDePokeortInicial(this)" class="BotonDeEleciion" id="BotonDeEleccion1">
-            <p id="NombrePokeort1" class="ParrafoDeNombre"> </p>
-            <img src="" alt="" id="EleccionPrimerPokemon" class="ImagenCombate">
-            <div class="NombresPokeorts">Pokeort1</div>
-        </button>
-        
-        <button  onclick="EleccionDePokeortInicial(this)" class="BotonDeEleciion"  id="BotonDeEleccion2">
-            <p id="NombrePokeort2" class="ParrafoDeNombre"> </p>
-            <img src="" alt=""  id="EleccionPrimerPokemon2" class="ImagenCombate">
-            <div class="NombresPokeorts">Pokeort2</div>
-        </button>
-
-        <button  onclick="EleccionDePokeortInicial(this)" class="BotonDeEleciion"  id="BotonDeEleccion3">
-            <p id="NombrePokeort3" class="ParrafoDeNombre"> </p>
-            <img src="" alt=""  id="EleccionPrimerPokemon3"class="ImagenCombate">
-            <div class="NombresPokeorts">Pokeort3</div>
-        </button> 
-
     </div>
     
     <div class="pokeort2">
@@ -47,16 +51,10 @@
         <button class="rendirse option" onclick="Rendirse()">Rendirse</button>
 
         <div id="ataques" class="ataques" style="display: none;">
-            <div class="atk1-2">
-
                 <button class="ataque" onclick="AdministrarBatalla(this)">agua</button>
                 <button class="ataque" onclick="AdministrarBatalla(this)"> planta </button>
-            </div>
-            <div class="atk3-4">
                 <button class="ataque" onclick="AdministrarBatalla(this)">fuego</button>
                 <button class="ataque" onclick="AdministrarBatalla(this)">electrico</button>
-            </div>
-
         </div>
 
         <div id="cambiar-pokeort" class="pokemon" style="display: none;">
@@ -70,17 +68,13 @@
                 <img id="ImagenSeleccion2"  class="ImagenesCambiables">
                 <p id="paarrafo2"  class="ParrafosCambiables"></p>
             </button>
+            
             <button class="pokeort" id="BotonDeCambio3" onclick="intercambiarPokeort(this, 2)"> 
                 <img id="ImagenSeleccion3"  class="ImagenesCambiables">
                 <p id="paarrafo3"  class="ParrafosCambiables"></p >
             </button>
-            
-<<<<<<< HEAD
-        
-=======
->>>>>>> bc83031794eea8098bfa2440b78075cf47538d02
+
         </div>
-    </div>
     </div>
 </body>
 </html>
