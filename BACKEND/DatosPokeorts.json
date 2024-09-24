@@ -199,7 +199,6 @@
     "NumeroSecreto": 5,
     "pokeortID": "AMONGUS"
   },
-<<<<<<< HEAD
   "Pokeort3": {
     "nombre": "CHANCHORANCIO",
     "atk": 500,
@@ -207,15 +206,6 @@
     "velocidad": 250,
     "defensa": 50,
     "Tipo1": "agua",
-=======
-  "Pokeort2": {
-    "nombre": "ROKTOM",
-    "atk": 200,
-    "vida": 400,
-    "velocidad": 100,
-    "defensa": 200,
-    "Tipo1": "roca",
->>>>>>> bc83031794eea8098bfa2440b78075cf47538d02
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
@@ -226,7 +216,6 @@
     "NumeroSecreto": 3,
     "pokeortID": "ROKTOM"
   },
-<<<<<<< HEAD
   "PokeortEnemigo1": {
     "nombre": "AMON GUS",
     "atk": 150,
@@ -244,11 +233,6 @@
   "PokeortEnemigo2": {
     "nombre": "PICKCHEL",
     "atk": 100,
-=======
-  "Pokeort3": {
-    "nombre": "GATO-RANCIO",
-    "atk": 200,
->>>>>>> bc83031794eea8098bfa2440b78075cf47538d02
     "vida": 200,
     "velocidad": 300,
     "defensa": 200,
@@ -270,68 +254,8 @@
     "Habilidad1": 1,
     "Habilidad2": 1,
     "Habilidad3": 1,
-<<<<<<< HEAD
     "src": "../recursos/img/melonkey.png",
     "NumeroSecreto": 2,
     "pokeortID": "MELONKEY"
-=======
-    "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
-    "src_back": "../recursos/img/pokeorts-static/back/gato-rancio-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/gato-rancio.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/gato-rancio-back.gif",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
-  },
-  "PokeortEnemigo1": {
-    "nombre": "MELONKEY",
-    "atk": 150,
-    "vida": 180,
-    "velocidad": 250,
-    "defensa": 200,
-    "Tipo1": "agua",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/pokeorts-static/front/melonkey.png",
-    "src_back": "../recursos/img/pokeorts-static/back/melonkey-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/melonkey.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/melonkey-back.gif",
-    "NumeroSecreto": 2,
-    "pokeortID": "MELONKEY"
-  },
-  "PokeortEnemigo2": {
-    "nombre": "CARITA-FACHA",
-    "atk": 200,
-    "vida": 400,
-    "velocidad": 100,
-    "defensa": 200,
-    "Tipo1": "planta",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/pokeorts-static/front/carita-fachera.png",
-    "src_back": "../recursos/img/pokeorts-static/back/carita-fachera-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/carita-fachera.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/carita-fachera-back.gif",
-    "NumeroSecreto": 9,
-    "pokeortID": "CARITAFACHA"
-  },
-  "PokeortEnemigo3": {
-    "nombre": "GATO-RANCIO",
-    "atk": 200,
-    "vida": 200,
-    "velocidad": 200,
-    "defensa": 200,
-    "Tipo1": "agua",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
-    "src_back": "../recursos/img/pokeorts-static/back/gato-rancio-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/gato-rancio.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/gato-rancio-back.gif",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
->>>>>>> bc83031794eea8098bfa2440b78075cf47538d02
   }
 }
