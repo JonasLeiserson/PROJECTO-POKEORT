@@ -85,7 +85,7 @@
     "pokeortID": "AMONGUS"
   },
   "CHANCHORANCIO": {
-    "nombre": "CHANCHORANCIO",
+    "nombre": "HAWK",
     "atk": 500,
     "vida": 100,
     "velocidad": 250,
@@ -102,7 +102,7 @@
     "pokeortID": "CHANCHORANCIO"
   },
   "GATORANCIO": {
-    "nombre": "GATO-RANCIO",
+    "nombre": "CATH",
     "atk": 200,
     "vida": 200,
     "velocidad": 200,
@@ -186,7 +186,7 @@
     "pokeortID": "ROKTOM"
   },
   "Pokeort2": {
-    "nombre": "GATO-RANCIO",
+    "nombre": "CATH",
     "atk": 200,
     "vida": 200,
     "velocidad": 200,

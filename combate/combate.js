@@ -65,8 +65,6 @@ const efectividadTipos = {
     }
 };
 
-
-
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
     document.getElementById("cambiar-pokeort").style.display = "none";
@@ -96,11 +94,15 @@ console.log("PokeORT elegido:", PokeortElegidoActual);
 PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
 console.log("PokeORT enemigo elegido:", PokeortElegidoEnemigoActual);
 
+document.getElementById("pokeort-name-1").innerHTML = pokeortElegido.nombre;
+
 document.getElementById("ImagenAmiga1").src = pokeortElegido.src_gif_back;
 
 document.getElementById("ImagenAmiga2").style.display = "block";
 
 document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
+
+document.getElementById("pokeort-name-2").innerHTML = PokeortElegidoEnemigoActual.nombre;
 
 document.querySelectorAll(".pokeortInicialEleccion").forEach(button => 
 {
@@ -121,18 +123,22 @@ PokeortAmigos.forEach((pokeort, index) =>
 document.getElementById("ImagenAmiga1").style.display="block";
 
 }
+
 function intercambiarPokeort(button, index)
 {
 
     const pokeortElegido = PokeortAmigos[index];
-    const img = document.getElementById("ImagenAmiga1")
+    const img = document.getElementById("ImagenAmiga1");
+    const name = document.getElementById("pokeort-name-1");
+
+    name.innerHTML = pokeortElegido.nombre;
     img.style.display = "block"
     img.src = pokeortElegido.src_gif_back;
     
     PokeortElegidoActual = pokeortElegido;
     console.log("PokeORT elegido:", PokeortElegidoActual);
     
-    document.querySelectorAll(".pokeort").forEach(button => 
+    document.querySelectorAll(".pokeort-cambiable").forEach(button => 
         {
         button.style.display = "block";
         });
@@ -226,6 +232,7 @@ function realizarTurnoJugador()
         PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
         document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif
         document.getElementById("ImagenAmiga2").style.display = "block";
+        document.getElementById("pokeort-name-2").innerHTML = PokeortElegidoEnemigoActual.nombre;
 
 
         if(valor === 3)
@@ -263,9 +270,9 @@ function realizarTurnoEnemigo()
 
             mostrar_pokeort()
 
-            document.querySelectorAll(".pokeort").forEach(button => 
+            document.querySelectorAll(".pokeort-cambiable").forEach(button => 
             {
-                document.querySelectorAll(".pokeort").forEach(button => {
+                document.querySelectorAll(".pokeort-cambiable").forEach(button => {
                     const parrafo = button.querySelector(".ParrafosCambiables").textContent.trim();
                     if (parrafo === PokeortElegidoActual.nombre) 
                     {
@@ -313,4 +320,3 @@ function elegirAtaqueMasEfectivo(TipoDefensor)
     }
     return mejorAtaque;
 }
-
