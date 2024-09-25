@@ -15,9 +15,11 @@ body {
 }
 
 .pokeortInicialEleccion {
-height: 80%;
-width: 80%;
+height: 100%;
+width: 100%;
 position: fixed;
+background-image: url(../recursos/img/fondos/fondocombate.png);
+background-size: contain;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
@@ -30,7 +32,8 @@ z-index: 1;
     p {
         font-family: Kyiv;
         font-size: 30px;
-        margin: 0;
+        position: relative;
+        top: 5%;
     }
 
     .botones {
@@ -43,10 +46,20 @@ z-index: 1;
     }
 
     .BotonDeEleccion {
-        width: 30%;
-        height: 60%;
-    
+        width: 20%;
+        height: 40%;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+
+        &:hover {
+            background-color: whitesmoke;
+            cursor: pointer;
+        }
+
         img {
+            position: relative;
+            bottom: 10%;
             height: 60%;
             width: auto;
             image-rendering: pixelated;
@@ -167,6 +180,14 @@ footer {
             .option {
                 width: 80%;
                 height: 10%;
+                background-color: rgb(255, 255, 255);
+                border: none;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: whitesmoke;
+                    cursor: pointer;
+                }
             }
         }
         
@@ -181,10 +202,22 @@ footer {
                 justify-content: space-evenly;
                 align-items: center;
 
+                button {
+                    border: none;
+                    border-radius: 10px;
+                    background-color: white;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: whitesmoke;
+                        cursor: pointer;
+                    }
+                }
+
                 .pokeort-cambiable {
                     width: 30%;
                     height: auto;
-
+                    
                     .ImagenesCambiables {
                         width: 80%;
                         height: auto;
@@ -193,11 +226,54 @@ footer {
             }
 
             .ataques {
-                width: 70%;
+                width: 100%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
+                align-items: center;
+
+                .arriba {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    width: 100%;
+                    height: 50%;
+                    
+                    button {
+                        width: 40%;
+                        height: 74%;
+                        border: none;
+                        background: white;
+                        border-radius: 8px;
+
+                        &:hover {
+                            background-color: whitesmoke;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .abajo {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    width: 100%;
+                    height: 50%;
+
+                    button {
+                        width: 40%;
+                        height: 74%;
+                        border: none;
+                        background: white;
+                        border-radius: 8px;
+
+                        &:hover {
+                            background-color: whitesmoke;
+                            cursor: pointer;
+                        }
+                    }
+                }
             }
         }
     }

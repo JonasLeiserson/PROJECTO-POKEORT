@@ -65,8 +65,6 @@ const efectividadTipos = {
     }
 };
 
-
-
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
     document.getElementById("cambiar-pokeort").style.display = "none";
@@ -125,6 +123,7 @@ PokeortAmigos.forEach((pokeort, index) =>
 document.getElementById("ImagenAmiga1").style.display="block";
 
 }
+
 function intercambiarPokeort(button, index)
 {
 
@@ -321,4 +320,3 @@ function elegirAtaqueMasEfectivo(TipoDefensor)
     }
     return mejorAtaque;
 }
-
