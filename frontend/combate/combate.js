@@ -2,6 +2,7 @@ let PokeortAmigos = []
 let PokeortEnemigos = []
 let PokeortElegidoActual ;
 let PokeortElegidoEnemigoActual ;
+let cambiabdoPokeort 
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
@@ -143,6 +144,9 @@ function intercambiarPokeort(button, index)
         button.style.display = "block";
         });
         button.style.display = "none"
+
+         cambiabdoPokeort = true
+        AdministrarBatalla()
 }
 
 function Rendirse() {
@@ -152,6 +156,9 @@ function Rendirse() {
 //BATALLA
 function AdministrarBatalla(button) 
 {
+
+    if(cambiabdoPokeort = false) 
+    {
     const ataque = button.textContent.trim(); 
 
         
@@ -176,7 +183,7 @@ function AdministrarBatalla(button)
                         TipoDeAtaque = "electrico"
                         }
 
-
+    }
 
         if(PokeortElegidoActual.velocidad  > PokeortElegidoEnemigoActual.velocidad)
         {
@@ -209,7 +216,10 @@ function AdministrarBatalla(button)
 
 function realizarTurnoJugador() 
 {
-
+    if(cambiabdoPokeort = true) 
+    {
+        return true;
+    }
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
     PokeortElegidoEnemigoActual.vida -= daño;
     if (PokeortElegidoEnemigoActual.vida < 0) 
@@ -222,7 +232,7 @@ function realizarTurnoJugador()
     console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
 
     if (PokeortElegidoEnemigoActual.vida <= 0) 
-    {
+{
         alert(`${PokeortElegidoEnemigoActual.nombre} ha sido derrotado.`);
         document.getElementById("ImagenAmiga2").style.display = "none";
 
@@ -247,6 +257,7 @@ return false;
 
 function realizarTurnoEnemigo()
 {
+     cambiabdoPokeort =  false
     const TipoDefensor = PokeortElegidoActual.Tipo1;
     const  ElementoMasEfectivo = elegirAtaqueMasEfectivo(TipoDefensor)
     console.log(TipoDeAtaque)
@@ -307,16 +318,17 @@ function CalcularDaño(atacante, defensor, TipoDeAtaque)
 
 function elegirAtaqueMasEfectivo(TipoDefensor) 
 {   
-    const efectividades = efectividadTipos[TipoDefensor];
-    let mejorEfectividad = 1;
-    let mejorAtaque = null;
+    let mejorEfectividad = 0; 
+    let mejorAtaque = null; 
 
-    for (const tipo in efectividades) {
-        const efectividad = efectividades[tipo];
+    for (const tipo in efectividadTipos) {
+        const efectividad = efectividadTipos[tipo][TipoDefensor] || 1; 
+        
+        
         if (efectividad > mejorEfectividad) {
             mejorEfectividad = efectividad;
             mejorAtaque = tipo;
         }
     }
-    return mejorAtaque;
+    return mejorAtaque; 
 }

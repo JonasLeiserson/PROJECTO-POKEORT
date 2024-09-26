@@ -21,7 +21,7 @@ function inicializarInterfazConDatos() {
             const pokeortID = item.getAttribute('data-id');
 
             if (pokeortID && PokeORTS[pokeortID]) {
-                const pokeortData = PokeORTS[pokeortID];
+                const pokeortData = PokeORT  [pokeortID];
 
                 item.querySelector('.pokeort-name').textContent = pokeortData.nombre;
                 item.querySelector('.pokeort-img').src = pokeortData.src;
@@ -72,6 +72,8 @@ function BloquearPokeort(button) {
         alert("Selecciona un PokeORT Primero");
     }
 }
+
+
 
 function CambiarPokeort(button) {
     const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
