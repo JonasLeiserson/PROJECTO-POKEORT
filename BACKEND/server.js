@@ -7,8 +7,8 @@ const app = express();
 
 // Configuración de CORS
 app.use(cors({
-    origin: '*', // Permite todos los orígenes
-    credentials: false // No se necesitan cookies
+    origin: '*', 
+    credentials: false 
 }));
 
 app.use(bodyParser.json());
