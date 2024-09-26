@@ -2,7 +2,6 @@ let PokeortAmigos = []
 let PokeortEnemigos = []
 let PokeortElegidoActual ;
 let PokeortElegidoEnemigoActual ;
-let cambiabdoPokeort 
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
@@ -38,6 +37,7 @@ let turnoJugador = true;
 let MedirVelocidad;
 let valor = 0
 let TipoDeAtaque
+let cambiabdoPokeort = false
 //TABLA DE TIPOS
 const efectividadTipos = {
     agua: {
@@ -260,7 +260,6 @@ function realizarTurnoEnemigo()
      cambiabdoPokeort =  false
     const TipoDefensor = PokeortElegidoActual.Tipo1;
     const  ElementoMasEfectivo = elegirAtaqueMasEfectivo(TipoDefensor)
-    console.log(TipoDeAtaque)
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ElementoMasEfectivo);
 
     PokeortElegidoActual.vida -= daño;
