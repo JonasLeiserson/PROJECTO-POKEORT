@@ -1,3 +1,5 @@
+
+
 let PokeortAmigos = []
 let PokeortEnemigos = []
 let PokeortElegidoActual ;
@@ -7,11 +9,6 @@ window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
     .then(response => response.json())
     .then(data => {
-        if (!data.Pokeort1 || !data.Pokeort2 || !data.Pokeort3) {
-            console.error('Error: Datos incompletos recibidos del servidor.');
-            alert('Error: Datos incompletos recibidos del servidor.');
-            return;
-        }
 
         PokeortAmigos = [data.Pokeort1,  data.Pokeort2, data.Pokeort3];
         PokeortEnemigos = [data.PokeortEnemigo1, data.PokeortEnemigo2, data.PokeortEnemigo3]
@@ -41,31 +38,41 @@ let cambiabdoPokeort = false
 //TABLA DE TIPOS
 const efectividadTipos = {
     agua: {
-        fuego: 2,  // Agua es 2x más fuerte contra Fuego
-        planta: 2, // Agua es 2x más fuerte contra Tierra
-        electrico: 0.5, // Agua es 0.5x efectivo contra Eléctrico
-        agua: 0.5  // Agua es 0.5x menos efectivo contra Agua
+        fuego: 2,
+        planta: 0.5,
+        electrico: 0.5,
+        agua: 1,
+        roca: 2
     },
     fuego: {
-        agua: 0.5,  // Fuego es 0.5x menos efectivo contra Agua
-        planta: 1,  // Fuego es neutral contra Tierra
-        electrico: 1,  // Fuego es neutral contra Eléctrico
-        fuego: 0.5   // Fuego es menos efectivo contra Fuego
+        agua: 0.5,
+        planta: 2,
+        electrico: 1,
+        fuego: 1,
+        roca: 0.5
     },
     planta: {
-        agua: 0.5,  // Tierra es 0.5x menos efectivo contra Agua
-        fuego: 2,  // Tierra es 2x más fuerte contra Fuego
-        electrico: 2,  // Tierra es 2x más fuerte contra Eléctrico
-        planta: 0.5   // Tierra es menos efectivo contra Tierra
+        agua: 2,
+        fuego: 0.5,
+        electrico: 1,
+        planta: 1,
+        roca: 2
     },
     electrico: {
-        agua: 2,  // Eléctrico es 2x más fuerte contra Agua
-        planta: 0.5,  // Eléctrico no tiene efecto contra Tierra
-        fuego: 1,  // Eléctrico es neutral contra Fuego
-        electrico: 0.5   // Eléctrico es menos efectivo contra Eléctrico
+        agua: 2,
+        planta: 0.5,
+        fuego: 1,
+        electrico: 1,
+        roca: 0.5
+    },
+    roca: {
+        agua: 0.5,
+        planta: 0.5,
+        fuego: 2,
+        electrico: 2,
+        roca: 1
     }
 };
-
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
     document.getElementById("cambiar-pokeort").style.display = "none";
@@ -145,7 +152,7 @@ function intercambiarPokeort(button, index)
         });
         button.style.display = "none"
 
-         cambiabdoPokeort = true
+        cambiabdoPokeort = true
         AdministrarBatalla()
 }
 
@@ -157,29 +164,29 @@ function Rendirse() {
 function AdministrarBatalla(button) 
 {
 
-    if(cambiabdoPokeort = false) 
+    if(cambiabdoPokeort === false) 
     {
     const ataque = button.textContent.trim(); 
 
         
         if (ataque === "agua")
             {
-            console.log("Es un ataque de agua");
+            
             TipoDeAtaque = "agua"
             }
         else if (ataque === "planta")
                 {
-                console.log("Es un ataque de planta");
+                
                 TipoDeAtaque = "planta"
                 }
                 else if (ataque === "fuego")
                     {
-                    console.log("Es un ataque de Fuego");
+                    ;
                     TipoDeAtaque = "fuego"
                     }
                     else if (ataque === "electrico")
                         {
-                        console.log("Es un ataque de Electricidad");
+                        
                         TipoDeAtaque = "electrico"
                         }
 
@@ -216,7 +223,7 @@ function AdministrarBatalla(button)
 
 function realizarTurnoJugador() 
 {
-    if(cambiabdoPokeort = true) 
+    if(cambiabdoPokeort === true) 
     {
         return true;
     }
@@ -227,8 +234,9 @@ function realizarTurnoJugador()
         PokeortElegidoEnemigoActual.vida = 0;
     }
 
+    
+    console.log(`¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} con un ataque de tipo ${TipoDeAtaque} causando ${daño} de daño!`);
 
-    console.log(`¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} causando ${daño} de daño!`);
     console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
 
     if (PokeortElegidoEnemigoActual.vida <= 0) 
@@ -257,7 +265,7 @@ return false;
 
 function realizarTurnoEnemigo()
 {
-     cambiabdoPokeort =  false
+    cambiabdoPokeort =  false
     const TipoDefensor = PokeortElegidoActual.Tipo1;
     const  ElementoMasEfectivo = elegirAtaqueMasEfectivo(TipoDefensor)
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ElementoMasEfectivo);
@@ -271,7 +279,7 @@ function realizarTurnoEnemigo()
 
         
 
-    console.log(`¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} causando ${daño} de daño!`);
+    console.log(`¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con un ataque de tipo ${ElementoMasEfectivo} causando ${daño} de daño!`);
     console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
 
     if (PokeortElegidoActual.vida <= 0) 
@@ -310,24 +318,34 @@ function CalcularDaño(atacante, defensor, TipoDeAtaque)
     const modificador = efectividadTipos[TipoDeAtaque][defensor.Tipo1] || 1;
 
     daño = daño*modificador
-    console.log("El ataque tiene una efectividad del: " + modificador)
+    console.log("El ataque de " + TipoDeAtaque + " tiene una efectividad del: " + modificador + " en " + defensor.Tipo1)
     return daño;
 
 }
 
 function elegirAtaqueMasEfectivo(TipoDefensor) 
 {   
-    let mejorEfectividad = 0; 
+    let mejorEfectividad = 1; 
     let mejorAtaque = null; 
 
     for (const tipo in efectividadTipos) {
         const efectividad = efectividadTipos[tipo][TipoDefensor] || 1; 
         
         
-        if (efectividad > mejorEfectividad) {
+        if (efectividad > mejorEfectividad) 
+        {
             mejorEfectividad = efectividad;
             mejorAtaque = tipo;
         }
     }
     return mejorAtaque; 
+}
+function MostrarTabla() 
+{
+    
+    Tabla = document.getElementById("TablaDeTipos").style.display = "block"
+}
+function OcultarTabla() 
+{
+    Tabla = document.getElementById("TablaDeTipos").style.display = "none"
 }
