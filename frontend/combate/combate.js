@@ -262,7 +262,6 @@ function realizarTurnoJugador()
 return false;
 }
 
-
 function realizarTurnoEnemigo()
 {
     cambiabdoPokeort =  false
@@ -284,6 +283,8 @@ function realizarTurnoEnemigo()
 
     if (PokeortElegidoActual.vida <= 0) 
         {
+
+            
         alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
 
             mostrar_pokeort()

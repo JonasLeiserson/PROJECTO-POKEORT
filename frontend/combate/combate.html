@@ -32,27 +32,49 @@
         </div>
     </div>
 
+    <div> 
+        <button  id="BotonTablaDeTipos" onmouseover="MostrarTabla()" onmouseout="OcultarTabla()">Tabla De Tipos</button>
+        <p id="TablaDeTipos" style="display: none;">+-----------+--------+---------+---------+----------+-------+
+            | Tipo      | Agua   | Fuego   | Planta  | Eléctrico| Roca  |
+            +-----------+--------+---------+---------+----------+-------+
+            | Agua      | 1      | 0.5     | 2       | 0.5      | 2     |
+            +-----------+--------+---------+---------+----------+-------+
+            | Fuego     | 0.5    | 1       | 0.5     | 1        | 0.5   |
+            +-----------+--------+---------+---------+----------+-------+
+            | Planta    | 2      | 2       | 1       | 1        | 2     |
+            +-----------+--------+---------+---------+----------+-------+
+            | Eléctrico | 2      | 1       | 0.5     | 1        | 0.5   |
+            +-----------+--------+---------+---------+----------+-------+
+            | Roca      | 0.5    | 2       | 0.5     | 2        | 1     |
+            +-----------+--------+---------+---------+----------+-------+</p>
+    </div>
+
         <header>
-            <div> 
-                <button  id="BotonTablaDeTipos" onmouseover="MostrarTabla()" onmouseout="OcultarTabla()">Tabla De Tipos</button>
-                <p id="TablaDeTipos" style="display: none;">+-----------+--------+---------+---------+----------+-------+
-                    | Tipo      | Agua   | Fuego   | Planta  | Eléctrico| Roca  |
-                    +-----------+--------+---------+---------+----------+-------+
-                    | Agua      | 1      | 0.5     | 2       | 0.5      | 2     |
-                    +-----------+--------+---------+---------+----------+-------+
-                    | Fuego     | 0.5    | 1       | 0.5     | 1        | 0.5   |
-                    +-----------+--------+---------+---------+----------+-------+
-                    | Planta    | 2      | 2       | 1       | 1        | 2     |
-                    +-----------+--------+---------+---------+----------+-------+
-                    | Eléctrico | 2      | 1       | 0.5     | 1        | 0.5   |
-                    +-----------+--------+---------+---------+----------+-------+
-                    | Roca      | 0.5    | 2       | 0.5     | 2        | 1     |
-                    +-----------+--------+---------+---------+----------+-------+</p>
+            <div class="pokeort1">
+                <div class="head">
+                    <p class="pokeort-name" id="pokeort-name-1">Nombre pokeort</p>
+                    <div class="pokebolas">
+                        <div class="pokebola1 pokebola"></div>
+                        <div class="pokebola2 pokebola"></div>
+                        <div class="pokebola3 pokebola"></div>
+                    </div>
+                </div>
+                <div class="barra-hp1">
+                    <div class="vida"></div>
+                </div>
+                <img style="display: none;" src="" alt="" class="pokeort1-img" id="ImagenAmiga1">
             </div>
         
 
             <div class="pokeort2">
-                <p class="pokeort-name" id="pokeort-name-2">Nombre pokeort</p>
+                <div class="head">
+                    <p class="pokeort-name" id="pokeort-name-2">Nombre pokeort</p>
+                    <div class="pokebolas">
+                        <div class="pokebola1 pokebola"></div>
+                        <div class="pokebola2 pokebola"></div>
+                        <div class="pokebola3 pokebola"></div>
+                    </div>
+                </div>
                 <div class="barra-hp2">
                     <div class="vida"></div>
                 </div>
@@ -61,15 +83,7 @@
         </header>
     
     <footer>
-        <div class="pokeort1">
-            <p class="pokeort-name" id="pokeort-name-1">Nombre PokeORT</p>
-            <div class="barra-hp1">
-                <div class="vida"></div>
-            </div>
-            <img style="display: none;" src="" alt="" class="pokeort1-img" id="ImagenAmiga1">
-        </div>
-        <div class="menu">.
-    
+        <div class="menu">
             <div class="ataques-cambios">
                 <div id="ataques" class="ataques" style="display: none;">
                     <div class="arriba">
@@ -81,7 +95,6 @@
                         <button class="ataque" onclick="AdministrarBatalla(this)">fuego</button>
                         <button class="ataque" onclick="AdministrarBatalla(this)">electrico</button>
                     </div>
-    
             </div>
         
             <div id="cambiar-pokeort" class="cambios" style="display: none;">
