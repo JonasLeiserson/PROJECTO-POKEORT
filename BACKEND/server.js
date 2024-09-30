@@ -12,13 +12,13 @@ app.use(cors({
 app.use(bodyParser.json());
 
 app.get('/leer-datos', (req, res) => {
-    fs.readFile('DatosPokeorts.json', 'utf8', (err, data) => {
+    fs.readFile('DatosPokeorts.json', 'utf8', (data) => {
         res.send(data);
     });
 });
 
 app.post('/guardar-datos', (req, res) => {
-    fs.readFile('DatosPokeorts.json', 'utf8', (err, data) => {
+    fs.readFile('DatosPokeorts.json', 'utf8', (data) => {
         let datosExistentes = JSON.parse(data);
         const nuevosDatos = req.body;
 
@@ -30,10 +30,7 @@ app.post('/guardar-datos', (req, res) => {
         datosExistentes.PokeortEnemigo2 = nuevosDatos.PokeortEnemigo2 || datosExistentes.PokeortEnemigo2;
         datosExistentes.PokeortEnemigo3 = nuevosDatos.PokeortEnemigo3 || datosExistentes.PokeortEnemigo3;
 
-        fs.writeFile('DatosPokeorts.json', JSON.stringify(datosExistentes, null, 2), (err) => {
-            
-            res.send('Datos guardados con éxito.');
-        });
+    fs.writeFile('DatosPokeorts.json', JSON.stringify(datosExistentes, null, 2))
     });
 });
 

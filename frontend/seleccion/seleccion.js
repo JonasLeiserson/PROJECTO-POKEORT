@@ -83,13 +83,15 @@ function MostrarEstadisticas(button) {
     }
 }
 
-function BotonesCombinados(button) {
+function BotonesCombinados(button) 
+{
     CambiarPokeort(button);
 }
 
 let PokemonesEnemigos = [];
 
-function seleccionarPokeORTAleatorio() {
+function seleccionarPokeORTAleatorio() 
+{
     const pokeortIDs = Object.keys(PokeORTS);
     const numeroAleatorio = Math.floor(Math.random() * pokeortIDs.length);
     const pokeortIDAleatorio = pokeortIDs[numeroAleatorio];
