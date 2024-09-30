@@ -210,13 +210,7 @@ function realizarTurnoJugador() {
     return false;
 }
 
-<<<<<<< HEAD
-function realizarTurnoEnemigo()
-{
-    cambiabdoPokeort =  false
-    const TipoDefensor = PokeortElegidoActual.Tipo1;
-    const  ElementoMasEfectivo = elegirAtaqueMasEfectivo(TipoDefensor)
-=======
+
 function realizarTurnoEnemigo(tipoooo) {
 
     if(tipoooo) 
@@ -228,7 +222,7 @@ function realizarTurnoEnemigo(tipoooo) {
         TipoDefensor = PokeortElegidoActual.Tipo1;
     }
     const ElementoMasEfectivo = elegirAtaqueMasEfectivo(TipoDefensor);
->>>>>>> 3fd7b37be9e99c6c619da03526d8c825a7f95167
+
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ElementoMasEfectivo);
 
     PokeortElegidoActual.vida -= daño;
@@ -240,14 +234,7 @@ function realizarTurnoEnemigo(tipoooo) {
     console.log(`¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con un ataque de tipo ${ElementoMasEfectivo} causando ${daño} de daño!`);
     console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
 
-<<<<<<< HEAD
-    if (PokeortElegidoActual.vida <= 0) 
-        {
-
-            
-=======
     if (PokeortElegidoActual.vida <= 0) {
->>>>>>> 3fd7b37be9e99c6c619da03526d8c825a7f95167
         alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
         mostrar_pokeort();
 
