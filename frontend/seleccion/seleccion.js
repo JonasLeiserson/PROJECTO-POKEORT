@@ -16,7 +16,7 @@ function inicializarInterfazConDatos() {
         if (pokeortID && PokeORTS[pokeortID]) {
             const pokeortData = PokeORTS[pokeortID];
             item.querySelector('.pokeort-name').textContent = pokeortData.nombre;
-            item.querySelector('.pokeort-img').src = pokeortData.src;
+            item.querySelector('.pokeort-img').src = pokeortData.src_gif;
         }
     });
     for (let i = 0; i < 3; i++) {
@@ -123,4 +123,6 @@ function EnviarAlCombate() {
             window.location.href = "../combate/combate.html";
         });
     }
+
+    location.href="../combate/combate.html"
 }
