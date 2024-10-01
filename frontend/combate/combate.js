@@ -30,8 +30,7 @@ let turnoJugador = true;
 let MedirVelocidad;
 let valor = 0;
 let TipoDeAtaque;
-let cambiabdoPokeort = false;
-let cambioAutomatico = false;
+let cambioManual = true;
 
 // TABLA DE TIPOS
 const efectividadTipos = {
@@ -90,17 +89,22 @@ function EleccionDePokeortInicial(button) {
 
     document.getElementById("ImagenAmiga1").style.display = "block";
 }
+
+
 function Funciones(button, index)
 {
-    if(PokeortElegidoActual.vida <= 0)
+    if (PokeortElegidoActual.vida <= 0) 
     {
-        intercambiarPokeortConPokeortMuerto(button, index)
-    }
-    else
+        cambioManual = false; 
+        intercambiarPokeortConPokeortMuerto(button, index);
+    } 
+    else 
     {
-        intercambiarPokeort(button, index)
+        cambioManual = true; 
+        intercambiarPokeort(button, index);
     }
 }
+
 function intercambiarPokeort(button, index) {
     const pokeortElegido = PokeortAmigos[index];
     const img = document.getElementById("ImagenAmiga1");
@@ -118,7 +122,10 @@ function intercambiarPokeort(button, index) {
     });
     button.style.display = "none";
 
-    realizarTurnoEnemigo(PokeortElegidoActual.tipo)
+    if (cambioManual) 
+    {
+        realizarTurnoEnemigo(PokeortElegidoActual.tipo);
+    }
 }
 function intercambiarPokeortConPokeortMuerto(button, index) {
     const pokeortElegido = PokeortAmigos[index];
