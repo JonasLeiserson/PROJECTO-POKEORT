@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fsp = require('fs').promises;
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -23,8 +24,11 @@ app.get('/leer-datos', (req, res) =>
     });
 });
 
-app.post('/guardar-datos', (req, res) => {
-    fs.readFile('DatosPokeorts.json', 'utf8', (data) => {
+
+app.post('/guardar-datos', async (req, res) => {
+    try {
+        // Leer archivo de datos
+        const data = await fsp.readFile('DatosPokeorts.json', 'utf8');
         let datosExistentes = JSON.parse(data);
         const nuevosDatos = req.body;
 
@@ -36,8 +40,15 @@ app.post('/guardar-datos', (req, res) => {
         datosExistentes.PokeortEnemigo2 = nuevosDatos.PokeortEnemigo2 || datosExistentes.PokeortEnemigo2;
         datosExistentes.PokeortEnemigo3 = nuevosDatos.PokeortEnemigo3 || datosExistentes.PokeortEnemigo3;
 
-    fs.writeFile('DatosPokeorts.json', JSON.stringify(datosExistentes, null, 2))
-    });
+        // Escribir datos actualizados en el archivo
+        await fsp.writeFile('DatosPokeorts.json', JSON.stringify(datosExistentes, null, 2));
+
+        // Enviar respuesta de éxito
+        res.send('Datos actualizados correctamente.');
+    } catch (err) {
+        console.error('Error al leer o escribir el archivo:', err);
+        res.status(500).send('Ocurrió un error al procesar los datos.');
+    }
 });
 
 const PORT = 3000;

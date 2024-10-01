@@ -285,10 +285,10 @@ function elegirAtaqueMasEfectivo(TipoDefensor) {
     return mejorAtaque; 
 }
 
-function MostrarTabla() {
-    document.getElementById("TablaDeTipos").style.display = "block";
+function mostrarTabla() {
+    document.getElementById("aaa").style.display="flex";
 }
 
-function OcultarTabla() {
-    document.getElementById("TablaDeTipos").style.display = "none";
+function cerrarTabla() {
+    document.getElementById("aaa").style.display="none";
 }

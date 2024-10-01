@@ -123,6 +123,4 @@ function EnviarAlCombate() {
             window.location.href = "../combate/combate.html";
         });
     }
-
-    location.href="../combate/combate.html"
 }

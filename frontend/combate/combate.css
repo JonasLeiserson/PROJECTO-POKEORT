@@ -69,6 +69,35 @@ z-index: 1;
     }    
 }
 
+.aaa {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.cerrartabla {
+    width: 2%;
+    height: 3.8%;
+    z-index: 1;
+}
+
+.tabladetipos {
+    background-image: url(../recursos/img/fondos/tabladetipos.png);
+    background-size: cover;
+    position: fixed;
+    width: 60%;
+    height: 86.43%;
+}
+
+
+.menudearriba {
+    width: 100%;
+    display: flex;
+}
 
 header {
     width: 100%;
