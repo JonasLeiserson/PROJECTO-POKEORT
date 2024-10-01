@@ -131,7 +131,7 @@
     "src_atk_back": "../frontend/recursos/img/pokeort-atk/back/carita-atk-back.gif",
     "src_extra_back": "../frontend/recursos/img/pokeorts-static/back/carita-turbina-back.png",
     "src_extra_gif_back": "../frontend/recursos/img/pokeorts-gifs/back/carita-turbina-back.gif",
-    "src_extra_back_atk": "../frontend/recursos/img/pokeort-atk/back/carita-turbina-atk-back.gif",
+    "src_extra_atk_back": "../frontend/recursos/img/pokeort-atk/back/carita-turbina-atk-back.gif",
     "NumeroSecreto": 9,
     "pokeortID": "CARITAFACHA"
   },
