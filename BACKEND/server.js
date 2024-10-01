@@ -11,8 +11,14 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-app.get('/leer-datos', (req, res) => {
-    fs.readFile('DatosPokeorts.json', 'utf8', (data) => {
+app.get('/leer-datos', (req, res) => 
+{
+    fs.readFile('DatosPokeorts.json', 'utf8', (err, data) => {
+        if (err) 
+    {
+            console.error('Error al leer el archivo:', err);
+            return res.status(500).send('Error al leer los datos');
+    }
         res.send(data);
     });
 });
