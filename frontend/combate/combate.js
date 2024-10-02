@@ -28,7 +28,8 @@ let botonSeleccionado = null;
 let botonSeleccionadoID = "";
 let turnoJugador = true;
 let MedirVelocidad;
-let valor = 0;
+let valorEnemigo = 0;
+let valorJugador = 0
 let TipoDeAtaque;
 let cambioManual = true;
 
@@ -91,21 +92,20 @@ function EleccionDePokeortInicial(button) {
 }
 
 
-function Funciones(button, index)
-{
-    if (PokeortElegidoActual.vida <= 0) 
-    {
-        cambioManual = false; 
-        intercambiarPokeortConPokeortMuerto(button, index);
-    } 
-    else 
-    {
-        cambioManual = true; 
-        intercambiarPokeort(button, index);
-    }
-}
+
 
 function intercambiarPokeort(button, index) {
+
+    if (PokeortElegidoActual.vida <= 0) 
+        {
+            cambioManual = false; 
+        } 
+        else 
+        {
+            cambioManual = true; 
+        }
+    const TipoAnterior = PokeortElegidoActual.Tipo1
+
     const pokeortElegido = PokeortAmigos[index];
     const img = document.getElementById("ImagenAmiga1");
     const name = document.getElementById("pokeort-name-1");
@@ -121,28 +121,11 @@ function intercambiarPokeort(button, index) {
         button.style.display = "block";
     });
     button.style.display = "none";
-
+    
     if (cambioManual) 
     {
-        realizarTurnoEnemigo(PokeortElegidoActual.tipo);
+        realizarTurnoEnemigo(TipoAnterior);
     }
-}
-function intercambiarPokeortConPokeortMuerto(button, index) {
-    const pokeortElegido = PokeortAmigos[index];
-    const img = document.getElementById("ImagenAmiga1");
-    const name = document.getElementById("pokeort-name-1");
-
-    name.innerHTML = pokeortElegido.nombre;
-    img.style.display = "block";
-    img.src = pokeortElegido.src_gif_back;
-
-    PokeortElegidoActual = pokeortElegido;
-    console.log("PokeORT elegido:", PokeortElegidoActual);
-    
-    document.querySelectorAll(".pokeort-cambiable").forEach(button => {
-        button.style.display = "block";
-    });
-    button.style.display = "none";
 }
 
 
@@ -201,28 +184,35 @@ function realizarTurnoJugador() {
         alert(`${PokeortElegidoEnemigoActual.nombre} ha sido derrotado.`);
         document.getElementById("ImagenAmiga2").style.display = "none";
 
-        valor =+ 1;
+        valorEnemigo = valorEnemigo + 1;
         
-        const PokeortElegidoEnemigo = PokeortEnemigos[valor];
+        if (valorEnemigo === 3) 
+        {
+            alert("Ganaste");
+
+            const elementos = document.body.querySelectorAll("*");
+            elementos.forEach(elemento => {
+                elemento.style.display = "none";
+            });
+            return true
+        }
+        const PokeortElegidoEnemigo = PokeortEnemigos[valorEnemigo];
         PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
         document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
         document.getElementById("ImagenAmiga2").style.display = "block";
         document.getElementById("pokeort-name-2").innerHTML = PokeortElegidoEnemigoActual.nombre;
 
-        if (valor === 3) {
-            alert("Ganaste");
-        }   
         return true;
     }
     return false;
 }
 
 
-function realizarTurnoEnemigo(tipoooo) {
+function realizarTurnoEnemigo(TipoAnterior) {
 
-    if(tipoooo) 
+    if(TipoAnterior) 
     {
-        TipoDefensor = tipoooo
+        TipoDefensor = TipoAnterior
     }
     else 
     {
@@ -242,24 +232,25 @@ function realizarTurnoEnemigo(tipoooo) {
     console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
 
     if (PokeortElegidoActual.vida <= 0) {
+        cambioManual = false
         alert(`${PokeortElegidoActual.nombre} ha sido derrotado.`);
         mostrar_pokeort();
 
         document.querySelectorAll(".pokeort-cambiable").forEach(button => {
             const parrafo = button.querySelector(".ParrafosCambiables").textContent.trim();
-            if (parrafo === PokeortElegidoActual.nombre) {
+            if (parrafo === PokeortElegidoActual.nombre) 
+            {
+                button.style.display = "none"
                 button.disabled = true;
                 button.style.opacity = "0.5";
-            } else {
-                button.style.display = "block";
-                button.style.opacity = "1";
             }
+            
         });
 
         document.getElementById("ImagenAmiga1").style.display = "none";
 
-        const valor =+ 1;
-        if (valor === 3) 
+        valorJugador = valorJugador + 1;
+        if (valorJugador === 3) 
         {
             alert("Perdiste");
         }
@@ -273,7 +264,15 @@ function CalcularDaño(atacante, defensor, TipoDeAtaque) {
     const modificador = efectividadTipos[TipoDeAtaque][defensor.Tipo1] || 1;
 
     daño = daño * modificador;
-    console.log("El ataque de " + TipoDeAtaque + " tiene una efectividad del: " + modificador + " en " + defensor.Tipo1);
+
+    const ProbabilidadDecritico = generarNumeroAleatorio()
+    let critico = ""
+    if (ProbabilidadDecritico === 10)
+    {
+        daño = daño*2
+        critico = "ES UN ATAQUE CRITICO Y"
+    }
+    console.log("El ataque de " + TipoDeAtaque + critico + " tiene una efectividad del: *" + modificador + " en " + defensor.Tipo1);
     return daño;
 }
 
@@ -299,3 +298,8 @@ function mostrarTabla() {
 function cerrarTabla() {
     document.getElementById("aaa").style.display="none";
 }
+function generarNumeroAleatorio() 
+{
+    return Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+}
+
