@@ -2,7 +2,7 @@
   "OWLEON": {
     "nombre": "OWLEON",
     "atk": 200,
-    "vida": 1000,
+    "vida": 800,
     "velocidad": 200,
     "defensa": 200,
     "Tipo1": "fuego",
@@ -21,7 +21,7 @@
   "ROKTOM": {
     "nombre": "ROKTOM",
     "atk": 200,
-    "vida": 2000,
+    "vida": 1500,
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "roca",
@@ -40,7 +40,7 @@
   "AMONGUS": {
     "nombre": "AMONG US",
     "atk": 150,
-    "vida": 1500,
+    "vida": 1000,
     "velocidad": 250,
     "defensa": 200,
     "Tipo1": "agua",
@@ -59,7 +59,7 @@
   "CHANCHORANCIO": {
     "nombre": "CHANCHORANCIO",
     "atk": 500,
-    "vida": 1000,
+    "vida": 800,
     "velocidad": 250,
     "defensa": 50,
     "Tipo1": "agua",
@@ -78,7 +78,7 @@
   "GATORANCIO": {
     "nombre": "GATORANCIO",
     "atk": 200,
-    "vida": 1000,
+    "vida": 800,
     "velocidad": 200,
     "defensa": 200,
     "Tipo1": "roca",
@@ -97,7 +97,7 @@
   "MACETONIO": {
     "nombre": "MACETONIO",
     "atk": 200,
-    "vida": 1400,
+    "vida": 1000,
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "planta",
@@ -116,7 +116,7 @@
   "CARITAFACHA": {
     "nombre": "CARITA",
     "atk": 200,
-    "vida": 1300,
+    "vida": 900,
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "planta",
