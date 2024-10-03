@@ -79,20 +79,23 @@ z-index: 1;
     z-index: 10;
 
     .cerrartabla {
-        width: 2.8%;
-        height: 4.1%;
+        width: 2.3%;
+        height: 3.5%;
         z-index: 1;
         border: none;
-        background-color: rgb(61, 61, 61);
-        color: white;
+        background-color: white;
+        background-image: url('../recursos/img/iconos/x.png');
+        background-size: contain;
+        margin-top: 1px;
+        margin-right: 1px;
     }
 
     .tabladetipos {
         background-image: url(../recursos/img/fondos/tabladetipos.png);
         background-size: cover;
         position: fixed;
-        width: 926px;
-        height: 625px;
+        width: 600px;
+        height: 404.9px;
         display: flex;
         justify-content: end;
     }
@@ -102,6 +105,13 @@ z-index: 1;
 .menudearriba {
     width: 100%;
     display: flex;
+
+    button {
+        border: none;
+        background-color: white;
+        border-radius: 5px;
+        margin: 2px;
+    }
 }
 
 header {
@@ -247,6 +257,23 @@ footer {
         height: 100%;
         background-color: #4E4E4E;
         display: flex;
+
+
+        .accionPokeort-div {
+            width: 70%;
+            height: 30%;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .accionPokeort {
+                font-size: 200%;
+                color: white;
+                font-family: Kyiv;
+            }
+        }
+
 
         .opciones {
         height: 100%;

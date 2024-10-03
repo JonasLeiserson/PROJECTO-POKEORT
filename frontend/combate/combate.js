@@ -54,6 +54,14 @@ function mostrar_pokeort() {
     document.getElementById("cambiar-pokeort").style.display = "flex";
 }
 
+function ocultarTodo() {
+
+}
+
+function mostrarTodo() {
+    
+}
+
 function EleccionDePokeortInicial(button) {
     const botones = [
         document.getElementById("BotonDeCambio1"),
