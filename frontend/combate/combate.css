@@ -384,6 +384,18 @@ footer {
         }
     }
 }
+.Objetos 
+{
+    display: none;
+    button 
+    {
+        img 
+        {
+            width: 50%;
+            height: 50%;
+        }
 
+    }    
+}
 
 

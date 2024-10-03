@@ -77,7 +77,7 @@
     
     <footer>
         <div class="menu">
-            <div class="accionPokeort-div">
+            <div class="accionPokeort-div" id="SabioDejaDeRomperElCodigo">
                 <p id="accionPokeort" class="accionPokeort">Que deberia hacer <span>Nombre pokeort</span>?</p>
             </div>
 
@@ -112,13 +112,19 @@
                 </button>
         
             </div>
+            <div class="Objetos" id="DivDeObjetos">
+                <button onclick="Objetos(1)">
+                    <img src="../recursos/img/iconos/pociondevida.png">
+                    <p>pocion de vida</p>
+                </button>
+            </div>
             </div>
             
     
             <div class="opciones">
                 <button onclick="mostrar_ataques()" class="atacar option">Ataques</button>
                 <button onclick="mostrar_pokeort()" class="cambiar-pokeort option">Cambiar PokeORT</button>
-                <button class="rendirse option" onclick="Rendirse()">Rendirse</button>
+                <button class="rendirse option" onclick="MostrarObjetos()">Objetos</button>
             </div>
     
     

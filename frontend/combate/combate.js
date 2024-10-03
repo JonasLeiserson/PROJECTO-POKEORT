@@ -34,6 +34,7 @@ let valorEnemigo = 0;
 let valorJugador = 0
 let TipoDeAtaque;
 let cambioManual = true;
+let SeleccionandoObjeto = false
 
 // TABLA DE TIPOS
 const efectividadTipos = {
@@ -47,12 +48,26 @@ const efectividadTipos = {
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
     document.getElementById("cambiar-pokeort").style.display = "none";
+    document.getElementById("SabioDejaDeRomperElCodigo").style.display = "none";
 }
 
+function MostrarObjetos() {
+    document.getElementById("cambiar-pokeort").style.display = "none";
+    document.getElementById("SabioDejaDeRomperElCodigo").style.display = "none";
+    document.getElementById("ataques").style.display = "none";
+    document.getElementById("DivDeObjetos").style.display = "block" 
+}
 function mostrar_pokeort() {
     document.getElementById("ataques").style.display = "none";
+    document.getElementById("SabioDejaDeRomperElCodigo").style.display = "none";
     document.getElementById("cambiar-pokeort").style.display = "flex";
-}
+    if(SeleccionandoObjeto === true)
+    {
+        document.querySelectorAll('.cambios').forEach((item) => {
+            item.style.display = "block"
+        });
+    }
+    }
 
 function ocultarTodo() {
 
@@ -138,14 +153,6 @@ function intercambiarPokeort(button, index) {
     }
 }
 
-
-function Rendirse() {
-    alert("Te rendiste");
-    document.querySelectorAll('*').forEach(element => {
-        element.style.display = 'none';
-    });
-}
-
 // BATALLA
 function AdministrarBatalla(button) {
     
@@ -192,37 +199,15 @@ function bajarPokeball() {
         document.getElementById("pokebolaEnemiga3")
     ]
     
-    if (PokeortAmigosDerrotados.length === 1)
+    for (let i = 0; i < PokeortAmigosDerrotados.length; i++)
     {
-        vidasAmigas[0].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
+        vidasAmigas[i].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
     }
-
-    if (PokeortAmigosDerrotados.length === 2)
+    for (let i = 0; i < PokeortEnemigosDerrotados.length; i++) 
     {
-        vidasAmigas[1].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
-    }
-
-    if (PokeortAmigosDerrotados.length === 3)
-    {
-        vidasAmigas[2].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
-    }
-
-    if (PokeortEnemigosDerrotados.length === 1)
-    {
-        vidasEnemigas[0].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
-    }
-    
-    if (PokeortEnemigosDerrotados.length === 2)
-    {
-        vidasEnemigas[1].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
-    }
-    
-    if (PokeortEnemigosDerrotados.length === 3)
-    {
-        vidasEnemigas[2].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
+        vidasEnemigas[i].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
     }
 }
-
 
 function realizarTurnoJugador() {
     
@@ -361,4 +346,13 @@ function generarNumeroAleatorio()
 {
     return Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 }
-
+function Objetos(PocionDeQue) 
+{
+    let Efecto
+    if(PocionDeQue === 1)
+    {
+        Efecto = "curar"
+    }
+    SeleccionandoObjeto = true 
+    mostrar_pokeort(Efecto)
+}
