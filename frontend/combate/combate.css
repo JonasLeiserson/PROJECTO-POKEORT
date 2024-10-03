@@ -77,20 +77,25 @@ z-index: 1;
     justify-content: center;
     align-items: center;
     z-index: 10;
-}
 
-.cerrartabla {
-    width: 2%;
-    height: 3.8%;
-    z-index: 1;
-}
+    .cerrartabla {
+        width: 2.8%;
+        height: 4.1%;
+        z-index: 1;
+        border: none;
+        background-color: rgb(61, 61, 61);
+        color: white;
+    }
 
-.tabladetipos {
-    background-image: url(../recursos/img/fondos/tabladetipos.png);
-    background-size: cover;
-    position: fixed;
-    width: 60%;
-    height: 86.43%;
+    .tabladetipos {
+        background-image: url(../recursos/img/fondos/tabladetipos.png);
+        background-size: cover;
+        position: fixed;
+        width: 926px;
+        height: 625px;
+        display: flex;
+        justify-content: end;
+    }
 }
 
 

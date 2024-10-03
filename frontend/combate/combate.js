@@ -2,6 +2,8 @@ let PokeortAmigos = [];
 let PokeortEnemigos = [];
 let PokeortElegidoActual;
 let PokeortElegidoEnemigoActual;
+let PokeortAmigosDerrotados = [];
+let PokeortEnemigosDerrotados = [];
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
@@ -35,11 +37,11 @@ let cambioManual = true;
 
 // TABLA DE TIPOS
 const efectividadTipos = {
-    agua: { fuego: 2, planta: 0.5, electrico: 0.5, agua: 1, roca: 2 },
+    agua: { fuego: 2, planta: 0.5, electrico: 1, agua: 1, roca: 2 },
     fuego: { agua: 0.5, planta: 2, electrico: 1, fuego: 1, roca: 0.5 },
-    planta: { agua: 2, fuego: 0.5, electrico: 1, planta: 1, roca: 2 },
+    planta: { agua: 2, fuego: 0.5, electrico: 1, planta: 0.5, roca: 2 },
     electrico: { agua: 2, planta: 0.5, fuego: 1, electrico: 1, roca: 0.5 },
-    roca: { agua: 0.5, planta: 0.5, fuego: 2, electrico: 2, roca: 1 }
+    roca: { agua: 0.5, planta: 1, fuego: 2, electrico: 2, roca: 1 }
 };
 
 function mostrar_ataques() {
@@ -169,12 +171,59 @@ function AdministrarBatalla(button) {
     }
 }
 
+function bajarPokeball() {
+    const vidasAmigas = [
+        document.getElementById("pokebolaAmiga1"),
+        document.getElementById("pokebolaAmiga2"),
+        document.getElementById("pokebolaAmiga3")
+    ]
+
+    const vidasEnemigas = [
+        document.getElementById("pokebolaEnemiga1"),
+        document.getElementById("pokebolaEnemiga2"),
+        document.getElementById("pokebolaEnemiga3")
+    ]
+    
+    if (PokeortAmigosDerrotados.length === 1)
+    {
+        vidasAmigas[0].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
+    }
+
+    if (PokeortAmigosDerrotados.length === 2)
+    {
+        vidasAmigas[1].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
+    }
+
+    if (PokeortAmigosDerrotados.length === 3)
+    {
+        vidasAmigas[2].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
+    }
+
+    if (PokeortEnemigosDerrotados.length === 1)
+    {
+        vidasEnemigas[0].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
+    }
+    
+    if (PokeortEnemigosDerrotados.length === 2)
+    {
+        vidasEnemigas[1].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
+    }
+    
+    if (PokeortEnemigosDerrotados.length === 3)
+    {
+        vidasEnemigas[2].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
+    }
+}
+
+
 function realizarTurnoJugador() {
     
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
     PokeortElegidoEnemigoActual.vida -= daño;
-    if (PokeortElegidoEnemigoActual.vida < 0) {
+    if (PokeortElegidoEnemigoActual.vida <= 0) {
         PokeortElegidoEnemigoActual.vida = 0;
+        PokeortEnemigosDerrotados.push(PokeortElegidoEnemigoActual.nombre)
+        bajarPokeball()
     }
 
     console.log(`¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} con un ataque de tipo ${TipoDeAtaque} causando ${daño} de daño!`);
@@ -224,8 +273,10 @@ function realizarTurnoEnemigo(TipoAnterior) {
 
     PokeortElegidoActual.vida -= daño;
 
-    if (PokeortElegidoEnemigoActual.vida < 0) {
-        PokeortElegidoEnemigoActual.vida = 0;
+    if (PokeortElegidoActual.vida <= 0) {
+        PokeortElegidoActual.vida = 0;
+        PokeortAmigosDerrotados.push(PokeortElegidoActual.nombre);
+        bajarPokeball();
     }
 
     console.log(`¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con un ataque de tipo ${ElementoMasEfectivo} causando ${daño} de daño!`);

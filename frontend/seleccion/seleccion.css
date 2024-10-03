@@ -99,6 +99,7 @@ main {
     .selected-pokeort-display1, .selected-pokeort-display2, .selected-pokeort-display3 {
         width: 90%;
         height: 55%;
+        image-rendering: pixelated;
     }
 }
 
