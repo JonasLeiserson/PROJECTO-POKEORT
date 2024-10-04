@@ -4,6 +4,7 @@ let PokeortElegidoActual;
 let PokeortElegidoEnemigoActual;
 let PokeortAmigosDerrotados = [];
 let PokeortEnemigosDerrotados = [];
+let orden = "";
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos')
@@ -48,18 +49,18 @@ const efectividadTipos = {
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
     document.getElementById("cambiar-pokeort").style.display = "none";
-    document.getElementById("SabioDejaDeRomperElCodigo").style.display = "none";
+    document.getElementById("accionPokeort-div").style.display = "none";
 }
 
 function MostrarObjetos() {
     document.getElementById("cambiar-pokeort").style.display = "none";
-    document.getElementById("SabioDejaDeRomperElCodigo").style.display = "none";
+    document.getElementById("accionPokeort-div").style.display = "none";
     document.getElementById("ataques").style.display = "none";
-    document.getElementById("DivDeObjetos").style.display = "block" 
+    document.getElementById("DivDeObjetos").style.display = "flex";
 }
 function mostrar_pokeort() {
     document.getElementById("ataques").style.display = "none";
-    document.getElementById("SabioDejaDeRomperElCodigo").style.display = "none";
+    document.getElementById("accionPokeort-div").style.display = "none";
     document.getElementById("cambiar-pokeort").style.display = "flex";
     if(SeleccionandoObjeto === true)
     {
@@ -70,11 +71,10 @@ function mostrar_pokeort() {
     }
 
 function ocultarTodo() {
-
-}
-
-function mostrarTodo() {
-    
+    document.getElementById("ataques").style.display = "none";
+    document.getElementById("cambiar-pokeort").style.display = "none";
+    document.getElementById("DivDeObjetos").style.display = "none";
+    document.getElementById("accionPokeort-div").style.display = "flex";
 }
 
 function EleccionDePokeortInicial(button) {
@@ -94,6 +94,7 @@ function EleccionDePokeortInicial(button) {
     PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
     console.log("PokeORT enemigo elegido:", PokeortElegidoEnemigoActual);
 
+    document.getElementById("pokeort-name-menu").innerHTML = pokeortElegido.nombre;
     document.getElementById("pokeort-name-1").innerHTML = pokeortElegido.nombre;
     document.getElementById("ImagenAmiga1").src = pokeortElegido.src_gif_back;
     document.getElementById("ImagenAmiga2").style.display = "block";
@@ -134,8 +135,10 @@ function intercambiarPokeort(button, index) {
     const pokeortElegido = PokeortAmigos[index];
     const img = document.getElementById("ImagenAmiga1");
     const name = document.getElementById("pokeort-name-1");
+    const name_menu = document.getElementById("pokeort-name-menu")
 
     name.innerHTML = pokeortElegido.nombre;
+    name_menu.innerHTML = pokeortElegido.nombre;
     img.style.display = "block";
     img.src = pokeortElegido.src_gif_back;
 
@@ -171,17 +174,21 @@ function AdministrarBatalla(button) {
     if (PokeortElegidoActual.velocidad > PokeortElegidoEnemigoActual.velocidad) {
         if (realizarTurnoJugador()) return; 
         if (realizarTurnoEnemigo()) return;
+        orden = "jugador";
     } else if (PokeortElegidoActual.velocidad < PokeortElegidoEnemigoActual.velocidad) { 
         if (realizarTurnoEnemigo()) return; 
         if (realizarTurnoJugador()) return;
+        orden = "enemigo";
     } else {
         const Aleatorio = Math.floor(Math.random() * 2) + 1;
         if (Aleatorio === 1) {
             if (realizarTurnoJugador()) return; 
             if (realizarTurnoEnemigo()) return;
+            orden = "jugador";
         } else if (Aleatorio === 2) { 
             if (realizarTurnoEnemigo()) return; 
             if (realizarTurnoJugador()) return;
+            orden = "enemigo";
         }
     }
 }
@@ -209,6 +216,25 @@ function bajarPokeball() {
     }
 }
 
+function accionPokeort(atacante, defensor, daño, tipoAtaque) {
+    let accionPokeort = document.getElementById("accionPokeort");
+
+    setTimeout(() => {
+        accionPokeort.innerHTML = `¡${atacante.nombre} ataca a ${defensor.nombre} con un ataque de tipo ${tipoAtaque}, causando ${daño} de daño!`;
+
+        setTimeout(() => {
+            accionPokeort.textContent = `${defensor.nombre} tiene ahora ${defensor.vida} de vida.`;
+
+            if (defensor.vida <= 0) {
+                setTimeout(() => {
+                    accionPokeort.textContent = `${defensor.nombre} ha sido derrotado.`;
+                }, 1000);
+            }
+
+        }, 1000);
+    }, 1000);
+}
+
 function realizarTurnoJugador() {
     
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
@@ -219,7 +245,7 @@ function realizarTurnoJugador() {
         bajarPokeball()
     }
 
-    console.log(`¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} con un ataque de tipo ${TipoDeAtaque} causando ${daño} de daño!`);
+    console.log( `¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} con un ataque de tipo ${TipoDeAtaque}, causando ${daño} de daño!`);
     console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
 
     if (PokeortElegidoEnemigoActual.vida <= 0) {
@@ -246,6 +272,8 @@ function realizarTurnoJugador() {
 
         return true;
     }
+
+    ocultarTodo();
     return false;
 }
 
@@ -272,7 +300,7 @@ function realizarTurnoEnemigo(TipoAnterior) {
         bajarPokeball();
     }
 
-    console.log(`¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con un ataque de tipo ${ElementoMasEfectivo} causando ${daño} de daño!`);
+    console.log( `¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con un ataque de tipo ${ElementoMasEfectivo}, causando ${daño} de daño!`);
     console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
 
     if (PokeortElegidoActual.vida <= 0) {
@@ -342,10 +370,12 @@ function mostrarTabla() {
 function cerrarTabla() {
     document.getElementById("aaa").style.display="none";
 }
+
 function generarNumeroAleatorio() 
 {
     return Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 }
+
 function Objetos(PocionDeQue) 
 {
     let Efecto
@@ -356,3 +386,4 @@ function Objetos(PocionDeQue)
     SeleccionandoObjeto = true 
     mostrar_pokeort(Efecto)
 }
+

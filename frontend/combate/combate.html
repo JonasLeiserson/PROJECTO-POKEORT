@@ -77,11 +77,14 @@
     
     <footer>
         <div class="menu">
-            <div class="accionPokeort-div" id="SabioDejaDeRomperElCodigo">
-                <p id="accionPokeort" class="accionPokeort">Que deberia hacer <span>Nombre pokeort</span>?</p>
-            </div>
+
 
             <div class="ataques-cambios">
+
+                <div class="accionPokeort-div" id="accionPokeort-div">
+                    <p id="accionPokeort" class="accionPokeort">¿Que deberia hacer <span id="pokeort-name-menu">Nombre pokeort</span>?</p>
+                </div>
+
                 <div id="ataques" class="ataques" style="display: none;">
                     <div class="arriba">
                         <button class="ataque" onclick="AdministrarBatalla(this)">agua</button>
@@ -92,7 +95,7 @@
                         <button class="ataque" onclick="AdministrarBatalla(this)">fuego</button>
                         <button class="ataque" onclick="AdministrarBatalla(this)">electrico</button>
                     </div>
-            </div>
+                </div>
         
             <div id="cambiar-pokeort" class="cambios" style="display: none;">
         
@@ -112,10 +115,11 @@
                 </button>
         
             </div>
-            <div class="Objetos" id="DivDeObjetos">
-                <button onclick="Objetos(1)">
-                    <img src="../recursos/img/iconos/pociondevida.png">
-                    <p>pocion de vida</p>
+
+            <div class="objetos-menu" id="DivDeObjetos">
+                <button class="objeto" onclick="Objetos(1)">
+                    <img class="objeto-img" src="../recursos/img/iconos/pociondevida.png">
+                    <p class="objeto-name">Poción de vida</p>
                 </button>
             </div>
             </div>
