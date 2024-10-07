@@ -64,7 +64,7 @@ function mostrar_pokeort() {
     if(SeleccionandoObjeto === true)
     {
         document.querySelectorAll('.cambios').forEach((item) => {
-            item.style.display = "block"
+            item.style.display = "flex";
         });
     }
     }
@@ -159,6 +159,8 @@ function intercambiarPokeort(button, index) {
     });
     button.style.display = "none";
     
+
+    
     if (cambioManual) 
     {
         realizarTurnoEnemigo(TipoAnterior);
@@ -169,6 +171,10 @@ function intercambiarPokeort(button, index) {
                 boton.style.opacity = '1'
             });
         }, 6000)
+    }
+    else 
+    {
+        document.getElementById("pokeort1").style.opacity = '1';
     }
 
     ocultarTodo();
@@ -415,6 +421,8 @@ function realizarTurnoEnemigo(TipoAnterior) {
             cambioManual = false
             PokeortAmigosDerrotados.push(PokeortElegidoActual.nombre);
             bajarPokeball();
+            document.getElementById("pokeort1").style.opacity = '0';
+
             mostrar_pokeort();
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
             botones.forEach(boton => {

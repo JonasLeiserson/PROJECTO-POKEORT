@@ -135,7 +135,8 @@ header {
                 width: 50%;
                 justify-content: end;
                 margin-top: 6%;
-                position: inherit;
+                position: relative;
+                right: 10%;
             }
             
             .pokebola {
@@ -147,12 +148,12 @@ header {
             }
 
             .pokeort-name {
-                width: 30%;
+                width: 40%;
                 margin: none;
                 margin-left: 10%;
                 margin-top: 5%;
                 font-family: Kyiv;
-                font-size: 20px;
+                font-size: auto;
             }
         }
 
@@ -197,6 +198,8 @@ header {
                 width: 50%;
                 justify-content: end;
                 margin-top: 6%;
+                position: relative;
+                right: 10%;
             }
             
             .pokebola {
@@ -209,12 +212,12 @@ header {
 
 
             .pokeort-name {
-                width: 30%;
+                width: 40%;
                 margin: none;
                 margin-left: 10%;
                 margin-top: 5%;
                 font-family: Kyiv;
-                font-size: 20px;
+                font-size: auto;
             }
         }
 
