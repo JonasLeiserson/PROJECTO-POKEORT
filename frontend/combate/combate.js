@@ -6,7 +6,7 @@ let PokeortAmigosDerrotados = [];
 let PokeortEnemigosDerrotados = [];
 
 window.onload = function() {
-    fetch('http://localhost:3000/leer-datos')
+    fetch('http://localhost:3000/leer-datos-de-pokeorts')
     .then(response => response.json())
     .then(data => {
         PokeortAmigos = [data.Pokeort1, data.Pokeort2, data.Pokeort3];

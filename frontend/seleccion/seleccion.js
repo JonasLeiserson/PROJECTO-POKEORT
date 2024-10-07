@@ -119,7 +119,8 @@ function EnviarAlCombate() {
             body: JSON.stringify(datos)
         })
         .then(response => response.text())
-        .then(data => {
+        .then(data => 
+        {
             window.location.href = "../combate/combate.html";
         });
     }
