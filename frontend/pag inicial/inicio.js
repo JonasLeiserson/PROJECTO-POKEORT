@@ -4,6 +4,7 @@ const menu_creditos = document.getElementById("creditos-menu");
 
 creditos.addEventListener("click", () => {
     menu_creditos.classList.add("show");
+
 });
 
 cerrar.addEventListener("click", () => {
