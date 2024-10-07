@@ -9,3 +9,9 @@
     src: url("kyiv/KyivTypeTitling-Bold.otf") format("OpenType");
     font-weight: 600;
 }
+
+@font-face {
+    font-family: "ABeeZee";
+    src: url("abeezee/ABeeZee-Regular.ttf") format("TrueType");
+    font-weight: 400;
+}

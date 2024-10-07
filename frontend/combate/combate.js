@@ -329,10 +329,14 @@ function realizarTurnoJugador() {
     let opciones = document.getElementById('opciones');
     let botones = opciones.querySelectorAll('button');
     let accion_Pokeort = document.getElementById("accionPokeort");
+    let img = document.getElementById("ImagenAmiga1")
+
+    img.src = PokeortElegidoActual.src_atk_back;
 
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
 
     PokeortElegidoEnemigoActual.vida -= daño;
+    
 
     ocultarTodo();
     accionPokeort(PokeortElegidoActual, PokeortElegidoEnemigoActual, daño, TipoDeAtaque);
@@ -374,6 +378,7 @@ function realizarTurnoJugador() {
 
             bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);
         }
+        img.src = PokeortElegidoActual.src_gif_back;
     }, 6000)
 
     if (PokeortElegidoEnemigoActual.vida <= 0) {
@@ -390,6 +395,7 @@ function realizarTurnoEnemigo(TipoAnterior) {
     let opciones = document.getElementById('opciones');
     let botones = opciones.querySelectorAll('button');
     let accion_Pokeort = document.getElementById("accionPokeort");
+    let img = document.getElementById("ImagenAmiga2");
 
     if(TipoAnterior) 
     {
@@ -403,7 +409,7 @@ function realizarTurnoEnemigo(TipoAnterior) {
 
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ElementoMasEfectivo);
 
-
+    img.src = PokeortElegidoEnemigoActual.src_atk;
     PokeortElegidoActual.vida -= daño;
 
     ocultarTodo();
@@ -449,6 +455,8 @@ function realizarTurnoEnemigo(TipoAnterior) {
                 alert("Perdiste");
             }
         }
+
+        img.src = PokeortElegidoEnemigoActual.src_gif;
     }, 6000)
 
     if (PokeortElegidoActual.vida <= 0) {
