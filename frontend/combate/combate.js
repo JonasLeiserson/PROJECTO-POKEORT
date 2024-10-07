@@ -124,9 +124,10 @@ let buttons = [
 ]
 
 function intercambiarPokeort(button, index) {
-
-
     let accion_Pokeort = document.getElementById("accionPokeort");
+    let barraDeVidaAmigo = document.getElementById("vidaAmigo");
+    let opciones = document.getElementById('opciones');
+    let botones = opciones.querySelectorAll('button');
 
     if (PokeortElegidoActual.vida <= 0) 
         {
@@ -149,6 +150,8 @@ function intercambiarPokeort(button, index) {
     img.src = pokeortElegido.src_gif_back;
 
     PokeortElegidoActual = pokeortElegido;
+    bajarBarraDeVida(PokeortElegidoActual, barraDeVidaAmigo);
+
     console.log("PokeORT elegido:", PokeortElegidoActual);
     
     document.querySelectorAll(".pokeort-cambiable").forEach(button => {
@@ -161,6 +164,10 @@ function intercambiarPokeort(button, index) {
         realizarTurnoEnemigo(TipoAnterior);
         setTimeout(() => {
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+            botones.forEach(boton => {
+                boton.disabled = false;
+                boton.style.opacity = '1'
+            });
         }, 6000)
     }
 
@@ -170,6 +177,8 @@ function intercambiarPokeort(button, index) {
 // BATALLA
 function AdministrarBatalla(button) {
     let accion_Pokeort = document.getElementById("accionPokeort");
+    let opciones = document.getElementById('opciones');
+    let botones = opciones.querySelectorAll('button');
     
         const ataque = button.textContent.trim(); 
 
@@ -191,6 +200,10 @@ function AdministrarBatalla(button) {
             if (realizarTurnoEnemigo()) return;
             setTimeout(() => {
                 accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                botones.forEach(boton => {
+                    boton.disabled = false;
+                    boton.style.opacity = '1'
+                });
             }, 6000)
         }, 6000); 
 
@@ -202,6 +215,10 @@ function AdministrarBatalla(button) {
             if (realizarTurnoJugador()) return;
         setTimeout(() => {
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+            botones.forEach(boton => {
+                boton.disabled = false;
+                boton.style.opacity = '1'
+            });
         }, 6000)
         }, 6000);
 
@@ -216,6 +233,10 @@ function AdministrarBatalla(button) {
             if (realizarTurnoEnemigo()) return;
             setTimeout(() => {
                 accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                botones.forEach(boton => {
+                    boton.disabled = false;
+                    boton.style.opacity = '1'
+                });
         }, 6000)
         }, 6000); 
 
@@ -228,6 +249,10 @@ function AdministrarBatalla(button) {
                 if (realizarTurnoJugador()) return; 
                 setTimeout(() => {
                     accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                    botones.forEach(boton => {
+                        boton.disabled = false;
+                        boton.style.opacity = '1'
+                    });
                 }, 6000)
             }, 6000); 
         }
@@ -258,13 +283,32 @@ function bajarPokeball() {
     }
 }
 
+function bajarBarraDeVida(defensor, barraDeVida) {
+
+    let vida = defensor.vida;
+    let vidaTotal = defensor.vida_total;
+    let porcentajeDeVida = (vida / vidaTotal) * 100;
+
+    barraDeVida.style.width = `${porcentajeDeVida}%`;
+}
+
 function accionPokeort(atacante, defensor, daño, tipoAtaque) {
+    let opciones = document.getElementById('opciones');
+    let botones = opciones.querySelectorAll('button');
+    let barraDeVidaEnemigo = document.getElementById("vidaEnemigo");
+    let barraDeVidaAmigo = document.getElementById("vidaAmigo");
     let accionPokeort = document.getElementById("accionPokeort");
 
         accionPokeort.textContent = `¡${atacante.nombre} ataca a ${defensor.nombre} con un ataque de tipo ${tipoAtaque}, causando ${daño} de daño!`;
+        botones.forEach(boton => {
+            boton.disabled = true;
+            boton.style.opacity = '0.8'
+        });
 
         setTimeout(() => {
             accionPokeort.textContent = `${defensor.nombre} tiene ahora ${defensor.vida} de vida.`;
+            bajarBarraDeVida(PokeortElegidoActual, barraDeVidaAmigo);
+            bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);
 
             if (defensor.vida <= 0) {
                 setTimeout(() => {
@@ -275,6 +319,9 @@ function accionPokeort(atacante, defensor, daño, tipoAtaque) {
 }
 
 function realizarTurnoJugador() {
+    let barraDeVidaEnemigo = document.getElementById("vidaEnemigo");
+    let opciones = document.getElementById('opciones');
+    let botones = opciones.querySelectorAll('button');
     let accion_Pokeort = document.getElementById("accionPokeort");
 
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
@@ -297,6 +344,10 @@ function realizarTurnoJugador() {
             PokeortEnemigosDerrotados.push(PokeortElegidoEnemigoActual.nombre)
             bajarPokeball()
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+            botones.forEach(boton => {
+                boton.disabled = false;
+                boton.style.opacity = '1'
+            });
 
             valorEnemigo = valorEnemigo + 1;
             
@@ -314,6 +365,8 @@ function realizarTurnoJugador() {
             document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
             document.getElementById("ImagenAmiga2").style.display = "block";
             document.getElementById("pokeort-name-2").innerHTML = PokeortElegidoEnemigoActual.nombre;
+
+            bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);
         }
     }, 6000)
 
@@ -328,6 +381,8 @@ function realizarTurnoJugador() {
 
 
 function realizarTurnoEnemigo(TipoAnterior) {
+    let opciones = document.getElementById('opciones');
+    let botones = opciones.querySelectorAll('button');
     let accion_Pokeort = document.getElementById("accionPokeort");
 
     if(TipoAnterior) 
@@ -362,6 +417,10 @@ function realizarTurnoEnemigo(TipoAnterior) {
             bajarPokeball();
             mostrar_pokeort();
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+            botones.forEach(boton => {
+                boton.disabled = false;
+                boton.style.opacity = '1'
+            });
     
             document.querySelectorAll(".pokeort-cambiable").forEach(button => {
                 const parrafo = button.querySelector(".ParrafosCambiables").textContent.trim();
