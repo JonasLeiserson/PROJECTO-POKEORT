@@ -1,3 +1,4 @@
+
 let PokeortAmigos = [];
 let PokeortEnemigos = [];
 let PokeortElegidoActual;
@@ -35,6 +36,7 @@ let valorJugador = 0
 let TipoDeAtaque;
 let cambioManual = true;
 let SeleccionandoObjeto = false
+let QueHacePocion = 0
 
 // TABLA DE TIPOS
 const efectividadTipos = {
@@ -61,10 +63,11 @@ function mostrar_pokeort() {
     document.getElementById("ataques").style.display = "none";
     document.getElementById("accionPokeort-div").style.display = "none";
     document.getElementById("cambiar-pokeort").style.display = "flex";
+
     if(SeleccionandoObjeto === true)
     {
-        document.querySelectorAll('.cambios').forEach((item) => {
-            item.style.display = "flex";
+        document.querySelectorAll('.pokeort-cambiable').forEach((button) => {
+            button.style.display = "block";
         });
     }
     }
@@ -123,7 +126,15 @@ let buttons = [
     document.getElementById("BotonDeCambio3")
 ]
 
+
 function intercambiarPokeort(button, index) {
+    if(SeleccionandoObjeto === true)
+    {
+        const BotonNombre = button.querySelector(".ParrafosCambiables").textContent
+        console.log(BotonNombre)
+        QueHacerConObjeto(BotonNombre)
+        return true
+    }
     let accion_Pokeort = document.getElementById("accionPokeort");
     let barraDeVidaAmigo = document.getElementById("vidaAmigo");
     let opciones = document.getElementById('opciones');
@@ -499,6 +510,10 @@ function realizarTurnoEnemigo(TipoAnterior) {
             if (valorJugador === 3) 
             {
                 alert("Perdiste");
+                const elementos = document.body.querySelectorAll("*");
+                elementos.forEach(elemento => {
+                    elemento.style.display = "none";
+                });
             }
         }
 
@@ -561,12 +576,23 @@ function generarNumeroAleatorio()
 
 function Objetos(PocionDeQue) 
 {
-    let Efecto
-    if(PocionDeQue === 1)
-    {
-        Efecto = "curar"
-    }
+    QueHacePocion = PocionDeQue
     SeleccionandoObjeto = true 
-    mostrar_pokeort(Efecto)
+    mostrar_pokeort()
 }
-
+function  QueHacerConObjeto(Nombre)
+{
+    if(QueHacePocion === 1)
+    {
+        const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
+        console.log(pokeortElegido.vida)
+        pokeortElegido.vida += 300;
+        console.log(pokeortElegido.vida)
+        if(pokeortElegido.vida > pokeortElegido.vida_total)
+        {
+            pokeortElegido.vida = pokeortElegido.vida_total
+        }
+        document.getElementById("PocionDeVida").style.display = "none"
+        MostrarObjetos()
+    }
+}
