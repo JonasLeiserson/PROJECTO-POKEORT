@@ -329,9 +329,10 @@ function realizarTurnoJugador() {
     let opciones = document.getElementById('opciones');
     let botones = opciones.querySelectorAll('button');
     let accion_Pokeort = document.getElementById("accionPokeort");
-    let img = document.getElementById("ImagenAmiga1")
+    let imgAmiga = document.getElementById("ImagenAmiga1");
+    let imgEnemiga = document.getElementById("ImagenAmiga2");
 
-    img.src = PokeortElegidoActual.src_atk_back;
+    imgAmiga.src = PokeortElegidoActual.src_atk_back;
 
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
 
@@ -347,6 +348,28 @@ function realizarTurnoJugador() {
 
     console.log( `¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} con un ataque de tipo ${TipoDeAtaque}, causando ${daño} de daño!`);
     console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
+
+    setTimeout(() => {
+        if (PokeortElegidoEnemigoActual.vida <= 0)
+        {
+            imgEnemiga.src = PokeortElegidoEnemigoActual.src_back;
+            imgEnemiga.style.display = "none";
+
+                setTimeout(() => {
+                    imgEnemiga.style.display = "block";
+                        setTimeout(() => {
+                            imgEnemiga.style.display = "none";
+                                setTimeout(() => {
+                                    imgEnemiga.style.display = "block";
+                                        setTimeout(() => {
+                                            imgEnemiga.style.display = "none";
+                            }, 300);
+                        }, 300);
+                    }, 300);
+                }, 300);
+            
+        }
+    }, 4000);
 
     setTimeout(() => {
         if (PokeortElegidoEnemigoActual.vida <= 0) {
@@ -378,7 +401,7 @@ function realizarTurnoJugador() {
 
             bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);
         }
-        img.src = PokeortElegidoActual.src_gif_back;
+        imgAmiga.src = PokeortElegidoActual.src_gif_back;
     }, 6000)
 
     if (PokeortElegidoEnemigoActual.vida <= 0) {
@@ -395,7 +418,8 @@ function realizarTurnoEnemigo(TipoAnterior) {
     let opciones = document.getElementById('opciones');
     let botones = opciones.querySelectorAll('button');
     let accion_Pokeort = document.getElementById("accionPokeort");
-    let img = document.getElementById("ImagenAmiga2");
+    let imgAmiga = document.getElementById("ImagenAmiga2");
+    let imgEnemiga = document.getElementById("ImagenAmiga1");
 
     if(TipoAnterior) 
     {
@@ -409,7 +433,7 @@ function realizarTurnoEnemigo(TipoAnterior) {
 
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ElementoMasEfectivo);
 
-    img.src = PokeortElegidoEnemigoActual.src_atk;
+    imgAmiga.src = PokeortElegidoEnemigoActual.src_atk;
     PokeortElegidoActual.vida -= daño;
 
     ocultarTodo();
@@ -421,6 +445,28 @@ function realizarTurnoEnemigo(TipoAnterior) {
 
     console.log( `¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con un ataque de tipo ${ElementoMasEfectivo}, causando ${daño} de daño!`);
     console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
+
+    setTimeout(() => {
+        if (PokeortElegidoActual.vida <= 0)
+        {
+            imgEnemiga.src = PokeortElegidoActual.src_back;
+            imgEnemiga.style.display = "none"
+
+                setTimeout(() => {
+                    imgEnemiga.style.display = "block";
+                        setTimeout(() => {
+                            imgEnemiga.style.display = "none";
+                                setTimeout(() => {
+                                    imgEnemiga.style.display = "block";
+                                        setTimeout(() => {
+                                            imgEnemiga.style.display = "none";
+                            }, 300);
+                        }, 300);
+                    }, 300);
+                }, 300);
+            
+        }
+    }, 4000);
 
     setTimeout(() => {
         if (PokeortElegidoActual.vida <= 0) {
@@ -456,7 +502,7 @@ function realizarTurnoEnemigo(TipoAnterior) {
             }
         }
 
-        img.src = PokeortElegidoEnemigoActual.src_gif;
+        imgAmiga.src = PokeortElegidoEnemigoActual.src_gif;
     }, 6000)
 
     if (PokeortElegidoActual.vida <= 0) {
