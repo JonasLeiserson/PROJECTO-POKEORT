@@ -1,2 +1,3 @@
 node_modules
 ./BACKEND/DatosPokeorts.json
+./BACKEND/PokemonesEstadisticas.json
