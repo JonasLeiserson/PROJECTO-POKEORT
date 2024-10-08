@@ -394,7 +394,7 @@ function realizarTurnoJugador() {
     setTimeout(() => {
         if (PokeortElegidoEnemigoActual.vida <= 0)
         {
-            imgEnemiga.src = PokeortElegidoEnemigoActual.src_back;
+            imgEnemiga.src = PokeortElegidoEnemigoActual.src;
             imgEnemiga.style.display = "none";
 
                 setTimeout(() => {
