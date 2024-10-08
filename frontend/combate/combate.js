@@ -80,7 +80,9 @@ function ocultarTodo() {
 }
 
 function EleccionDePokeortInicial(button) {
-    const botones = [
+    
+    let botones = 
+    [
         document.getElementById("BotonDeCambio1"),
         document.getElementById("BotonDeCambio2"),
         document.getElementById("BotonDeCambio3")
@@ -623,24 +625,36 @@ function  QueHacerConObjeto(Nombre)
                     MostrarObjetos()
     }
     else if(QueHacePocion === 5)
-    {
-            const AmigosPokeortsCopia =   [PokeortAmigos]
-            const EnemigosPokeortsCopia = [PokeortEnemigos]
-
-            PokeortAmigos = EnemigosPokeortsCopia;
-            PokeortEnemigos = AmigosPokeortsCopia;
-
+        {
+            [PokeortAmigos, PokeortEnemigos] = [PokeortEnemigos, PokeortAmigos];
+        
+            const PokeortElegidoActualcopia = PokeortElegidoActual;
+            const PokeortElegidoEnemigoActualcopia = PokeortElegidoEnemigoActual;
+            PokeortElegidoActual = PokeortElegidoEnemigoActualcopia;
+            PokeortElegidoEnemigoActual = PokeortElegidoActualcopia;
+            
             console.log("PokeortAmigos después de la inversión:", PokeortAmigos);
             console.log("PokeortEnemigos después de la inversión:", PokeortEnemigos);
-            
-        document.getElementById("EleccionPrimerPokemon").src = PokeortAmigos[0].src;
-        document.getElementById("EleccionPrimerPokemon2").src = PokeortAmigos[1].src;
-        document.getElementById("EleccionPrimerPokemon3").src = PokeortAmigos[2].src;
-        document.getElementById("NombrePokeort1").innerHTML = PokeortAmigos[0].nombre;
-        document.getElementById("NombrePokeort2").innerHTML = PokeortAmigos[1].nombre;
-        document.getElementById("NombrePokeort3").innerHTML = PokeortAmigos[2].nombre;
-
-            document.getElementById("PocionMisteriosa").style.display = "none"
-            MostrarObjetos()
-    }
+        
+            // Actualizar los botones con las nuevas imágenes y nombres
+            PokeortAmigos.forEach((pokeort, index) => {
+                const img = botones[index].querySelector(".ImagenesCambiables");
+                img.src = pokeort.src;  // Cambia la imagen del Pokeort
+                
+                const parrafo = botones[index].querySelector(".ParrafosCambiables");
+                parrafo.textContent = pokeort.nombre;  // Cambia el nombre del Pokeort
+        
+                // Oculta el botón si el nombre coincide con PokeortElegidoId
+                if (pokeort.nombre === PokeortElegidoId) {
+                    botones[index].style.display = "none";
+                } else {
+                    botones[index].style.display = "block"; // Asegura que los demás botones estén visibles
+                }
+            });
+        
+            // Ocultar la poción misteriosa y mostrar los objetos de nuevo
+            document.getElementById("PocionMisteriosa").style.display = "none";
+            MostrarObjetos();  // Asumo que esta función actualiza otros elementos visuales relacionados con objetos
+        }
+        
 }
