@@ -61,7 +61,7 @@
   },
   "CHANCHORANCIO": {
     "nombre": "CHANCHORANCIO",
-    "atk": 500,
+    "atk": 250,
     "vida": 800,
     "vida_total": 800,
     "velocidad": 250,

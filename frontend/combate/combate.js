@@ -595,4 +595,52 @@ function  QueHacerConObjeto(Nombre)
         document.getElementById("PocionDeVida").style.display = "none"
         MostrarObjetos()
     }
+    else if(QueHacePocion === 2)
+        {
+            const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
+            console.log(pokeortElegido.atk)
+            pokeortElegido.atk += 200;
+            console.log(pokeortElegido.atk)
+            document.getElementById("PocionDeAtaque").style.display = "none"
+            MostrarObjetos()
+        }
+    else if(QueHacePocion === 3)
+    {
+                const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
+                console.log(pokeortElegido.defensa)
+                pokeortElegido.defensa += 200;
+                console.log(pokeortElegido.defensa)
+                document.getElementById("PocionDeDefensa").style.display = "none"
+                MostrarObjetos()
+    }
+    else if(QueHacePocion === 4)
+    {
+                    const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
+                    console.log(pokeortElegido.velocidad)
+                    pokeortElegido.velocidad += 200;
+                    console.log(pokeortElegido.velocidad)
+                    document.getElementById("PocionDeVelocidad").style.display = "none"
+                    MostrarObjetos()
+    }
+    else if(QueHacePocion === 5)
+    {
+            const AmigosPokeortsCopia =   [PokeortAmigos]
+            const EnemigosPokeortsCopia = [PokeortEnemigos]
+
+            PokeortAmigos = EnemigosPokeortsCopia;
+            PokeortEnemigos = AmigosPokeortsCopia;
+
+            console.log("PokeortAmigos después de la inversión:", PokeortAmigos);
+            console.log("PokeortEnemigos después de la inversión:", PokeortEnemigos);
+            
+        document.getElementById("EleccionPrimerPokemon").src = PokeortAmigos[0].src;
+        document.getElementById("EleccionPrimerPokemon2").src = PokeortAmigos[1].src;
+        document.getElementById("EleccionPrimerPokemon3").src = PokeortAmigos[2].src;
+        document.getElementById("NombrePokeort1").innerHTML = PokeortAmigos[0].nombre;
+        document.getElementById("NombrePokeort2").innerHTML = PokeortAmigos[1].nombre;
+        document.getElementById("NombrePokeort3").innerHTML = PokeortAmigos[2].nombre;
+
+            document.getElementById("PocionMisteriosa").style.display = "none"
+            MostrarObjetos()
+    }
 }
