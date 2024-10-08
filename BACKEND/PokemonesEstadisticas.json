@@ -1,25 +1,5 @@
 {
   "Pokeort1": {
-    "nombre": "OWLEON",
-    "atk": 200,
-    "vida": 800,
-    "vida_total": 800,
-    "velocidad": 200,
-    "defensa": 200,
-    "Tipo1": "fuego",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/pokeorts-static/front/owleon.png",
-    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
-    "NumeroSecreto": 1,
-    "pokeortID": "OWLEON"
-  },
-  "Pokeort2": {
     "nombre": "AMONG US",
     "atk": 150,
     "vida": 1000,
@@ -38,6 +18,26 @@
     "src_atk_back": "../recursos/img/pokeort-atk/back/among-us-atk-back.gif",
     "NumeroSecreto": 5,
     "pokeortID": "AMONG US"
+  },
+  "Pokeort2": {
+    "nombre": "CHANCHORANCIO",
+    "atk": 250,
+    "vida": 800,
+    "vida_total": 800,
+    "velocidad": 250,
+    "defensa": 50,
+    "Tipo1": "agua",
+    "Habilidad1": 1,
+    "Habilidad2": 1,
+    "Habilidad3": 1,
+    "src": "../recursos/img/pokeorts-static/front/chancho-rancio.png",
+    "src_back": "../recursos/img/pokeorts-static/back/chancho-rancio-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/chancho-rancio.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/chancho-rancio-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/chancho-rancio-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/chancho-rancio-atk-back.gif",
+    "NumeroSecreto": 6,
+    "pokeortID": "CHANCHORANCIO"
   },
   "Pokeort3": {
     "nombre": "GATORANCIO",
