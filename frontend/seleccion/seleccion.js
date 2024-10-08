@@ -36,14 +36,18 @@ function BloquearPokeort(button) {
 
         if (BotonOculto) {
             BotonOculto.disabled = true;
-            BotonOculto.style.display = "none";
+            BotonOculto.classList.add('desabilitado-permanente');
         }
 
         if (eleccion < 3) {
             eleccion++;
             document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "block";
         } else {
-            document.querySelectorAll('.pokeort-container').forEach(el => el.style.display = "none");
+            document.querySelector('.footer').style.display = "none";
+            document.getElementById('header').style.position = "fixed";
+            document.getElementById('header').style.top = "0";
+            document.querySelector('.ability-container').style.display = "none";
+            document.querySelector('.divDeLaDerecha').style.display = "none";
             eleccion++;
         }
     }
@@ -98,6 +102,8 @@ function seleccionarPokeORTAleatorio()
 
     PokemonesEnemigos.push(pokeortAleatorio);
 }
+
+
 
 function EnviarAlCombate() {
     if (eleccion === 4) {
