@@ -6,6 +6,7 @@ let PokeortElegidoEnemigoActual;
 let PokeortAmigosDerrotados = [];
 let PokeortEnemigosDerrotados = [];
 
+
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos-de-pokeorts')
     .then(response => response.json())
@@ -37,6 +38,11 @@ let TipoDeAtaque;
 let cambioManual = true;
 let SeleccionandoObjeto = false;
 let QueHacePocion = 0
+let botones = [
+    document.getElementById("BotonDeCambio1"),
+    document.getElementById("BotonDeCambio2"),
+    document.getElementById("BotonDeCambio3")
+];
 
 // TABLA DE TIPOS
 const efectividadTipos = {
@@ -61,11 +67,6 @@ function MostrarObjetos() {
 }
 function mostrar_pokeort() {
     const PokeortElegidoId = PokeortElegidoActual.pokeortID;
-    const botones = [
-        document.getElementById("BotonDeCambio1"),
-        document.getElementById("BotonDeCambio2"),
-        document.getElementById("BotonDeCambio3")
-    ];
 
     document.getElementById("ataques").style.display = "none";
     document.getElementById("accionPokeort-div").style.display = "none";
@@ -665,31 +666,35 @@ function  QueHacerConObjeto(Nombre)
         
             const PokeortElegidoActualcopia = PokeortElegidoActual;
             const PokeortElegidoEnemigoActualcopia = PokeortElegidoEnemigoActual;
+            
             PokeortElegidoActual = PokeortElegidoEnemigoActualcopia;
             PokeortElegidoEnemigoActual = PokeortElegidoActualcopia;
             
             console.log("PokeortAmigos después de la inversión:", PokeortAmigos);
             console.log("PokeortEnemigos después de la inversión:", PokeortEnemigos);
-        
-            // Actualizar los botones con las nuevas imágenes y nombres
+
             PokeortAmigos.forEach((pokeort, index) => {
                 const img = botones[index].querySelector(".ImagenesCambiables");
-                img.src = pokeort.src;  // Cambia la imagen del Pokeort
+                img.src = pokeort.src;  
                 
                 const parrafo = botones[index].querySelector(".ParrafosCambiables");
-                parrafo.textContent = pokeort.nombre;  // Cambia el nombre del Pokeort
-        
-                // Oculta el botón si el nombre coincide con PokeortElegidoId
-                if (pokeort.nombre === PokeortElegidoId) {
-                    botones[index].style.display = "none";
-                } else {
-                    botones[index].style.display = "block"; // Asegura que los demás botones estén visibles
-                }
+                parrafo.textContent = pokeort.nombre; 
+                
+                    botones[index].style.display = "block"; 
             });
+            let imgAmiga = document.getElementById("ImagenAmiga1");
+            let imgEnemiga = document.getElementById("ImagenAmiga2");
         
-            // Ocultar la poción misteriosa y mostrar los objetos de nuevo
+            imgAmiga.src = PokeortElegidoActual.src_gif_back;
+            imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
+            
             document.getElementById("PocionMisteriosa").style.display = "none";
-            MostrarObjetos();  // Asumo que esta función actualiza otros elementos visuales relacionados con objetos
+            MostrarObjetos();  
         }
-        
+        mostrar_ataques()
+}
+function PocionInsana()
+{
+    QueHacePocion = 5 
+    QueHacerConObjeto()
 }

@@ -301,7 +301,7 @@ footer {
                 justify-content: space-evenly;
 
                 #PocionMisteriosa {
-                    display: none;
+                    display: block;
                 }
 
                 .objeto {
