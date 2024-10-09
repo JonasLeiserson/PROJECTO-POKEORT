@@ -3,6 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
 
 app.use(cors({
     origin: '*', 
@@ -53,3 +56,54 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
 });
+
+
+//login porque pinto
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(session({
+    secret: 'tu_secreto', // Cambia esto por una cadena secreta
+    resave: false,
+    saveUninitialized: true
+}));
+
+// Usuarios simulados
+const usuarios = {
+    'pancho': 'banana',
+    'usuario2': 'contraseña2'
+};
+
+// Rutas
+app.get('/login', (req, res) => {
+    res.send(`
+        <form method="POST" action="/login">
+            <input type="text" name="username" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+    `);
+});
+
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+
+    // Verificación simple
+    if (usuarios[username] && usuarios[username] === password) {
+        req.session.user = username; // Guarda el usuario en la sesión
+        res.send(`¡Bienvenido, ${username}! <a href="/logout">Cerrar sesión</a>`);
+    } else {
+        res.send('Usuario o contraseña incorrectos. <a href="/login">Intenta de nuevo</a>');
+    }
+});
+
+app.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.redirect('/');
+        }
+        res.send('Sesión cerrada. <a href="/login">Iniciar sesión</a>');
+    });
+});
+
