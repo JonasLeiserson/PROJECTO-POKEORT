@@ -87,16 +87,16 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
+    // Procesa la solicitud POST aquí
     const { username, password } = req.body;
-
-    // Verificación simple
+    // Verifica las credenciales del usuario
     if (usuarios[username] && usuarios[username] === password) {
-        req.session.user = username; // Guarda el usuario en la sesión
-        res.send(`¡Bienvenido, ${username}! <a href="/logout">Cerrar sesión</a>`);
+      req.session.user = username; // Guarda el usuario en la sesión
+      res.send(`¡Bienvenido, ${username}! <a href="/logout">Cerrar sesión</a>`);
     } else {
-        res.send('Usuario o contraseña incorrectos. <a href="/login">Intenta de nuevo</a>');
+      res.send('Usuario o contraseña incorrectos. <a href="/login">Intenta de nuevo</a>');
     }
-});
+  });
 
 app.get('/logout', (req, res) => {
     req.session.destroy(err => {
