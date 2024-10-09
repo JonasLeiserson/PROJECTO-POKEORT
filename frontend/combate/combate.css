@@ -280,7 +280,7 @@ footer {
                 border-radius: 5px;
                 border: none; 
                 font-family: ABeeZee;
-                font-size: 150%;
+                font-size: 1.3rem;
 
                 &:hover {
                     background-color: whitesmoke;
@@ -314,12 +314,14 @@ footer {
                     .objeto-img {
                         width: 50%;
                         height: 50%;
+                        image-rendering: pixelated;
                     }
 
                     .objeto-name {
                         font-family: ABeeZee;
                         font-size: 90%;
                         font-size: 120%;
+                        margin: 0;
                     }
                 }
             }
@@ -365,6 +367,7 @@ footer {
                     width: 7%;
                     font-family: ABeeZee;
                     height: 80%;
+                    font-size: 0.7rem;
                 }
 
                 .pokeort-cambiable {

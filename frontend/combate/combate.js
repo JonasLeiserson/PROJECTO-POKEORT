@@ -44,6 +44,16 @@ let botones = [
     document.getElementById("BotonDeCambio3")
 ];
 
+//cosas para front
+let opciones = document.getElementById('opciones');
+let botones_opciones = opciones.querySelectorAll('button');
+let accion_Pokeort = document.getElementById("accionPokeort");
+let imgAmiga = document.getElementById("ImagenAmiga1");
+let imgEnemiga = document.getElementById("ImagenAmiga2");
+let barraDeVidaAmigo = document.getElementById("vidaAmigo");
+let barraDeVidaEnemigo = document.getElementById("vidaEnemigo");
+
+
 // TABLA DE TIPOS
 const efectividadTipos = {
     agua: { fuego: 2, planta: 0.5, electrico: 1, agua: 1, roca: 2 },
@@ -169,10 +179,6 @@ function intercambiarPokeort(button, index) {
         return true
     }
     
-    let accion_Pokeort = document.getElementById("accionPokeort");
-    let barraDeVidaAmigo = document.getElementById("vidaAmigo");
-    let opciones = document.getElementById('opciones');
-    let botones = opciones.querySelectorAll('button');
 
     if (PokeortElegidoActual.vida <= 0) 
         {
@@ -227,10 +233,6 @@ function intercambiarPokeort(button, index) {
 
 // BATALLA
 function AdministrarBatalla(button) {
-    let accion_Pokeort = document.getElementById("accionPokeort");
-    let opciones = document.getElementById('opciones');
-    let botones = opciones.querySelectorAll('button');
-    
         const ataque = button.textContent.trim(); 
 
         if (ataque === "agua") {
@@ -344,39 +346,26 @@ function bajarBarraDeVida(defensor, barraDeVida) {
 }
 
 function accionPokeort(atacante, defensor, daño, tipoAtaque) {
-    let opciones = document.getElementById('opciones');
-    let botones = opciones.querySelectorAll('button');
-    let barraDeVidaEnemigo = document.getElementById("vidaEnemigo");
-    let barraDeVidaAmigo = document.getElementById("vidaAmigo");
-    let accionPokeort = document.getElementById("accionPokeort");
-
-        accionPokeort.textContent = `¡${atacante.nombre} ataca a ${defensor.nombre} con un ataque de tipo ${tipoAtaque}, causando ${daño} de daño!`;
+        accion_Pokeort.textContent = `¡${atacante.nombre} ataca a ${defensor.nombre} con un ataque de tipo ${tipoAtaque}, causando ${daño} de daño!`;
         botones.forEach(boton => {
             boton.disabled = true;
             boton.style.opacity = '0.8'
         });
 
         setTimeout(() => {
-            accionPokeort.textContent = `${defensor.nombre} tiene ahora ${defensor.vida} de vida.`;
+            accion_Pokeort.textContent = `${defensor.nombre} tiene ahora ${defensor.vida} de vida.`;
             bajarBarraDeVida(PokeortElegidoActual, barraDeVidaAmigo);
             bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);
 
             if (defensor.vida <= 0) {
                 setTimeout(() => {
-                    accionPokeort.textContent = `${defensor.nombre} ha sido derrotado.`;
+                    accion_Pokeort.textContent = `${defensor.nombre} ha sido derrotado.`;
                 }, 2000);
             }
         }, 2000);
 }
 
 function realizarTurnoJugador() {
-    let barraDeVidaEnemigo = document.getElementById("vidaEnemigo");
-    let opciones = document.getElementById('opciones');
-    let botones = opciones.querySelectorAll('button');
-    let accion_Pokeort = document.getElementById("accionPokeort");
-    let imgAmiga = document.getElementById("ImagenAmiga1");
-    let imgEnemiga = document.getElementById("ImagenAmiga2");
-
     imgAmiga.src = PokeortElegidoActual.src_atk_back;
 
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
@@ -422,7 +411,7 @@ function realizarTurnoJugador() {
             PokeortEnemigosDerrotados.push(PokeortElegidoEnemigoActual.nombre)
             bajarPokeball()
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-            botones.forEach(boton => {
+            botones_opciones.forEach(boton => {
                 boton.disabled = false;
                 boton.style.opacity = '1'
             });
@@ -460,12 +449,6 @@ function realizarTurnoJugador() {
 
 
 function realizarTurnoEnemigo(TipoAnterior) {
-    let opciones = document.getElementById('opciones');
-    let botones = opciones.querySelectorAll('button');
-    let accion_Pokeort = document.getElementById("accionPokeort");
-    let imgAmiga = document.getElementById("ImagenAmiga2");
-    let imgEnemiga = document.getElementById("ImagenAmiga1");
-
     if(TipoAnterior) 
     {
         TipoDefensor = TipoAnterior
@@ -478,7 +461,7 @@ function realizarTurnoEnemigo(TipoAnterior) {
 
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ElementoMasEfectivo);
 
-    imgAmiga.src = PokeortElegidoEnemigoActual.src_atk;
+    imgEnemiga.src = PokeortElegidoEnemigoActual.src_atk;
     PokeortElegidoActual.vida -= daño;
 
     ocultarTodo();
@@ -494,17 +477,17 @@ function realizarTurnoEnemigo(TipoAnterior) {
     setTimeout(() => {
         if (PokeortElegidoActual.vida <= 0)
         {
-            imgEnemiga.src = PokeortElegidoActual.src_back;
-            imgEnemiga.style.display = "none"
+            imgAmiga.src = PokeortElegidoActual.src_back;
+            imgAmiga.style.display = "none"
 
                 setTimeout(() => {
-                    imgEnemiga.style.display = "block";
+                    imgAmiga.style.display = "block";
                         setTimeout(() => {
-                            imgEnemiga.style.display = "none";
+                            imgAmiga.style.display = "none";
                                 setTimeout(() => {
-                                    imgEnemiga.style.display = "block";
+                                    imgAmiga.style.display = "block";
                                         setTimeout(() => {
-                                            imgEnemiga.style.display = "none";
+                                            imgAmiga.style.display = "none";
                             }, 300);
                         }, 300);
                     }, 300);
@@ -522,7 +505,7 @@ function realizarTurnoEnemigo(TipoAnterior) {
 
             mostrar_pokeort();
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-            botones.forEach(boton => {
+            botones_opciones.forEach(boton => {
                 boton.disabled = false;
                 boton.style.opacity = '1'
             });
@@ -531,14 +514,14 @@ function realizarTurnoEnemigo(TipoAnterior) {
                 const parrafo = button.querySelector(".ParrafosCambiables").textContent.trim();
                 if (parrafo === PokeortElegidoActual.nombre) 
                 {
-                    button.style.display = "none"
+                    button.style.display = "none";
                     button.disabled = true;
                     button.style.opacity = "0.5";
                 }
                 
             });
     
-            document.getElementById("ImagenAmiga1").style.display = "none";
+            imgAmiga.style.display = "none";
     
             valorJugador = valorJugador + 1;
             if (valorJugador === 3) 
@@ -551,7 +534,7 @@ function realizarTurnoEnemigo(TipoAnterior) {
             }
         }
 
-        imgAmiga.src = PokeortElegidoEnemigoActual.src_gif;
+        imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
     }, 6000)
 
     if (PokeortElegidoActual.vida <= 0) {
@@ -620,6 +603,29 @@ function Objetos(PocionDeQue)
 
 function  QueHacerConObjeto(Nombre)
 {
+    const pociones = [
+        'VIDA',
+        'DAÑO',
+        'DEFENSA',
+        'VELOCIDAD',
+        'ESPECIAL'
+    ]
+
+    let pocionIndex = QueHacePocion - 1;
+
+    function pokeortBebePocion(pokeort, cambioEstadistica) {
+        ocultarTodo();
+
+        accion_Pokeort.textContent = `${pokeort.nombre} bebió una pocion de ${pociones[pocionIndex]}!`;
+        setTimeout(() => {
+            accion_Pokeort.textContent = `${pociones[pocionIndex]} de ${pokeort.nombre} aumentó +${cambioEstadistica}!`;
+            setTimeout(() => {
+                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                botones_opciones.forEach(boton => boton.disabled = false);
+            }, 2000)
+        }, 2000)
+    }
+
     if(QueHacePocion === 1)
     {
         const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
@@ -632,6 +638,7 @@ function  QueHacerConObjeto(Nombre)
         }
         document.getElementById("PocionDeVida").style.display = "none"
         MostrarObjetos()
+        pokeortBebePocion(pokeortElegido, 300)
     }
     else if(QueHacePocion === 2)
         {
@@ -641,6 +648,7 @@ function  QueHacerConObjeto(Nombre)
             console.log(pokeortElegido.atk)
             document.getElementById("PocionDeAtaque").style.display = "none"
             MostrarObjetos()
+            pokeortBebePocion(pokeortElegido, 200)
         }
     else if(QueHacePocion === 3)
     {
@@ -650,6 +658,7 @@ function  QueHacerConObjeto(Nombre)
                 console.log(pokeortElegido.defensa)
                 document.getElementById("PocionDeDefensa").style.display = "none"
                 MostrarObjetos()
+                pokeortBebePocion(pokeortElegido, 200)
     }
     else if(QueHacePocion === 4)
     {
@@ -659,6 +668,7 @@ function  QueHacerConObjeto(Nombre)
                     console.log(pokeortElegido.velocidad)
                     document.getElementById("PocionDeVelocidad").style.display = "none"
                     MostrarObjetos()
+                    pokeortBebePocion(pokeortElegido, 200)
     }
     else if(QueHacePocion === 5)
         {
@@ -691,8 +701,10 @@ function  QueHacerConObjeto(Nombre)
             document.getElementById("PocionMisteriosa").style.display = "none";
             MostrarObjetos();  
         }
-        mostrar_ataques()
+
+        SeleccionandoObjeto = false;
 }
+
 function PocionInsana()
 {
     QueHacePocion = 5 

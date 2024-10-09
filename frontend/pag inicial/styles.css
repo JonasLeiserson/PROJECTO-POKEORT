@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-image: url(../recursos/img/fondos/pantalla\ de\ inicio.png);
-    background-size: 100%;
+    background-size: cover;
 }
 
 .combatir, .creditos-button, .opciones{
@@ -28,7 +28,7 @@ body {
     margin: 0;
     width: 35%;
     height: 20%;
-    font-size: 416%;
+    font-size: 3.3rem;
     font-weight: bold;
     margin-top: 1.5%;
 
@@ -44,7 +44,12 @@ body {
     background-color: black;
     color: white;
     margin-top: 1.5%;
-    font-size: 130%;
+    font-size: 1.3rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #101010;
+    }
 }
 
 .title-div {
@@ -54,7 +59,7 @@ body {
 
     .title {
         margin: 0;
-        font-size: 500%;
+        font-size: 5rem;
         font-family: Kyiv;
         color: white;
         font-weight: 400;
@@ -72,7 +77,7 @@ body {
 .parrafo {
     color: white;
     font-family: Kyiv;
-    font-size: 130%;
+    font-size: 1.3rem;
 }
 
 .creditos-menu {
@@ -80,25 +85,31 @@ body {
         width: 65%;
         background-color: black;
         position: fixed;
-        margin-top: 7%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         border-radius: 20px;
         border: 5px solid white;
         opacity: 0;
         pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     
     .creditos {
             height: 40%;
-            width: 50%;
-            height: auto;
-            position: relative;
-            top: 19%; 
-            left: 31%;
+            width: 100%;
             color: white;
             font-family: Kyiv;
-            font-size: 30px;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
 
             h5 {
                 font-weight: 400;
+                margin: 5%;
             }
         }
     
