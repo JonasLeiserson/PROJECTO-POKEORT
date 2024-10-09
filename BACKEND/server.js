@@ -52,6 +52,15 @@ app.get('/leer-datos-de-pokeorts', (req, res) => {
     }
 });
 
+let usuarios = {};
+fs.readFile('usuarios.json', 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error al leer el archivo de usuarios:', err);
+        return;
+    }
+    usuarios = JSON.parse(data);
+});
+
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
@@ -69,11 +78,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// Usuarios simulados
-const usuarios = {
-    'pancho': 'banana',
-    'usuario2': 'contraseña2'
-};
 
 // Rutas
 app.get('/login', (req, res) => {
