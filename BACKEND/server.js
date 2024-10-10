@@ -8,8 +8,8 @@ const session = require('express-session');
 
 
 app.use(cors({
-    origin: '*', 
-    credentials: false 
+    origin: 'http://localhost:3000', 
+    credentials: true 
 }));
 
 app.use(bodyParser.json());
@@ -65,17 +65,18 @@ fs.readFile('usuarios.json', 'utf8', (err, data) => {
     console.log(usuarios)
 });
 
-app.use(cors({
-    origin: '*', 
-    credentials: true 
-}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(session({
-    secret: 'tu_secreto', 
+    secret: '1234', 
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        secure: false, 
+        sameSite: 'None',
+        httpOnly: true 
+    }
 }));
 
 // Ruta de login
@@ -92,10 +93,14 @@ app.post('/login', (req, res) => {
         const usuarios = JSON.parse(data); // Parsear el contenido del JSON
         
         // Verificar las credenciales
-        if (usuarios[username] && usuarios[username] === password) {
+        if (usuarios[username] && usuarios[username] === password) 
+        {
             req.session.user = username; // Guardar el usuario en la sesión
-            res.send(`¡Bienvenido, ${username}! <a href="/logout">Cerrar sesión</a>`);
-        } else {
+            res.redirect('../frontend/pag inicial/index.html')
+
+        } 
+        else 
+        {
             res.send('Usuario o contraseña incorrectos. <a href="/login">Intenta de nuevo</a>');
         }
     });
@@ -107,7 +112,7 @@ app.get('/logout', (req, res) => {
         if (err) {
             return res.redirect('/');
         }
-        res.send('Sesión cerrada. <a href="/login">Iniciar sesión</a>');
+        res.send('Sesión cerrada. <a href="/http://localhost:3000/login">Iniciar sesión</a>');
     });
 });
 
