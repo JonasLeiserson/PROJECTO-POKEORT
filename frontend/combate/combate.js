@@ -217,7 +217,7 @@ function intercambiarPokeort(button, index) {
         realizarTurnoEnemigo(TipoAnterior);
         setTimeout(() => {
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-            botones.forEach(boton => {
+            botones_opciones.forEach(boton => {
                 boton.disabled = false;
                 boton.style.opacity = '1'
             });
@@ -226,6 +226,10 @@ function intercambiarPokeort(button, index) {
     else 
     {
         document.getElementById("pokeort1").style.opacity = '1';
+        botones_opciones.forEach(boton => {
+            boton.disabled = false;
+            boton.style.opacity = '1';
+        })
     }
 
     ocultarTodo();
@@ -253,7 +257,7 @@ function AdministrarBatalla(button) {
             if (realizarTurnoEnemigo()) return;
             setTimeout(() => {
                 accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                botones.forEach(boton => {
+                botones_opciones.forEach(boton => {
                     boton.disabled = false;
                     boton.style.opacity = '1'
                 });
@@ -268,7 +272,7 @@ function AdministrarBatalla(button) {
             if (realizarTurnoJugador()) return;
         setTimeout(() => {
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-            botones.forEach(boton => {
+            botones_opciones.forEach(boton => {
                 boton.disabled = false;
                 boton.style.opacity = '1'
             });
@@ -286,7 +290,7 @@ function AdministrarBatalla(button) {
             if (realizarTurnoEnemigo()) return;
             setTimeout(() => {
                 accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                botones.forEach(boton => {
+                botones_opciones.forEach(boton => {
                     boton.disabled = false;
                     boton.style.opacity = '1'
                 });
@@ -302,7 +306,7 @@ function AdministrarBatalla(button) {
                 if (realizarTurnoJugador()) return; 
                 setTimeout(() => {
                     accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                    botones.forEach(boton => {
+                    botones_opciones.forEach(boton => {
                         boton.disabled = false;
                         boton.style.opacity = '1'
                     });
@@ -347,7 +351,7 @@ function bajarBarraDeVida(defensor, barraDeVida) {
 
 function accionPokeort(atacante, defensor, daño, tipoAtaque) {
         accion_Pokeort.textContent = `¡${atacante.nombre} ataca a ${defensor.nombre} con un ataque de tipo ${tipoAtaque}, causando ${daño} de daño!`;
-        botones.forEach(boton => {
+        botones_opciones.forEach(boton => {
             boton.disabled = true;
             boton.style.opacity = '0.8'
         });
@@ -367,6 +371,15 @@ function accionPokeort(atacante, defensor, daño, tipoAtaque) {
 
 function realizarTurnoJugador() {
     imgAmiga.src = PokeortElegidoActual.src_atk_back;
+    
+    setTimeout(() => {
+        imgAmiga.style.width = "188%";
+        imgAmiga.style.height = "184%";
+        imgAmiga.style.position = "relative";
+        imgAmiga.style.bottom = "45%";
+        imgAmiga.style.right = "44%";
+    }, 10);
+
 
     const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, TipoDeAtaque);
 
@@ -436,6 +449,10 @@ function realizarTurnoJugador() {
             bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);
         }
         imgAmiga.src = PokeortElegidoActual.src_gif_back;
+        imgAmiga.style.width = "94%";
+        imgAmiga.style.height = "92%";
+        imgAmiga.style.bottom = "0";
+        imgAmiga.style.right = "0";
     }, 6000)
 
     if (PokeortElegidoEnemigoActual.vida <= 0) {
@@ -462,6 +479,15 @@ function realizarTurnoEnemigo(TipoAnterior) {
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ElementoMasEfectivo);
 
     imgEnemiga.src = PokeortElegidoEnemigoActual.src_atk;
+
+    setTimeout(() => {
+    imgEnemiga.style.width = "188%";
+    imgEnemiga.style.height = "182%";
+    imgEnemiga.style.position = "relative";
+    imgEnemiga.style.bottom = "45%";
+    imgEnemiga.style.right = "44%";
+    }, 10);
+
     PokeortElegidoActual.vida -= daño;
 
     ocultarTodo();
@@ -506,8 +532,8 @@ function realizarTurnoEnemigo(TipoAnterior) {
             mostrar_pokeort();
             accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
             botones_opciones.forEach(boton => {
-                boton.disabled = false;
-                boton.style.opacity = '1'
+                boton.disabled = true;
+                boton.style.opacity = '0.8'
             });
     
             document.querySelectorAll(".pokeort-cambiable").forEach(button => {
@@ -535,6 +561,10 @@ function realizarTurnoEnemigo(TipoAnterior) {
         }
 
         imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
+        imgEnemiga.style.width = "94%";
+        imgEnemiga.style.height = "92%";
+        imgEnemiga.style.bottom = "0";
+        imgEnemiga.style.right = "0";
     }, 6000)
 
     if (PokeortElegidoActual.vida <= 0) {
@@ -626,7 +656,7 @@ function  QueHacerConObjeto(Nombre)
         }, 2000)
     }
 
-    if(QueHacePocion === 1)
+    if (QueHacePocion === 1)
     {
         const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
         console.log(pokeortElegido.vida)
@@ -635,10 +665,12 @@ function  QueHacerConObjeto(Nombre)
         if(pokeortElegido.vida > pokeortElegido.vida_total)
         {
             pokeortElegido.vida = pokeortElegido.vida_total
+            console.log(pokeortElegido.vida)
         }
         document.getElementById("PocionDeVida").style.display = "none"
         MostrarObjetos()
-        pokeortBebePocion(pokeortElegido, 300)
+        bajarBarraDeVida(PokeortElegidoActual, barraDeVidaAmigo);
+        pokeortBebePocion(pokeortElegido, 300);
     }
     else if(QueHacePocion === 2)
         {
@@ -691,15 +723,14 @@ function  QueHacerConObjeto(Nombre)
                 parrafo.textContent = pokeort.nombre; 
                 
                     botones[index].style.display = "block"; 
-            });
-            let imgAmiga = document.getElementById("ImagenAmiga1");
-            let imgEnemiga = document.getElementById("ImagenAmiga2");
-        
+            });       
             imgAmiga.src = PokeortElegidoActual.src_gif_back;
             imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
-            
-            document.getElementById("PocionMisteriosa").style.display = "none";
+            document.getElementById("pokeort-name-1").textContent = PokeortElegidoActual.nombre;
+            document.getElementById("pokeort-name-2").textContent = PokeortElegidoActual.nombre;
+        
             MostrarObjetos();  
+            document.getElementById("PocionMisteriosa").style.display = "none";
         }
 
         SeleccionandoObjeto = false;
