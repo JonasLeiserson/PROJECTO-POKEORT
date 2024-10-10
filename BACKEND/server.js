@@ -52,6 +52,9 @@ app.get('/leer-datos-de-pokeorts', (req, res) => {
     }
 });
 
+//login
+
+
 let usuarios = {};
 fs.readFile('usuarios.json', 'utf8', (err, data) => {
     if (err) {
@@ -59,49 +62,46 @@ fs.readFile('usuarios.json', 'utf8', (err, data) => {
         return;
     }
     usuarios = JSON.parse(data);
+    console.log(usuarios)
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
-});
-
-
-//login porque pinto
-
-
+app.use(cors({
+    origin: '*', 
+    credentials: true 
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(session({
-    secret: 'tu_secreto', // Cambia esto por una cadena secreta
+    secret: 'tu_secreto', 
     resave: false,
     saveUninitialized: true
 }));
 
+// Ruta de login
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
 
-// Rutas
-app.get('/login', (req, res) => {
-    res.send(`
-        <form method="POST" action="/login">
-            <input type="text" name="username" placeholder="Usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <button type="submit">Iniciar sesión</button>
-        </form>
-    `);
+    // Leer el archivo de usuarios
+    fs.readFile('usuarios.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error al leer el archivo de usuarios:', err);
+            return res.status(500).send('Error en el servidor');
+        }
+
+        const usuarios = JSON.parse(data); // Parsear el contenido del JSON
+        
+        // Verificar las credenciales
+        if (usuarios[username] && usuarios[username] === password) {
+            req.session.user = username; // Guardar el usuario en la sesión
+            res.send(`¡Bienvenido, ${username}! <a href="/logout">Cerrar sesión</a>`);
+        } else {
+            res.send('Usuario o contraseña incorrectos. <a href="/login">Intenta de nuevo</a>');
+        }
+    });
 });
 
-app.post('/login', (req, res) => {
-    // Procesa la solicitud POST aquí
-    const { username, password } = req.body;
-    // Verifica las credenciales del usuario
-    if (usuarios[username] && usuarios[username] === password) {
-      req.session.user = username; // Guarda el usuario en la sesión
-      res.send(`¡Bienvenido, ${username}! <a href="/logout">Cerrar sesión</a>`);
-    } else {
-      res.send('Usuario o contraseña incorrectos. <a href="/login">Intenta de nuevo</a>');
-    }
-  });
-
+// Ruta para cerrar sesión
 app.get('/logout', (req, res) => {
     req.session.destroy(err => {
         if (err) {
@@ -111,3 +111,7 @@ app.get('/logout', (req, res) => {
     });
 });
 
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+});
