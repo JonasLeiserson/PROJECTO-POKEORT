@@ -6,7 +6,7 @@
 </div>
 
 <form method="POST" action="http://localhost:3000/login">
-    <input type="text" name="username" placeholder="Usuario" required>
-    <input type="password" name="password" placeholder="Contraseña" required>
+    <input type="text" name="username" placeholder="Usuario" autocomplete="username" required>
+    <input type="password" name="password" placeholder="Contraseña"  autocomplete="current-password" required>
     <button type="submit">Iniciar sesión</button>
 </form>

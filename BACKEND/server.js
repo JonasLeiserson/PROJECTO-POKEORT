@@ -5,6 +5,7 @@ const cors = require('cors');
 const app = express();
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const path = require('path');
 
 
 app.use(cors({
@@ -52,6 +53,8 @@ app.get('/leer-datos-de-pokeorts', (req, res) => {
     }
 });
 
+
+
 //login
 
 
@@ -74,12 +77,14 @@ app.use(session({
     saveUninitialized: true,
     cookie: {
         secure: false, 
-        sameSite: 'None',
+        sameSite: 'Lax',
         httpOnly: true 
     }
 }));
 
-// Ruta de login
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
@@ -96,7 +101,7 @@ app.post('/login', (req, res) => {
         if (usuarios[username] && usuarios[username] === password) 
         {
             req.session.user = username; // Guardar el usuario en la sesión
-            res.redirect('../frontend/pag inicial/index.html')
+            res.redirect('/pag_inicial/index.html');
 
         } 
         else 
