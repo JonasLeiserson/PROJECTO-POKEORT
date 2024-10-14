@@ -62,11 +62,16 @@ let ataques = [
 
 // TABLA DE TIPOS
 const efectividadTipos = {
-    agua: { fuego: 2, planta: 0.5, electrico: 1, agua: 1, roca: 2 },
-    fuego: { agua: 0.5, planta: 2, electrico: 1, fuego: 1, roca: 0.5 },
-    planta: { agua: 2, fuego: 0.5, electrico: 1, planta: 0.5, roca: 2 },
-    electrico: { agua: 2, planta: 0.5, fuego: 1, electrico: 1, roca: 0.5 },
-    roca: { agua: 0.5, planta: 1, fuego: 2, electrico: 2, roca: 1 }
+    agua: { fuego: 2, planta: 0.5, electrico: 1, agua: 1, roca: 2, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1},
+    fuego: { agua: 0.5, planta: 2, electrico: 1, fuego: 1, roca: 0.5, normal: 1, tierra: 0.5, hielo: 2, volador: 1, oscuridad: 1},
+    planta: { agua: 2, fuego: 0.5, electrico: 1, planta: 0.5, roca: 2, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1},
+    electrico: { agua: 2, planta: 0.5, fuego: 1, electrico: 1, roca: 0.5, normal: 1, tierra: 0.5, hielo: 1, volador: 2, oscuridad: 1},
+    roca: { agua: 0.5, planta: 1, fuego: 2, electrico: 2, roca: 1, normal: 1, tierra: 1, hielo: 1, volador: 2, oscuridad: 0.5},
+    normal: { fuego: 1, planta: 1, electrico: 1, agua: 1, roca: 0.5, normal: 1, tierra: 1, hielo: 1, volador: 1, oscuridad: 0.5},
+    tierra: { fuego: 2, planta: 0.5, electrico: 2, agua: 1, roca: 2, normal: 1, tierra: 1, hielo: 1, volador: 1, oscuridad: 1},
+    hielo: { fuego: 0.5, planta: 2, electrico: 1, agua: 0.5, roca: 1, normal: 1, tierra: 2, hielo: 0.5, volador: 2, oscuridad: 1},
+    volador: { fuego: 1, planta: 2, electrico: 0.5, agua: 1, roca: 0.5, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1},
+    oscuridad: { fuego: 1, planta: 1, electrico: 1, agua: 1, roca: 1, normal: 1, tierra: 1, hielo: 1, volador: 1, oscuridad: 0.5}
 };
 
 function mostrar_ataques() {
