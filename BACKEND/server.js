@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const path = require('path');
 
-
 app.use(cors({
     origin: 'http://localhost:3000', 
     credentials: true 
@@ -15,42 +14,24 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-//lee datos de DatosPokeorts.json
+// lee datos de DatosPokeorts.json
 app.get('/leer-datos', (req, res) => {
-    try {
-        const data = fs.readFileSync('DatosPokeorts.json', 'utf8');
-        res.send(data);
-    } catch (err) {
-        console.error('Error al leer el archivo:', err);
-        res.status(500).send('Error al leer los datos');
-    }
+    const data = fs.readFileSync('DatosPokeorts.json', 'utf8');
+    res.send(data);
 });
 
-//escribe datos en PokemonesEstadisticas.json
+// escribe datos en PokemonesEstadisticas.json
 app.post('/guardar-datos', (req, res) => {
-    try {
-        const nuevosDatos = req.body;
-        console.log('Datos recibidos:', nuevosDatos);
-        fs.writeFileSync('PokemonesEstadisticas.json', JSON.stringify(nuevosDatos, null, 2));
-        res.send('Datos actualizados correctamente.');
-    } catch (err) {
-        console.error('Error al escribir el archivo:', err);
-        res.status(500).send('Ocurrió un error al procesar los datos.');
-    }
+    const nuevosDatos = req.body;
+    console.log('Datos recibidos:', nuevosDatos);
+    fs.writeFileSync('PokemonesEstadisticas.json', JSON.stringify(nuevosDatos, null, 2));
+    res.send('Datos actualizados correctamente.');
 });
 
-
-
-
-//lee datos de PokemonesEstadisticas.json
+// lee datos de PokemonesEstadisticas.json
 app.get('/leer-datos-de-pokeorts', (req, res) => {
-    try {
-        const data = fs.readFileSync('PokemonesEstadisticas.json', 'utf8');
-        res.send(data);
-    } catch (err) {
-        console.error('Error al leer el archivo:', err);
-        res.status(500).send('Error al leer los datos');
-    }
+    const data = fs.readFileSync('PokemonesEstadisticas.json', 'utf8');
+    res.send(data);
 });
 
 
@@ -59,11 +40,7 @@ app.get('/leer-datos-de-pokeorts', (req, res) => {
 
 
 let usuarios = {};
-fs.readFile('usuarios.json', 'utf8', (err, data) => {
-    if (err) {
-        console.error('Error al leer el archivo de usuarios:', err);
-        return;
-    }
+fs.readFile('usuarios.json', 'utf8', (data) => {
     usuarios = JSON.parse(data);
     console.log(usuarios)
 });
@@ -88,19 +65,15 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    // Leer el archivo de usuarios
-    fs.readFile('usuarios.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error('Error al leer el archivo de usuarios:', err);
-            return res.status(500).send('Error en el servidor');
-        }
-
-        const usuarios = JSON.parse(data); // Parsear el contenido del JSON
+    
+    fs.readFile('usuarios.json', 'utf8', (data) => {
         
-        // Verificar las credenciales
+
+        const usuarios = JSON.parse(data); 
+        
         if (usuarios[username] && usuarios[username] === password) 
         {
-            req.session.user = username; // Guardar el usuario en la sesión
+            req.session.user = username; 
             res.redirect('/pag_inicial/index.html');
 
         } 
@@ -121,6 +94,7 @@ app.get('/logout', (req, res) => {
     });
 });
 
+app.get("/CrearUsuario")
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
