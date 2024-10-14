@@ -5,30 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../recursos/fonts/fonts.css">
     <script src="login.js"></script>
+    <script src="hola.js"></script>
 </head>
 <body>
     
 </body>
 </html>
 <div id="loginFormContainer"></div>
-<div class="title-div">
-    <h1 class="title first">BIENVENIDOS</h1> 
-    <h1 class="title">A <span class="negrita">POKEORT</span></h1>
+
+<div class="todo">
+
+    <div class="login" id="login">
+        <form class="iniciar" method="POST" action="http://localhost:3000/login">
+            <h1 class="iniciasesion">Inicia sesion</h1>
+            <input type="text" name="username" placeholder="Usuario" autocomplete="username" required>
+            <input type="password" name="password" placeholder="Contraseña"  autocomplete="current-password" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <div class="notengocuenta">
+            <h1> ¿No tienes un usuario?</h1>
+            <button id="crear">Crear usuario</button>
+        </div>
+    </div>
+    
+
+    <div class="signin" id="signin">
+        <form>
+            <h5>Usuario</h5>
+            <input type="text" class="InputTexto">
+            <h5>Contraseña</h5>
+            <input type="text" class="InputTexto">
+            <button onclick="CrearUsuario()">Crear usuario</button>
+        </form>
+    
+        <div>
+            <h1></h1>
+        </div>
+    </div>
 </div>
 
-<form method="POST" action="http://localhost:3000/login">
-    <input type="text" name="username" placeholder="Usuario" autocomplete="username" required>
-    <input type="password" name="password" placeholder="Contraseña"  autocomplete="current-password" required>
-    <button type="submit">Iniciar sesión</button>
-</form>
-<h1> No tienes un usuario, CREA UNO</h1>
-<div>
-<h5>Usuario</h5>
-<input type="text" class="InputTexto">
-<h5>Contraseña</h5>
-<input type="text" class="InputTexto">
-</div>
-<div>
-<button onclick="CrearUsuario()">CrearUsuario</button>
-</div>
+
+
