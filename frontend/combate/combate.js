@@ -151,11 +151,21 @@ function EleccionDePokeortInicial(button) {
     document.getElementById("ImagenAmiga2").style.display = "block";
     document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
     document.getElementById("pokeort-name-2").innerHTML = PokeortElegidoEnemigoActual.nombre;
+
     ataques[0].textContent = PokeortElegidoActual.ataques[0].nombre;
     ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
     ataques[2].textContent = PokeortElegidoActual.ataques[2].nombre;
     ataques[3].textContent = PokeortElegidoActual.ataques[3].nombre;
 
+    let AtaquesDePokeortActual = PokeortElegidoActual.ataques[0];
+    let ataques = 
+    {
+        ataque1: new Ataque(AtaquesDePokeortActual.nombre, AtaquesDePokeortActual.potencia, AtaquesDePokeortActual.precision, AtaquesDePokeortActual.tipo),
+        ataque2: new Ataque(PokeortElegidoActual.ataques[1].nombre, 25),
+        ataque3: new Ataque(PokeortElegidoActual.ataques[2].nombre, ),
+        ataque4: new Ataque(PokeortElegidoActual.ataques[3].nombre, 40),
+    };
+    console.log(ataques)
     document.querySelectorAll(".pokeortInicialEleccion").forEach(button => {
         button.style.display = "none";
     });
@@ -659,7 +669,7 @@ function Objetos(PocionDeQue)
         option.disabled = true;
     });
 }
-
+//POCIONES
 function  QueHacerConObjeto(Nombre)
 {
     const pociones = [
@@ -792,4 +802,13 @@ function PocionInsana()
 {
     QueHacePocion = 5 
     QueHacerConObjeto()
+}
+
+class Ataque {
+    constructor(nombre, potencia, precision, tipo) {
+        this.nombre = nombre;
+        this.potencia = potencia;
+        this.precision = precision;
+        this.tipo = tipo;
+    }
 }
