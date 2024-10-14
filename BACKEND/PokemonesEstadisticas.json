@@ -7,9 +7,36 @@
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "roca",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+    "ataques": [
+      {
+        "nombre": "Terremoto",
+        "tipo": "Tierra",
+        "potencia": 120,
+        "precision": 85,
+        "descripcion": "Sacude el suelo, causando daño a todos los oponentes y puede hacerlos caer."
+      },
+      {
+        "nombre": "Pedrada",
+        "tipo": "Roca",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño y puede causar confusión."
+      },
+      {
+        "nombre": "Roca Filosa",
+        "tipo": "Roca",
+        "potencia": 80,
+        "precision": 95,
+        "descripcion": "Un ataque que lanza fragmentos afilados, causando daño con una alta posibilidad de crítico."
+      },
+      {
+        "nombre": "Puño Fuego",
+        "tipo": "Fuego",
+        "potencia": 90,
+        "precision": 100,
+        "descripcion": "Un ataque físico que causa daño y puede quemar al enemigo."
+      }
+    ],
     "src": "../recursos/img/pokeorts-static/front/roktom.png",
     "src_back": "../recursos/img/pokeorts-static/back/roktom-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/roktom.gif",
@@ -20,26 +47,6 @@
     "pokeortID": "ROKTOM"
   },
   "Pokeort2": {
-    "nombre": "GATORANCIO",
-    "atk": 200,
-    "vida": 800,
-    "vida_total": 800,
-    "velocidad": 200,
-    "defensa": 200,
-    "Tipo1": "roca",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
-    "src_back": "../recursos/img/pokeorts-static/back/gato-rancio-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/gato-rancio.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/gato-rancio-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/gato-rancio-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/gato-rancio-atk-back.gif",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
-  },
-  "Pokeort3": {
     "nombre": "MACETONIO",
     "atk": 200,
     "vida": 1000,
@@ -47,9 +54,36 @@
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "planta",
-    "Habilidad1": "PUÑO VELOZ",
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+    "ataques": [
+      {
+        "nombre": "Rayo Vegetal",
+        "tipo": "Planta",
+        "potencia": 70,
+        "precision": 100,
+        "descripcion": "Un ataque rápido que lanza espinas al oponente, causando daño inmediato."
+      },
+      {
+        "nombre": "Brotar",
+        "tipo": "Planta",
+        "potencia": 40,
+        "precision": 100,
+        "descripcion": "Restaura un poco de vida a sí mismo y causa daño leve al oponente."
+      },
+      {
+        "nombre": "Hoja Afilada",
+        "tipo": "Planta",
+        "potencia": 90,
+        "precision": 95,
+        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
+      },
+      {
+        "nombre": "Puño Vigoroso",
+        "tipo": "Normal",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Un ataque de puño fuerte que inflige gran daño al enemigo."
+      }
+    ],
     "src": "../recursos/img/pokeorts-static/front/maceta-rancia.png",
     "src_back": "../recursos/img/pokeorts-static/back/maceta-rancia-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/maceta-rancia.gif",
@@ -59,7 +93,7 @@
     "NumeroSecreto": 8,
     "pokeortID": "MACETONIO"
   },
-  "PokeortEnemigo1": {
+  "Pokeort3": {
     "nombre": "CARITA",
     "atk": 200,
     "vida": 900,
@@ -67,9 +101,36 @@
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "planta",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+    "ataques": [
+      {
+        "nombre": "Rostro Amistoso",
+        "tipo": "Normal",
+        "potencia": 50,
+        "precision": 100,
+        "descripcion": "Causa daño y puede confundir al oponente, reduciendo su precisión."
+      },
+      {
+        "nombre": "Golpe de Calor",
+        "tipo": "Fuego",
+        "potencia": 80,
+        "precision": 90,
+        "descripcion": "Un ataque cálido que puede quemar al enemigo."
+      },
+      {
+        "nombre": "Destello",
+        "tipo": "Normal",
+        "potencia": 70,
+        "precision": 95,
+        "descripcion": "Lanza una luz brillante que causa daño y puede cegar al oponente."
+      },
+      {
+        "nombre": "Reflejo Acierto",
+        "tipo": "Normal",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Un ataque que causa daño y reduce la defensa del enemigo."
+      }
+    ],
     "src": "../recursos/img/pokeorts-static/front/carita.png",
     "src_back": "../recursos/img/pokeorts-static/back/carita.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/carita.gif",
@@ -82,27 +143,7 @@
     "NumeroSecreto": 9,
     "pokeortID": "CARITAFACHA"
   },
-  "PokeortEnemigo2": {
-    "nombre": "MACETONIO",
-    "atk": 200,
-    "vida": 1000,
-    "vida_total": 1000,
-    "velocidad": 100,
-    "defensa": 200,
-    "Tipo1": "planta",
-    "Habilidad1": "PUÑO VELOZ",
-    "Habilidad2": 1,
-    "Habilidad3": 1,
-    "src": "../recursos/img/pokeorts-static/front/maceta-rancia.png",
-    "src_back": "../recursos/img/pokeorts-static/back/maceta-rancia-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/maceta-rancia.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/maceta-rancia-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/maceta-rancia-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/maceta-rancia-atk-back.gif",
-    "NumeroSecreto": 8,
-    "pokeortID": "MACETONIO"
-  },
-  "PokeortEnemigo3": {
+  "PokeortEnemigo1": {
     "nombre": "CHANCHORANCIO",
     "atk": 250,
     "vida": 800,
@@ -110,9 +151,36 @@
     "velocidad": 250,
     "defensa": 50,
     "Tipo1": "agua",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+    "ataques": [
+      {
+        "nombre": "Maremoto",
+        "tipo": "Agua",
+        "potencia": 90,
+        "precision": 100,
+        "descripcion": "Desata una ola gigante que golpea al oponente con fuerza."
+      },
+      {
+        "nombre": "Chocogranizo",
+        "tipo": "Hielo",
+        "potencia": 80,
+        "precision": 90,
+        "descripcion": "Lanza proyectiles de hielo que pueden congelar al enemigo."
+      },
+      {
+        "nombre": "Burbuja",
+        "tipo": "Agua",
+        "potencia": 50,
+        "precision": 100,
+        "descripcion": "Un ataque ligero que causa daño y puede reducir la velocidad del enemigo."
+      },
+      {
+        "nombre": "Puño Acuático",
+        "tipo": "Agua",
+        "potencia": 70,
+        "precision": 95,
+        "descripcion": "Un ataque físico que causa daño y tiene una alta probabilidad de golpe crítico."
+      }
+    ],
     "src": "../recursos/img/pokeorts-static/front/chancho-rancio.png",
     "src_back": "../recursos/img/pokeorts-static/back/chancho-rancio-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/chancho-rancio.gif",
@@ -121,5 +189,99 @@
     "src_atk_back": "../recursos/img/pokeort-atk/back/chancho-rancio-atk-back.gif",
     "NumeroSecreto": 6,
     "pokeortID": "CHANCHORANCIO"
+  },
+  "PokeortEnemigo2": {
+    "nombre": "CHANCHORANCIO",
+    "atk": 250,
+    "vida": 800,
+    "vida_total": 800,
+    "velocidad": 250,
+    "defensa": 50,
+    "Tipo1": "agua",
+    "ataques": [
+      {
+        "nombre": "Maremoto",
+        "tipo": "Agua",
+        "potencia": 90,
+        "precision": 100,
+        "descripcion": "Desata una ola gigante que golpea al oponente con fuerza."
+      },
+      {
+        "nombre": "Chocogranizo",
+        "tipo": "Hielo",
+        "potencia": 80,
+        "precision": 90,
+        "descripcion": "Lanza proyectiles de hielo que pueden congelar al enemigo."
+      },
+      {
+        "nombre": "Burbuja",
+        "tipo": "Agua",
+        "potencia": 50,
+        "precision": 100,
+        "descripcion": "Un ataque ligero que causa daño y puede reducir la velocidad del enemigo."
+      },
+      {
+        "nombre": "Puño Acuático",
+        "tipo": "Agua",
+        "potencia": 70,
+        "precision": 95,
+        "descripcion": "Un ataque físico que causa daño y tiene una alta probabilidad de golpe crítico."
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/chancho-rancio.png",
+    "src_back": "../recursos/img/pokeorts-static/back/chancho-rancio-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/chancho-rancio.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/chancho-rancio-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/chancho-rancio-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/chancho-rancio-atk-back.gif",
+    "NumeroSecreto": 6,
+    "pokeortID": "CHANCHORANCIO"
+  },
+  "PokeortEnemigo3": {
+    "nombre": "MACETONIO",
+    "atk": 200,
+    "vida": 1000,
+    "vida_total": 1000,
+    "velocidad": 100,
+    "defensa": 200,
+    "Tipo1": "planta",
+    "ataques": [
+      {
+        "nombre": "Rayo Vegetal",
+        "tipo": "Planta",
+        "potencia": 70,
+        "precision": 100,
+        "descripcion": "Un ataque rápido que lanza espinas al oponente, causando daño inmediato."
+      },
+      {
+        "nombre": "Brotar",
+        "tipo": "Planta",
+        "potencia": 40,
+        "precision": 100,
+        "descripcion": "Restaura un poco de vida a sí mismo y causa daño leve al oponente."
+      },
+      {
+        "nombre": "Hoja Afilada",
+        "tipo": "Planta",
+        "potencia": 90,
+        "precision": 95,
+        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
+      },
+      {
+        "nombre": "Puño Vigoroso",
+        "tipo": "Normal",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Un ataque de puño fuerte que inflige gran daño al enemigo."
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/maceta-rancia.png",
+    "src_back": "../recursos/img/pokeorts-static/back/maceta-rancia-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/maceta-rancia.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/maceta-rancia-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/maceta-rancia-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/maceta-rancia-atk-back.gif",
+    "NumeroSecreto": 8,
+    "pokeortID": "MACETONIO"
   }
 }
