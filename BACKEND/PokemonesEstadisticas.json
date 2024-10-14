@@ -51,7 +51,7 @@
     "atk": 200,
     "vida": 1000,
     "vida_total": 1000,
-    "velocidad": 100,
+    "velocidad": 250,
     "defensa": 200,
     "Tipo1": "planta",
     "ataques": [

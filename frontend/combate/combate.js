@@ -52,6 +52,12 @@ let imgAmiga = document.getElementById("ImagenAmiga1");
 let imgEnemiga = document.getElementById("ImagenAmiga2");
 let barraDeVidaAmigo = document.getElementById("vidaAmigo");
 let barraDeVidaEnemigo = document.getElementById("vidaEnemigo");
+let ataques = [
+    document.getElementById("ataque1"),
+    document.getElementById("ataque2"),
+    document.getElementById("ataque3"),
+    document.getElementById("ataque4")
+];
 
 
 // TABLA DE TIPOS
@@ -145,6 +151,10 @@ function EleccionDePokeortInicial(button) {
     document.getElementById("ImagenAmiga2").style.display = "block";
     document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
     document.getElementById("pokeort-name-2").innerHTML = PokeortElegidoEnemigoActual.nombre;
+    ataques[0].textContent = PokeortElegidoActual.ataques[0].nombre;
+    ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
+    ataques[2].textContent = PokeortElegidoActual.ataques[2].nombre;
+    ataques[3].textContent = PokeortElegidoActual.ataques[3].nombre;
 
     document.querySelectorAll(".pokeortInicialEleccion").forEach(button => {
         button.style.display = "none";
@@ -201,6 +211,10 @@ function intercambiarPokeort(button, index) {
     img.src = pokeortElegido.src_gif_back;
 
     PokeortElegidoActual = pokeortElegido;
+    ataques[0].textContent = PokeortElegidoActual.ataques[0].nombre;
+    ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
+    ataques[2].textContent = PokeortElegidoActual.ataques[2].nombre;
+    ataques[3].textContent = PokeortElegidoActual.ataques[3].nombre;
     bajarBarraDeVida(PokeortElegidoActual, barraDeVidaAmigo);
 
     console.log("PokeORT elegido:", PokeortElegidoActual);
@@ -758,6 +772,10 @@ function  QueHacerConObjeto(Nombre)
             imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
             document.getElementById("pokeort-name-1").textContent = PokeortElegidoActual.nombre;
             document.getElementById("pokeort-name-2").textContent = PokeortElegidoActual.nombre;
+            ataques[0].textContent = PokeortElegidoActual.ataques[0].nombre;
+            ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
+            ataques[2].textContent = PokeortElegidoActual.ataques[2].nombre;
+            ataques[3].textContent = PokeortElegidoActual.ataques[3].nombre;
             bajarPokeball();
             bajarBarraDeVida(PokeortElegidoActual, barraDeVidaAmigo);
             bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);
