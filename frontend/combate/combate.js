@@ -334,10 +334,25 @@ function bajarPokeball() {
     {
         vidasAmigas[i].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
     }
+
     for (let i = 0; i < PokeortEnemigosDerrotados.length; i++) 
     {
         vidasEnemigas[i].style.backgroundImage = "url('../recursos/img/iconos/pokeball-gris.png')";
     }
+
+    if (PokeortAmigosDerrotados.length === 0)
+    {
+        vidasAmigas.forEach(vida => {
+            vida.style.backgroundImage = "url('../recursos/img/iconos/pokeball-roja.png'"
+        })
+    }
+
+    if (PokeortEnemigosDerrotados.length === 0)
+        {
+            vidasEnemigas.forEach(vida => {
+                vida.style.backgroundImage = "url('../recursos/img/iconos/pokeball-roja.png'"
+            })
+        }
 }
 
 function bajarBarraDeVida(defensor, barraDeVida) {
@@ -646,14 +661,28 @@ function  QueHacerConObjeto(Nombre)
     function pokeortBebePocion(pokeort, cambioEstadistica) {
         ocultarTodo();
 
-        accion_Pokeort.textContent = `${pokeort.nombre} bebió una pocion de ${pociones[pocionIndex]}!`;
-        setTimeout(() => {
-            accion_Pokeort.textContent = `${pociones[pocionIndex]} de ${pokeort.nombre} aumentó +${cambioEstadistica}!`;
+        if (QueHacePocion <= 4)
+        {
+            accion_Pokeort.textContent = `${pokeort.nombre} bebió una pocion de ${pociones[pocionIndex]}!`;
             setTimeout(() => {
-                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                botones_opciones.forEach(boton => boton.disabled = false);
+                accion_Pokeort.textContent = `${pociones[pocionIndex]} de ${pokeort.nombre} aumentó +${cambioEstadistica}!`;
+                setTimeout(() => {
+                    accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                    botones_opciones.forEach(boton => boton.disabled = false);
+                }, 2000)
             }, 2000)
-        }, 2000)
+        }
+        else
+        {
+            accion_Pokeort.textContent = "¡Cambiaste los PokeORTs con el rival!"
+            setTimeout(() => {
+                accion_Pokeort.textContent = `Tus PokeORT actuales son: ${PokeortAmigos[0].nombre}, ${PokeortAmigos[1].nombre} y ${PokeortAmigos[2].nombre}`;
+                setTimeout(() => {
+                    accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                    botones_opciones.forEach(boton => boton.disabled = false);
+                }, 2000)
+            }, 2000)
+        }
     }
 
     if (QueHacePocion === 1)
@@ -705,6 +734,7 @@ function  QueHacerConObjeto(Nombre)
     else if(QueHacePocion === 5)
         {
             [PokeortAmigos, PokeortEnemigos] = [PokeortEnemigos, PokeortAmigos];
+            [PokeortAmigosDerrotados, PokeortEnemigosDerrotados] = [PokeortEnemigosDerrotados, PokeortAmigosDerrotados]
         
             const PokeortElegidoActualcopia = PokeortElegidoActual;
             const PokeortElegidoEnemigoActualcopia = PokeortElegidoEnemigoActual;
@@ -728,9 +758,13 @@ function  QueHacerConObjeto(Nombre)
             imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
             document.getElementById("pokeort-name-1").textContent = PokeortElegidoActual.nombre;
             document.getElementById("pokeort-name-2").textContent = PokeortElegidoActual.nombre;
+            bajarPokeball();
+            bajarBarraDeVida(PokeortElegidoActual, barraDeVidaAmigo);
+            bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);
         
             MostrarObjetos();  
             document.getElementById("PocionMisteriosa").style.display = "none";
+            pokeortBebePocion(PokeortElegidoActual, 0);
         }
 
         SeleccionandoObjeto = false;
