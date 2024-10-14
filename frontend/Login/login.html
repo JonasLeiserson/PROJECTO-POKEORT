@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="login.css">
-    <script src="login.js"></script>
+    
 </head>
 <body>
-    
-</body>
-</html>
-<div id="loginFormContainer"></div>
+
 <div class="title-div">
     <h1 class="title first">BIENVENIDOS</h1> 
     <h1 class="title">A <span class="negrita">POKEORT</span></h1>
@@ -19,16 +16,18 @@
 
 <form method="POST" action="http://localhost:3000/login">
     <input type="text" name="username" placeholder="Usuario" autocomplete="username" required>
-    <input type="password" name="password" placeholder="Contraseña"  autocomplete="current-password" required>
+    <input type="password" name="password" placeholder="Contraseña" autocomplete="current-password" required>
     <button type="submit">Iniciar sesión</button>
 </form>
-<h1> No tienes un usuario, CREA UNO</h1>
-<div>
-<h5>Usuario</h5>
-<input type="text" class="InputTexto">
-<h5>Contraseña</h5>
-<input type="text" class="InputTexto">
+
+<div class="register-container">
+    <h2>Crear Usuario</h2>
+    <form method="POST" action="http://localhost:3000/CrearUsuario">
+        <input type="text" name="username" placeholder="Nuevo Usuario" required>
+        <input type="password" name="password" placeholder="Nueva Contraseña" required>
+        <button type="submit">Crear Usuario</button>
+    </form>
 </div>
-<div>
-<button onclick="CrearUsuario()">CrearUsuario</button>
-</div>
+
+</body>
+</html>

@@ -8,7 +8,7 @@ const session = require('express-session');
 const path = require('path');
 
 app.use(cors({
-    origin: 'http://localhost:3000', 
+    origin: "*", 
     credentials: true 
 }));
 
@@ -38,13 +38,6 @@ app.get('/leer-datos-de-pokeorts', (req, res) => {
 
 //login
 
-
-let usuarios = {};
-fs.readFile('usuarios.json', 'utf8', (data) => {
-    usuarios = JSON.parse(data);
-    console.log(usuarios)
-});
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -65,24 +58,26 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
 
-    
-    fs.readFile('usuarios.json', 'utf8', (data) => {
-        
+    fs.readFile('usuarios.json', 'utf8', (err, data) => {
 
-        const usuarios = JSON.parse(data); 
-        
-        if (usuarios[username] && usuarios[username] === password) 
-        {
+        let usuarios = {};
+        if (data) {
+            try {
+                usuarios = JSON.parse(data);
+            } catch (parseError) {
+                return res.status(500).send('Error al parsear usuarios.json.');
+            }
+        }
+
+        if (usuarios[username] && usuarios[username] === password) {
             req.session.user = username; 
             res.redirect('/pag_inicial/index.html');
-
-        } 
-        else 
-        {
+        } else {
             res.send('Usuario o contraseña incorrectos. <a href="/login">Intenta de nuevo</a>');
         }
     });
 });
+
 
 // Ruta para cerrar sesión
 app.get('/logout', (req, res) => {
@@ -94,7 +89,30 @@ app.get('/logout', (req, res) => {
     });
 });
 
-app.get("/CrearUsuario")
+app.post('/CrearUsuario', (req, res) => {
+    const { username, password } = req.body;
+
+    fs.readFile('usuarios.json', 'utf8', (err, data) => {
+        let usuarios = {};
+        if (data) {
+            usuarios = JSON.parse(data);
+        }
+
+        if (usuarios[username]) {
+            return res.status(400).send('El usuario ya existe.');
+        }
+
+        
+        usuarios[username] = password;
+        console.log(usuarios)
+        fs.writeFile('usuarios.json', JSON.stringify(usuarios, null, 2), () => {
+            res.send('Usuario creado exitosamente.');
+        });
+    });
+});
+
+
+
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
