@@ -6,10 +6,37 @@
     "vida_total": 800,
     "velocidad": 200,
     "defensa": 200,
-    "Tipo1": "fuego",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+    "Tipo1": "",
+    "ataques": [
+      {
+        "nombre": "Llama Sagrada",
+        "tipo": "Fuego",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo y puede quemar."
+      },
+      {
+        "nombre": "Garra Luminosa",
+        "tipo": "Fuego",
+        "potencia": 70,
+        "precision": 95,
+        "descripcion": "Un ataque rápido que inflige daño y puede reducir la defensa del enemigo."
+      },
+      {
+        "nombre": "Rayo Solar",
+        "tipo": "Planta",
+        "potencia": 120,
+        "precision": 100,
+        "descripcion": "Carga energía solar para lanzar un rayo devastador. Requiere un turno para cargar."
+      },
+      {
+        "nombre": "Explosión de Luz",
+        "tipo": "Normal",
+        "potencia": 90,
+        "precision": 85,
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
+      }
+    ],
     "src": "../recursos/img/pokeorts-static/front/owleon.png",
     "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
@@ -18,6 +45,7 @@
     "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
     "NumeroSecreto": 1,
     "pokeortID": "OWLEON"
+    
   },
   "ROKTOM": {
     "nombre": "ROKTOM",
@@ -27,9 +55,36 @@
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "roca",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+   "ataques": [
+        {
+          "nombre": "Terremoto",
+          "tipo": "Tierra",
+          "potencia": 120,
+          "precision": 85,
+          "descripcion": "Sacude el suelo, causando daño a todos los oponentes y puede hacerlos caer."
+        },
+        {
+          "nombre": "Pedrada",
+          "tipo": "Roca",
+          "potencia": 100,
+          "precision": 90,
+          "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño y puede causar confusión."
+        },
+        {
+          "nombre": "Roca Filosa",
+          "tipo": "Roca",
+          "potencia": 80,
+          "precision": 95,
+          "descripcion": "Un ataque que lanza fragmentos afilados, causando daño con una alta posibilidad de crítico."
+        },
+        {
+          "nombre": "Puño Fuego",
+          "tipo": "Fuego",
+          "potencia": 90,
+          "precision": 100,
+          "descripcion": "Un ataque físico que causa daño y puede quemar al enemigo."
+        }
+      ],
     "src": "../recursos/img/pokeorts-static/front/roktom.png",
     "src_back": "../recursos/img/pokeorts-static/back/roktom-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/roktom.gif",
@@ -47,9 +102,36 @@
     "velocidad": 250,
     "defensa": 200,
     "Tipo1": "agua",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+    "ataques": [
+        {
+          "nombre": "Aguacero",
+          "tipo": "Agua",
+          "potencia": 80,
+          "precision": 95,
+          "descripcion": "Invoca una tormenta que causa daño continuo durante varios turnos."
+        },
+        {
+          "nombre": "Chorro de Agua",
+          "tipo": "Agua",
+          "potencia": 60,
+          "precision": 100,
+          "descripcion": "Un ataque rápido que causa daño y puede reducir la velocidad del oponente."
+        },
+        {
+          "nombre": "Surf",
+          "tipo": "Agua",
+          "potencia": 100,
+          "precision": 100,
+          "descripcion": "Monta una ola que inflige daño a todos los oponentes en el campo."
+        },
+        {
+          "nombre": "Beso Hidratante",
+          "tipo": "Agua",
+          "potencia": 50,
+          "precision": 100,
+          "descripcion": "Cura un poco de salud a sí mismo o a un aliado y causa un leve daño al oponente."
+        }
+      ],
     "src": "../recursos/img/pokeorts-static/front/among-us.png",
     "src_back": "../recursos/img/pokeorts-static/back/among-us-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/among-us.gif",
@@ -67,9 +149,36 @@
     "velocidad": 250,
     "defensa": 50,
     "Tipo1": "agua",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+    "ataques": [
+        {
+          "nombre": "Maremoto",
+          "tipo": "Agua",
+          "potencia": 90,
+          "precision": 100,
+          "descripcion": "Desata una ola gigante que golpea al oponente con fuerza."
+        },
+        {
+          "nombre": "Chocogranizo",
+          "tipo": "Hielo",
+          "potencia": 80,
+          "precision": 90,
+          "descripcion": "Lanza proyectiles de hielo que pueden congelar al enemigo."
+        },
+        {
+          "nombre": "Burbuja",
+          "tipo": "Agua",
+          "potencia": 50,
+          "precision": 100,
+          "descripcion": "Un ataque ligero que causa daño y puede reducir la velocidad del enemigo."
+        },
+        {
+          "nombre": "Puño Acuático",
+          "tipo": "Agua",
+          "potencia": 70,
+          "precision": 95,
+          "descripcion": "Un ataque físico que causa daño y tiene una alta probabilidad de golpe crítico."
+        }
+      ],
     "src": "../recursos/img/pokeorts-static/front/chancho-rancio.png",
     "src_back": "../recursos/img/pokeorts-static/back/chancho-rancio-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/chancho-rancio.gif",
@@ -87,9 +196,36 @@
     "velocidad": 200,
     "defensa": 200,
     "Tipo1": "roca",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+    "ataques": [
+      {
+        "nombre": "Golpe de Roca",
+        "tipo": "Roca",
+        "potencia": 90,
+        "precision": 95,
+        "descripcion": "Un ataque potente que puede causar desorientación."
+      },
+      {
+        "nombre": "Poder Tierra",
+        "tipo": "Tierra",
+        "potencia": 110,
+        "precision": 80,
+        "descripcion": "Un ataque que causa un fuerte golpe en el suelo, afectando a todos los enemigos cercanos."
+      },
+      {
+        "nombre": "Rugido Aterrador",
+        "tipo": "Normal",
+        "potencia": 60,
+        "precision": 100,
+        "descripcion": "Un ataque que causa daño y puede asustar al oponente, reduciendo su ataque."
+      },
+      {
+        "nombre": "Deslizarse",
+        "tipo": "Agua",
+        "potencia": 70,
+        "precision": 100,
+        "descripcion": "Se desliza hacia el enemigo, causando daño y aumentando la velocidad."
+      }
+    ],
     "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
     "src_back": "../recursos/img/pokeorts-static/back/gato-rancio-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/gato-rancio.gif",
@@ -107,9 +243,36 @@
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "planta",
-    "Habilidad1": "PUÑO VELOZ",
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+    "ataques": [
+      {
+        "nombre": "Rayo Vegetal",
+        "tipo": "Planta",
+        "potencia": 70,
+        "precision": 100,
+        "descripcion": "Un ataque rápido que lanza espinas al oponente, causando daño inmediato."
+      },
+      {
+        "nombre": "Brotar",
+        "tipo": "Planta",
+        "potencia": 40,
+        "precision": 100,
+        "descripcion": "Restaura un poco de vida a sí mismo y causa daño leve al oponente."
+      },
+      {
+        "nombre": "Hoja Afilada",
+        "tipo": "Planta",
+        "potencia": 90,
+        "precision": 95,
+        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
+      },
+      {
+        "nombre": "Puño Vigoroso",
+        "tipo": "Normal",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Un ataque de puño fuerte que inflige gran daño al enemigo."
+      }
+    ],
     "src": "../recursos/img/pokeorts-static/front/maceta-rancia.png",
     "src_back": "../recursos/img/pokeorts-static/back/maceta-rancia-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/maceta-rancia.gif",
@@ -127,9 +290,36 @@
     "velocidad": 100,
     "defensa": 200,
     "Tipo1": "planta",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+  "ataques": [
+        {
+          "nombre": "Rostro Amistoso",
+          "tipo": "Normal",
+          "potencia": 50,
+          "precision": 100,
+          "descripcion": "Causa daño y puede confundir al oponente, reduciendo su precisión."
+        },
+        {
+          "nombre": "Golpe de Calor",
+          "tipo": "Fuego",
+          "potencia": 80,
+          "precision": 90,
+          "descripcion": "Un ataque cálido que puede quemar al enemigo."
+        },
+        {
+          "nombre": "Destello",
+          "tipo": "Normal",
+          "potencia": 70,
+          "precision": 95,
+          "descripcion": "Lanza una luz brillante que causa daño y puede cegar al oponente."
+        },
+        {
+          "nombre": "Reflejo Acierto",
+          "tipo": "Normal",
+          "potencia": 100,
+          "precision": 90,
+          "descripcion": "Un ataque que causa daño y reduce la defensa del enemigo."
+        }
+      ],
     "src": "../recursos/img/pokeorts-static/front/carita.png",
     "src_back": "../recursos/img/pokeorts-static/back/carita.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/carita.gif",
@@ -150,9 +340,36 @@
     "velocidad": 300,
     "defensa": 1,
     "Tipo1": "TOILET",
-    "Habilidad1": 1,
-    "Habilidad2": 1,
-    "Habilidad3": 1,
+   "ataques": [
+        {
+          "nombre": "Fuerza Toilet",
+          "tipo": "Especial",
+          "potencia": 999,
+          "precision": 50,
+          "descripcion": "Un ataque extremadamente poderoso, pero con baja precisión. Puede acabar con un oponente de un solo golpe."
+        },
+        {
+          "nombre": "Danza del Inodoro",
+          "tipo": "Normal",
+          "potencia": 70,
+          "precision": 95,
+          "descripcion": "Realiza un baile que causa confusión al enemigo y reduce su ataque."
+        },
+        {
+          "nombre": "Chorro de Agua Infinito",
+          "tipo": "Agua",
+          "potencia": 90,
+          "precision": 100,
+          "descripcion": "Lanza un chorro de agua que no tiene fin, causando daño continuo."
+        },
+        {
+          "nombre": "Baile de Fuego",
+          "tipo": "Fuego",
+          "potencia": 80,
+          "precision": 90,
+          "descripcion": "Un baile de fuego que causa daño y puede quemar al oponente."
+        }
+      ],
     "src": "../recursos/img/pokeorts-static/front/skibidi.png",
     "src_back": "../recursos/img/pokeorts-static/back/skibidi-back.png",
     "src_gif": "../recursos/img/pokeorts-gifs/front/skibidi.gif",

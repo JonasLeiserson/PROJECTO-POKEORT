@@ -83,7 +83,12 @@ function MostrarEstadisticas(button) {
         document.getElementById("VELOCIDAD").textContent = "VELOCIDAD: " + pokeort.velocidad;
         document.getElementById("DAÑO").textContent = "DAÑO: " + pokeort.atk;
         document.getElementById("DEFENSA").textContent = "DEFENSA: " + pokeort.defensa;
-    }
+
+        document.getElementById("Ability1").textContent =  pokeort.ataques[0].nombre;
+        document.getElementById("Ability2").textContent =  pokeort.ataques[1].nombre;
+        document.getElementById("Ability3").textContent =  pokeort.ataques[2].nombre;
+        document.getElementById("Ability4").textContent =  pokeort.ataques[3].nombre;
+}
 }
 
 function BotonesCombinados(button) 
@@ -114,7 +119,7 @@ function EnviarAlCombate() {
             PokeortEnemigo1: PokemonesEnemigos[0],
             PokeortEnemigo2: PokemonesEnemigos[1],
             PokeortEnemigo3: PokemonesEnemigos[2],
-        };
+        }
 
         fetch('http://localhost:3000/guardar-datos', {
             method: 'POST',
@@ -128,5 +133,5 @@ function EnviarAlCombate() {
         {
             window.location.href = "../combate/combate.html";
         });
-    }
+}
 }
