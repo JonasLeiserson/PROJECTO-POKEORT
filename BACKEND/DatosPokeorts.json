@@ -26,9 +26,9 @@
       {
         "nombre": "Rayo Solar",
         "tipo": "planta",
-        "potencia": 120,
-        "precision": 100,
-        "descripcion": "Carga energía solar para lanzar un rayo devastador. Requiere un turno para cargar."
+        "potencia": 100,
+        "precision": 80,
+        "descripcion": "Carga energía solar para lanzar un rayo devastador."
       },
       {
         "nombre": "Explosión de Luz",
