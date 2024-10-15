@@ -14,20 +14,22 @@
         "tipo": "fuego",
         "potencia": 100,
         "precision": 90,
-        "descripcion": "Envuelve al oponente en llamas, causando daño significativo y puede quemar."
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo y puede quemar.",
+        "efecto" : "quemar"
       },
       {
         "nombre": "Haz Luminoso",
         "tipo": "volador",
         "potencia": 70,
         "precision": 95,
-        "descripcion": "Un ataque rápido que inflige daño y puede reducir la defensa del enemigo."
+        "descripcion": "Un ataque rápido que inflige daño y puede reducir la defensa del enemigo.",
+        "efecto" : "bajardefensa"
       },
       {
         "nombre": "Rayo Solar",
         "tipo": "planta",
-        "potencia": 100,
-        "precision": 80,
+        "potencia": 150,
+        "precision": 75,
         "descripcion": "Carga energía solar para lanzar un rayo devastador."
       },
       {
@@ -35,7 +37,8 @@
         "tipo": "normal",
         "potencia": 90,
         "precision": 85,
-        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo.",
+        "efecto" : "cegar"
       }
     ],
     "src": "../recursos/img/pokeorts-static/front/owleon.png",
@@ -70,21 +73,24 @@
           "tipo": "roca",
           "potencia": 100,
           "precision": 90,
-          "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño y puede causar confusión."
+          "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño y puede causar confusión.",
+           "efecto" : "confusion"
         },
         {
           "nombre": "Roca Filosa",
           "tipo": "roca",
           "potencia": 80,
           "precision": 95,
-          "descripcion": "Un ataque que lanza fragmentos afilados, causando daño con una alta posibilidad de crítico."
+          "descripcion": "Un ataque que lanza fragmentos afilados, causando daño con una alta posibilidad de crítico.",
+           "efecto" : "aumentarCritico"
         },
         {
           "nombre": "Golpe",
           "tipo": "normal",
           "potencia": 90,
           "precision": 100,
-          "descripcion": "Un ataque físico que causa daño y puede quemar al enemigo."
+          "descripcion": "Un ataque físico que causa daño y puede quemar al enemigo.",
+           "efecto" : "quemar"
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/roktom.png",
@@ -118,13 +124,14 @@
           "tipo": "agua",
           "potencia": 60,
           "precision": 100,
-          "descripcion": "Un ataque rápido que causa daño y puede reducir la velocidad del oponente."
+          "descripcion": "Un ataque rápido que causa daño y puede reducir la velocidad del oponente.",
+          "efecto" : "bajarvelocidad"
         },
         {
           "nombre": "Meteoritos",
           "tipo": "roca",
-          "potencia": 100,
-          "precision": 70,
+          "potencia": 200,
+          "precision": 60,
           "descripcion": "Caen meteoritos infligiendo mucho daño al oponente."
         },
         {
@@ -132,7 +139,8 @@
           "tipo": "agua",
           "potencia": 1000,
           "precision": 2,
-          "descripcion": "2% de probabilidad de insta-kill al oponente."
+          "descripcion": "2% de probabilidad de insta-kill al oponente.",
+          "efecto" : "instakill"
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/among-us.png",
@@ -166,14 +174,16 @@
           "tipo": "hielo",
           "potencia": 80,
           "precision": 90,
-          "descripcion": "Lanza proyectiles de hielo que pueden congelar al enemigo."
+          "descripcion": "Lanza proyectiles de hielo que pueden congelar al enemigo.",
+           "efecto" : "congelar"
         },
         {
           "nombre": "Burbuja oscura",
           "tipo": "oscuridad",
           "potencia": 50,
           "precision": 100,
-          "descripcion": "Un ataque ligero que causa daño y puede reducir la velocidad del enemigo."
+          "descripcion": "Un ataque ligero que causa daño y puede reducir la velocidad del enemigo.",
+           "efecto" : "bajarvelocidad"
         },
         {
           "nombre": "Oscuritrueno",
@@ -207,7 +217,8 @@
         "tipo": "roca",
         "potencia": 90,
         "precision": 95,
-        "descripcion": "Un ataque potente que puede causar desorientación."
+        "descripcion": "Un ataque potente que puede causar desorientación.",
+        "efecto" : "confusion"
       },
       {
         "nombre": "Poder Tierra",
@@ -221,14 +232,16 @@
         "tipo": "normal",
         "potencia": 60,
         "precision": 100,
-        "descripcion": "Un ataque que causa daño y puede asustar al oponente, reduciendo su ataque."
+        "descripcion": "Un ataque que causa daño y puede asustar al oponente, reduciendo su ataque.",
+         "efecto" : "bajarataque"
       },
       {
         "nombre": "Deslizarse",
         "tipo": "agua",
         "potencia": 70,
         "precision": 100,
-        "descripcion": "Se desliza hacia el enemigo, causando daño y aumentando la velocidad."
+        "descripcion": "Se desliza hacia el enemigo, causando daño y aumentando la velocidad.",
+        "efecto" : "subirvelocidad"
       }
     ],
     "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
@@ -254,7 +267,7 @@
         "nombre": "Rayo Vegetal",
         "tipo": "planta",
         "potencia": 70,
-        "precision": 100,
+        "precision": 150,
         "descripcion": "Un ataque rápido que lanza espinas al oponente, causando daño inmediato."
       },
       {
@@ -262,14 +275,16 @@
         "tipo": "planta",
         "potencia": 40,
         "precision": 100,
-        "descripcion": "Restaura un poco de vida a sí mismo y causa daño leve al oponente."
+        "descripcion": "Restaura un poco de vida a sí mismo y causa daño leve al oponente.",
+        "efecto" : "curar"
       },
       {
         "nombre": "Hoja Afilada",
         "tipo": "planta",
         "potencia": 90,
         "precision": 95,
-        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
+        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico.",
+        "efecto" : "aumentarCritico"
       },
       {
         "nombre": "Puño Vigoroso",
@@ -303,14 +318,16 @@
           "tipo": "normal",
           "potencia": 50,
           "precision": 100,
-          "descripcion": "Causa daño y puede confundir al oponente, reduciendo su precisión."
+          "descripcion": "Causa daño y puede confundir al oponente, reduciendo su precisión.",
+          "efecto" : "confusion"
         },
         {
           "nombre": "Golpe de Calor",
           "tipo": "fuego",
           "potencia": 80,
           "precision": 90,
-          "descripcion": "Un ataque cálido que puede quemar al enemigo."
+          "descripcion": "Un ataque cálido que puede quemar al enemigo.",
+          "efecto" : "quemar"
         },
         {
           "nombre": "Latigo Sonriente",
@@ -324,7 +341,8 @@
           "tipo": "electrico",
           "potencia": 100,
           "precision": 90,
-          "descripcion": "Un ataque que causa daño y reduce la defensa del enemigo."
+          "descripcion": "Un ataque que causa daño y reduce la defensa del enemigo.",
+          "efecto" : "bajardefensa"
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/carita.png",
@@ -361,21 +379,24 @@
           "tipo": "normal",
           "potencia": 70,
           "precision": 95,
-          "descripcion": "Realiza un baile que causa confusión al enemigo y reduce su ataque."
+          "descripcion": "Realiza un baile que causa confusión al enemigo y reduce su ataque.",
+          "efecto" : "confusion"
         },
         {
           "nombre": "Chorro de Agua Infinito",
           "tipo": "agua",
           "potencia": 90,
           "precision": 100,
-          "descripcion": "Lanza un chorro de agua que no tiene fin, causando daño continuo."
+          "descripcion": "Lanza un chorro de agua que no tiene fin, causando daño continuo.",
+          "efecto" : "DañoContinuo"
         },
         {
           "nombre": "Baile de Fuego",
           "tipo": "fuego",
           "potencia": 80,
           "precision": 90,
-          "descripcion": "Un baile de fuego que causa daño y puede quemar al oponente."
+          "descripcion": "Un baile de fuego que causa daño y puede quemar al oponente.",
+          "efecto" : "quemar"
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/skibidi.png",
