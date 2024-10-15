@@ -44,6 +44,7 @@ let botones = [
 ];
 let ataqueElegido;
 let mejorAtaque = null; 
+let acertado;
 
 //cosas para front
 let opciones = document.getElementById('opciones');
@@ -163,16 +164,6 @@ function EleccionDePokeortInicial(button) {
     ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
     ataques[2].textContent = PokeortElegidoActual.ataques[2].nombre;
     ataques[3].textContent = PokeortElegidoActual.ataques[3].nombre;
-
-    let AtaquesDePokeortActual = PokeortElegidoActual.ataques[0];
-
-    let ataquesa = 
-    {
-        ataque1: new Ataque(AtaquesDePokeortActual.nombre, AtaquesDePokeortActual.potencia, AtaquesDePokeortActual.precision, AtaquesDePokeortActual.tipo),
-        ataque2: new Ataque(PokeortElegidoActual.ataques[1].nombre, 25),
-        ataque3: new Ataque(PokeortElegidoActual.ataques[2].nombre, ),
-        ataque4: new Ataque(PokeortElegidoActual.ataques[3].nombre, 40),
-    };
 
     document.querySelectorAll(".pokeortInicialEleccion").forEach(button => {
         button.style.display = "none";
@@ -398,7 +389,7 @@ function bajarBarraDeVida(defensor, barraDeVida) {
 }
 
 function accionPokeort(atacante, defensor, daño, ataque) {
-    if (pokeortAcierta(ataqueElegido))
+    if (acertado)
     {
         accion_Pokeort.textContent = `¡${atacante.nombre} ataca a ${defensor.nombre} con ${ataque.nombre}, causando ${daño} de daño!`;
         botones_opciones.forEach(boton => {
@@ -452,6 +443,7 @@ function realizarTurnoJugador() {
 
     if (pokeortAcierta(ataqueElegido))
     {
+        acertado = true;
         const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, ataqueElegido);
 
         PokeortElegidoEnemigoActual.vida -= daño;
@@ -528,6 +520,7 @@ function realizarTurnoJugador() {
     }
     else
     {
+        acertado = false;
         console.log(`¡${PokeortElegidoActual.nombre} ha fallado el ataque ${ataqueElegido.nombre}!`)
         ocultarTodo();
         accionPokeort(PokeortElegidoActual, PokeortElegidoEnemigoActual, 0, ataqueElegido)
@@ -591,6 +584,7 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
 
     if (pokeortAcierta(ataqueElegido))
     {
+        acertado = true;
         PokeortElegidoActual.vida -= daño;
 
         ocultarTodo();
@@ -672,9 +666,10 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
     }
     else
     {
+        acertado = false;
         console.log(`¡${PokeortElegidoActual.nombre} ha fallado el ataque ${ataqueElegido.nombre}!`)
         ocultarTodo();
-        accionPokeort(PokeortElegidoEnemigoActual ,PokeortElegidoActual , 0, AtaqueMasEfectivo)
+        accionPokeort(PokeortElegidoEnemigoActual ,PokeortElegidoActual , 0, AtaqueMasEfectivo);
 
         setTimeout(() => {
             imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
@@ -791,9 +786,9 @@ function  QueHacerConObjeto(Nombre)
 
         if (QueHacePocion <= 4)
         {
-            accion_Pokeort.textContent = `${pokeort.nombre} bebió una pocion de ${pociones[pocionIndex]}!`;
+            accion_Pokeort.textContent = `¡${pokeort.nombre} bebió una pocion de ${pociones[pocionIndex]}!`;
             setTimeout(() => {
-                accion_Pokeort.textContent = `${pociones[pocionIndex]} de ${pokeort.nombre} aumentó +${cambioEstadistica}!`;
+                accion_Pokeort.textContent = `¡${pociones[pocionIndex]} de ${pokeort.nombre} aumentó +${cambioEstadistica}!`;
                 setTimeout(() => {
                     accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
                     botones_opciones.forEach(boton => boton.disabled = false);
@@ -802,6 +797,7 @@ function  QueHacerConObjeto(Nombre)
         }
         else
         {
+            botones_opciones.forEach(boton => boton.disabled = true);
             accion_Pokeort.textContent = "¡Cambiaste los PokeORTs con el rival!"
             setTimeout(() => {
                 accion_Pokeort.textContent = `Tus PokeORT actuales son: ${PokeortAmigos[0].nombre}, ${PokeortAmigos[1].nombre} y ${PokeortAmigos[2].nombre}`;
@@ -908,11 +904,3 @@ function PocionInsana()
     QueHacerConObjeto()
 }
 
-class Ataque {
-    constructor(nombre, potencia, precision, tipo) {
-        this.nombre = nombre;
-        this.potencia = potencia;
-        this.precision = precision;
-        this.tipo = tipo;
-    }
-}
