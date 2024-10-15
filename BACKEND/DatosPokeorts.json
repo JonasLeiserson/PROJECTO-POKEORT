@@ -1,11 +1,11 @@
 {
   "OWLEON": {
     "nombre": "OWLEON",
-    "atk": 200,
+    "atk": 300,
     "vida": 800,
     "vida_total": 800,
     "velocidad": 200,
-    "defensa": 200,
+    "defensa": 175,
     "Tipo1": "fuego",
     "Tipo2": "volador",
     "ataques": [
@@ -50,7 +50,7 @@
   },
   "ROKTOM": {
     "nombre": "ROKTOM",
-    "atk": 200,
+    "atk": 100,
     "vida": 1500,
     "vida_total": 1500,
     "velocidad": 100,
@@ -98,11 +98,11 @@
   },
   "AMONGUS": {
     "nombre": "AMONG US",
-    "atk": 150,
-    "vida": 1000,
-    "vida_total": 1000,
+    "atk": 200,
+    "vida": 1100,
+    "vida_total": 1100,
     "velocidad": 250,
-    "defensa": 200,
+    "defensa": 125,
     "Tipo1": "agua",
     "Tipo2": "electrico",
     "ataques": [
@@ -131,8 +131,8 @@
           "nombre": "Asesinato",
           "tipo": "agua",
           "potencia": 1000,
-          "precision": 1,
-          "descripcion": "1% de probabilidad de insta-kill al oponente."
+          "precision": 2,
+          "descripcion": "2% de probabilidad de insta-kill al oponente."
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/among-us.png",
@@ -146,11 +146,11 @@
   },
   "CHANCHORANCIO": {
     "nombre": "CHANCHORANCIO",
-    "atk": 250,
+    "atk": 350,
     "vida": 800,
     "vida_total": 800,
     "velocidad": 250,
-    "defensa": 50,
+    "defensa": 75,
     "Tipo1": "oscuridad",
     "Tipo2": "agua",
     "ataques": [
@@ -194,11 +194,11 @@
   },
   "GATORANCIO": {
     "nombre": "GATORANCIO",
-    "atk": 200,
+    "atk": 250,
     "vida": 800,
     "vida_total": 800,
-    "velocidad": 200,
-    "defensa": 200,
+    "velocidad": 250,
+    "defensa": 140,
     "Tipo1": "roca",
     "Tipo2": "normal",
     "ataques": [
@@ -243,10 +243,10 @@
   "MACETONIO": {
     "nombre": "MACETONIO",
     "atk": 200,
-    "vida": 1000,
-    "vida_total": 1000,
+    "vida": 1200,
+    "vida_total": 1200,
     "velocidad": 100,
-    "defensa": 200,
+    "defensa": 180,
     "Tipo1": "planta",
     "Tipo2": "agua",
     "ataques": [
@@ -293,8 +293,8 @@
     "atk": 200,
     "vida": 900,
     "vida_total": 900,
-    "velocidad": 100,
-    "defensa": 200,
+    "velocidad": 300,
+    "defensa": 180,
     "Tipo1": "planta",
     "Tipo2": "hielo",
   "ataques": [
@@ -313,15 +313,15 @@
           "descripcion": "Un ataque cálido que puede quemar al enemigo."
         },
         {
-          "nombre": "Destello",
-          "tipo": "normal",
+          "nombre": "Latigo Sonriente",
+          "tipo": "planta",
           "potencia": 70,
           "precision": 95,
-          "descripcion": "Lanza una luz brillante que causa daño y puede cegar al oponente."
+          "descripcion": "Lanza un latigazo que causa daño."
         },
         {
           "nombre": "Reflejo Acierto",
-          "tipo": "normal",
+          "tipo": "electrico",
           "potencia": 100,
           "precision": 90,
           "descripcion": "Un ataque que causa daño y reduce la defensa del enemigo."

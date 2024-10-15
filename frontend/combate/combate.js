@@ -22,6 +22,7 @@ window.onload = function() {
         document.getElementById("NombrePokeort1").innerHTML = PokeortAmigos[0].nombre;
         document.getElementById("NombrePokeort2").innerHTML = PokeortAmigos[1].nombre;
         document.getElementById("NombrePokeort3").innerHTML = PokeortAmigos[2].nombre;
+        document.getElementById("spoiler").src = PokeortEnemigos[0].src
 
         document.getElementById("ImagenAmiga2").style.display = "none";
     });
@@ -42,7 +43,8 @@ let botones = [
     document.getElementById("BotonDeCambio2"),
     document.getElementById("BotonDeCambio3")
 ];
-let ataqueElegido;
+let ataqueElegidoAmigo;
+let ataqueElegidoEnemigo;
 let mejorAtaque = null; 
 let acertado;
 
@@ -52,6 +54,14 @@ let botones_opciones = opciones.querySelectorAll('button');
 let accion_Pokeort = document.getElementById("accionPokeort");
 let imgAmiga = document.getElementById("ImagenAmiga1");
 let imgEnemiga = document.getElementById("ImagenAmiga2");
+let tiposPokeortElegido = [
+    document.getElementById("pokeortAmigo-tipo1"),
+    document.getElementById("pokeortAmigo-tipo2")
+]
+let tiposPokeortElegidoEnemigo = [
+    document.getElementById("pokeortEnemigo-tipo1"),
+    document.getElementById("pokeortEnemigo-tipo2")
+]
 let barraDeVidaAmigo = document.getElementById("vidaAmigo");
 let barraDeVidaEnemigo = document.getElementById("vidaEnemigo");
 let ataques = [
@@ -73,7 +83,9 @@ const efectividadTipos = {
     tierra: { fuego: 2, planta: 0.5, electrico: 2, agua: 1, roca: 2, normal: 1, tierra: 1, hielo: 1, volador: 0, oscuridad: 1},
     hielo: { fuego: 0.5, planta: 2, electrico: 1, agua: 0.5, roca: 1, normal: 1, tierra: 2, hielo: 0.5, volador: 2, oscuridad: 1},
     volador: { fuego: 1, planta: 2, electrico: 0.5, agua: 1, roca: 0.5, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1},
-    oscuridad: { fuego: 1, planta: 1, electrico: 2, agua: 1, roca: 1, normal: 1, tierra: 1, hielo: 1, volador: 2, oscuridad: 0.5}
+    oscuridad: { fuego: 1, planta: 1, electrico: 2, agua: 1, roca: 1, normal: 1, tierra: 1, hielo: 1, volador: 2, oscuridad: 0.5},
+    skibidi: { fuego: 100, planta: 100, electrico: 100, agua: 100, roca: 100, normal: 100, tierra: 100, hielo: 100, volador: 100, oscuridad: 100}
+    
 };
 
 function mostrar_ataques() {
@@ -135,7 +147,7 @@ function ocultarTodo() {
 }
 
 function EleccionDePokeortInicial(button) {
-    
+
     let botones = 
     [
         document.getElementById("BotonDeCambio1"),
@@ -159,6 +171,10 @@ function EleccionDePokeortInicial(button) {
     document.getElementById("ImagenAmiga2").style.display = "block";
     document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
     document.getElementById("pokeort-name-2").innerHTML = PokeortElegidoEnemigoActual.nombre;
+    tiposPokeortElegido[0].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo1}.png`
+    tiposPokeortElegido[1].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo2}.png`
+    tiposPokeortElegidoEnemigo[0].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo1}.png`
+    tiposPokeortElegidoEnemigo[1].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo2}.png`
 
     ataques[0].textContent = PokeortElegidoActual.ataques[0].nombre;
     ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
@@ -220,6 +236,9 @@ function intercambiarPokeort(button, index) {
     nameMenu.textContent = pokeortElegido.nombre;
     img.style.display = "block";
     img.src = pokeortElegido.src_gif_back;
+    tiposPokeortElegido[0].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo1}.png`
+    tiposPokeortElegido[1].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo2}.png`
+
 
     PokeortElegidoActual = pokeortElegido;
     ataques[0].textContent = PokeortElegidoActual.ataques[0].nombre;
@@ -263,13 +282,13 @@ function AdministrarBatalla(button) {
         const ataque = button.textContent.trim(); 
 
         if (ataque === ataques[0].textContent.trim()) {
-            ataqueElegido = PokeortElegidoActual.ataques[0];
+            ataqueElegidoAmigo = PokeortElegidoActual.ataques[0];
         } else if (ataque === ataques[1].textContent.trim()) {
-            ataqueElegido = PokeortElegidoActual.ataques[1];
+            ataqueElegidoAmigo = PokeortElegidoActual.ataques[1];
         } else if (ataque === ataques[2].textContent.trim()) {
-            ataqueElegido = PokeortElegidoActual.ataques[2];
+            ataqueElegidoAmigo = PokeortElegidoActual.ataques[2];
         } else if (ataque === ataques[3].textContent.trim()) {
-            ataqueElegido = PokeortElegidoActual.ataques[3];
+            ataqueElegidoAmigo = PokeortElegidoActual.ataques[3];
         }
 
 
@@ -441,22 +460,22 @@ function realizarTurnoJugador() {
         imgAmiga.style.right = "44%";
     }, 10);
 
-    if (pokeortAcierta(ataqueElegido))
+    if (pokeortAcierta(ataqueElegidoAmigo))
     {
         acertado = true;
-        const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, ataqueElegido);
+        const daño = CalcularDaño(PokeortElegidoActual, PokeortElegidoEnemigoActual, ataqueElegidoAmigo);
 
         PokeortElegidoEnemigoActual.vida -= daño;
         
     
         ocultarTodo();
-        accionPokeort(PokeortElegidoActual, PokeortElegidoEnemigoActual, daño, ataqueElegido);
+        accionPokeort(PokeortElegidoActual, PokeortElegidoEnemigoActual, daño, ataqueElegidoAmigo);
     
         if (PokeortElegidoEnemigoActual.vida <= 0) {
             PokeortElegidoEnemigoActual.vida = 0;
         }
     
-        console.log( `¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} con ${ataqueElegido.nombre}, causando ${daño} de daño!`);
+        console.log( `¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} con ${ataqueElegidoAmigo.nombre}, causando ${daño} de daño!`);
         console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
     
         setTimeout(() => {
@@ -508,6 +527,8 @@ function realizarTurnoJugador() {
                 document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
                 document.getElementById("ImagenAmiga2").style.display = "block";
                 document.getElementById("pokeort-name-2").innerHTML = PokeortElegidoEnemigoActual.nombre;
+                tiposPokeortElegidoEnemigo[0].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo1}.png`
+                tiposPokeortElegidoEnemigo[1].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo2}.png`
     
                 bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);
             }
@@ -521,9 +542,9 @@ function realizarTurnoJugador() {
     else
     {
         acertado = false;
-        console.log(`¡${PokeortElegidoActual.nombre} ha fallado el ataque ${ataqueElegido.nombre}!`)
+        console.log(`¡${PokeortElegidoActual.nombre} ha fallado el ataque ${ataqueElegidoAmigo.nombre}!`)
         ocultarTodo();
-        accionPokeort(PokeortElegidoActual, PokeortElegidoEnemigoActual, 0, ataqueElegido)
+        accionPokeort(PokeortElegidoActual, PokeortElegidoEnemigoActual, 0, ataqueElegidoAmigo)
 
         setTimeout(() => {
             imgAmiga.src = PokeortElegidoActual.src_gif_back;
@@ -570,7 +591,7 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
 
     const daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, AtaqueMasEfectivo);
 
-    ataqueElegido = AtaqueMasEfectivo;
+    ataqueElegidoEnemigo = AtaqueMasEfectivo;
 
     imgEnemiga.src = PokeortElegidoEnemigoActual.src_atk;
 
@@ -582,7 +603,7 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
     imgEnemiga.style.right = "44%";
     }, 10);
 
-    if (pokeortAcierta(ataqueElegido))
+    if (pokeortAcierta(ataqueElegidoEnemigo))
     {
         acertado = true;
         PokeortElegidoActual.vida -= daño;
@@ -667,7 +688,7 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
     else
     {
         acertado = false;
-        console.log(`¡${PokeortElegidoActual.nombre} ha fallado el ataque ${ataqueElegido.nombre}!`)
+        console.log(`¡${PokeortElegidoActual.nombre} ha fallado el ataque ${ataqueElegidoEnemigo.nombre}!`)
         ocultarTodo();
         accionPokeort(PokeortElegidoEnemigoActual ,PokeortElegidoActual , 0, AtaqueMasEfectivo);
 
@@ -689,15 +710,15 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
 
 }
 
-function CalcularDaño(atacante, defensor, ataqueElegido) {
-    const modificador1 = efectividadTipos[ataqueElegido.tipo][defensor.Tipo1];
-    const modificador2 = efectividadTipos[ataqueElegido.tipo][defensor.Tipo2];
+function CalcularDaño(atacante, defensor, ataque) {
+    const modificador1 = efectividadTipos[ataque.tipo][defensor.Tipo1];
+    const modificador2 = efectividadTipos[ataque.tipo][defensor.Tipo2];
 
     let modificadorTotal = modificador1 * modificador2;
 
     let variacion = Math.floor(Math.random() * (100 - 85 + 1)) + 85;
 
-    let daño = Math.round(0.01 * modificadorTotal * variacion * ((0.2 * 100 + 1) * atacante.atk * ataqueElegido.potencia / (25 * defensor.defensa) + 2));
+    let daño = Math.round(0.01 * modificadorTotal * variacion * ((0.2 * 100 + 1) * atacante.atk * ataque.potencia / (25 * defensor.defensa) + 2));
 
     const ProbabilidadDecritico = generarNumeroAleatorio()
     let critico = ""
@@ -706,7 +727,7 @@ function CalcularDaño(atacante, defensor, ataqueElegido) {
         daño = daño * 2
         critico = " ES UN ATAQUE CRITICO Y"
     }
-    console.log("El ataque de " + ataqueElegido.tipo + critico + " tiene una efectividad del: *" + modificador1 * modificador2 + " en " + defensor.Tipo1 + " y " + defensor.Tipo2);
+    console.log("El ataque de " + ataque.tipo + critico + " tiene una efectividad del: *" + modificador1 * modificador2 + " en " + defensor.Tipo1 + " y " + defensor.Tipo2);
     return daño;
 }
 
@@ -886,6 +907,10 @@ function  QueHacerConObjeto(Nombre)
             ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
             ataques[2].textContent = PokeortElegidoActual.ataques[2].nombre;
             ataques[3].textContent = PokeortElegidoActual.ataques[3].nombre;
+            tiposPokeortElegido[0].src = `../recursos/img/iconos/tipos/${PokeortElegidoActual.Tipo1}.png`
+            tiposPokeortElegido[1].src = `../recursos/img/iconos/tipos/${PokeortElegidoActual.Tipo2}.png`
+            tiposPokeortElegidoEnemigo[0].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo1}.png`
+            tiposPokeortElegidoEnemigo[1].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo2}.png`
             bajarPokeball();
             bajarBarraDeVida(PokeortElegidoActual, barraDeVidaAmigo);
             bajarBarraDeVida(PokeortElegidoEnemigoActual, barraDeVidaEnemigo);

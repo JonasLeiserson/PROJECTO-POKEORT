@@ -31,6 +31,16 @@ align-items: center;
 justify-content: center;
 z-index: 1;
 
+    .spoiler {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #spoiler {
+        image-rendering: pixelated;
+    }
+
     p {
         font-family: Kyiv;
         font-size: 200%;
@@ -42,14 +52,14 @@ z-index: 1;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        height: 100%;
+        height: 50%;
         width: 100%;
         margin: 0;
     }
 
     .BotonDeEleccion {
         width: 20%;
-        height: 40%;
+        height: 70%;
         border: none;
         border-radius: 10px;
         background-color: white;
@@ -126,6 +136,22 @@ header {
         position: relative;
         top: 5%;
 
+        
+        .tipos {
+            width: 20%;
+            height: 10%;
+            position: relative;
+            left: 10%;
+            display: flex;
+
+            .tipo1, .tipo2 {
+                width: auto;
+                height: 100%;
+                margin-right: 8%;
+                image-rendering: pixelated;
+            }
+        }
+
         .head {
             width: auto;
             height: 20%;
@@ -190,6 +216,21 @@ header {
         width: 25%;
         position: relative;
         bottom: 5%;
+
+        .tipos {
+            width: 20%;
+            height: 10%;
+            position: relative;
+            left: 10%;
+            display: flex;
+
+            .tipo1, .tipo2 {
+                image-rendering: pixelated;
+                width: auto;
+                height: 100%;
+                margin-right: 8%;
+            }
+        }
 
         .head {
             width: auto;
