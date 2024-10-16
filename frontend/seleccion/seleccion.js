@@ -1,4 +1,5 @@
 let PokeORTS = {};
+let ModoDeJuego2Jugadores = localStorage.getItem('DosJugadores') 
 
 function cargarDatosIniciales() {
     fetch('http://localhost:3000/leer-datos')
@@ -9,7 +10,8 @@ function cargarDatosIniciales() {
         });
 }
 
-function inicializarInterfazConDatos() {
+function inicializarInterfazConDatos() 
+{
     document.querySelectorAll('.pokeort-item').forEach((item) => {
         const pokeortID = item.getAttribute('data-id');
         if (pokeortID && PokeORTS[pokeortID]) {
@@ -18,15 +20,26 @@ function inicializarInterfazConDatos() {
             item.querySelector('.pokeort-img').src = pokeortData.src_gif;
         }
     });
-    for (let i = 0; i < 3; i++) {
-        seleccionarPokeORTAleatorio();
+    if(ModoDeJuego2Jugadores === false)
+    {
+        for (let i = 0; i < 3; i++) 
+            {
+                seleccionarPokeORTAleatorio();
+            }
     }
+    
 }
+if(ModoDeJuego2Jugadores === false)
+{
+    document.getElementById("PokemonesJugador2").style.display =  "none";
+}
+
 
 document.addEventListener('DOMContentLoaded', cargarDatosIniciales);
 
 let eleccion = 1;
 let seleccionados = [];
+let PokemonesEnemigos = [];
 let BotonOculto = "";
 
 function BloquearPokeort(button) {
@@ -96,7 +109,7 @@ function BotonesCombinados(button)
     CambiarPokeort(button);
 }
 
-let PokemonesEnemigos = [];
+
 
 function seleccionarPokeORTAleatorio() 
 {

@@ -11,3 +11,12 @@ cerrar.addEventListener("click", () => {
     menu_creditos.classList.remove("show");
 });
 
+function combatirIA() {
+    localStorage.setItem('DosJugadores', false);
+    location.href = '../seleccion/seleccion.html';
+  }
+
+  function combatirJugador() {
+    localStorage.setItem('DosJugadores', true); 
+    location.href = '../seleccion/seleccion.html';
+  }
