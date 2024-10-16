@@ -20,20 +20,13 @@ function inicializarInterfazConDatos()
             item.querySelector('.pokeort-img').src = pokeortData.src_gif;
         }
     });
-    if(ModoDeJuego2Jugadores === false)
-    {
+    
         for (let i = 0; i < 3; i++) 
             {
                 seleccionarPokeORTAleatorio();
             }
-    }
     
 }
-if(ModoDeJuego2Jugadores === false)
-{
-    document.getElementById("PokemonesJugador2").style.display =  "none";
-}
-
 
 document.addEventListener('DOMContentLoaded', cargarDatosIniciales);
 
@@ -42,6 +35,16 @@ let seleccionados = [];
 let PokemonesEnemigos = [];
 let BotonOculto = "";
 
+if(ModoDeJuego2Jugadores === true)
+    {
+        console.log("Mostrado")
+        document.getElementById("PokemonesJugador2").style.display =  "block";
+    }
+    else 
+    {
+        console.log("Escondido")
+        document.getElementById("PokemonesJugador2").style.display =  "none";
+    }
 function BloquearPokeort(button) {
     if (seleccionados[eleccion - 1]) {
         document.querySelector(`.selected-pokeort-${eleccion}`).style.backgroundColor = "rgba(0, 255, 0, 0.799)";
