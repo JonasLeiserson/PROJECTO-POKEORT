@@ -5,7 +5,7 @@
 ---
 Con ayuda de:  
 - ChatGPT
-- Gemini
+- BlackBox
 - Claude
-Y muchos más!!  
+Y muchos más!! Ias falopa
 ### PokeORT: ¡Jugá ya!

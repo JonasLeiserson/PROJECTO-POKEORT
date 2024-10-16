@@ -1,152 +1,56 @@
 {
   "Pokeort1": {
-    "nombre": "ROKTOM",
-    "atk": 100,
-    "vida": 1500,
-    "vida_total": 1500,
-    "velocidad": 100,
-    "defensa": 200,
-    "Tipo1": "roca",
-    "Tipo2": "volador",
+    "nombre": "AMONG US",
+    "atk": 200,
+    "vida": 1100,
+    "vida_total": 1100,
+    "velocidad": 250,
+    "defensa": 125,
+    "Tipo1": "agua",
+    "Tipo2": "electrico",
+    "Estado": "",
     "ataques": [
       {
-        "nombre": "Terremoto",
-        "tipo": "tierra",
-        "potencia": 120,
-        "precision": 85,
-        "descripcion": "Sacude el suelo, causando daño a todos los oponentes y puede hacerlos caer."
+        "nombre": "Cables",
+        "tipo": "electrico",
+        "potencia": 170,
+        "precision": 55,
+        "descripcion": "Invoca una tormenta de cables que causa daño."
       },
       {
-        "nombre": "Pedrada",
-        "tipo": "roca",
-        "potencia": 100,
-        "precision": 90,
-        "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño y puede causar confusión."
-      },
-      {
-        "nombre": "Roca Filosa",
-        "tipo": "roca",
-        "potencia": 80,
-        "precision": 95,
-        "descripcion": "Un ataque que lanza fragmentos afilados, causando daño con una alta posibilidad de crítico."
-      },
-      {
-        "nombre": "Golpe",
-        "tipo": "normal",
-        "potencia": 90,
+        "nombre": "Chorro de Agua",
+        "tipo": "agua",
+        "potencia": 60,
         "precision": 100,
-        "descripcion": "Un ataque físico que causa daño y puede quemar al enemigo."
+        "descripcion": "Un ataque rápido que causa daño y puede reducir la velocidad del oponente.",
+        "efecto": "bajarvelocidad"
+      },
+      {
+        "nombre": "Meteoritos",
+        "tipo": "roca",
+        "potencia": 200,
+        "precision": 60,
+        "descripcion": "Caen meteoritos infligiendo mucho daño al oponente."
+      },
+      {
+        "nombre": "Asesinato",
+        "tipo": "agua",
+        "potencia": 1000,
+        "precision": 2,
+        "descripcion": "2% de probabilidad de insta-kill al oponente.",
+        "efecto": "instakill"
       }
     ],
-    "src": "../recursos/img/pokeorts-static/front/roktom.png",
-    "src_back": "../recursos/img/pokeorts-static/back/roktom-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/roktom.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/roktom-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/roktom-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/roktom-atk-back.gif",
-    "NumeroSecreto": 3,
-    "pokeortID": "ROKTOM"
+    "src": "../recursos/img/pokeorts-static/front/among-us.png",
+    "src_back": "../recursos/img/pokeorts-static/back/among-us-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/among-us.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/among-us-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/among-us-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/among-us-atk-back.gif",
+    "NumeroSecreto": 5,
+    "pokeortID": "AMONG US"
   },
   "Pokeort2": {
-    "nombre": "MACETONIO",
-    "atk": 200,
-    "vida": 1200,
-    "vida_total": 1200,
-    "velocidad": 100,
-    "defensa": 180,
-    "Tipo1": "planta",
-    "Tipo2": "agua",
-    "ataques": [
-      {
-        "nombre": "Rayo Vegetal",
-        "tipo": "planta",
-        "potencia": 70,
-        "precision": 100,
-        "descripcion": "Un ataque rápido que lanza espinas al oponente, causando daño inmediato."
-      },
-      {
-        "nombre": "Brotar",
-        "tipo": "planta",
-        "potencia": 40,
-        "precision": 100,
-        "descripcion": "Restaura un poco de vida a sí mismo y causa daño leve al oponente."
-      },
-      {
-        "nombre": "Hoja Afilada",
-        "tipo": "planta",
-        "potencia": 90,
-        "precision": 95,
-        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
-      },
-      {
-        "nombre": "Puño Vigoroso",
-        "tipo": "normal",
-        "potencia": 100,
-        "precision": 90,
-        "descripcion": "Un ataque de puño fuerte que inflige gran daño al enemigo."
-      }
-    ],
-    "src": "../recursos/img/pokeorts-static/front/maceta-rancia.png",
-    "src_back": "../recursos/img/pokeorts-static/back/maceta-rancia-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/maceta-rancia.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/maceta-rancia-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/maceta-rancia-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/maceta-rancia-atk-back.gif",
-    "NumeroSecreto": 8,
-    "pokeortID": "MACETONIO"
-  },
-  "Pokeort3": {
-    "nombre": "CARITA",
-    "atk": 200,
-    "vida": 900,
-    "vida_total": 900,
-    "velocidad": 300,
-    "defensa": 180,
-    "Tipo1": "planta",
-    "Tipo2": "hielo",
-    "ataques": [
-      {
-        "nombre": "Rostro Amistoso",
-        "tipo": "normal",
-        "potencia": 50,
-        "precision": 100,
-        "descripcion": "Causa daño y puede confundir al oponente, reduciendo su precisión."
-      },
-      {
-        "nombre": "Golpe de Calor",
-        "tipo": "fuego",
-        "potencia": 80,
-        "precision": 90,
-        "descripcion": "Un ataque cálido que puede quemar al enemigo."
-      },
-      {
-        "nombre": "Latigo Sonriente",
-        "tipo": "planta",
-        "potencia": 70,
-        "precision": 95,
-        "descripcion": "Lanza un latigazo que causa daño."
-      },
-      {
-        "nombre": "Reflejo Acierto",
-        "tipo": "electrico",
-        "potencia": 100,
-        "precision": 90,
-        "descripcion": "Un ataque que causa daño y reduce la defensa del enemigo."
-      }
-    ],
-    "src": "../recursos/img/pokeorts-static/front/carita.png",
-    "src_back": "../recursos/img/pokeorts-static/back/carita.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/carita.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/carita-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/carita-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/carita-atk-back.gif",
-    "src_extra_back": "../recursos/img/pokeorts-static/back/carita-turbina-back.png",
-    "src_extra_gif_back": "../recursos/img/pokeorts-gifs/back/carita-turbina-back.gif",
-    "src_extra_atk_back": "../recursos/img/pokeort-atk/back/carita-turbina-atk-back.gif",
-    "NumeroSecreto": 9,
-    "pokeortID": "CARITAFACHA"
-  },
-  "PokeortEnemigo1": {
     "nombre": "CHANCHORANCIO",
     "atk": 350,
     "vida": 800,
@@ -155,6 +59,7 @@
     "defensa": 75,
     "Tipo1": "oscuridad",
     "Tipo2": "agua",
+    "Estado": "",
     "ataques": [
       {
         "nombre": "Maremoto",
@@ -168,14 +73,16 @@
         "tipo": "hielo",
         "potencia": 80,
         "precision": 90,
-        "descripcion": "Lanza proyectiles de hielo que pueden congelar al enemigo."
+        "descripcion": "Lanza proyectiles de hielo que pueden congelar al enemigo.",
+        "efecto": "congelar"
       },
       {
         "nombre": "Burbuja oscura",
         "tipo": "oscuridad",
         "potencia": 50,
         "precision": 100,
-        "descripcion": "Un ataque ligero que causa daño y puede reducir la velocidad del enemigo."
+        "descripcion": "Un ataque ligero que causa daño y puede reducir la velocidad del enemigo.",
+        "efecto": "bajarvelocidad"
       },
       {
         "nombre": "Oscuritrueno",
@@ -194,56 +101,160 @@
     "NumeroSecreto": 6,
     "pokeortID": "CHANCHORANCIO"
   },
-  "PokeortEnemigo2": {
-    "nombre": "CARITA",
+  "Pokeort3": {
+    "nombre": "MACETONIO",
     "atk": 200,
-    "vida": 900,
-    "vida_total": 900,
-    "velocidad": 300,
+    "vida": 1200,
+    "vida_total": 1200,
+    "velocidad": 100,
     "defensa": 180,
     "Tipo1": "planta",
-    "Tipo2": "hielo",
+    "Tipo2": "agua",
+    "Estado": "",
     "ataques": [
       {
-        "nombre": "Rostro Amistoso",
-        "tipo": "normal",
-        "potencia": 50,
-        "precision": 100,
-        "descripcion": "Causa daño y puede confundir al oponente, reduciendo su precisión."
-      },
-      {
-        "nombre": "Golpe de Calor",
-        "tipo": "fuego",
-        "potencia": 80,
-        "precision": 90,
-        "descripcion": "Un ataque cálido que puede quemar al enemigo."
-      },
-      {
-        "nombre": "Latigo Sonriente",
+        "nombre": "Rayo Vegetal",
         "tipo": "planta",
         "potencia": 70,
-        "precision": 95,
-        "descripcion": "Lanza un latigazo que causa daño."
+        "precision": 150,
+        "descripcion": "Un ataque rápido que lanza espinas al oponente, causando daño inmediato."
       },
       {
-        "nombre": "Reflejo Acierto",
-        "tipo": "electrico",
+        "nombre": "Brotar",
+        "tipo": "planta",
+        "potencia": 40,
+        "precision": 100,
+        "descripcion": "Restaura un poco de vida a sí mismo y causa daño leve al oponente.",
+        "efecto": "curar"
+      },
+      {
+        "nombre": "Hoja Afilada",
+        "tipo": "planta",
+        "potencia": 90,
+        "precision": 95,
+        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico.",
+        "efecto": "aumentarCritico"
+      },
+      {
+        "nombre": "Puño Vigoroso",
+        "tipo": "normal",
         "potencia": 100,
         "precision": 90,
-        "descripcion": "Un ataque que causa daño y reduce la defensa del enemigo."
+        "descripcion": "Un ataque de puño fuerte que inflige gran daño al enemigo."
       }
     ],
-    "src": "../recursos/img/pokeorts-static/front/carita.png",
-    "src_back": "../recursos/img/pokeorts-static/back/carita.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/carita.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/carita-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/carita-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/carita-atk-back.gif",
-    "src_extra_back": "../recursos/img/pokeorts-static/back/carita-turbina-back.png",
-    "src_extra_gif_back": "../recursos/img/pokeorts-gifs/back/carita-turbina-back.gif",
-    "src_extra_atk_back": "../recursos/img/pokeort-atk/back/carita-turbina-atk-back.gif",
-    "NumeroSecreto": 9,
-    "pokeortID": "CARITAFACHA"
+    "src": "../recursos/img/pokeorts-static/front/maceta-rancia.png",
+    "src_back": "../recursos/img/pokeorts-static/back/maceta-rancia-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/maceta-rancia.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/maceta-rancia-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/maceta-rancia-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/maceta-rancia-atk-back.gif",
+    "NumeroSecreto": 8,
+    "pokeortID": "MACETONIO"
+  },
+  "PokeortEnemigo1": {
+    "nombre": "OWLEON",
+    "atk": 300,
+    "vida": 800,
+    "vida_total": 800,
+    "velocidad": 200,
+    "defensa": 175,
+    "Tipo1": "fuego",
+    "Tipo2": "volador",
+    "Estado": "",
+    "ataques": [
+      {
+        "nombre": "Llama Sagrada",
+        "tipo": "fuego",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo y puede quemar.",
+        "efecto": "quemar"
+      },
+      {
+        "nombre": "Haz Luminoso",
+        "tipo": "volador",
+        "potencia": 70,
+        "precision": 95,
+        "descripcion": "Un ataque rápido que inflige daño y puede reducir la defensa del enemigo.",
+        "efecto": "bajardefensa"
+      },
+      {
+        "nombre": "Rayo Solar",
+        "tipo": "planta",
+        "potencia": 150,
+        "precision": 75,
+        "descripcion": "Carga energía solar para lanzar un rayo devastador."
+      },
+      {
+        "nombre": "Explosión de Luz",
+        "tipo": "normal",
+        "potencia": 90,
+        "precision": 85,
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo.",
+        "efecto": "cegar"
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/owleon.png",
+    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
+    "NumeroSecreto": 1,
+    "pokeortID": "OWLEON"
+  },
+  "PokeortEnemigo2": {
+    "nombre": "GATORANCIO",
+    "atk": 250,
+    "vida": 800,
+    "vida_total": 800,
+    "velocidad": 250,
+    "defensa": 140,
+    "Tipo1": "roca",
+    "Tipo2": "normal",
+    "Estado": "",
+    "ataques": [
+      {
+        "nombre": "Golpe de Roca",
+        "tipo": "roca",
+        "potencia": 90,
+        "precision": 95,
+        "descripcion": "Un ataque potente que puede causar desorientación.",
+        "efecto": "confusion"
+      },
+      {
+        "nombre": "Poder Tierra",
+        "tipo": "tierra",
+        "potencia": 110,
+        "precision": 80,
+        "descripcion": "Un ataque que causa un fuerte golpe en el suelo, afectando a todos los enemigos cercanos."
+      },
+      {
+        "nombre": "Rugido Aterrador",
+        "tipo": "normal",
+        "potencia": 60,
+        "precision": 100,
+        "descripcion": "Un ataque que causa daño y puede asustar al oponente, reduciendo su ataque.",
+        "efecto": "bajarataque"
+      },
+      {
+        "nombre": "Deslizarse",
+        "tipo": "agua",
+        "potencia": 70,
+        "precision": 100,
+        "descripcion": "Se desliza hacia el enemigo, causando daño y aumentando la velocidad.",
+        "efecto": "subirvelocidad"
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
+    "src_back": "../recursos/img/pokeorts-static/back/gato-rancio-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/gato-rancio.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/gato-rancio-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/gato-rancio-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/gato-rancio-atk-back.gif",
+    "NumeroSecreto": 7,
+    "pokeortID": "GATORANCIO"
   },
   "PokeortEnemigo3": {
     "nombre": "OWLEON",
@@ -254,26 +265,29 @@
     "defensa": 175,
     "Tipo1": "fuego",
     "Tipo2": "volador",
+    "Estado": "",
     "ataques": [
       {
         "nombre": "Llama Sagrada",
         "tipo": "fuego",
         "potencia": 100,
         "precision": 90,
-        "descripcion": "Envuelve al oponente en llamas, causando daño significativo y puede quemar."
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo y puede quemar.",
+        "efecto": "quemar"
       },
       {
         "nombre": "Haz Luminoso",
         "tipo": "volador",
         "potencia": 70,
         "precision": 95,
-        "descripcion": "Un ataque rápido que inflige daño y puede reducir la defensa del enemigo."
+        "descripcion": "Un ataque rápido que inflige daño y puede reducir la defensa del enemigo.",
+        "efecto": "bajardefensa"
       },
       {
         "nombre": "Rayo Solar",
         "tipo": "planta",
-        "potencia": 100,
-        "precision": 80,
+        "potencia": 150,
+        "precision": 75,
         "descripcion": "Carga energía solar para lanzar un rayo devastador."
       },
       {
@@ -281,7 +295,8 @@
         "tipo": "normal",
         "potencia": 90,
         "precision": 85,
-        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo.",
+        "efecto": "cegar"
       }
     ],
     "src": "../recursos/img/pokeorts-static/front/owleon.png",

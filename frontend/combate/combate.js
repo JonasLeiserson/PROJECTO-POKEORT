@@ -614,7 +614,8 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
         if (PokeortElegidoActual.vida <= 0) {
             PokeortElegidoActual.vida = 0;
         }
-    
+        
+        TieneEfectoElAtaque(mejorAtaque.efecto, PokeortElegidoActual, PokeortElegidoEnemigoActual)
         console.log( `¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con ${mejorAtaque.nombre}, causando ${daño} de daño!`);
         console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
     
@@ -729,6 +730,7 @@ function CalcularDaño(atacante, defensor, ataque) {
     }
     console.log("El ataque de " + ataque.tipo + critico + " tiene una efectividad del: *" + modificador1 * modificador2 + " en " + defensor.Tipo1 + " y " + defensor.Tipo2);
     return daño;
+    
 }
 
 function elegirAtaqueMasEfectivo(TipoDefensor1, TipoDefensor2) {   
@@ -929,3 +931,67 @@ function PocionInsana()
     QueHacerConObjeto()
 }
 
+function TieneEfectoElAtaque(Efecto, ElegidoParaElEfecto, atacante)
+{
+    switch (Efecto) 
+    {
+        case "quemar":
+        console.log("El oponente ha sido quemado.");
+        ElegidoParaElEfecto.Estado = "Quemado"
+        break;
+        
+        case "bajardefensa":
+        console.log("La defensa del oponente ha sido reducida de" + ElegidoParaElEfecto.defensa);
+        ElegidoParaElEfecto.defensa -= 50
+        console.log("a" + ElegidoParaElEfecto.defensa);
+        break;
+
+        case "bajarvelocidad":
+        console.log("La velocidad del oponente ha sido reducida.");
+        ElegidoParaElEfecto.velocidad -= 100
+        break;
+        
+        case "cegar":
+        console.log("El oponente ha sido cegado.");
+        ElegidoParaElEfecto.Estado = "Cegado"
+        break;
+
+        case "congelar":
+        console.log("El oponente ha sido congelado.");
+        ElegidoParaElEfecto.Estado = "Congelado"
+        break;
+
+        case "bajarataque":
+        console.log("El ataque del oponente ha sido disminuido en 50.");
+        ElegidoParaElEfecto.atk -= 50 
+        break;
+
+        case "curar":
+        console.log("El atacante se a curado 100 de vida.");
+        atacante.atk += 100 
+        break;
+
+        case "confusion":
+        console.log("El oponente ha sido confundido.");
+        ElegidoParaElEfecto.Estado = "Confundido"
+        break;
+        
+        case "instakill":
+            
+            const probabilidad = Math.random() * 100;
+
+            
+            if (probabilidad <= 5) {
+                console.log("El oponente ha sido instakileado.");
+                ElegidoParaElEfecto.vida = 0;
+            } else {
+                console.log("Instakill falló.");
+            }
+            break;
+
+        default:
+        console.log("No hay un efecto especial para este ataque.");
+        
+        break;
+    }
+}
