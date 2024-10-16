@@ -83,8 +83,7 @@
           "tipo": "roca",
           "potencia": 80,
           "precision": 95,
-          "descripcion": "Un ataque que lanza fragmentos afilados, causando daño con una alta posibilidad de crítico.",
-          "efecto" : "aumentarCritico"
+          "descripcion": "Un ataque que lanza fragmentos afilados, causando daño con una alta posibilidad de crítico."
         },
         {
           "nombre": "Golpe",
@@ -139,11 +138,10 @@
         },
         {
           "nombre": "Asesinato",
-          "tipo": "agua",
+          "tipo": "normal",
           "potencia": 1000,
           "precision": 2,
-          "descripcion": "2% de probabilidad de insta-kill al oponente.",
-          "efecto" : "instakill"
+          "descripcion": "2% de probabilidad de insta-kill al oponente."
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/among-us.png",
@@ -179,7 +177,7 @@
           "potencia": 80,
           "precision": 90,
           "descripcion": "Lanza proyectiles de hielo que pueden congelar al enemigo.",
-           "efecto" : "congelar"
+          "efecto" : "congelar"
         },
         {
           "nombre": "Burbuja oscura",
@@ -187,7 +185,7 @@
           "potencia": 50,
           "precision": 100,
           "descripcion": "Un ataque ligero que causa daño y puede reducir la velocidad del enemigo.",
-           "efecto" : "bajarvelocidad"
+          "efecto" : "bajarvelocidad"
         },
         {
           "nombre": "Oscuritrueno",
@@ -289,8 +287,7 @@
         "tipo": "planta",
         "potencia": 90,
         "precision": 95,
-        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico.",
-        "efecto" : "aumentarCritico"
+        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
       },
       {
         "nombre": "Puño Vigoroso",
@@ -373,7 +370,7 @@
     "defensa": 1,
     "Tipo1": "TOILET",
     "Tipo2": "SKIBI",
-    "Estado": "",
+    "Estado": [],
     "ataques": [
         {
           "nombre": "Fuerza Toilet",
@@ -395,8 +392,7 @@
           "tipo": "agua",
           "potencia": 90,
           "precision": 100,
-          "descripcion": "Lanza un chorro de agua que no tiene fin, causando daño continuo.",
-          "efecto" : "DañoContinuo"
+          "descripcion": "Lanza un chorro de agua que no tiene fin."
         },
         {
           "nombre": "Baile de Fuego",

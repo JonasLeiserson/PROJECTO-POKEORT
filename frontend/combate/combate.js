@@ -475,6 +475,7 @@ function realizarTurnoJugador() {
             PokeortElegidoEnemigoActual.vida = 0;
         }
     
+        TieneEfectoElAtaque(ataqueElegidoAmigo, PokeortElegidoEnemigoActual, PokeortElegidoActual)
         console.log( `¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} con ${ataqueElegidoAmigo.nombre}, causando ${daño} de daño!`);
         console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
     
@@ -615,8 +616,8 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
             PokeortElegidoActual.vida = 0;
         }
         
-        TieneEfectoElAtaque(mejorAtaque.efecto, PokeortElegidoActual, PokeortElegidoEnemigoActual)
-        console.log( `¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con ${mejorAtaque.nombre}, causando ${daño} de daño!`);
+        TieneEfectoElAtaque(ataqueElegidoEnemigo, PokeortElegidoActual, PokeortElegidoEnemigoActual);
+        console.log( `¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con ${ataqueElegidoAmigo.nombre}, causando ${daño} de daño!`);
         console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
     
         setTimeout(() => {
@@ -931,9 +932,9 @@ function PocionInsana()
     QueHacerConObjeto()
 }
 
-function TieneEfectoElAtaque(Efecto, ElegidoParaElEfecto, atacante)
+function TieneEfectoElAtaque(ataque, ElegidoParaElEfecto, atacante)
 {
-    switch (Efecto) 
+    switch (ataque.efecto) 
     {
         case "quemar":
         console.log("El oponente ha sido quemado.");
@@ -975,22 +976,9 @@ function TieneEfectoElAtaque(Efecto, ElegidoParaElEfecto, atacante)
         console.log("El oponente ha sido confundido.");
         ElegidoParaElEfecto.Estado = "Confundido"
         break;
-        
-        case "instakill":
-            
-            const probabilidad = Math.random() * 100;
-
-            
-            if (probabilidad <= 5) {
-                console.log("El oponente ha sido instakileado.");
-                ElegidoParaElEfecto.vida = 0;
-            } else {
-                console.log("Instakill falló.");
-            }
-            break;
 
         default:
-        console.log("No hay un efecto especial para este ataque.");
+        console.log(`No hay un efecto especial para ${ataque.nombre}.`);
         
         break;
     }
