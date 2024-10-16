@@ -1,6 +1,11 @@
 let PokeORTS = {};
-let ModoDeJuego2Jugadores = localStorage.getItem('DosJugadores') 
+let ModoDeJuego2Jugadores = localStorage.getItem('DosJugadores') === 'true' ? true : false; 
 
+if(ModoDeJuego2Jugadores === "true")
+{
+    ModoDeJuego2Jugadores = true
+}
+console.log("Modo de 2 jugador = " + ModoDeJuego2Jugadores)
 function cargarDatosIniciales() {
     fetch('http://localhost:3000/leer-datos')
         .then(response => response.json())
@@ -14,19 +19,34 @@ function inicializarInterfazConDatos()
 {
     document.querySelectorAll('.pokeort-item').forEach((item) => {
         const pokeortID = item.getAttribute('data-id');
-        if (pokeortID && PokeORTS[pokeortID]) {
+        if (pokeortID && PokeORTS[pokeortID]) 
+        {
             const pokeortData = PokeORTS[pokeortID];
             item.querySelector('.pokeort-name').textContent = pokeortData.nombre;
             item.querySelector('.pokeort-img').src = pokeortData.src_gif;
         }
     });
-    
+
+    if(ModoDeJuego2Jugadores === false)
+    {
         for (let i = 0; i < 3; i++) 
             {
                 seleccionarPokeORTAleatorio();
             }
+    }
     
 }
+if(ModoDeJuego2Jugadores === true)
+{
+    console.log("Mostrado")
+    document.getElementById("PokemonesJugador2").style.display =  "block";
+}
+else 
+{
+    console.log("Escondido")
+    document.getElementById("PokemonesJugador2").style.display =  "none";
+}
+
 
 document.addEventListener('DOMContentLoaded', cargarDatosIniciales);
 
@@ -35,19 +55,18 @@ let seleccionados = [];
 let PokemonesEnemigos = [];
 let BotonOculto = "";
 
-if(ModoDeJuego2Jugadores === true)
-    {
-        console.log("Mostrado")
-        document.getElementById("PokemonesJugador2").style.display =  "block";
-    }
-    else 
-    {
-        console.log("Escondido")
-        document.getElementById("PokemonesJugador2").style.display =  "none";
-    }
-function BloquearPokeort(button) {
+function BloquearPokeort(button, JugadorQueElije) {
     if (seleccionados[eleccion - 1]) {
-        document.querySelector(`.selected-pokeort-${eleccion}`).style.backgroundColor = "rgba(0, 255, 0, 0.799)";
+        if(JugadorQueElije  === "Jugador1")
+
+        {
+            document.querySelector(`.selected-pokeort-${eleccion}`).style.backgroundColor = "rgba(0, 255, 0, 0.799)";
+        }
+        else
+        {
+            document.querySelector(`.selected-pokeortJugador2-${eleccion}`).style.backgroundColor = "rgba(0, 255, 0, 0.799)";
+        }
+        
         button.style.display = "none";
 
         if (BotonOculto) {
