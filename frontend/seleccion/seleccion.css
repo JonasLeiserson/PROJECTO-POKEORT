@@ -253,6 +253,18 @@ z-index: 1;
 {
     display: none;
 }
+#BotonDeBloqueo1Jugador2 
+{
+    display: none;
+}
+#BotonDeBloqueo2Jugador2 
+{
+    display: none;
+}
+#BotonDeBloqueo3Jugador2
+{
+    display: none;
+}
 
 .hidden
  {
