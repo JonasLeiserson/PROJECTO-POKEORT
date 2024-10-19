@@ -24,6 +24,8 @@ let ataqueElegidoAmigo;
 let ataqueElegidoEnemigo;
 let mejorAtaque = null; 
 let acertado;
+let PokeortElegidoActualEstado;
+let PokeortElegidoEnemigoActualEstado;
 
 window.onload = function() {
     fetch('http://localhost:3000/leer-datos-de-pokeorts')
@@ -960,7 +962,11 @@ function TieneEfectoElAtaque(ataque, ElegidoParaElEfecto, atacante)
 
         case "congelar":
         console.log("El oponente ha sido congelado.");
+        let random = generarNumeroAleatorio();
+        if (random > 8)
+        {
         ElegidoParaElEfecto.Estado = "Congelado"
+        }
         break;
 
         case "bajarataque":
@@ -985,12 +991,15 @@ function TieneEfectoElAtaque(ataque, ElegidoParaElEfecto, atacante)
     }
 }
 
-function pokeortEstado(estado, pokeort) {
-    
+function aplicarEfectoQuemado(pokeort) {
+    const dañoQuemadura = Math.floor(pokeort.vida_total * 0.05);
+    pokeort.vida -= dañoQuemadura;
 
-    if (estado === "quemado")
-    {
-        let restar = pokeort.vida * 0.05;
-        pokeort.vida -= restar;
+    console.log(`${pokeort.nombre} sufre ${dañoQuemadura} de daño por quemadura.`);
+    
+    if (pokeort.vida <= 0) {
+        pokeort.vida = 0;
+        console.log(`${pokeort.nombre} ha sido derrotado por la quemadura.`);
     }
+    bajarBarraDeVida(pokeort, barraDeVidaAmigo);
 }
