@@ -76,18 +76,18 @@ let nameMenu = document.getElementById("pokeort-name-menu");
 
 // TABLA DE TIPOS
 const efectividadTipos = {
-    agua: { fuego: 2, planta: 0.5, electrico: 1, agua: 1, roca: 2, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1},
-    fuego: { agua: 0.5, planta: 2, electrico: 1, fuego: 1, roca: 0.5, normal: 1, tierra: 0.5, hielo: 2, volador: 1, oscuridad: 1},
-    planta: { agua: 2, fuego: 0.5, electrico: 1, planta: 0.5, roca: 2, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1},
-    electrico: { agua: 2, planta: 0.5, fuego: 1, electrico: 1, roca: 0.5, normal: 1, tierra: 0.5, hielo: 1, volador: 2, oscuridad: 1},
-    roca: { agua: 0.5, planta: 1, fuego: 2, electrico: 2, roca: 1, normal: 1, tierra: 1, hielo: 1, volador: 2, oscuridad: 0.5},
-    normal: { fuego: 1, planta: 1, electrico: 1, agua: 1, roca: 0.5, normal: 1, tierra: 1, hielo: 1, volador: 1, oscuridad: 0.5},
-    tierra: { fuego: 2, planta: 0.5, electrico: 2, agua: 1, roca: 2, normal: 1, tierra: 1, hielo: 1, volador: 0, oscuridad: 1},
-    hielo: { fuego: 0.5, planta: 2, electrico: 1, agua: 0.5, roca: 1, normal: 1, tierra: 2, hielo: 0.5, volador: 2, oscuridad: 1},
-    volador: { fuego: 1, planta: 2, electrico: 0.5, agua: 1, roca: 0.5, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1},
-    oscuridad: { fuego: 1, planta: 1, electrico: 2, agua: 1, roca: 1, normal: 1, tierra: 1, hielo: 1, volador: 2, oscuridad: 0.5},
-    skibidi: { fuego: 100, planta: 100, electrico: 100, agua: 100, roca: 100, normal: 100, tierra: 100, hielo: 100, volador: 100, oscuridad: 100}
-    
+    agua: { fuego: 2, planta: 0.5, electrico: 1, agua: 1, roca: 2, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1, skibidi: 1, especial: 1},
+    fuego: { agua: 0.5, planta: 2, electrico: 1, fuego: 1, roca: 0.5, normal: 1, tierra: 0.5, hielo: 2, volador: 1, oscuridad: 1, skibidi: 1, especial: 1},
+    planta: { agua: 2, fuego: 0.5, electrico: 1, planta: 0.5, roca: 2, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1, skibidi: 1, especial: 1},
+    electrico: { agua: 2, planta: 0.5, fuego: 1, electrico: 1, roca: 0.5, normal: 1, tierra: 0.5, hielo: 1, volador: 2, oscuridad: 1, skibidi: 1, especial: 1},
+    roca: { agua: 0.5, planta: 1, fuego: 2, electrico: 2, roca: 1, normal: 1, tierra: 1, hielo: 1, volador: 2, oscuridad: 0.5, skibidi: 1, especial: 1},
+    normal: { fuego: 1, planta: 1, electrico: 1, agua: 1, roca: 0.5, normal: 1, tierra: 1, hielo: 1, volador: 1, oscuridad: 0.5, skibidi: 1, especial: 1},
+    tierra: { fuego: 2, planta: 0.5, electrico: 2, agua: 1, roca: 2, normal: 1, tierra: 1, hielo: 1, volador: 0, oscuridad: 1, skibidi: 1, especial: 1},
+    hielo: { fuego: 0.5, planta: 2, electrico: 1, agua: 0.5, roca: 1, normal: 1, tierra: 2, hielo: 0.5, volador: 2, oscuridad: 1, skibidi: 1, especial: 1},
+    volador: { fuego: 1, planta: 2, electrico: 0.5, agua: 1, roca: 0.5, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1, skibidi: 1, especial: 1},
+    oscuridad: { fuego: 1, planta: 1, electrico: 2, agua: 1, roca: 1, normal: 1, tierra: 1, hielo: 1, volador: 2, oscuridad: 0.5, skibidi: 1, especial: 1},
+    skibidi: { fuego: 100, planta: 100, electrico: 100, agua: 100, roca: 100, normal: 100, tierra: 100, hielo: 100, volador: 100, oscuridad: 100, skibidi: 1, especial: 1},
+    especial: { fuego: 100, planta: 100, electrico: 100, agua: 100, roca: 100, normal: 100, tierra: 100, hielo: 100, volador: 100, oscuridad: 100, skibidi: 1, especial: 1}
 };
 
 // funciones front
@@ -301,88 +301,253 @@ function AdministrarBatalla(button) {
     if (PokeortElegidoActual.velocidad > PokeortElegidoEnemigoActual.velocidad) 
     {
         if (realizarTurnoJugador()) return; 
-        setTimeout(() => {
-        if (realizarTurnoEnemigo()) return;
-            if (PokeortElegidoActual.vida <= 0)
-            {
-                setTimeout(() => {
-                    accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                    habilitarOpciones()
-                }, 6000)
-            }
-            else
-            {
-                setTimeout(() => {
-                    accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                    habilitarOpciones()
-                }, 4000)
-            }
-        }, 4000); 
-    }
-    else if (PokeortElegidoActual.velocidad < PokeortElegidoEnemigoActual.velocidad) 
-    { 
-            if (realizarTurnoEnemigo()) return;
-        setTimeout(() => {
-            if (realizarTurnoJugador()) return;
-            if (PokeortElegidoEnemigoActual.vida <= 0)
+        if (acertado)
+        {
+            setTimeout(() => {
+                if (realizarTurnoEnemigo()) return;
+                if (acertado)
                 {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+
+                                setTimeout(() => {
+                                    accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                    habilitarOpciones()
+                                }, 4000)
+                        }
+                }
+                else {
+                        setTimeout(() => {
+                            accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                            habilitarOpciones()
+                        }, 6000)
+                }
+                }, 4000); 
+        }
+        else
+        {
+            setTimeout(() => {
+                if (realizarTurnoEnemigo()) return;
+                if (acertado)
+                {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
                     setTimeout(() => {
                         accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
                         habilitarOpciones()
                     }, 6000)
                 }
-                else
+                }, 6000); 
+        }
+    }
+    else if (PokeortElegidoActual.velocidad < PokeortElegidoEnemigoActual.velocidad) 
+    { 
+        if (realizarTurnoEnemigo()) return;
+        if (acertado)
+        {
+            setTimeout(() => {
+                if (realizarTurnoJugador()) return; 
+                if (acertado)
                 {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
                     setTimeout(() => {
                         accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
                         habilitarOpciones()
-                    }, 4000)
+                    }, 6000)
                 }
-        }, 4000);
+                }, 4000); 
+        }
+        else
+        {
+            setTimeout(() => {
+                if (realizarTurnoEnemigo()) return;
+                if (acertado)
+                {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
+                    setTimeout(() => {
+                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                        habilitarOpciones()
+                    }, 6000)
+                }
+                }, 6000); 
+        }
     } 
     else 
     {
         const Aleatorio = Math.floor(Math.random() * 2) + 1;
         if (Aleatorio === 1) {
-            if (realizarTurnoJugador()) return; 
-        setTimeout(() => {
-            if (realizarTurnoEnemigo()) return;
-            if (PokeortElegidoActual.vida <= 0)
+if (realizarTurnoJugador()) return; 
+        if (acertado)
+        {
+            setTimeout(() => {
+                if (realizarTurnoEnemigo()) return;
+                if (acertado)
                 {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
                     setTimeout(() => {
                         accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
                         habilitarOpciones()
                     }, 6000)
                 }
-                else
-                {
-                    setTimeout(() => {
-                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                        habilitarOpciones()
-                    }, 4000)
-                }
-        }, 4000); 
-    } 
-    else if (Aleatorio === 2) 
-    {
-    if (realizarTurnoEnemigo()) return;
-    setTimeout(() => {
-        if (realizarTurnoJugador()) return; 
-        if (PokeortElegidoEnemigoActual.vida <= 0)
-        {
-            setTimeout(() => {
-                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                habilitarOpciones()
-            }, 6000)
+                }, 4000); 
         }
         else
         {
             setTimeout(() => {
-                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                habilitarOpciones()
-            }, 4000)
+                if (realizarTurnoEnemigo()) return;
+                if (acertado)
+                {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
+                    setTimeout(() => {
+                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                        habilitarOpciones()
+                    }, 6000)
+                }
+                }, 6000); 
         }
-    }, 4000); 
+    } 
+    else if (Aleatorio === 2) 
+    {
+        if (realizarTurnoEnemigo()) return;
+        if (acertado)
+        {
+            setTimeout(() => {
+                if (realizarTurnoJugador()) return; 
+                if (acertado)
+                {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
+                    setTimeout(() => {
+                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                        habilitarOpciones()
+                    }, 6000)
+                }
+                }, 4000); 
+        }
+        else
+        {
+            setTimeout(() => {
+                if (realizarTurnoEnemigo()) return;
+                if (acertado)
+                {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
+                    setTimeout(() => {
+                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                        habilitarOpciones()
+                    }, 6000)
+                }
+                }, 6000); 
+        }
     }
     }
 }
@@ -556,6 +721,11 @@ function realizarTurnoJugador() {
                     imgAmiga.src = PokeortElegidoActual.src_gif_back;
                     terminarAtaqueAnimacion(imgAmiga)
                 }, 4000);
+
+                if (PokeortElegidoActual.estado === "Quemado")
+                {
+                    aplicarEfectoQuemado(PokeortElegidoActual);
+                }
             }
 
     }
@@ -569,7 +739,7 @@ function realizarTurnoJugador() {
         setTimeout(() => {
             imgAmiga.src = PokeortElegidoActual.src_gif_back;
             terminarAtaqueAnimacion(imgAmiga)
-        }, 6000)
+        }, 4000)
     }
 
     
@@ -697,6 +867,11 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
                     imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
                     terminarAtaqueAnimacion(imgEnemiga)
             }, 4000)
+
+            if (PokeortElegidoEnemigoActual.Estado === "Quemado")
+                {
+                    aplicarEfectoQuemado(PokeortElegidoEnemigoActual);
+                }
             }
     }
     else
@@ -709,7 +884,7 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
         setTimeout(() => {
             imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
             terminarAtaqueAnimacion(imgEnemiga)
-        }, 6000)
+        }, 4000)
     }
 
     if (PokeortElegidoActual.vida <= 0) {
@@ -996,6 +1171,7 @@ function aplicarEfectoQuemado(pokeort) {
     pokeort.vida -= dañoQuemadura;
 
     console.log(`${pokeort.nombre} sufre ${dañoQuemadura} de daño por quemadura.`);
+    console.log(`${pokeort.nombre} tiene ahora ${pokeort.vida} de vida.`);
     
     if (pokeort.vida <= 0) {
         pokeort.vida = 0;
