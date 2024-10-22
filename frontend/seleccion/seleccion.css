@@ -96,12 +96,12 @@ main {
     align-items: center;
     font-family: Kyiv;
     background-color: #3afa74;
+}
 
-    .selected-pokeort-display1, .selected-pokeort-display2, .selected-pokeort-display3 {
-        width: 90%;
-        height: 55%;
-        image-rendering: pixelated;
-    }
+.selected-pokeort-display {
+    width: 90%;
+    height: 55%;
+    image-rendering: pixelated;
 }
 
 .selected-pokeort-container {
@@ -173,22 +173,6 @@ footer {
     width: 100px;
     image-rendering: pixelated;
 }
-}
-
-#selected-pokeort-display 
-{
-    height: 100px;
-    width: 100px;
-}
-
-#selected-pokeort-display2 {
-    height: 100px;
-    width: 100px;
-}
-
-#selected-pokeort-display3 {
-    height: 100px;
-    width: 100px;
 }
 
 #VIDA

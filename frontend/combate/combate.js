@@ -87,10 +87,17 @@ const efectividadTipos = {
     volador: { fuego: 1, planta: 2, electrico: 0.5, agua: 1, roca: 0.5, normal: 1, tierra: 2, hielo: 1, volador: 1, oscuridad: 1, skibidi: 1, especial: 1},
     oscuridad: { fuego: 1, planta: 1, electrico: 2, agua: 1, roca: 1, normal: 1, tierra: 1, hielo: 1, volador: 2, oscuridad: 0.5, skibidi: 1, especial: 1},
     skibidi: { fuego: 100, planta: 100, electrico: 100, agua: 100, roca: 100, normal: 100, tierra: 100, hielo: 100, volador: 100, oscuridad: 100, skibidi: 1, especial: 1},
-    especial: { fuego: 100, planta: 100, electrico: 100, agua: 100, roca: 100, normal: 100, tierra: 100, hielo: 100, volador: 100, oscuridad: 100, skibidi: 1, especial: 1}
+    especial: { fuego: 2, planta: 2, electrico: 2, agua: 2, roca: 2, normal: 2, tierra: 2, hielo: 2, volador: 2, oscuridad: 2, skibidi: 2, especial: 2}
 };
 
 // funciones front
+
+function cambiarAtaques(pokeort) {
+    ataques[0].textContent = pokeort.ataques[0].nombre;
+    ataques[1].textContent = pokeort.ataques[1].nombre;
+    ataques[2].textContent = pokeort.ataques[2].nombre;
+    ataques[3].textContent = pokeort.ataques[3].nombre;
+}
 
 function ataqueAnimacion(img) {
     img.style.width = "188%";
@@ -202,10 +209,7 @@ function EleccionDePokeortInicial(button) {
     tiposPokeortElegido[1].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo2}.png`
     tiposPokeortElegidoEnemigo[0].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo1}.png`
     tiposPokeortElegidoEnemigo[1].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo2}.png`
-    ataques[0].textContent = PokeortElegidoActual.ataques[0].nombre;
-    ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
-    ataques[2].textContent = PokeortElegidoActual.ataques[2].nombre;
-    ataques[3].textContent = PokeortElegidoActual.ataques[3].nombre;
+    cambiarAtaques(PokeortElegidoActual)
 
     document.querySelectorAll(".pokeortInicialEleccion").forEach(button => {
         button.style.display = "none";
@@ -253,10 +257,7 @@ function intercambiarPokeort(button, index) {
     tiposPokeortElegido[0].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo1}.png`
     tiposPokeortElegido[1].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo2}.png`
     PokeortElegidoActual = pokeortElegido;
-    ataques[0].textContent = PokeortElegidoActual.ataques[0].nombre;
-    ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
-    ataques[2].textContent = PokeortElegidoActual.ataques[2].nombre;
-    ataques[3].textContent = PokeortElegidoActual.ataques[3].nombre;
+    cambiarAtaques(PokeortElegidoActual)
     bajarBarraDeVida(PokeortElegidoActual, barraDeVidaAmigo);
 
     console.log("PokeORT elegido:", PokeortElegidoActual);
@@ -656,7 +657,6 @@ function realizarTurnoJugador() {
             PokeortElegidoEnemigoActual.vida = 0;
         }
     
-        TieneEfectoElAtaque(ataqueElegidoAmigo, PokeortElegidoEnemigoActual, PokeortElegidoActual)
         console.log( `¡${PokeortElegidoActual.nombre} ataca a ${PokeortElegidoEnemigoActual.nombre} con ${ataqueElegidoAmigo.nombre}, causando ${daño} de daño!`);
         console.log(`${PokeortElegidoEnemigoActual.nombre} tiene ahora ${PokeortElegidoEnemigoActual.vida} de vida.`);
     
@@ -721,11 +721,6 @@ function realizarTurnoJugador() {
                     imgAmiga.src = PokeortElegidoActual.src_gif_back;
                     terminarAtaqueAnimacion(imgAmiga)
                 }, 4000);
-
-                if (PokeortElegidoActual.estado === "Quemado")
-                {
-                    aplicarEfectoQuemado(PokeortElegidoActual);
-                }
             }
 
     }
@@ -798,8 +793,7 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
             PokeortElegidoActual.vida = 0;
         }
         
-        TieneEfectoElAtaque(ataqueElegidoEnemigo, PokeortElegidoActual, PokeortElegidoEnemigoActual);
-        console.log( `¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con ${ataqueElegidoAmigo.nombre}, causando ${daño} de daño!`);
+        console.log( `¡${PokeortElegidoEnemigoActual.nombre} ataca a ${PokeortElegidoActual.nombre} con ${ataqueElegidoEnemigo.nombre}, causando ${daño} de daño!`);
         console.log(`${PokeortElegidoActual.nombre} tiene ahora ${PokeortElegidoActual.vida} de vida.`);
     
         setTimeout(() => {
@@ -867,11 +861,6 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
                     imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
                     terminarAtaqueAnimacion(imgEnemiga)
             }, 4000)
-
-            if (PokeortElegidoEnemigoActual.Estado === "Quemado")
-                {
-                    aplicarEfectoQuemado(PokeortElegidoEnemigoActual);
-                }
             }
     }
     else
@@ -902,7 +891,7 @@ function CalcularDaño(atacante, defensor, ataque) {
 
     let modificadorTotal = modificador1 * modificador2;
     let variacion = Math.floor(Math.random() * (100 - 85 + 1)) + 85;
-    let daño = Math.round(0.01 * modificadorTotal * variacion * ((0.2 * 100 + 1) * atacante.atk * ataque.potencia / (25 * defensor.defensa) + 2));
+    let daño = Math.round(0.01 * modificadorTotal * variacion * (21 * atacante.atk * ataque.potencia / (25 * defensor.defensa) + 2));
 
     const ProbabilidadDecritico = generarNumeroAleatorio()
     let critico = ""
@@ -1084,10 +1073,7 @@ function  QueHacerConObjeto(Nombre)
             imgAmiga.src = PokeortElegidoActual.src_gif_back;
             imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
             pokeortEnemigoNombre.textContent = PokeortElegidoActual.nombre;
-            ataques[0].textContent = PokeortElegidoActual.ataques[0].nombre;
-            ataques[1].textContent = PokeortElegidoActual.ataques[1].nombre;
-            ataques[2].textContent = PokeortElegidoActual.ataques[2].nombre;
-            ataques[3].textContent = PokeortElegidoActual.ataques[3].nombre;
+            cambiarAtaques(PokeortElegidoActual)
             tiposPokeortElegido[0].src = `../recursos/img/iconos/tipos/${PokeortElegidoActual.Tipo1}.png`
             tiposPokeortElegido[1].src = `../recursos/img/iconos/tipos/${PokeortElegidoActual.Tipo2}.png`
             tiposPokeortElegidoEnemigo[0].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo1}.png`
@@ -1108,74 +1094,4 @@ function PocionInsana()
 {
     QueHacePocion = 5 
     QueHacerConObjeto()
-}
-
-function TieneEfectoElAtaque(ataque, ElegidoParaElEfecto, atacante)
-{
-    switch (ataque.efecto) 
-    {
-        case "quemar":
-        console.log("El oponente ha sido quemado.");
-        ElegidoParaElEfecto.Estado = "Quemado"
-        break;
-        
-        case "bajardefensa":
-        console.log("La defensa del oponente ha sido reducida de" + ElegidoParaElEfecto.defensa);
-        ElegidoParaElEfecto.defensa -= 50
-        console.log("a" + ElegidoParaElEfecto.defensa);
-        break;
-
-        case "bajarvelocidad":
-        console.log("La velocidad del oponente ha sido reducida.");
-        ElegidoParaElEfecto.velocidad -= 100
-        break;
-        
-        case "cegar":
-        console.log("El oponente ha sido cegado.");
-        ElegidoParaElEfecto.Estado = "Cegado"
-        break;
-
-        case "congelar":
-        console.log("El oponente ha sido congelado.");
-        let random = generarNumeroAleatorio();
-        if (random > 8)
-        {
-        ElegidoParaElEfecto.Estado = "Congelado"
-        }
-        break;
-
-        case "bajarataque":
-        console.log("El ataque del oponente ha sido disminuido en 50.");
-        ElegidoParaElEfecto.atk -= 50 
-        break;
-
-        case "curar":
-        console.log("El atacante se a curado 100 de vida.");
-        atacante.atk += 100 
-        break;
-
-        case "confusion":
-        console.log("El oponente ha sido confundido.");
-        ElegidoParaElEfecto.Estado = "Confundido"
-        break;
-
-        default:
-        console.log(`No hay un efecto especial para ${ataque.nombre}.`);
-        
-        break;
-    }
-}
-
-function aplicarEfectoQuemado(pokeort) {
-    const dañoQuemadura = Math.floor(pokeort.vida_total * 0.05);
-    pokeort.vida -= dañoQuemadura;
-
-    console.log(`${pokeort.nombre} sufre ${dañoQuemadura} de daño por quemadura.`);
-    console.log(`${pokeort.nombre} tiene ahora ${pokeort.vida} de vida.`);
-    
-    if (pokeort.vida <= 0) {
-        pokeort.vida = 0;
-        console.log(`${pokeort.nombre} ha sido derrotado por la quemadura.`);
-    }
-    bajarBarraDeVida(pokeort, barraDeVidaAmigo);
 }

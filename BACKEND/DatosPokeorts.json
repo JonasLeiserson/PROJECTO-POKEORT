@@ -8,38 +8,34 @@
     "defensa": 175,
     "Tipo1": "fuego",
     "Tipo2": "volador",
-    "Estado": "",
     "ataques": [
       {
         "nombre": "Llama Sagrada",
         "tipo": "fuego",
         "potencia": 100,
         "precision": 90,
-        "descripcion": "Envuelve al oponente en llamas, causando daño significativo y puede quemar.",
-        "efecto" : "quemar"
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo."
       },
       {
         "nombre": "Haz Luminoso",
         "tipo": "volador",
-        "potencia": 70,
-        "precision": 95,
-        "descripcion": "Un ataque rápido que inflige daño y puede reducir la defensa del enemigo.",
-        "efecto" : "bajardefensa"
+        "potencia": 80,
+        "precision": 100,
+        "descripcion": "Un ataque rápido que inflige daño."
       },
       {
         "nombre": "Rayo Solar",
         "tipo": "planta",
-        "potencia": 150,
-        "precision": 75,
+        "potencia": 170,
+        "precision": 60,
         "descripcion": "Carga energía solar para lanzar un rayo devastador."
       },
       {
         "nombre": "Explosión de Luz",
         "tipo": "normal",
-        "potencia": 90,
-        "precision": 85,
-        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo.",
-        "efecto" : "cegar"
+        "potencia": 110,
+        "precision": 80,
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
       }
     ],
     "src": "../recursos/img/pokeorts-static/front/owleon.png",
@@ -61,7 +57,6 @@
     "defensa": 200,
     "Tipo1": "roca",
     "Tipo2": "volador",
-    "Estado": "",
     "ataques": [
         {
           "nombre": "Terremoto",
@@ -75,23 +70,21 @@
           "tipo": "roca",
           "potencia": 100,
           "precision": 90,
-          "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño y puede causar confusión.",
-          "efecto" : "confusion"
+          "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño y puede causar confusión."
         },
         {
-          "nombre": "Roca Filosa",
-          "tipo": "roca",
-          "potencia": 80,
-          "precision": 95,
-          "descripcion": "Un ataque que lanza fragmentos afilados, causando daño con una alta posibilidad de crítico."
+          "nombre": "Pico Rocoso",
+          "tipo": "volador",
+          "potencia": 150,
+          "precision": 65,
+          "descripcion": "Se eleva a una gran altura y cae en picado cusando mucho daño."
         },
         {
           "nombre": "Golpe",
           "tipo": "normal",
           "potencia": 90,
           "precision": 100,
-          "descripcion": "Un ataque físico que causa daño y puede quemar al enemigo.",
-          "efecto" : "quemar"
+          "descripcion": "Un ataque físico que causa daño y puede quemar al enemigo."
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/roktom.png",
@@ -112,36 +105,34 @@
     "defensa": 125,
     "Tipo1": "agua",
     "Tipo2": "electrico",
-    "Estado": "",
     "ataques": [
         {
           "nombre": "Cables",
           "tipo": "electrico",
           "potencia": 170,
-          "precision": 55,
-          "descripcion": "Invoca una tormenta de cables que causa daño."
+          "precision": 60,
+          "descripcion": "Invoca una tormenta de cables que electrocuta al rival causando mucho daño."
         },
         {
           "nombre": "Chorro de Agua",
           "tipo": "agua",
-          "potencia": 60,
+          "potencia": 80,
           "precision": 100,
-          "descripcion": "Un ataque rápido que causa daño y puede reducir la velocidad del oponente.",
-          "efecto" : "bajarvelocidad"
+          "descripcion": "Un ataque rápido que causa daño."
         },
         {
           "nombre": "Meteoritos",
           "tipo": "roca",
           "potencia": 200,
-          "precision": 60,
+          "precision": 50,
           "descripcion": "Caen meteoritos infligiendo mucho daño al oponente."
         },
         {
           "nombre": "Asesinato",
           "tipo": "normal",
-          "potencia": 1000,
-          "precision": 2,
-          "descripcion": "2% de probabilidad de insta-kill al oponente."
+          "potencia": 10000,
+          "precision": 3,
+          "descripcion": "3% de probabilidad de insta-kill al oponente."
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/among-us.png",
@@ -162,37 +153,34 @@
     "defensa": 75,
     "Tipo1": "oscuridad",
     "Tipo2": "agua",
-    "Estado": "",
     "ataques": [
         {
           "nombre": "Maremoto",
           "tipo": "agua",
-          "potencia": 90,
+          "potencia": 100,
           "precision": 100,
           "descripcion": "Desata una ola gigante que golpea al oponente con fuerza."
         },
         {
           "nombre": "Chocogranizo",
           "tipo": "hielo",
-          "potencia": 80,
+          "potencia": 120,
           "precision": 90,
-          "descripcion": "Lanza proyectiles de hielo que pueden congelar al enemigo.",
-          "efecto" : "congelar"
+          "descripcion": "Lanza proyectiles de hielo que causan daño."
         },
         {
           "nombre": "Burbuja oscura",
           "tipo": "oscuridad",
-          "potencia": 50,
+          "potencia": 90,
           "precision": 100,
-          "descripcion": "Un ataque ligero que causa daño y puede reducir la velocidad del enemigo.",
-          "efecto" : "bajarvelocidad"
+          "descripcion": "Un ataque ligero que causa daño."
         },
         {
           "nombre": "Oscuritrueno",
           "tipo": "electrico",
-          "potencia": 70,
-          "precision": 95,
-          "descripcion": "Relampago oscuro que causa daño."
+          "potencia": 150,
+          "precision": 70,
+          "descripcion": "Relámpago oscuro que causa daño."
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/chancho-rancio.png",
@@ -212,16 +200,14 @@
     "velocidad": 250,
     "defensa": 140,
     "Tipo1": "roca",
-    "Tipo2": "normal",
-    "Estado": "",
+    "Tipo2": "electrico",
     "ataques": [
       {
         "nombre": "Golpe de Roca",
         "tipo": "roca",
-        "potencia": 90,
-        "precision": 95,
-        "descripcion": "Un ataque potente que puede causar desorientación.",
-        "efecto" : "confusion"
+        "potencia": 100,
+        "precision": 85,
+        "descripcion": "Lanza una gran roca hacia el enemigo."
       },
       {
         "nombre": "Poder Tierra",
@@ -231,20 +217,18 @@
         "descripcion": "Un ataque que causa un fuerte golpe en el suelo, afectando a todos los enemigos cercanos."
       },
       {
-        "nombre": "Rugido Aterrador",
-        "tipo": "normal",
-        "potencia": 60,
+        "nombre": "Tormenta",
+        "tipo": "electrico",
+        "potencia": 90,
         "precision": 100,
-        "descripcion": "Un ataque que causa daño y puede asustar al oponente, reduciendo su ataque.",
-        "efecto" : "bajarataque"
+        "descripcion": "Un ataque que causa daño."
       },
       {
-        "nombre": "Deslizarse",
+        "nombre": "Surf",
         "tipo": "agua",
-        "potencia": 70,
+        "potencia": 80,
         "precision": 100,
-        "descripcion": "Se desliza hacia el enemigo, causando daño y aumentando la velocidad.",
-        "efecto" : "subirvelocidad"
+        "descripcion": "Se desliza hacia el enemigo con una ola, causando daño."
       }
     ],
     "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
@@ -258,40 +242,38 @@
   },
   "MACETONIO": {
     "nombre": "MACETONIO",
-    "atk": 200,
+    "atk": 150,
     "vida": 1200,
     "vida_total": 1200,
     "velocidad": 100,
     "defensa": 180,
     "Tipo1": "planta",
     "Tipo2": "agua",
-    "Estado": "",
     "ataques": [
       {
         "nombre": "Rayo Vegetal",
         "tipo": "planta",
-        "potencia": 70,
-        "precision": 150,
-        "descripcion": "Un ataque rápido que lanza espinas al oponente, causando daño inmediato."
+        "potencia": 150,
+        "precision": 70,
+        "descripcion": "Lanza un rayo proveniente de la naturaleza, causando daño inmediato."
       },
       {
-        "nombre": "Brotar",
-        "tipo": "planta",
-        "potencia": 40,
+        "nombre": "Zarpazo",
+        "tipo": "especial",
+        "potencia": 60,
         "precision": 100,
-        "descripcion": "Restaura un poco de vida a sí mismo y causa daño leve al oponente.",
-        "efecto" : "curar"
+        "descripcion": "Un ataque que causa el mismo daño a todos los enemigos"
       },
       {
         "nombre": "Hoja Afilada",
         "tipo": "planta",
-        "potencia": 90,
-        "precision": 95,
+        "potencia": 105,
+        "precision": 90,
         "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
       },
       {
-        "nombre": "Puño Vigoroso",
-        "tipo": "normal",
+        "nombre": "Puño Acuatico",
+        "tipo": "agua",
         "potencia": 100,
         "precision": 90,
         "descripcion": "Un ataque de puño fuerte que inflige gran daño al enemigo."
@@ -315,38 +297,34 @@
     "defensa": 180,
     "Tipo1": "planta",
     "Tipo2": "hielo",
-    "Estado": "",
   "ataques": [
         {
           "nombre": "Rostro Amistoso",
           "tipo": "normal",
-          "potencia": 50,
-          "precision": 100,
-          "descripcion": "Causa daño y puede confundir al oponente, reduciendo su precisión.",
-          "efecto" : "confusion"
+          "potencia": 200,
+          "precision": 50,
+          "descripcion": "Sonrie tan fuerte que causa muchisimo daño al enemigo. Muy facil de esquivar."
         },
         {
           "nombre": "Golpe de Calor",
           "tipo": "fuego",
-          "potencia": 80,
-          "precision": 90,
-          "descripcion": "Un ataque cálido que puede quemar al enemigo.",
-          "efecto" : "quemar"
+          "potencia": 120,
+          "precision": 75,
+          "descripcion": "Un ataque cálido y poderoso."
         },
         {
           "nombre": "Latigo Sonriente",
           "tipo": "planta",
-          "potencia": 70,
-          "precision": 95,
+          "potencia": 80,
+          "precision": 100,
           "descripcion": "Lanza un latigazo que causa daño."
         },
         {
-          "nombre": "Reflejo Acierto",
+          "nombre": "Reflejo Electrico",
           "tipo": "electrico",
-          "potencia": 100,
-          "precision": 90,
-          "descripcion": "Un ataque que causa daño y reduce la defensa del enemigo.",
-          "efecto" : "bajardefensa"
+          "potencia": 80,
+          "precision": 100,
+          "descripcion": "Un ataque electrico que causa daño."
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/carita.png",
@@ -368,39 +346,37 @@
     "vida_total": 1,
     "velocidad": 300,
     "defensa": 1,
-    "Tipo1": "TOILET",
-    "Tipo2": "SKIBI",
+    "Tipo1": "skibidi",
+    "Tipo2": "especial",
     "Estado": [],
     "ataques": [
         {
           "nombre": "Fuerza Toilet",
-          "tipo": "especial",
+          "tipo": "skibidi",
           "potencia": 999,
-          "precision": 50,
-          "descripcion": "Un ataque extremadamente poderoso, pero con baja precisión. Puede acabar con un oponente de un solo golpe."
+          "precision": 40,
+          "descripcion": "SKIBIDI"
         },
         {
-          "nombre": "Danza del Inodoro",
-          "tipo": "normal",
-          "potencia": 70,
-          "precision": 95,
-          "descripcion": "Realiza un baile que causa confusión al enemigo y reduce su ataque.",
-          "efecto" : "confusion"
+          "nombre": "Fuerza Toilet",
+          "tipo": "skibidi",
+          "potencia": 999,
+          "precision": 40,
+          "descripcion": "SKIBIDI"
         },
         {
-          "nombre": "Chorro de Agua Infinito",
-          "tipo": "agua",
-          "potencia": 90,
-          "precision": 100,
-          "descripcion": "Lanza un chorro de agua que no tiene fin."
+          "nombre": "Fuerza Toilet",
+          "tipo": "skibidi",
+          "potencia": 999,
+          "precision": 40,
+          "descripcion": "SKIBIDI"
         },
         {
-          "nombre": "Baile de Fuego",
-          "tipo": "fuego",
-          "potencia": 80,
-          "precision": 90,
-          "descripcion": "Un baile de fuego que causa daño y puede quemar al oponente.",
-          "efecto" : "quemar"
+          "nombre": "Fuerza Toilet",
+          "tipo": "skibidi",
+          "potencia": 999,
+          "precision": 40,
+          "descripcion": "SKIBIDI"
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/skibidi.png",
