@@ -50,7 +50,7 @@
   },
   "ROKTOM": {
     "nombre": "ROKTOM",
-    "atk": 100,
+    "atk": 120,
     "vida": 1500,
     "vida_total": 1500,
     "velocidad": 100,
@@ -344,7 +344,7 @@
     "atk": 999,
     "vida": 1,
     "vida_total": 1,
-    "velocidad": 300,
+    "velocidad": 1000,
     "defensa": 1,
     "Tipo1": "skibidi",
     "Tipo2": "especial",

@@ -190,6 +190,7 @@ header {
             height: 92%;
             image-rendering: pixelated;
             margin: auto;
+            pointer-events: none;
         }
 
         .barra-hp1 {
@@ -430,6 +431,42 @@ footer {
                 flex-direction: column;
                 justify-content: space-evenly;
                 align-items: center;
+
+                .ataqueInfo {
+                    display: flex;
+                    flex-direction: column;
+                    position: fixed;
+                    z-index: 2;
+                    width: fit-content;
+                    height: max-content;
+                    background-color: rgb(218, 218, 218);
+                    border-radius: 10px;
+
+                    p {
+                        margin: 0;
+                        padding: 2px;
+                    }
+                }
+
+                .ataqueInfoArribaIzquierda {
+                    bottom: 2%;
+                    left: 4.6%;
+                }
+
+                .ataqueInfoArribaDerecha {
+                    bottom: 2%;
+                    left: 37.3%;
+                }
+
+                .ataqueInfoAbajoIzquierda {
+                    bottom: 15%;
+                    left: 4.6%;
+                }
+
+                .ataqueInfoAbajoDerecha {
+                    bottom: 15%;
+                    left: 37.3%;
+                }
 
                 .arriba {
                     display: flex;

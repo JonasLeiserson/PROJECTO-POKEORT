@@ -48,52 +48,52 @@
     "pokeortID": "ROKTOM"
   },
   "Pokeort2": {
-    "nombre": "OWLEON",
-    "atk": 300,
-    "vida": 800,
-    "vida_total": 800,
-    "velocidad": 200,
-    "defensa": 175,
-    "Tipo1": "fuego",
-    "Tipo2": "volador",
+    "nombre": "AMONG US",
+    "atk": 200,
+    "vida": 1100,
+    "vida_total": 1100,
+    "velocidad": 250,
+    "defensa": 125,
+    "Tipo1": "agua",
+    "Tipo2": "electrico",
     "ataques": [
       {
-        "nombre": "Llama Sagrada",
-        "tipo": "fuego",
-        "potencia": 100,
-        "precision": 90,
-        "descripcion": "Envuelve al oponente en llamas, causando daño significativo."
-      },
-      {
-        "nombre": "Haz Luminoso",
-        "tipo": "volador",
-        "potencia": 80,
-        "precision": 100,
-        "descripcion": "Un ataque rápido que inflige daño."
-      },
-      {
-        "nombre": "Rayo Solar",
-        "tipo": "planta",
+        "nombre": "Cables",
+        "tipo": "electrico",
         "potencia": 170,
         "precision": 60,
-        "descripcion": "Carga energía solar para lanzar un rayo devastador."
+        "descripcion": "Invoca una tormenta de cables que electrocuta al rival causando mucho daño."
       },
       {
-        "nombre": "Explosión de Luz",
+        "nombre": "Chorro de Agua",
+        "tipo": "agua",
+        "potencia": 80,
+        "precision": 100,
+        "descripcion": "Un ataque rápido que causa daño."
+      },
+      {
+        "nombre": "Meteoritos",
+        "tipo": "roca",
+        "potencia": 200,
+        "precision": 50,
+        "descripcion": "Caen meteoritos infligiendo mucho daño al oponente."
+      },
+      {
+        "nombre": "Asesinato",
         "tipo": "normal",
-        "potencia": 110,
-        "precision": 80,
-        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
+        "potencia": 10000,
+        "precision": 3,
+        "descripcion": "3% de probabilidad de insta-kill al oponente."
       }
     ],
-    "src": "../recursos/img/pokeorts-static/front/owleon.png",
-    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
-    "NumeroSecreto": 1,
-    "pokeortID": "OWLEON"
+    "src": "../recursos/img/pokeorts-static/front/among-us.png",
+    "src_back": "../recursos/img/pokeorts-static/back/among-us-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/among-us.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/among-us-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/among-us-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/among-us-atk-back.gif",
+    "NumeroSecreto": 5,
+    "pokeortID": "AMONG US"
   },
   "Pokeort3": {
     "nombre": "CHANCHORANCIO",
@@ -192,99 +192,99 @@
     "pokeortID": "ROKTOM"
   },
   "PokeortEnemigo2": {
-    "nombre": "GATORANCIO",
-    "atk": 250,
+    "nombre": "OWLEON",
+    "atk": 300,
     "vida": 800,
     "vida_total": 800,
-    "velocidad": 250,
-    "defensa": 140,
-    "Tipo1": "roca",
-    "Tipo2": "electrico",
+    "velocidad": 200,
+    "defensa": 175,
+    "Tipo1": "fuego",
+    "Tipo2": "volador",
     "ataques": [
       {
-        "nombre": "Golpe de Roca",
-        "tipo": "roca",
+        "nombre": "Llama Sagrada",
+        "tipo": "fuego",
         "potencia": 100,
-        "precision": 85,
-        "descripcion": "Lanza una gran roca hacia el enemigo."
+        "precision": 90,
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo."
       },
       {
-        "nombre": "Poder Tierra",
-        "tipo": "tierra",
-        "potencia": 110,
-        "precision": 80,
-        "descripcion": "Un ataque que causa un fuerte golpe en el suelo, afectando a todos los enemigos cercanos."
-      },
-      {
-        "nombre": "Tormenta",
-        "tipo": "electrico",
-        "potencia": 90,
-        "precision": 100,
-        "descripcion": "Un ataque que causa daño."
-      },
-      {
-        "nombre": "Surf",
-        "tipo": "agua",
+        "nombre": "Haz Luminoso",
+        "tipo": "volador",
         "potencia": 80,
         "precision": 100,
-        "descripcion": "Se desliza hacia el enemigo con una ola, causando daño."
+        "descripcion": "Un ataque rápido que inflige daño."
+      },
+      {
+        "nombre": "Rayo Solar",
+        "tipo": "planta",
+        "potencia": 170,
+        "precision": 60,
+        "descripcion": "Carga energía solar para lanzar un rayo devastador."
+      },
+      {
+        "nombre": "Explosión de Luz",
+        "tipo": "normal",
+        "potencia": 110,
+        "precision": 80,
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
       }
     ],
-    "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
-    "src_back": "../recursos/img/pokeorts-static/back/gato-rancio-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/gato-rancio.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/gato-rancio-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/gato-rancio-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/gato-rancio-atk-back.gif",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
+    "src": "../recursos/img/pokeorts-static/front/owleon.png",
+    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
+    "NumeroSecreto": 1,
+    "pokeortID": "OWLEON"
   },
   "PokeortEnemigo3": {
-    "nombre": "GATORANCIO",
-    "atk": 250,
+    "nombre": "OWLEON",
+    "atk": 300,
     "vida": 800,
     "vida_total": 800,
-    "velocidad": 250,
-    "defensa": 140,
-    "Tipo1": "roca",
-    "Tipo2": "electrico",
+    "velocidad": 200,
+    "defensa": 175,
+    "Tipo1": "fuego",
+    "Tipo2": "volador",
     "ataques": [
       {
-        "nombre": "Golpe de Roca",
-        "tipo": "roca",
+        "nombre": "Llama Sagrada",
+        "tipo": "fuego",
         "potencia": 100,
-        "precision": 85,
-        "descripcion": "Lanza una gran roca hacia el enemigo."
+        "precision": 90,
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo."
       },
       {
-        "nombre": "Poder Tierra",
-        "tipo": "tierra",
-        "potencia": 110,
-        "precision": 80,
-        "descripcion": "Un ataque que causa un fuerte golpe en el suelo, afectando a todos los enemigos cercanos."
-      },
-      {
-        "nombre": "Tormenta",
-        "tipo": "electrico",
-        "potencia": 90,
-        "precision": 100,
-        "descripcion": "Un ataque que causa daño."
-      },
-      {
-        "nombre": "Surf",
-        "tipo": "agua",
+        "nombre": "Haz Luminoso",
+        "tipo": "volador",
         "potencia": 80,
         "precision": 100,
-        "descripcion": "Se desliza hacia el enemigo con una ola, causando daño."
+        "descripcion": "Un ataque rápido que inflige daño."
+      },
+      {
+        "nombre": "Rayo Solar",
+        "tipo": "planta",
+        "potencia": 170,
+        "precision": 60,
+        "descripcion": "Carga energía solar para lanzar un rayo devastador."
+      },
+      {
+        "nombre": "Explosión de Luz",
+        "tipo": "normal",
+        "potencia": 110,
+        "precision": 80,
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
       }
     ],
-    "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
-    "src_back": "../recursos/img/pokeorts-static/back/gato-rancio-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/gato-rancio.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/gato-rancio-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/gato-rancio-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/gato-rancio-atk-back.gif",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
+    "src": "../recursos/img/pokeorts-static/front/owleon.png",
+    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
+    "NumeroSecreto": 1,
+    "pokeortID": "OWLEON"
   }
 }

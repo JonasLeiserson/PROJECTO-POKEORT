@@ -186,6 +186,32 @@ function ocultarTodo() {
     document.getElementById("accionPokeort-div").style.display = "flex";
 }
 
+function infoAtaque(button, index) {
+    let ataqueBoton = PokeortElegidoActual.ataques.find(ataque => ataque.nombre === button.textContent);
+
+    let infos = [
+        document.getElementById('infoAtaque-1'),
+        document.getElementById('infoAtaque-2'),
+        document.getElementById('infoAtaque-3'),
+        document.getElementById('infoAtaque-4')
+    ];
+
+    infos[index].innerHTML = `<p>Tipo: ${ataqueBoton.tipo}</p> <p>Potencia: ${ataqueBoton.potencia}</p> <p>Precision: ${ataqueBoton.precision}</p> <p>Descripcion: ${ataqueBoton.descripcion}</p>`;
+    
+    infos[index].style.display="flex";
+}
+
+function nombreAtaque(index) {
+    let infos = [
+        document.getElementById('infoAtaque-1'),
+        document.getElementById('infoAtaque-2'),
+        document.getElementById('infoAtaque-3'),
+        document.getElementById('infoAtaque-4')
+    ];
+
+    infos[index].style.display="none";
+}
+
 // funciones combate
 
 function EleccionDePokeortInicial(button) {
@@ -900,25 +926,22 @@ function CalcularDaño(atacante, defensor, ataque) {
         daño = daño * 2
         critico = " ES UN ATAQUE CRITICO Y"
     }
-    console.log("El ataque de " + ataque.tipo + critico + " tiene una efectividad del: *" + modificador1 * modificador2 + " en " + defensor.Tipo1 + " y " + defensor.Tipo2);
     return daño;
     
 }
 
 function elegirAtaqueMasEfectivo(TipoDefensor1, TipoDefensor2) {   
-    let mejorEfectividad = 0; 
+    let mejorAtaque;
+    let mayorDaño = 0;
 
     let tiposAtaquesDisponibles = PokeortElegidoEnemigoActual.ataques;
 
     tiposAtaquesDisponibles.forEach(ataque => {
+        let daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ataque)
 
-        const efectividad1 = efectividadTipos[ataque.tipo][TipoDefensor1] || 1;
-        const efectividad2 = efectividadTipos[ataque.tipo][TipoDefensor2] || 1;
-
-        const efectividadTotal = efectividad1 * efectividad2;
-
-        if (efectividadTotal > mejorEfectividad) {
-            mejorEfectividad = efectividadTotal;
+        if (daño > mayorDaño)
+        {
+            mayorDaño = daño;
             mejorAtaque = ataque;
         }
     });

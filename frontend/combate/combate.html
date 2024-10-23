@@ -100,13 +100,17 @@
 
                 <div id="ataques" class="ataques" style="display: none;">
                     <div class="arriba">
-                        <button class="ataque" id="ataque1" onclick="AdministrarBatalla(this)">agua</button>
-                        <button class="ataque" id="ataque2" onclick="AdministrarBatalla(this)">planta</button>
+                        <div class="ataqueInfo ataqueInfoArribaIzquierda" id="infoAtaque-1"></div>
+                        <button class="ataque" id="ataque1" onclick="AdministrarBatalla(this)" onmouseover="infoAtaque(this, 0)" onmouseout="nombreAtaque(0)"></button>
+                        <div class="ataqueInfo ataqueInfoArribaDerecha" id="infoAtaque-2"></div>
+                        <button class="ataque" id="ataque2" onclick="AdministrarBatalla(this)" onmouseover="infoAtaque(this, 1)" onmouseout="nombreAtaque(1)"></button>
                     </div>
     
                     <div class="abajo">
-                        <button class="ataque" id="ataque3" onclick="AdministrarBatalla(this)">fuego</button>
-                        <button class="ataque" id="ataque4" onclick="AdministrarBatalla(this)">electrico</button>
+                        <div class="ataqueInfo ataqueInfoAbajoIzquierda" id="infoAtaque-3"></div>
+                        <button class="ataque" id="ataque3" onclick="AdministrarBatalla(this)" onmouseover="infoAtaque(this, 2)" onmouseout="nombreAtaque(2)"></button>
+                        <div class="ataqueInfo ataqueInfoAbajoDerecha" id="infoAtaque-4"></div>
+                        <button class="ataque" id="ataque4" onclick="AdministrarBatalla(this)" onmouseover="infoAtaque(this, 3)" onmouseout="nombreAtaque(3)"></button>
                     </div>
                 </div>
         
