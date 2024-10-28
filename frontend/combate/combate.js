@@ -423,7 +423,7 @@ function AdministrarBatalla(button) {
         else
         {
             setTimeout(() => {
-                if (realizarTurnoEnemigo()) return;
+                if (realizarTurnoJugador()) return;
                 if (acertado)
                 {
                     if (PokeortElegidoActual.vida <= 0)
@@ -549,7 +549,7 @@ if (realizarTurnoJugador()) return;
         else
         {
             setTimeout(() => {
-                if (realizarTurnoEnemigo()) return;
+                if (realizarTurnoJugador()) return;
                 if (acertado)
                 {
                     if (PokeortElegidoActual.vida <= 0)
@@ -892,9 +892,9 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
     else
     {
         acertado = false;
-        console.log(`¡${PokeortElegidoActual.nombre} ha fallado el ataque ${ataqueElegidoEnemigo.nombre}!`)
+        console.log(`¡${PokeortElegidoEnemigoActual.nombre} ha fallado el ataque ${ataqueElegidoEnemigo.nombre}!`)
         ocultarTodo();
-        accionPokeort(PokeortElegidoEnemigoActual ,PokeortElegidoActual , 0, AtaqueMasEfectivo);
+        accionPokeort(PokeortElegidoEnemigoActual, PokeortElegidoActual, 0, AtaqueMasEfectivo);
 
         setTimeout(() => {
             imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
@@ -917,10 +917,10 @@ function CalcularDaño(atacante, defensor, ataque) {
 
     let modificadorTotal = modificador1 * modificador2;
     let variacion = Math.floor(Math.random() * (100 - 85 + 1)) + 85;
-    let daño = Math.round(0.01 * modificadorTotal * variacion * (21 * atacante.atk * ataque.potencia / (25 * defensor.defensa) + 2));
+    let daño = Math.round(0.01 * modificadorTotal * variacion * (atacante.atk * ataque.potencia / defensor.defensa + 2));
 
     const ProbabilidadDecritico = generarNumeroAleatorio()
-    let critico = ""
+    let critico = "";
     if (ProbabilidadDecritico === 10)
     {
         daño = daño * 2

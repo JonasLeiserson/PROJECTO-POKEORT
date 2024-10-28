@@ -34,8 +34,6 @@ app.get('/leer-datos-de-pokeorts', (req, res) => {
     res.send(data);
 });
 
-
-
 //login
 
 app.use(bodyParser.urlencoded({ extended: true }));

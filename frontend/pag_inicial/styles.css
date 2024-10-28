@@ -17,14 +17,6 @@ body {
     background-size: cover;
 }
 
-.botones {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 30%;
-    width: 100%;
-}
-
 .combatir, .creditos-button, .opciones{
     font-family: Kyiv;
     background-color: #928E8E;
@@ -36,7 +28,7 @@ body {
     margin: 0;
     width: 35%;
     height: 20%;
-    font-size: 1rem;
+    font-size: 3.3rem;
     font-weight: bold;
     margin-top: 1.5%;
 
@@ -48,11 +40,11 @@ body {
 
 .creditos-button {
     width: 25%;
-    height: 20%;
+    height: 7%;
     background-color: black;
     color: white;
     margin-top: 1.5%;
-    font-size: 1rem;
+    font-size: 1.3rem;
 
     &:hover {
         cursor: pointer;
