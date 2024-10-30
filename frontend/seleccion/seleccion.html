@@ -9,11 +9,35 @@
     <script src="seleccion.js" defer></script>
 </head>
 <body>
+    <div class="comosejuega" id="comosejuega">
+        <button onclick="ocultarComoSeJuega()">cerrar</button>
+        <div class="texto">
+            <h2>¿Como se juega?</h2>
+            <p>PokeORT tiene un sistema igual al del pokemon original, siendo un sistema de combate por turnos. El objetivo del combate es que todos los pokeORTs enemigos lleguen a tener 0 de vida, logrando ganar el combate. Para esto necesitarás atacar al enemigo con alguno de tus 4 ataques, siendo que algunos causan más daño que otros dependiendo de varios factores: estadísticas del ataque, estadísticas de ambos pokeORTs (aliado y enemigo), la suerte y la tabla de tipos. Si ya sabes jugar Pokemón te recomendamos saltearte la guía ya que el juego es el mismo.</p>
+        </div>
+        <h3>¿Sobre qué necesitas saber?</h3>
+        <div class="botones-info">
+            <button class="info" onclick="mostrarReglas(reglas[0])">Estadisticas PokeORTs</button>
+            <button class="info" onclick="mostrarReglas(reglas[1])">Estadisticas Ataques</button>
+            <button class="info" onclick="mostrarReglas(reglas[2])">Suerte</button>
+            <button class="info" onclick="mostrarReglas(reglas[3])">Tabla de tipos</button>
+            <button class="info" onclick="mostrarReglas(reglas[4])">Pociones</button>
+            <button class="info" onclick="mostrarReglas(reglas[5])">Sistema de turnos</button>
+        </div>
+
+        <div class="reglas stats-pokeorts" id="stats" onclick="ocultarReglas(reglas[0])"></div>
+        <div class="reglas stats-atk" id="ataques-r" onclick="ocultarReglas(reglas[1])"></div>
+        <div class="reglas suerte" id="suerte" onclick="ocultarReglas(reglas[2])"></div>
+        <div class="reglas tabla" id="tabla" onclick="ocultarReglas(reglas[3])"></div>
+        <div class="reglas pociones" id="pociones" onclick="ocultarReglas(reglas[4])"></div>
+        <div class="reglas turnos" id="turnos" onclick="ocultarReglas(reglas[5])"></div>
+    </div>
+
 
     <header id="header">
         <h1 class="seleccione-pokeort">Seleccione sus PokeORTs</h1>
         <div class="volver" onclick="location.href='../pag inicial/index.html'"><img src="../recursos/img/iconos/home.png" alt=""></div>
-        <button class="combatir" onclick="EnviarAlCombate()">COMBATIR!</button>
+        <button class="htp" onclick="comoSeJuega()">¿Como se juega?</button>
     </header>
 
     <main>

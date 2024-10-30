@@ -135,3 +135,28 @@ function EnviarAlCombate() {
         });
 }
 }
+
+let reglas = [
+    document.getElementById('stats'),
+    document.getElementById('ataques-r'),
+    document.getElementById('suerte'),
+    document.getElementById('tabla'),
+    document.getElementById('pociones'),
+    document.getElementById('turnos')
+]
+
+function mostrarReglas(regla) {
+    regla.style.display = "block";
+}
+
+function ocultarReglas(regla) {
+    regla.style.display = "none";
+}
+
+function comoSeJuega() {
+    document.getElementById('comosejuega').style.display = 'flex';
+}
+
+function ocultarComoSeJuega() {
+    document.getElementById('comosejuega').style.display = 'none';
+}
