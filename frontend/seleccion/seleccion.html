@@ -13,7 +13,6 @@
     <header id="header">
         <h1 class="seleccione-pokeort">Seleccione sus PokeORTs</h1>
         <div class="volver" onclick="location.href='../pag inicial/index.html'"><img src="../recursos/img/iconos/home.png" alt=""></div>
-        <button class="combatir" onclick="EnviarAlCombate()">COMBATIR!</button>
     </header>
 
     <main>
@@ -52,8 +51,10 @@
         </div>   
     </main>
 
-    <footer class="footer">
-        <div class="pokeort-container">
+    <footer>
+        <button class="combatirGrande" id="combatirButton" onclick="EnviarAlCombate()">COMBATIR</button>
+
+        <div class="pokeort-container" id="carrusel">
             <div class="pokeort-item" data-id="OWLEON">
                 <button onclick="CambiarPokeort(this)" id="Owleon" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
                 <p class="pokeort-name" id="OWLEON">OWLEON</p>
@@ -75,29 +76,29 @@
                 </button>
             </div>
 
-            <div class="pokeort-item" data-id="CHANCHORANCIO">
+            <div class="pokeort-item" data-id="CHANCIO">
                 <button onclick="CambiarPokeort(this)" onmouseover="MostrarEstadisticas(this)" class="BotonDeEleccion" >
-                <p class="pokeort-name" id="CHANCHORANCIO">CHANCHORANCIO</p>
+                <p class="pokeort-name" id="CHANCIO">CHANCIO</p>
                 <img class="pokeort-img" src="../recursos/img/pokeorts-gifs/front/chancho-rancio.gif">
                 </button>
             </div>
 
-            <div class="pokeort-item" data-id="GATO-RANCIO">
+            <div class="pokeort-item" data-id="GATENCIO">
                 <button onclick="CambiarPokeort(this)" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
-                <p class="pokeort-name" id="GATORANCIO">GATORANCIO</p>
+                <p class="pokeort-name" id="GATENCIO">GATENCIO</p>
                 <img class="pokeort-img" src="../recursos/img/pokeorts-gifs/front/gato-rancio.gif">
                 </button>
             </div>
             <div class="pokeort-item" data-id="MACETONIO">
                 <button onclick="CambiarPokeort(this)" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
-                <p class="pokeort-name" id="MACETONIO" >MACETONIO</p>
+                <p class="pokeort-name" id="MACETONIO">MACETONIO</p>
                 <img class="pokeort-img" src="../recursos/img/pokeorts-gifs/front/maceta-rancia.gif">
                 </button>
             </div>
         
             <div class="pokeort-item" data-id="CARI-TAFACHA">
                 <button onclick="CambiarPokeort(this)" onmouseover="MostrarEstadisticas(this)"  class="BotonDeEleccion">
-                <p class="pokeort-name" id="CARITAFACHA" >CARITAFACHA</p>
+                <p class="pokeort-name" id="CARITAFACHA" >CARITA</p>
                 <img class="pokeort-img" src="../recursos/img/pokeorts-gifs/front/carita.gif">
                 </button>
             </div>

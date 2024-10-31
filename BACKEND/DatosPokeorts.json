@@ -144,8 +144,8 @@
     "NumeroSecreto": 5,
     "pokeortID": "AMONG US"
   },
-  "CHANCHORANCIO": {
-    "nombre": "CHANCHORANCIO",
+  "CHANCIO": {
+    "nombre": "CHANCIO",
     "atk": 350,
     "vida": 800,
     "vida_total": 800,
@@ -190,10 +190,10 @@
     "src_atk": "../recursos/img/pokeort-atk/front/chancho-rancio-atk.gif",
     "src_atk_back": "../recursos/img/pokeort-atk/back/chancho-rancio-atk-back.gif",
     "NumeroSecreto": 6,
-    "pokeortID": "CHANCHORANCIO"
+    "pokeortID": "CHANCIO"
   },
-  "GATORANCIO": {
-    "nombre": "GATORANCIO",
+  "GATENCIO": {
+    "nombre": "GATENCIO",
     "atk": 250,
     "vida": 800,
     "vida_total": 800,
@@ -238,7 +238,7 @@
     "src_atk": "../recursos/img/pokeort-atk/front/gato-rancio-atk.gif",
     "src_atk_back": "../recursos/img/pokeort-atk/back/gato-rancio-atk-back.gif",
     "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
+    "pokeortID": "GATENCIO"
   },
   "MACETONIO": {
     "nombre": "MACETONIO",

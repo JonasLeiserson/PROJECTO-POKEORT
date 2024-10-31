@@ -43,7 +43,8 @@ function BloquearPokeort(button) {
             eleccion++;
             document.getElementById(`BotonDeBloqueo${eleccion}`).style.display = "block";
         } else {
-            document.querySelector('.footer').style.display = "none";
+            document.getElementById('combatirButton').style.display = "block";
+            document.getElementById('carrusel').style.display = "none";
             document.getElementById('header').style.position = "fixed";
             document.getElementById('header').style.top = "0";
             document.querySelector('.ability-container').style.display = "none";

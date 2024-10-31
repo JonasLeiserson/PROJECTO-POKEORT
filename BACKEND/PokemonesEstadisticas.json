@@ -1,53 +1,5 @@
 {
   "Pokeort1": {
-    "nombre": "CHANCHORANCIO",
-    "atk": 350,
-    "vida": 800,
-    "vida_total": 800,
-    "velocidad": 250,
-    "defensa": 75,
-    "Tipo1": "oscuridad",
-    "Tipo2": "agua",
-    "ataques": [
-      {
-        "nombre": "Maremoto",
-        "tipo": "agua",
-        "potencia": 100,
-        "precision": 100,
-        "descripcion": "Desata una ola gigante que golpea al oponente con fuerza."
-      },
-      {
-        "nombre": "Chocogranizo",
-        "tipo": "hielo",
-        "potencia": 120,
-        "precision": 90,
-        "descripcion": "Lanza proyectiles de hielo que causan daño."
-      },
-      {
-        "nombre": "Burbuja oscura",
-        "tipo": "oscuridad",
-        "potencia": 90,
-        "precision": 100,
-        "descripcion": "Un ataque ligero que causa daño."
-      },
-      {
-        "nombre": "Oscuritrueno",
-        "tipo": "electrico",
-        "potencia": 150,
-        "precision": 70,
-        "descripcion": "Relámpago oscuro que causa daño."
-      }
-    ],
-    "src": "../recursos/img/pokeorts-static/front/chancho-rancio.png",
-    "src_back": "../recursos/img/pokeorts-static/back/chancho-rancio-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/chancho-rancio.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/chancho-rancio-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/chancho-rancio-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/chancho-rancio-atk-back.gif",
-    "NumeroSecreto": 6,
-    "pokeortID": "CHANCHORANCIO"
-  },
-  "Pokeort2": {
     "nombre": "AMONG US",
     "atk": 200,
     "vida": 1100,
@@ -95,8 +47,56 @@
     "NumeroSecreto": 5,
     "pokeortID": "AMONG US"
   },
+  "Pokeort2": {
+    "nombre": "CHANCIO",
+    "atk": 350,
+    "vida": 800,
+    "vida_total": 800,
+    "velocidad": 250,
+    "defensa": 75,
+    "Tipo1": "oscuridad",
+    "Tipo2": "agua",
+    "ataques": [
+      {
+        "nombre": "Maremoto",
+        "tipo": "agua",
+        "potencia": 100,
+        "precision": 100,
+        "descripcion": "Desata una ola gigante que golpea al oponente con fuerza."
+      },
+      {
+        "nombre": "Chocogranizo",
+        "tipo": "hielo",
+        "potencia": 120,
+        "precision": 90,
+        "descripcion": "Lanza proyectiles de hielo que causan daño."
+      },
+      {
+        "nombre": "Burbuja oscura",
+        "tipo": "oscuridad",
+        "potencia": 90,
+        "precision": 100,
+        "descripcion": "Un ataque ligero que causa daño."
+      },
+      {
+        "nombre": "Oscuritrueno",
+        "tipo": "electrico",
+        "potencia": 150,
+        "precision": 70,
+        "descripcion": "Relámpago oscuro que causa daño."
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/chancho-rancio.png",
+    "src_back": "../recursos/img/pokeorts-static/back/chancho-rancio-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/chancho-rancio.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/chancho-rancio-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/chancho-rancio-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/chancho-rancio-atk-back.gif",
+    "NumeroSecreto": 6,
+    "pokeortID": "CHANCIO"
+  },
   "Pokeort3": {
-    "nombre": "GATORANCIO",
+    "nombre": "GATENCIO",
     "atk": 250,
     "vida": 800,
     "vida_total": 800,
@@ -141,9 +141,105 @@
     "src_atk": "../recursos/img/pokeort-atk/front/gato-rancio-atk.gif",
     "src_atk_back": "../recursos/img/pokeort-atk/back/gato-rancio-atk-back.gif",
     "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
+    "pokeortID": "GATENCIO"
   },
   "PokeortEnemigo1": {
+    "nombre": "MACETONIO",
+    "atk": 150,
+    "vida": 1200,
+    "vida_total": 1200,
+    "velocidad": 100,
+    "defensa": 180,
+    "Tipo1": "planta",
+    "Tipo2": "agua",
+    "ataques": [
+      {
+        "nombre": "Rayo Vegetal",
+        "tipo": "planta",
+        "potencia": 150,
+        "precision": 70,
+        "descripcion": "Lanza un rayo proveniente de la naturaleza, causando daño inmediato."
+      },
+      {
+        "nombre": "Zarpazo",
+        "tipo": "especial",
+        "potencia": 60,
+        "precision": 100,
+        "descripcion": "Un ataque que causa el mismo daño a todos los enemigos"
+      },
+      {
+        "nombre": "Hoja Afilada",
+        "tipo": "planta",
+        "potencia": 105,
+        "precision": 90,
+        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
+      },
+      {
+        "nombre": "Puño Acuatico",
+        "tipo": "agua",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Un ataque de puño fuerte que inflige gran daño al enemigo."
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/maceta-rancia.png",
+    "src_back": "../recursos/img/pokeorts-static/back/maceta-rancia-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/maceta-rancia.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/maceta-rancia-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/maceta-rancia-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/maceta-rancia-atk-back.gif",
+    "NumeroSecreto": 8,
+    "pokeortID": "MACETONIO"
+  },
+  "PokeortEnemigo2": {
+    "nombre": "MACETONIO",
+    "atk": 150,
+    "vida": 1200,
+    "vida_total": 1200,
+    "velocidad": 100,
+    "defensa": 180,
+    "Tipo1": "planta",
+    "Tipo2": "agua",
+    "ataques": [
+      {
+        "nombre": "Rayo Vegetal",
+        "tipo": "planta",
+        "potencia": 150,
+        "precision": 70,
+        "descripcion": "Lanza un rayo proveniente de la naturaleza, causando daño inmediato."
+      },
+      {
+        "nombre": "Zarpazo",
+        "tipo": "especial",
+        "potencia": 60,
+        "precision": 100,
+        "descripcion": "Un ataque que causa el mismo daño a todos los enemigos"
+      },
+      {
+        "nombre": "Hoja Afilada",
+        "tipo": "planta",
+        "potencia": 105,
+        "precision": 90,
+        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
+      },
+      {
+        "nombre": "Puño Acuatico",
+        "tipo": "agua",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Un ataque de puño fuerte que inflige gran daño al enemigo."
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/maceta-rancia.png",
+    "src_back": "../recursos/img/pokeorts-static/back/maceta-rancia-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/maceta-rancia.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/maceta-rancia-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/maceta-rancia-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/maceta-rancia-atk-back.gif",
+    "NumeroSecreto": 8,
+    "pokeortID": "MACETONIO"
+  },
+  "PokeortEnemigo3": {
     "nombre": "ROKTOM",
     "atk": 120,
     "vida": 1500,
@@ -190,101 +286,5 @@
     "src_atk_back": "../recursos/img/pokeort-atk/back/roktom-atk-back.gif",
     "NumeroSecreto": 3,
     "pokeortID": "ROKTOM"
-  },
-  "PokeortEnemigo2": {
-    "nombre": "GATORANCIO",
-    "atk": 250,
-    "vida": 800,
-    "vida_total": 800,
-    "velocidad": 250,
-    "defensa": 140,
-    "Tipo1": "roca",
-    "Tipo2": "electrico",
-    "ataques": [
-      {
-        "nombre": "Golpe de Roca",
-        "tipo": "roca",
-        "potencia": 100,
-        "precision": 85,
-        "descripcion": "Lanza una gran roca hacia el enemigo."
-      },
-      {
-        "nombre": "Poder Tierra",
-        "tipo": "tierra",
-        "potencia": 110,
-        "precision": 80,
-        "descripcion": "Un ataque que causa un fuerte golpe en el suelo, afectando a todos los enemigos cercanos."
-      },
-      {
-        "nombre": "Tormenta",
-        "tipo": "electrico",
-        "potencia": 90,
-        "precision": 100,
-        "descripcion": "Un ataque que causa daño."
-      },
-      {
-        "nombre": "Surf",
-        "tipo": "agua",
-        "potencia": 80,
-        "precision": 100,
-        "descripcion": "Se desliza hacia el enemigo con una ola, causando daño."
-      }
-    ],
-    "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
-    "src_back": "../recursos/img/pokeorts-static/back/gato-rancio-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/gato-rancio.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/gato-rancio-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/gato-rancio-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/gato-rancio-atk-back.gif",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATORANCIO"
-  },
-  "PokeortEnemigo3": {
-    "nombre": "SKIBIDI",
-    "atk": 999,
-    "vida": 1,
-    "vida_total": 1,
-    "velocidad": 1000,
-    "defensa": 1,
-    "Tipo1": "skibidi",
-    "Tipo2": "especial",
-    "Estado": [],
-    "ataques": [
-      {
-        "nombre": "Fuerza Toilet",
-        "tipo": "skibidi",
-        "potencia": 999,
-        "precision": 40,
-        "descripcion": "SKIBIDI"
-      },
-      {
-        "nombre": "Fuerza Toilet",
-        "tipo": "skibidi",
-        "potencia": 999,
-        "precision": 40,
-        "descripcion": "SKIBIDI"
-      },
-      {
-        "nombre": "Fuerza Toilet",
-        "tipo": "skibidi",
-        "potencia": 999,
-        "precision": 40,
-        "descripcion": "SKIBIDI"
-      },
-      {
-        "nombre": "Fuerza Toilet",
-        "tipo": "skibidi",
-        "potencia": 999,
-        "precision": 40,
-        "descripcion": "SKIBIDI"
-      }
-    ],
-    "src": "../recursos/img/pokeorts-static/front/skibidi.png",
-    "src_back": "../recursos/img/pokeorts-static/back/skibidi-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/skibidi.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/skibidi-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/skibidi-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/skibidi-atk-back.gif",
-    "pokeortID": "SKIBIDI"
   }
 }

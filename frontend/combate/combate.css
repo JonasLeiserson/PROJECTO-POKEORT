@@ -134,7 +134,7 @@ header {
         height: 100%;
         width: 25%;
         position: relative;
-        top: 5%;
+        bottom: 5%;
 
         
         .tipos {
@@ -216,7 +216,7 @@ header {
         height: 100%;
         width: 25%;
         position: relative;
-        bottom: 5%;
+        bottom: 15%;
 
         .tipos {
             width: 20%;
