@@ -131,8 +131,8 @@
           "nombre": "Asesinato",
           "tipo": "normal",
           "potencia": 10000,
-          "precision": 3,
-          "descripcion": "3% de probabilidad de insta-kill al oponente."
+          "precision": 5,
+          "descripcion": "5% de probabilidad de insta-kill al oponente."
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/among-us.png",
