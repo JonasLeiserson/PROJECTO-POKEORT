@@ -118,7 +118,14 @@ body {
         position: absolute;
         right: 1%;
         top: 1%;
-        background-color: #949494;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #e4e4e4;
+        }
     }
 }
 

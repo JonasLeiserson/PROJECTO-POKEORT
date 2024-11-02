@@ -7,5 +7,6 @@ Con ayuda de:
 - ChatGPT
 - BlackBox
 - Claude
-Y muchos más!! Ias falopa
+Y muchos más!!
 ### PokeORT: ¡Jugá ya!
+Mango

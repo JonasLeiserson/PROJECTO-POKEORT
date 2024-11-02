@@ -91,6 +91,23 @@ const efectividadTipos = {
 };
 
 // funciones front
+function pokeortDerrotadoAnimacion(pokeortImg, pokeort) {
+    pokeortImg.src = pokeort.src;
+    pokeortImg.style.display = "none";
+
+        setTimeout(() => {
+            pokeortImg.style.display = "block";
+                setTimeout(() => {
+                    pokeortImg.style.display = "none";
+                        setTimeout(() => {
+                            pokeortImg.style.display = "block";
+                                setTimeout(() => {
+                                    pokeortImg.style.display = "none";
+                    }, 300);
+                }, 300);
+            }, 300);
+        }, 300);
+}
 
 function cambiarAtaques(pokeort) {
     ataques[0].textContent = pokeort.ataques[0].nombre;
@@ -128,6 +145,14 @@ function desabilitarOpciones() {
     });
 }
 
+function mostrarTabla() {
+    document.getElementById("tabladetipos-div").style.display="flex";
+}
+
+function cerrarTabla() {
+    document.getElementById("tabladetipos-div").style.display="none";
+}
+
 function mostrar_ataques() {
     document.getElementById("ataques").style.display = "flex";
     document.getElementById("cambiar-pokeort").style.display = "none";
@@ -154,7 +179,7 @@ function mostrar_pokeort() {
         document.querySelectorAll('.pokeort-cambiable').forEach((button) => {
             button.style.display = "block";
         });
-        cancelar.style.display = "block";
+        cancelar.style.display = "flex";
     }
     else
     {
@@ -214,6 +239,131 @@ function nombreAtaque(index) {
 
 // funciones combate
 
+function atacaPrimeroEnemigo() {
+    if (realizarTurnoEnemigo()) return;
+        if (acertado)
+        {
+            setTimeout(() => {
+                if (realizarTurnoJugador()) return; 
+                if (acertado)
+                {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
+                    setTimeout(() => {
+                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                        habilitarOpciones()
+                    }, 6000)
+                }
+                }, 4000); 
+        }
+        else
+        {
+            setTimeout(() => {
+                if (realizarTurnoJugador()) return;
+                if (acertado)
+                {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
+                    setTimeout(() => {
+                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                        habilitarOpciones()
+                    }, 6000)
+                }
+                }, 6000); 
+        }
+}
+
+function atacaPrimeroAmigo() {
+    if (realizarTurnoJugador()) return; 
+        if (acertado)
+        {
+            setTimeout(() => {
+                if (realizarTurnoEnemigo()) return;
+                if (acertado)
+                {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+
+                                setTimeout(() => {
+                                    accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                    habilitarOpciones()
+                                }, 4000)
+                        }
+                }
+                else {
+                        setTimeout(() => {
+                            accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                            habilitarOpciones()
+                        }, 6000)
+                }
+                }, 4000); 
+        }
+        else
+        {
+            setTimeout(() => {
+                if (realizarTurnoEnemigo()) return;
+                if (acertado)
+                {
+                    if (PokeortElegidoActual.vida <= 0)
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 6000)
+                        }
+                        else
+                        {
+                            setTimeout(() => {
+                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                                habilitarOpciones()
+                            }, 4000)
+                        }
+                }
+                else {
+                    setTimeout(() => {
+                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
+                        habilitarOpciones()
+                    }, 6000)
+                }
+                }, 6000); 
+        }
+}
+
 function EleccionDePokeortInicial(button) {
     const PokeortElegidoId = button.querySelector(".ParrafoDeNombre").textContent.trim();
     const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === PokeortElegidoId);
@@ -258,7 +408,6 @@ function intercambiarPokeort(button, index) {
     if(SeleccionandoObjeto === true)
     {
         const BotonNombre = button.querySelector(".ParrafosCambiables").textContent
-        console.log(BotonNombre)
         QueHacerConObjeto(BotonNombre)
         return true
     }
@@ -327,254 +476,22 @@ function AdministrarBatalla(button) {
 
     if (PokeortElegidoActual.velocidad > PokeortElegidoEnemigoActual.velocidad) 
     {
-        if (realizarTurnoJugador()) return; 
-        if (acertado)
-        {
-            setTimeout(() => {
-                if (realizarTurnoEnemigo()) return;
-                if (acertado)
-                {
-                    if (PokeortElegidoActual.vida <= 0)
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 6000)
-                        }
-                        else
-                        {
-
-                                setTimeout(() => {
-                                    accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                    habilitarOpciones()
-                                }, 4000)
-                        }
-                }
-                else {
-                        setTimeout(() => {
-                            accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                            habilitarOpciones()
-                        }, 6000)
-                }
-                }, 4000); 
-        }
-        else
-        {
-            setTimeout(() => {
-                if (realizarTurnoEnemigo()) return;
-                if (acertado)
-                {
-                    if (PokeortElegidoActual.vida <= 0)
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 6000)
-                        }
-                        else
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 4000)
-                        }
-                }
-                else {
-                    setTimeout(() => {
-                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                        habilitarOpciones()
-                    }, 6000)
-                }
-                }, 6000); 
-        }
+        atacaPrimeroAmigo()
     }
     else if (PokeortElegidoActual.velocidad < PokeortElegidoEnemigoActual.velocidad) 
     { 
-        if (realizarTurnoEnemigo()) return;
-        if (acertado)
-        {
-            setTimeout(() => {
-                if (realizarTurnoJugador()) return; 
-                if (acertado)
-                {
-                    if (PokeortElegidoActual.vida <= 0)
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 6000)
-                        }
-                        else
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 4000)
-                        }
-                }
-                else {
-                    setTimeout(() => {
-                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                        habilitarOpciones()
-                    }, 6000)
-                }
-                }, 4000); 
-        }
-        else
-        {
-            setTimeout(() => {
-                if (realizarTurnoJugador()) return;
-                if (acertado)
-                {
-                    if (PokeortElegidoActual.vida <= 0)
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 6000)
-                        }
-                        else
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 4000)
-                        }
-                }
-                else {
-                    setTimeout(() => {
-                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                        habilitarOpciones()
-                    }, 6000)
-                }
-                }, 6000); 
-        }
+        atacaPrimeroEnemigo()
     } 
     else 
     {
         const Aleatorio = Math.floor(Math.random() * 2) + 1;
-        if (Aleatorio === 1) {
-if (realizarTurnoJugador()) return; 
-        if (acertado)
-        {
-            setTimeout(() => {
-                if (realizarTurnoEnemigo()) return;
-                if (acertado)
-                {
-                    if (PokeortElegidoActual.vida <= 0)
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 6000)
-                        }
-                        else
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 4000)
-                        }
-                }
-                else {
-                    setTimeout(() => {
-                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                        habilitarOpciones()
-                    }, 6000)
-                }
-                }, 4000); 
-        }
-        else
-        {
-            setTimeout(() => {
-                if (realizarTurnoEnemigo()) return;
-                if (acertado)
-                {
-                    if (PokeortElegidoActual.vida <= 0)
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 6000)
-                        }
-                        else
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 4000)
-                        }
-                }
-                else {
-                    setTimeout(() => {
-                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                        habilitarOpciones()
-                    }, 6000)
-                }
-                }, 6000); 
-        }
+        if (Aleatorio === 1) 
+    {
+        atacaPrimeroAmigo()
     } 
     else if (Aleatorio === 2) 
     {
-        if (realizarTurnoEnemigo()) return;
-        if (acertado)
-        {
-            setTimeout(() => {
-                if (realizarTurnoJugador()) return; 
-                if (acertado)
-                {
-                    if (PokeortElegidoActual.vida <= 0)
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 6000)
-                        }
-                        else
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 4000)
-                        }
-                }
-                else {
-                    setTimeout(() => {
-                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                        habilitarOpciones()
-                    }, 6000)
-                }
-                }, 4000); 
-        }
-        else
-        {
-            setTimeout(() => {
-                if (realizarTurnoJugador()) return;
-                if (acertado)
-                {
-                    if (PokeortElegidoActual.vida <= 0)
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 6000)
-                        }
-                        else
-                        {
-                            setTimeout(() => {
-                                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                                habilitarOpciones()
-                            }, 4000)
-                        }
-                }
-                else {
-                    setTimeout(() => {
-                        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
-                        habilitarOpciones()
-                    }, 6000)
-                }
-                }, 6000); 
-        }
+        atacaPrimeroEnemigo()
     }
     }
 }
@@ -689,29 +606,14 @@ function realizarTurnoJugador() {
         setTimeout(() => {
             if (PokeortElegidoEnemigoActual.vida <= 0)
             {
-                imgEnemiga.src = PokeortElegidoEnemigoActual.src;
-                imgEnemiga.style.display = "none";
-    
-                    setTimeout(() => {
-                        imgEnemiga.style.display = "block";
-                            setTimeout(() => {
-                                imgEnemiga.style.display = "none";
-                                    setTimeout(() => {
-                                        imgEnemiga.style.display = "block";
-                                            setTimeout(() => {
-                                                imgEnemiga.style.display = "none";
-                                }, 300);
-                            }, 300);
-                        }, 300);
-                    }, 300);
-                
+                pokeortDerrotadoAnimacion(imgEnemiga, PokeortElegidoEnemigoActual)
             }
         }, 4000);
     
 
             if (PokeortElegidoEnemigoActual.vida <= 0) {
                 setTimeout(() => {
-                document.getElementById("ImagenAmiga2").style.display = "none";
+                imgEnemiga.style.display = "none";
                 PokeortEnemigosDerrotados.push(PokeortElegidoEnemigoActual.nombre)
                 bajarPokeball()
                 accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
@@ -730,8 +632,9 @@ function realizarTurnoJugador() {
                 }
                 const PokeortElegidoEnemigo = PokeortEnemigos[valorEnemigo];
                 PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
-                document.getElementById("ImagenAmiga2").src = PokeortElegidoEnemigoActual.src_gif;
-                document.getElementById("ImagenAmiga2").style.display = "block";
+                console.log("PokeORT enemigo elegido:", PokeortElegidoEnemigoActual);
+                imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
+                imgEnemiga.style.display = "block";
                 pokeortEnemigoNombre.innerHTML = PokeortElegidoEnemigoActual.nombre;
                 tiposPokeortElegidoEnemigo[0].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo1}.png`
                 tiposPokeortElegidoEnemigo[1].src = `../recursos/img/iconos/tipos/${PokeortElegidoEnemigoActual.Tipo2}.png`
@@ -748,22 +651,19 @@ function realizarTurnoJugador() {
                     terminarAtaqueAnimacion(imgAmiga)
                 }, 4000);
             }
-
     }
     else
     {
         acertado = false;
         console.log(`¡${PokeortElegidoActual.nombre} ha fallado el ataque ${ataqueElegidoAmigo.nombre}!`)
         ocultarTodo();
-        accionPokeort(PokeortElegidoActual, PokeortElegidoEnemigoActual, 0, ataqueElegidoAmigo)
+        accionPokeort(PokeortElegidoActual, PokeortElegidoEnemigoActual, 0, ataqueElegidoAmigo);
 
         setTimeout(() => {
             imgAmiga.src = PokeortElegidoActual.src_gif_back;
-            terminarAtaqueAnimacion(imgAmiga)
+            terminarAtaqueAnimacion(imgAmiga);
         }, 4000)
     }
-
-    
 
     if (PokeortElegidoEnemigoActual.vida <= 0) {
         return true;
@@ -825,22 +725,7 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
         setTimeout(() => {
             if (PokeortElegidoActual.vida <= 0)
             {
-                imgAmiga.src = PokeortElegidoActual.src_back;
-                imgAmiga.style.display = "none"
-    
-                    setTimeout(() => {
-                        imgAmiga.style.display = "block";
-                            setTimeout(() => {
-                                imgAmiga.style.display = "none";
-                                    setTimeout(() => {
-                                        imgAmiga.style.display = "block";
-                                            setTimeout(() => {
-                                                imgAmiga.style.display = "none";
-                                }, 300);
-                            }, 300);
-                        }, 300);
-                    }, 300);
-                
+                pokeortDerrotadoAnimacion(imgAmiga, PokeortElegidoActual)
             }
         }, 4000);
     
@@ -850,7 +735,6 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
                 PokeortAmigosDerrotados.push(PokeortElegidoActual.nombre);
                 bajarPokeball();
                 document.getElementById("pokeort1").style.opacity = '0';
-    
                 mostrar_pokeort();
                 accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
                 desabilitarOpciones()
@@ -908,7 +792,6 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
     else {
         return false;
     }
-
 }
 
 function CalcularDaño(atacante, defensor, ataque) {
@@ -916,28 +799,27 @@ function CalcularDaño(atacante, defensor, ataque) {
     const modificador2 = efectividadTipos[ataque.tipo][defensor.Tipo2];
 
     let modificadorTotal = modificador1 * modificador2;
+    
     let variacion = Math.floor(Math.random() * (100 - 85 + 1)) + 85;
     let daño = Math.round(0.01 * modificadorTotal * variacion * (atacante.atk * ataque.potencia / defensor.defensa + 2));
 
     const ProbabilidadDecritico = generarNumeroAleatorio()
-    let critico = "";
     if (ProbabilidadDecritico === 10)
     {
         daño = daño * 2
-        critico = " ES UN ATAQUE CRITICO Y"
     }
+
     return daño;
-    
 }
 
-function elegirAtaqueMasEfectivo(TipoDefensor1, TipoDefensor2) {   
+function elegirAtaqueMasEfectivo() {   
     let mejorAtaque;
     let mayorDaño = 0;
 
     let tiposAtaquesDisponibles = PokeortElegidoEnemigoActual.ataques;
 
     tiposAtaquesDisponibles.forEach(ataque => {
-        let daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ataque)
+        let daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ataque);
 
         if (daño > mayorDaño)
         {
@@ -961,14 +843,6 @@ function pokeortAcierta(ataque) {
     {
         return false;
     }
-}
-
-function mostrarTabla() {
-    document.getElementById("tabladetipos-div").style.display="flex";
-}
-
-function cerrarTabla() {
-    document.getElementById("tabladetipos-div").style.display="none";
 }
 
 function generarNumeroAleatorio() 
@@ -1027,13 +901,10 @@ function  QueHacerConObjeto(Nombre)
     if (QueHacePocion === 1)
     {
         const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
-        console.log(pokeortElegido.vida)
         pokeortElegido.vida += 300;
-        console.log(pokeortElegido.vida)
         if(pokeortElegido.vida > pokeortElegido.vida_total)
         {
             pokeortElegido.vida = pokeortElegido.vida_total
-            console.log(pokeortElegido.vida)
         }
         document.getElementById("PocionDeVida").style.display = "none"
         MostrarObjetos()
@@ -1043,9 +914,7 @@ function  QueHacerConObjeto(Nombre)
     else if(QueHacePocion === 2)
         {
             const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
-            console.log(pokeortElegido.atk)
             pokeortElegido.atk += 200;
-            console.log(pokeortElegido.atk)
             document.getElementById("PocionDeAtaque").style.display = "none"
             MostrarObjetos()
             pokeortBebePocion(pokeortElegido, 200)
@@ -1053,9 +922,7 @@ function  QueHacerConObjeto(Nombre)
     else if(QueHacePocion === 3)
     {
                 const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
-                console.log(pokeortElegido.defensa)
                 pokeortElegido.defensa += 200;
-                console.log(pokeortElegido.defensa)
                 document.getElementById("PocionDeDefensa").style.display = "none"
                 MostrarObjetos()
                 pokeortBebePocion(pokeortElegido, 200)
@@ -1063,9 +930,7 @@ function  QueHacerConObjeto(Nombre)
     else if(QueHacePocion === 4)
     {
                     const pokeortElegido = PokeortAmigos.find(pokeort => pokeort.nombre === Nombre);
-                    console.log(pokeortElegido.velocidad)
                     pokeortElegido.velocidad += 200;
-                    console.log(pokeortElegido.velocidad)
                     document.getElementById("PocionDeVelocidad").style.display = "none"
                     MostrarObjetos()
                     pokeortBebePocion(pokeortElegido, 200)
@@ -1080,9 +945,6 @@ function  QueHacerConObjeto(Nombre)
             
             PokeortElegidoActual = PokeortElegidoEnemigoActualcopia;
             PokeortElegidoEnemigoActual = PokeortElegidoActualcopia;
-            
-            console.log("PokeortAmigos después de la inversión:", PokeortAmigos);
-            console.log("PokeortEnemigos después de la inversión:", PokeortEnemigos);
 
             PokeortAmigos.forEach((pokeort, index) => {
                 const img = botones[index].querySelector(".ImagenesCambiables");

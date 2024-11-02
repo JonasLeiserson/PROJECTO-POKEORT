@@ -63,14 +63,14 @@
           "tipo": "tierra",
           "potencia": 120,
           "precision": 85,
-          "descripcion": "Sacude el suelo, causando daño a todos los oponentes y puede hacerlos caer."
+          "descripcion": "Sacude el suelo, causando daño a todos los oponentes."
         },
         {
           "nombre": "Pedrada",
           "tipo": "roca",
           "potencia": 100,
           "precision": 90,
-          "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño y puede causar confusión."
+          "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño."
         },
         {
           "nombre": "Pico Rocoso",
@@ -84,7 +84,7 @@
           "tipo": "normal",
           "potencia": 90,
           "precision": 100,
-          "descripcion": "Un ataque físico que causa daño y puede quemar al enemigo."
+          "descripcion": "Un ataque físico que causa daño."
         }
       ],
     "src": "../recursos/img/pokeorts-static/front/roktom.png",

@@ -89,23 +89,34 @@ z-index: 1;
     z-index: 10;
 
     .cerrartabla {
-        width: 2.3%;
-        height: 3.5%;
+        width: 1%;
+        height: 1.8%;
         z-index: 1;
         border: none;
-        background-color: white;
-        background-image: url('../recursos/img/iconos/x.png');
-        background-size: contain;
+        border-radius: 1px;
         margin-top: 1px;
         margin-right: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #b1b1b1;
+        }
+
+        img {
+            width: auto;
+            height: 100%;
+        }
     }
 
     .tabladetipos {
         background-image: url(../recursos/img/fondos/tabladetipos.png);
-        background-size: cover;
+        background-size: contain;
         position: fixed;
-        width: 600px;
-        height: 404.9px;
+        width: 1034px;
+        height: 488px;
         display: flex;
         justify-content: end;
     }
@@ -121,6 +132,11 @@ z-index: 1;
         background-color: white;
         border-radius: 5px;
         margin: 2px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: aliceblue;
+        }
     }
 }
 
@@ -328,6 +344,11 @@ footer {
                     background-color: whitesmoke;
                     cursor: pointer;
                 }
+                
+                &:disabled:hover {
+                    background-color: rgb(255, 255, 255);
+                    cursor: auto;
+                }
             }
         }
         
@@ -351,7 +372,12 @@ footer {
                     height: 65%;
                     border-radius: 5px;
                     border: none;
+                    background-color: white;
 
+                    &:hover {
+                        background-color: whitesmoke;
+                        cursor: pointer;
+                    }
 
                     .objeto-img {
                         width: 50%;
@@ -410,6 +436,13 @@ footer {
                     font-family: ABeeZee;
                     height: 80%;
                     font-size: 0.7rem;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:hover {
+                        background-color: rgb(212, 0, 0);
+                        cursor: pointer;
+                    }
                 }
 
                 .pokeort-cambiable {
@@ -517,6 +550,3 @@ footer {
         }
     }
 }
-
-
-
