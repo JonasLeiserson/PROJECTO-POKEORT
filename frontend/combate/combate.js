@@ -833,7 +833,6 @@ function elegirAtaqueMasEfectivo() {
                 {
                     mayorDaño = daño;
                     mejorAtaque = ataque;
-                    console.log(mejorAtaque)
                 }
         }
     });
@@ -841,7 +840,6 @@ function elegirAtaqueMasEfectivo() {
     if (mejorAtaque === undefined)
     {
         mejorAtaque = AtaquesDisponibles[0];
-        console.log("pancho")
     }
 
     return mejorAtaque; 

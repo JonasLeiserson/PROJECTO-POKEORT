@@ -5,7 +5,7 @@
     "vida": 800,
     "vida_total": 800,
     "velocidad": 200,
-    "defensa": 175,
+    "defensa": 100,
     "Tipo1": "fuego",
     "Tipo2": "volador",
     "ataques": [
