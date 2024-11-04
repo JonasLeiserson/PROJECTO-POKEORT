@@ -629,6 +629,8 @@ function realizarTurnoJugador() {
                     elementos.forEach(elemento => {
                         elemento.style.display = "none";
                     });
+                    document.querySelector("body").style.backgroundImage = "url('../recursos/img/fondos/victoria.png')"
+                    document.querySelector("body").style.backgroundSize = "cover";
                 }
                 const PokeortElegidoEnemigo = PokeortEnemigos[valorEnemigo];
                 PokeortElegidoEnemigoActual = PokeortElegidoEnemigo;
@@ -760,6 +762,8 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
                     elementos.forEach(elemento => {
                         elemento.style.display = "none";
                     });
+                    document.querySelector("body").style.backgroundImage = "url('../recursos/img/fondos/derrota.png')"
+                    document.querySelector("body").style.backgroundSize = "cover";
                 }
                 imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
                 terminarAtaqueAnimacion(imgEnemiga)
@@ -816,17 +820,29 @@ function elegirAtaqueMasEfectivo() {
     let mejorAtaque;
     let mayorDaño = 0;
 
-    let tiposAtaquesDisponibles = PokeortElegidoEnemigoActual.ataques;
+    let AtaquesDisponibles = PokeortElegidoEnemigoActual.ataques;
 
-    tiposAtaquesDisponibles.forEach(ataque => {
+    AtaquesDisponibles.forEach(ataque => {
+        let acierto = pokeortAcierta(ataque)
+        
         let daño = CalcularDaño(PokeortElegidoEnemigoActual, PokeortElegidoActual, ataque);
 
-        if (daño > mayorDaño)
+        if (acierto)
         {
-            mayorDaño = daño;
-            mejorAtaque = ataque;
+            if (daño > mayorDaño)
+                {
+                    mayorDaño = daño;
+                    mejorAtaque = ataque;
+                    console.log(mejorAtaque)
+                }
         }
     });
+
+    if (mejorAtaque === undefined)
+    {
+        mejorAtaque = AtaquesDisponibles[0];
+        console.log("pancho")
+    }
 
     return mejorAtaque; 
 }

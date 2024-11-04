@@ -1,200 +1,53 @@
 {
   "Pokeort1": {
-    "nombre": "CARITA",
-    "atk": 200,
-    "vida": 900,
-    "vida_total": 900,
-    "velocidad": 300,
-    "defensa": 180,
-    "Tipo1": "planta",
-    "Tipo2": "hielo",
+    "nombre": "OWLEON",
+    "atk": 300,
+    "vida": 800,
+    "vida_total": 800,
+    "velocidad": 200,
+    "defensa": 175,
+    "Tipo1": "fuego",
+    "Tipo2": "volador",
     "ataques": [
       {
-        "nombre": "Rostro Amistoso",
-        "tipo": "normal",
-        "potencia": 200,
-        "precision": 50,
-        "descripcion": "Sonrie tan fuerte que causa muchisimo daño al enemigo. Muy facil de esquivar."
-      },
-      {
-        "nombre": "Golpe de Calor",
+        "nombre": "Llama Sagrada",
         "tipo": "fuego",
-        "potencia": 120,
-        "precision": 75,
-        "descripcion": "Un ataque cálido y poderoso."
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo."
       },
       {
-        "nombre": "Latigo Sonriente",
+        "nombre": "Haz Luminoso",
+        "tipo": "volador",
+        "potencia": 80,
+        "precision": 100,
+        "descripcion": "Un ataque rápido que inflige daño."
+      },
+      {
+        "nombre": "Rayo Solar",
         "tipo": "planta",
-        "potencia": 80,
-        "precision": 100,
-        "descripcion": "Lanza un latigazo que causa daño."
+        "potencia": 170,
+        "precision": 60,
+        "descripcion": "Carga energía solar para lanzar un rayo devastador."
       },
       {
-        "nombre": "Reflejo Electrico",
-        "tipo": "electrico",
-        "potencia": 80,
-        "precision": 100,
-        "descripcion": "Un ataque electrico que causa daño."
+        "nombre": "Explosión de Luz",
+        "tipo": "normal",
+        "potencia": 110,
+        "precision": 80,
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
       }
     ],
-    "src": "../recursos/img/pokeorts-static/front/carita.png",
-    "src_back": "../recursos/img/pokeorts-static/back/carita.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/carita.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/carita-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/carita-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/carita-atk-back.gif",
-    "src_extra_back": "../recursos/img/pokeorts-static/back/carita-turbina-back.png",
-    "src_extra_gif_back": "../recursos/img/pokeorts-gifs/back/carita-turbina-back.gif",
-    "src_extra_atk_back": "../recursos/img/pokeort-atk/back/carita-turbina-atk-back.gif",
-    "NumeroSecreto": 9,
-    "pokeortID": "CARITAFACHA"
+    "src": "../recursos/img/pokeorts-static/front/owleon.png",
+    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
+    "NumeroSecreto": 1,
+    "pokeortID": "OWLEON"
   },
   "Pokeort2": {
-    "nombre": "MACETONIO",
-    "atk": 150,
-    "vida": 1200,
-    "vida_total": 1200,
-    "velocidad": 100,
-    "defensa": 180,
-    "Tipo1": "planta",
-    "Tipo2": "agua",
-    "ataques": [
-      {
-        "nombre": "Rayo Vegetal",
-        "tipo": "planta",
-        "potencia": 150,
-        "precision": 70,
-        "descripcion": "Lanza un rayo proveniente de la naturaleza, causando daño inmediato."
-      },
-      {
-        "nombre": "Zarpazo",
-        "tipo": "especial",
-        "potencia": 60,
-        "precision": 100,
-        "descripcion": "Un ataque que causa el mismo daño a todos los enemigos"
-      },
-      {
-        "nombre": "Hoja Afilada",
-        "tipo": "planta",
-        "potencia": 105,
-        "precision": 90,
-        "descripcion": "Lanza hojas afiladas que causan daño alto y pueden provocar un golpe crítico."
-      },
-      {
-        "nombre": "Puño Acuatico",
-        "tipo": "agua",
-        "potencia": 100,
-        "precision": 90,
-        "descripcion": "Un ataque de puño fuerte que inflige gran daño al enemigo."
-      }
-    ],
-    "src": "../recursos/img/pokeorts-static/front/maceta-rancia.png",
-    "src_back": "../recursos/img/pokeorts-static/back/maceta-rancia-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/maceta-rancia.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/maceta-rancia-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/maceta-rancia-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/maceta-rancia-atk-back.gif",
-    "NumeroSecreto": 8,
-    "pokeortID": "MACETONIO"
-  },
-  "Pokeort3": {
-    "nombre": "OWLEON",
-    "atk": 300,
-    "vida": 800,
-    "vida_total": 800,
-    "velocidad": 200,
-    "defensa": 175,
-    "Tipo1": "fuego",
-    "Tipo2": "volador",
-    "ataques": [
-      {
-        "nombre": "Llama Sagrada",
-        "tipo": "fuego",
-        "potencia": 100,
-        "precision": 90,
-        "descripcion": "Envuelve al oponente en llamas, causando daño significativo."
-      },
-      {
-        "nombre": "Haz Luminoso",
-        "tipo": "volador",
-        "potencia": 80,
-        "precision": 100,
-        "descripcion": "Un ataque rápido que inflige daño."
-      },
-      {
-        "nombre": "Rayo Solar",
-        "tipo": "planta",
-        "potencia": 170,
-        "precision": 60,
-        "descripcion": "Carga energía solar para lanzar un rayo devastador."
-      },
-      {
-        "nombre": "Explosión de Luz",
-        "tipo": "normal",
-        "potencia": 110,
-        "precision": 80,
-        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
-      }
-    ],
-    "src": "../recursos/img/pokeorts-static/front/owleon.png",
-    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
-    "NumeroSecreto": 1,
-    "pokeortID": "OWLEON"
-  },
-  "PokeortEnemigo1": {
-    "nombre": "OWLEON",
-    "atk": 300,
-    "vida": 800,
-    "vida_total": 800,
-    "velocidad": 200,
-    "defensa": 175,
-    "Tipo1": "fuego",
-    "Tipo2": "volador",
-    "ataques": [
-      {
-        "nombre": "Llama Sagrada",
-        "tipo": "fuego",
-        "potencia": 100,
-        "precision": 90,
-        "descripcion": "Envuelve al oponente en llamas, causando daño significativo."
-      },
-      {
-        "nombre": "Haz Luminoso",
-        "tipo": "volador",
-        "potencia": 80,
-        "precision": 100,
-        "descripcion": "Un ataque rápido que inflige daño."
-      },
-      {
-        "nombre": "Rayo Solar",
-        "tipo": "planta",
-        "potencia": 170,
-        "precision": 60,
-        "descripcion": "Carga energía solar para lanzar un rayo devastador."
-      },
-      {
-        "nombre": "Explosión de Luz",
-        "tipo": "normal",
-        "potencia": 110,
-        "precision": 80,
-        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
-      }
-    ],
-    "src": "../recursos/img/pokeorts-static/front/owleon.png",
-    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
-    "NumeroSecreto": 1,
-    "pokeortID": "OWLEON"
-  },
-  "PokeortEnemigo2": {
     "nombre": "AMONG US",
     "atk": 200,
     "vida": 1100,
@@ -242,52 +95,196 @@
     "NumeroSecreto": 5,
     "pokeortID": "AMONG US"
   },
-  "PokeortEnemigo3": {
-    "nombre": "GATENCIO",
-    "atk": 250,
-    "vida": 800,
-    "vida_total": 800,
-    "velocidad": 250,
-    "defensa": 140,
+  "Pokeort3": {
+    "nombre": "ROKTOM",
+    "atk": 120,
+    "vida": 1500,
+    "vida_total": 1500,
+    "velocidad": 100,
+    "defensa": 200,
     "Tipo1": "roca",
+    "Tipo2": "volador",
+    "ataques": [
+      {
+        "nombre": "Terremoto",
+        "tipo": "tierra",
+        "potencia": 120,
+        "precision": 85,
+        "descripcion": "Sacude el suelo, causando daño a todos los oponentes."
+      },
+      {
+        "nombre": "Pedrada",
+        "tipo": "roca",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Lanza grandes rocas hacia el enemigo, causando daño."
+      },
+      {
+        "nombre": "Pico Rocoso",
+        "tipo": "volador",
+        "potencia": 150,
+        "precision": 65,
+        "descripcion": "Se eleva a una gran altura y cae en picado cusando mucho daño."
+      },
+      {
+        "nombre": "Golpe",
+        "tipo": "normal",
+        "potencia": 90,
+        "precision": 100,
+        "descripcion": "Un ataque físico que causa daño."
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/roktom.png",
+    "src_back": "../recursos/img/pokeorts-static/back/roktom-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/roktom.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/roktom-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/roktom-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/roktom-atk-back.gif",
+    "NumeroSecreto": 3,
+    "pokeortID": "ROKTOM"
+  },
+  "PokeortEnemigo1": {
+    "nombre": "AMONG US",
+    "atk": 200,
+    "vida": 1100,
+    "vida_total": 1100,
+    "velocidad": 250,
+    "defensa": 125,
+    "Tipo1": "agua",
     "Tipo2": "electrico",
     "ataques": [
       {
-        "nombre": "Golpe de Roca",
-        "tipo": "roca",
-        "potencia": 100,
-        "precision": 85,
-        "descripcion": "Lanza una gran roca hacia el enemigo."
-      },
-      {
-        "nombre": "Poder Tierra",
-        "tipo": "tierra",
-        "potencia": 110,
-        "precision": 80,
-        "descripcion": "Un ataque que causa un fuerte golpe en el suelo, afectando a todos los enemigos cercanos."
-      },
-      {
-        "nombre": "Tormenta",
+        "nombre": "Cables",
         "tipo": "electrico",
-        "potencia": 90,
-        "precision": 100,
-        "descripcion": "Un ataque que causa daño."
+        "potencia": 170,
+        "precision": 60,
+        "descripcion": "Invoca una tormenta de cables que electrocuta al rival causando mucho daño."
       },
       {
-        "nombre": "Surf",
+        "nombre": "Chorro de Agua",
         "tipo": "agua",
         "potencia": 80,
         "precision": 100,
-        "descripcion": "Se desliza hacia el enemigo con una ola, causando daño."
+        "descripcion": "Un ataque rápido que causa daño."
+      },
+      {
+        "nombre": "Meteoritos",
+        "tipo": "roca",
+        "potencia": 200,
+        "precision": 50,
+        "descripcion": "Caen meteoritos infligiendo mucho daño al oponente."
+      },
+      {
+        "nombre": "Asesinato",
+        "tipo": "normal",
+        "potencia": 10000,
+        "precision": 5,
+        "descripcion": "5% de probabilidad de insta-kill al oponente."
       }
     ],
-    "src": "../recursos/img/pokeorts-static/front/gato-rancio.png",
-    "src_back": "../recursos/img/pokeorts-static/back/gato-rancio-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/gato-rancio.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/gato-rancio-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/gato-rancio-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/gato-rancio-atk-back.gif",
-    "NumeroSecreto": 7,
-    "pokeortID": "GATENCIO"
+    "src": "../recursos/img/pokeorts-static/front/among-us.png",
+    "src_back": "../recursos/img/pokeorts-static/back/among-us-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/among-us.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/among-us-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/among-us-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/among-us-atk-back.gif",
+    "NumeroSecreto": 5,
+    "pokeortID": "AMONG US"
+  },
+  "PokeortEnemigo2": {
+    "nombre": "OWLEON",
+    "atk": 300,
+    "vida": 800,
+    "vida_total": 800,
+    "velocidad": 200,
+    "defensa": 175,
+    "Tipo1": "fuego",
+    "Tipo2": "volador",
+    "ataques": [
+      {
+        "nombre": "Llama Sagrada",
+        "tipo": "fuego",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo."
+      },
+      {
+        "nombre": "Haz Luminoso",
+        "tipo": "volador",
+        "potencia": 80,
+        "precision": 100,
+        "descripcion": "Un ataque rápido que inflige daño."
+      },
+      {
+        "nombre": "Rayo Solar",
+        "tipo": "planta",
+        "potencia": 170,
+        "precision": 60,
+        "descripcion": "Carga energía solar para lanzar un rayo devastador."
+      },
+      {
+        "nombre": "Explosión de Luz",
+        "tipo": "normal",
+        "potencia": 110,
+        "precision": 80,
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/owleon.png",
+    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
+    "NumeroSecreto": 1,
+    "pokeortID": "OWLEON"
+  },
+  "PokeortEnemigo3": {
+    "nombre": "OWLEON",
+    "atk": 300,
+    "vida": 800,
+    "vida_total": 800,
+    "velocidad": 200,
+    "defensa": 175,
+    "Tipo1": "fuego",
+    "Tipo2": "volador",
+    "ataques": [
+      {
+        "nombre": "Llama Sagrada",
+        "tipo": "fuego",
+        "potencia": 100,
+        "precision": 90,
+        "descripcion": "Envuelve al oponente en llamas, causando daño significativo."
+      },
+      {
+        "nombre": "Haz Luminoso",
+        "tipo": "volador",
+        "potencia": 80,
+        "precision": 100,
+        "descripcion": "Un ataque rápido que inflige daño."
+      },
+      {
+        "nombre": "Rayo Solar",
+        "tipo": "planta",
+        "potencia": 170,
+        "precision": 60,
+        "descripcion": "Carga energía solar para lanzar un rayo devastador."
+      },
+      {
+        "nombre": "Explosión de Luz",
+        "tipo": "normal",
+        "potencia": 110,
+        "precision": 80,
+        "descripcion": "Libera una explosión de luz que causa daño y puede cegarlo."
+      }
+    ],
+    "src": "../recursos/img/pokeorts-static/front/owleon.png",
+    "src_back": "../recursos/img/pokeorts-static/back/owleon-back.png",
+    "src_gif": "../recursos/img/pokeorts-gifs/front/owleon.gif",
+    "src_gif_back": "../recursos/img/pokeorts-gifs/back/owleon-back.gif",
+    "src_atk": "../recursos/img/pokeort-atk/front/owleon-atk.gif",
+    "src_atk_back": "../recursos/img/pokeort-atk/back/owleon-atk-back.gif",
+    "NumeroSecreto": 1,
+    "pokeortID": "OWLEON"
   }
 }
