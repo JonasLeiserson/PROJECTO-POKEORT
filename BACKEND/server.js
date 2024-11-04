@@ -3,9 +3,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const path = require('path');
 
 app.use(cors({
     origin: "*", 
