@@ -453,6 +453,7 @@ function intercambiarPokeort(button, index) {
     else 
     {
         document.getElementById("pokeort1").style.opacity = '1';
+        accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
         habilitarOpciones()
     }
 
@@ -738,7 +739,6 @@ function realizarTurnoEnemigo(TipoAnterior1, TipoAnterior2) {
                 bajarPokeball();
                 document.getElementById("pokeort1").style.opacity = '0';
                 mostrar_pokeort();
-                accion_Pokeort.innerHTML = `¿Que deberia hacer <span id='pokeort-name-menu'>${PokeortElegidoActual.nombre}</span>?`;
                 desabilitarOpciones()
         
                 document.querySelectorAll(".pokeort-cambiable").forEach(button => {

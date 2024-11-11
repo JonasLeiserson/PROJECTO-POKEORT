@@ -90,7 +90,7 @@ z-index: 1;
 
     .cerrartabla {
         width: 1%;
-        height: 1.8%;
+        height: 3%;
         z-index: 1;
         border: none;
         border-radius: 1px;
@@ -137,6 +137,8 @@ z-index: 1;
         background-color: white;
         border-radius: 5px;
         margin: 2px;
+        font-family: ABeeZee;
+        padding: 5px;
 
         &:hover {
             cursor: pointer;
@@ -411,7 +413,7 @@ footer {
                     font-size: 200%;
                     text-align: center;
                     color: white;
-                    font-family: Kyiv;
+                    font-family: ABeeZee;
                 }
             }
 
