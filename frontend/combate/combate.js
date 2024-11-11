@@ -33,8 +33,8 @@ window.onload = function() {
     .then(data => {
         PokeortAmigos = [data.Pokeort1, data.Pokeort2, data.Pokeort3];
         PokeortEnemigos = [data.PokeortEnemigo1, data.PokeortEnemigo2, data.PokeortEnemigo3];
-        console.log(PokeortAmigos);
-        console.log(PokeortEnemigos);
+        console.log("Pokeorts seleccionados: ", PokeortAmigos);
+        console.log("Pokeorts enemigos: ", PokeortEnemigos);
 
         document.getElementById("EleccionPrimerPokemon").src = PokeortAmigos[0].src;
         document.getElementById("EleccionPrimerPokemon2").src = PokeortAmigos[1].src;

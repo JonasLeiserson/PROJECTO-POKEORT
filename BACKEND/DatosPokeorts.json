@@ -338,53 +338,5 @@
     "src_extra_atk_back": "../recursos/img/pokeort-atk/back/carita-turbina-atk-back.gif",
     "NumeroSecreto": 9,
     "pokeortID": "CARITAFACHA"
-  },
-  "SKIBIDI": {
-    "nombre": "SKIBIDI",
-    "atk": 999,
-    "vida": 1,
-    "vida_total": 1,
-    "velocidad": 1000,
-    "defensa": 1,
-    "Tipo1": "skibidi",
-    "Tipo2": "especial",
-    "Estado": [],
-    "ataques": [
-        {
-          "nombre": "Fuerza Toilet",
-          "tipo": "skibidi",
-          "potencia": 999,
-          "precision": 40,
-          "descripcion": "SKIBIDI"
-        },
-        {
-          "nombre": "Fuerza Toilet",
-          "tipo": "skibidi",
-          "potencia": 999,
-          "precision": 40,
-          "descripcion": "SKIBIDI"
-        },
-        {
-          "nombre": "Fuerza Toilet",
-          "tipo": "skibidi",
-          "potencia": 999,
-          "precision": 40,
-          "descripcion": "SKIBIDI"
-        },
-        {
-          "nombre": "Fuerza Toilet",
-          "tipo": "skibidi",
-          "potencia": 999,
-          "precision": 40,
-          "descripcion": "SKIBIDI"
-        }
-      ],
-    "src": "../recursos/img/pokeorts-static/front/skibidi.png",
-    "src_back": "../recursos/img/pokeorts-static/back/skibidi-back.png",
-    "src_gif": "../recursos/img/pokeorts-gifs/front/skibidi.gif",
-    "src_gif_back": "../recursos/img/pokeorts-gifs/back/skibidi-back.gif",
-    "src_atk": "../recursos/img/pokeort-atk/front/skibidi-atk.gif",
-    "src_atk_back": "../recursos/img/pokeort-atk/back/skibidi-atk-back.gif",
-    "pokeortID": "SKIBIDI"
   }
 }
