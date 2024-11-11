@@ -194,22 +194,22 @@ footer {
 
 #VIDA
 {
-background-color: greenyellow;
+background-color: #08C832;
 }
 
 #VELOCIDAD 
 {
-background-color: yellow;
+background-color: #FAFF07;
 }
 
 #DEFENSA 
 {
-    background-color: brown;
+    background-color: #FF0000;
 }
 
 #DAÑO
 {
-    background-color: crimson;
+    background-color: #FF8A00;
 }
 
 .ability 
