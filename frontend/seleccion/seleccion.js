@@ -5,6 +5,8 @@ function cargarDatosIniciales() {
         .then(response => response.json())
         .then(data => {
             PokeORTS = data;
+            console.log("📦 Datos completos:");
+            console.dir(PokeORTS, { depth: null });
             inicializarInterfazConDatos();
         });
 }
