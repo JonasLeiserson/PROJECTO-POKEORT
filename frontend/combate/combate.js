@@ -27,27 +27,31 @@ let acertado;
 let PokeortElegidoActualEstado;
 let PokeortElegidoEnemigoActualEstado;
 
-window.onload = function() {
-    fetch('http://localhost:3000/leer-datos-de-pokeorts')
-    .then(response => response.json())
-    .then(data => {
+window.onload = function() 
+{
+    fetch('http://localhost:3000/leer-datos')
+            .then(response => response.json())
+            .then(data => {
+                PokeORTS = data;
+                console.log("📦 Datos completos:");
+                console.dir(PokeORTS, { depth: null });
+    
         PokeortAmigos = [data.Pokeort1, data.Pokeort2, data.Pokeort3];
         PokeortEnemigos = [data.PokeortEnemigo1, data.PokeortEnemigo2, data.PokeortEnemigo3];
         console.log("Pokeorts seleccionados: ", PokeortAmigos);
         console.log("Pokeorts enemigos: ", PokeortEnemigos);
 
-        document.getElementById("EleccionPrimerPokemon").src = PokeortAmigos[0].src;
-        document.getElementById("EleccionPrimerPokemon2").src = PokeortAmigos[1].src;
-        document.getElementById("EleccionPrimerPokemon3").src = PokeortAmigos[2].src;
+        document.getElementById("EleccionPrimerPokemon").src = PokeortAmigos[0].imagenes.src;
+        document.getElementById("EleccionPrimerPokemon2").src = PokeortAmigos[1].imagenes.src;
+        document.getElementById("EleccionPrimerPokemon3").src = PokeortAmigos[2].imagenes.src;
         document.getElementById("NombrePokeort1").innerHTML = PokeortAmigos[0].nombre;
         document.getElementById("NombrePokeort2").innerHTML = PokeortAmigos[1].nombre;
         document.getElementById("NombrePokeort3").innerHTML = PokeortAmigos[2].nombre;
-        document.getElementById("spoiler").src = PokeortEnemigos[0].src
+        document.getElementById("spoiler").src = PokeortEnemigos[0].imagenes.src
 
         document.getElementById("ImagenAmiga2").style.display = "none";
     });
 };
-
 // cosas para front
 let opciones = document.getElementById('opciones');
 let botones_opciones = opciones.querySelectorAll('button');
@@ -185,7 +189,7 @@ function mostrar_pokeort() {
     {
         PokeortAmigos.forEach((pokeort, index) => {
             const img = botones[index].querySelector(".ImagenesCambiables");
-            img.src = pokeort.src;
+            img.src = pokeort.imagenes.src;
             const parrafo = botones[index].querySelector(".ParrafosCambiables");
             parrafo.textContent = pokeort.nombre;
             if (pokeort.nombre === PokeortElegidoId) {
@@ -377,9 +381,9 @@ function EleccionDePokeortInicial(button) {
 
     nameMenu.innerHTML = pokeortElegido.nombre;
     pokeortElegidoNombre.innerHTML = pokeortElegido.nombre;
-    imgAmiga.src = pokeortElegido.src_gif_back;
+    imgAmiga.src = pokeortElegido.imagenes.src_gif_back;
     imgEnemiga.style.display = "block";
-    imgEnemiga.src = PokeortElegidoEnemigoActual.src_gif;
+    imgEnemiga.src = PokeortElegidoEnemigoActual.imagenes.src_gif;
     pokeortEnemigoNombre.innerHTML = PokeortElegidoEnemigoActual.nombre;
     tiposPokeortElegido[0].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo1}.png`
     tiposPokeortElegido[1].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo2}.png`
@@ -393,7 +397,7 @@ function EleccionDePokeortInicial(button) {
 
     PokeortAmigos.forEach((pokeort, index) => {
         const img = botones[index].querySelector(".ImagenesCambiables");
-        img.src = pokeort.src;
+        img.src = pokeort.imagenes.src;
         const parrafo = botones[index].querySelector(".ParrafosCambiables");
         parrafo.textContent = pokeort.nombre;
         if (pokeort.nombre === PokeortElegidoId) {
@@ -428,7 +432,7 @@ function intercambiarPokeort(button, index) {
     pokeortElegidoNombre.textContent = pokeortElegido.nombre;
     nameMenu.textContent = pokeortElegido.nombre;
     imgAmiga.style.display = "block";
-    imgAmiga.src = pokeortElegido.src_gif_back;
+    imgAmiga.src = pokeortElegido.imagenes.src_gif_back;
     tiposPokeortElegido[0].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo1}.png`
     tiposPokeortElegido[1].src = `../recursos/img/iconos/tipos/${pokeortElegido.Tipo2}.png`
     PokeortElegidoActual = pokeortElegido;
@@ -580,7 +584,7 @@ function accionPokeort(atacante, defensor, daño, ataque) {
 }
 
 function realizarTurnoJugador() {
-    imgAmiga.src = PokeortElegidoActual.src_atk_back;
+    imgAmiga.src = PokeortElegidoActual.imagenes.src_atk_back;
     
     setTimeout(() => {
         ataqueAnimacion(imgAmiga)

@@ -20,10 +20,11 @@ app.get('/leer-datos', async(req, res) => {
 });
 
 // escribe datos en PokemonesEstadisticas.json
-app.post('/guardar-datos', (req, res) => {
-    const nuevosDatos = req.body;
-    console.log('Datos recibidos:', nuevosDatos);
-    fs.writeFileSync('PokemonesEstadisticas.json', JSON.stringify(nuevosDatos, null, 2));
+app.post('/guardar-datos', async(req, res) => {
+
+    const datos = req.body;
+    console.log('Datos recibidos:', datos);
+    await PokeortEnviadosAlCombate(datos);
     res.send('Datos actualizados correctamente.');
 });
 
@@ -64,3 +65,19 @@ const obtenerPokeortsConAtaques = async () => {
 
   return resultado;
 };
+const PokeortEnviadosAlCombate = async (datos) => 
+{
+  const seleccionados = [datos.Pokeort1, datos.Pokeort2, datos.Pokeort3, datos.PokeortEnemigo1, datos.PokeortEnemigo2, datos.PokeortEnemigo3];
+  for (const pokeort of seleccionados)
+  {
+    try
+    {
+      console.log(seleccionados)
+      await sql`UPDATE pokeorts set seleccionado = true  WHERE id = ${pokeort.ID}`;
+    }
+    catch
+    {
+      console.warn("PokeORT inválido:", pokeort);
+    }
+  }
+}

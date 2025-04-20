@@ -17,7 +17,7 @@ function inicializarInterfazConDatos() {
         if (pokeortID && PokeORTS[pokeortID]) {
             const pokeortData = PokeORTS[pokeortID];
             item.querySelector('.pokeort-name').textContent = pokeortData.nombre;
-            item.querySelector('.pokeort-img').src = pokeortData.src_gif;
+            item.querySelector('.pokeort-img').src = pokeortData.imagenes.src_gif;
         }
     });
     for (let i = 0; i < 3; i++) {
@@ -57,12 +57,11 @@ function BloquearPokeort(button) {
 }
 
 function CambiarPokeort(button) {
-    const pokeortID = button.querySelector(".pokeort-name").textContent.trim();
-    const pokeort = PokeORTS[pokeortID];
+    const pokeortID = button.id;
+    const pokeort = PokeORTS[pokeortID - 1];
     const imgElement = document.getElementById(`selected-pokeort-display${eleccion}`);
-
     if (imgElement) {
-        imgElement.src = pokeort.src_gif;
+        imgElement.src = pokeort.imagenes.src_gif;
         imgElement.style.display = "block";
     }
 
